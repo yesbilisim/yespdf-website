@@ -98,13 +98,6 @@ const translations = {
     'why.browser.desc': 'İstemci kurulumu gerektirmez. Chrome, Firefox, Edge ile her cihazdan erişin. Windows, Mac, Linux, mobil desteği.',
     'why.compliance.title': 'KVKK & BDDK Uyumlu',
     'why.compliance.desc': 'Kapsamlı denetim kayıtları, AES-256 şifreleme, RBAC yetkilendirme. Türk düzenlemelerine tam uyum.',
-    'why.compare.title': 'Maliyet Karşılaştırması',
-    'why.compare.users': 'Kullanıcı',
-    'why.compare.adobe': 'Adobe Acrobat Pro',
-    'why.compare.yespdf': 'YesPDF',
-    'why.compare.savings': 'Tasarruf',
-    'why.compare.license': 'Tek Lisans',
-
     // Security
     'security.title': 'Kurumsal Güvenlik',
     'security.subtitle': 'Verileriniz en üst düzeyde korunur',
@@ -269,12 +262,6 @@ const translations = {
     'why.browser.desc': 'No client installation required. Access from any device with Chrome, Firefox, or Edge. Windows, Mac, Linux, mobile support.',
     'why.compliance.title': 'KVKK & BDDK Compliant',
     'why.compliance.desc': 'Comprehensive audit logs, AES-256 encryption, RBAC authorization. Full compliance with Turkish regulations.',
-    'why.compare.title': 'Cost Comparison',
-    'why.compare.users': 'Users',
-    'why.compare.adobe': 'Adobe Acrobat Pro',
-    'why.compare.yespdf': 'YesPDF',
-    'why.compare.savings': 'Savings',
-    'why.compare.license': 'Single License',
 
     // Security
     'security.title': 'Enterprise Security',
