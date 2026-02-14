@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YesPDF - Kurumsal PDF Yönetim Platformu. KVKK uyumlu, on-premise PDF dönüştürme, düzenleme, OCR ve belge yönetimi çözümü.">
+    <meta name="keywords" content="PDF yönetimi, kurumsal PDF, KVKK uyumlu, on-premise, PDF dönüştürme, OCR, PDF editör">
+    <meta name="author" content="YesPDF">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="YesPDF - Kurumsal PDF Yönetim Platformu">
+    <meta property="og:description" content="KVKK uyumlu, on-premise kurumsal PDF yönetim platformu. 20+ PDF aracı, OCR, gelişmiş editör ve yönetim paneli.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yespdf.com">
+    <meta property="og:image" content="https://yespdf.com/img/og-image.png">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YesPDF - Kurumsal PDF Yönetim Platformu">
+    <meta name="twitter:description" content="KVKK uyumlu, on-premise kurumsal PDF yönetim platformu.">
+    <meta name="twitter:image" content="https://yespdf.com/img/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+
+    <title>YesPDF - Kurumsal PDF Y&ouml;netim Platformu</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50:  '#f0f4f8',
+                            100: '#d9e2ec',
+                            200: '#bcccdc',
+                            300: '#9fb3c8',
+                            400: '#829ab1',
+                            500: '#627d98',
+                            600: '#486581',
+                            700: '#1B3A5C',
+                            800: '#143050',
+                            900: '#0F2440',
+                            950: '#091A30',
+                        },
+                        'brand-green': {
+                            50:  '#f0fdf0',
+                            100: '#dcfcdc',
+                            200: '#bbf7bb',
+                            300: '#86ef86',
+                            400: '#4ade4a',
+                            500: '#288C28',
+                            600: '#228222',
+                            700: '#1a6b1a',
+                            800: '#1a5a1a',
+                            900: '#164a16',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="font-sans text-gray-800 bg-white antialiased">
+
+    <!-- ============================================================
+         SECTION 1: NAVBAR - Fixed, Glass-morphism
+         ============================================================ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/80 backdrop-blur-lg border-b border-gray-200/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-18">
+
+                <!-- Logo -->
+                <a href="#" class="flex items-center flex-shrink-0">
+                    <img src="img/logo-nav.webp" alt="YesPDF Logo" class="h-9 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="#features" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.features">
+                        &Ouml;zellikler
+                    </a>
+                    <a href="#gallery" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.gallery">
+                        Galeri
+                    </a>
+                    <a href="#why-yespdf" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.why">
+                        Neden YesPDF
+                    </a>
+                    <a href="#security" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.security">
+                        G&uuml;venlik
+                    </a>
+                    <a href="#docs" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.docs">
+                        Dok&uuml;manlar
+                    </a>
+                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium text-gray-700 hover:text-navy-700 rounded-lg hover:bg-navy-50 transition-colors" data-i18n="nav.contact">
+                        &Idot;leti&scedil;im
+                    </a>
+                </div>
+
+                <!-- Right side: Language toggle + CTA -->
+                <div class="hidden lg:flex items-center space-x-3">
+                    <!-- Language Toggle -->
+                    <button id="lang-toggle" onclick="toggleLanguage()" class="flex items-center space-x-1.5 px-3 py-1.5 text-sm font-medium text-gray-600 hover:text-navy-700 border border-gray-300 rounded-lg hover:border-navy-300 hover:bg-navy-50 transition-all" title="Switch language">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg>
+                        <span id="lang-label">EN</span>
+                    </button>
+
+                    <!-- CTA Button -->
+                    <a href="#contact" class="inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5" data-i18n="nav.cta">
+                        Demo Talep Et
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="lg:hidden flex items-center justify-center w-10 h-10 text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" aria-label="Menu">
+                    <svg id="menu-icon-open" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+                    <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white/95 backdrop-blur-lg border-t border-gray-200/50">
+            <div class="px-4 py-4 space-y-1">
+                <a href="#features" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.features">
+                    &Ouml;zellikler
+                </a>
+                <a href="#gallery" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.gallery">
+                    Galeri
+                </a>
+                <a href="#why-yespdf" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.why">
+                    Neden YesPDF
+                </a>
+                <a href="#security" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.security">
+                    G&uuml;venlik
+                </a>
+                <a href="#docs" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.docs">
+                    Dok&uuml;manlar
+                </a>
+                <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-2.5 text-base font-medium text-gray-700 hover:text-navy-700 hover:bg-navy-50 rounded-lg transition-colors" data-i18n="nav.contact">
+                    &Idot;leti&scedil;im
+                </a>
+                <div class="pt-3 mt-3 border-t border-gray-200 flex items-center space-x-3">
+                    <button onclick="toggleLanguage()" class="flex items-center space-x-1.5 px-3 py-2 text-sm font-medium text-gray-600 border border-gray-300 rounded-lg hover:bg-navy-50 transition-colors">
+                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg>
+                        <span class="lang-label-mobile">EN</span>
+                    </button>
+                    <a href="#contact" onclick="closeMobileMenu()" class="flex-1 text-center px-4 py-2.5 text-sm font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-lg shadow-md transition-all" data-i18n="nav.cta">
+                        Demo Talep Et
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ============================================================
+         SECTION 2: HERO - Dark Gradient, Full Screen
+         ============================================================ -->
+    <section id="hero" class="relative min-h-screen flex items-center bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 overflow-hidden">
+        <!-- Background decorative elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-brand-green-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-navy-500/20 rounded-full blur-3xl"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-green-500/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-20 w-full">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- Left: Text Content -->
+                <div class="text-center lg:text-left" data-aos="fade-right" data-aos-duration="800">
+                    <!-- KVKK Badge -->
+                    <div class="inline-flex items-center space-x-2 px-4 py-2 bg-brand-green-500/15 border border-brand-green-500/30 rounded-full mb-8">
+                        <svg class="w-4 h-4 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        <span class="text-sm font-semibold text-brand-green-400 tracking-wide" data-i18n="hero.badge">KVKK Uyumlu &middot; On-Premise</span>
+                    </div>
+
+                    <!-- Heading -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+                        <span data-i18n="hero.title.line1">Kurumsal PDF</span><br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-green-400 to-brand-green-300" data-i18n="hero.title.line2">Y&ouml;netim Platformu</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-lg sm:text-xl text-navy-200 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed" data-i18n="hero.subtitle">
+                        T&uuml;m PDF i&scedil;lemlerinizi tek bir platformda y&ouml;netin. D&ouml;n&uuml;&scedil;t&uuml;rme, d&uuml;zenleme, OCR, &scedil;ifreleme ve daha fazlas&inodot; &mdash; tamamen kendi sunucunuzda.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-xl shadow-lg shadow-brand-green-500/25 hover:shadow-xl hover:shadow-brand-green-500/30 transition-all duration-200 transform hover:-translate-y-0.5" data-i18n="hero.cta_primary">
+                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            Demo Talep Et
+                        </a>
+                        <a href="#features" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white border-2 border-white/20 hover:border-white/40 hover:bg-white/5 rounded-xl transition-all duration-200" data-i18n="hero.cta_secondary">
+                            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+                            &Ouml;zellikleri Ke&scedil;fedin
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Browser Mockup -->
+                <div class="relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40 border border-white/10">
+                        <!-- Browser chrome bar -->
+                        <div class="bg-gray-800 px-4 py-3 flex items-center space-x-3">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="flex-1 ml-3">
+                                <div class="bg-gray-700 rounded-md px-3 py-1 flex items-center">
+                                    <svg class="w-3.5 h-3.5 text-gray-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                                    <span class="text-xs text-gray-400 truncate">https://yespdf.yourcompany.com</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Screenshot -->
+                        <img src="img/screenshots/tools/anasayfa.webp" alt="YesPDF Ana Sayfa" class="w-full h-auto block" loading="eager">
+                    </div>
+                    <!-- Glow effect behind mockup -->
+                    <div class="absolute -inset-4 bg-brand-green-500/10 rounded-3xl blur-2xl -z-10"></div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-center p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white mb-1" data-i18n="hero.stat1_number">20+</div>
+                    <div class="text-sm text-navy-300" data-i18n="hero.stat1_label">PDF Arac&inodot;</div>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white mb-1" data-i18n="hero.stat2_number">200+</div>
+                    <div class="text-sm text-navy-300" data-i18n="hero.stat2_label">E&scedil;zamanl&inodot; Kullan&inodot;c&inodot;</div>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white mb-1" data-i18n="hero.stat3_number">6</div>
+                    <div class="text-sm text-navy-300" data-i18n="hero.stat3_label">OCR Dili</div>
+                </div>
+                <div class="text-center p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-white mb-1" data-i18n="hero.stat4_number">%100</div>
+                    <div class="text-sm text-navy-300" data-i18n="hero.stat4_label">On-Premise</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 3: FEATURES - 12 Cards in Responsive Grid
+         ============================================================ -->
+    <section id="features" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="inline-block px-4 py-1.5 text-sm font-semibold text-brand-green-500 bg-brand-green-50 rounded-full mb-4" data-i18n="features.tag">
+                    &Ouml;zellikler
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-700 mb-4" data-i18n="features.title">
+                    T&uuml;m PDF &Idot;&scedil;lemleriniz Tek Platformda
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="features.subtitle">
+                    20'den fazla profesyonel PDF arac&inodot; ile belge y&ouml;netim s&uuml;re&ccedil;lerinizi h&inodot;zland&inodot;r&inodot;n.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Feature 1: PDF Dönüştürme -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m.75 12l3 3m0 0l3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.convert.title">PDF D&ouml;n&uuml;&scedil;t&uuml;rme</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.convert.desc">Word, Excel, HTML, g&ouml;r&uuml;nt&uuml; formatlar&inodot;na d&ouml;n&uuml;&scedil;t&uuml;rme.</p>
+                </div>
+
+                <!-- Feature 2: Gelişmiş PDF Editörü -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="50">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.editor.title">Geli&scedil;mi&scedil; PDF Edit&ouml;r&uuml;</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.editor.desc">Metin, g&ouml;rsel, a&ccedil;&inodot;klama d&uuml;zenleme.</p>
+                </div>
+
+                <!-- Feature 3: OCR -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.ocr.title">OCR</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.ocr.desc">Taranm&inodot;&scedil; belgeleri aranabilir PDF'e d&ouml;n&uuml;&scedil;t&uuml;rme.</p>
+                </div>
+
+                <!-- Feature 4: PDF Birleştir & Böl -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="150">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 8.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v8.25A2.25 2.25 0 006 16.5h2.25m8.25-8.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-6A2.25 2.25 0 019.75 18v-2.25m6.75-8.25h-6a2.25 2.25 0 00-2.25 2.25v6"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.merge_split.title">PDF Birle&scedil;tir &amp; B&ouml;l</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.merge_split.desc">Belgeleri birle&scedil;tirin veya sayfalara b&ouml;l&uuml;n.</p>
+                </div>
+
+                <!-- Feature 5: PDF Sıkıştırma -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9V4.5M9 9H4.5M9 9L3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5l5.25 5.25"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.compress.title">PDF S&inodot;k&inodot;&scedil;t&inodot;rma</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.compress.desc">Dosya boyutunu kalite kayb&inodot; olmadan k&uuml;&ccedil;&uuml;lt&uuml;n.</p>
+                </div>
+
+                <!-- Feature 6: Filigran & Damga -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="250">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.watermark.title">Filigran &amp; Damga</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.watermark.desc">Metin veya QR kod filigran&inodot; ekleyin.</p>
+                </div>
+
+                <!-- Feature 7: Şifreleme & Koruma -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.encrypt.title">&Scedil;ifreleme &amp; Koruma</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.encrypt.desc">AES-256 ile belge &scedil;ifreleme.</p>
+                </div>
+
+                <!-- Feature 8: Formlar & İmza -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="350">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.forms.title">Formlar &amp; &Idot;mza</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.forms.desc">PDF formlar&inodot; doldurun ve dijital imzalay&inodot;n.</p>
+                </div>
+
+                <!-- Feature 9: Akıllı Düzenleme -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.smart_edit.title">Ak&inodot;ll&inodot; D&uuml;zenleme</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.smart_edit.desc">Taranm&inodot;&scedil; belgelerde metin d&uuml;zenleme.</p>
+                </div>
+
+                <!-- Feature 10: Karartma (Redaction) -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="450">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.523 10.523 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.242 4.242L9.88 9.88"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.redaction.title">Karartma (Redaction)</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.redaction.desc">Hassas bilgileri kal&inodot;c&inodot; olarak kart&inodot;n.</p>
+                </div>
+
+                <!-- Feature 11: Yönetim Paneli -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.admin.title">Y&ouml;netim Paneli</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.admin.desc">Kullan&inodot;c&inodot;, rol ve belge y&ouml;netimi.</p>
+                </div>
+
+                <!-- Feature 12: Belge Çeviri -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 hover:border-brand-green-200 transition-all duration-300 group" data-aos="fade-up" data-aos-delay="550">
+                    <div class="w-12 h-12 rounded-xl bg-brand-green-50 text-brand-green-500 flex items-center justify-center mb-4 group-hover:bg-brand-green-500 group-hover:text-white transition-colors duration-300">
+                        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-navy-700 mb-2" data-i18n="features.translate.title">Belge &Ccedil;eviri</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed" data-i18n="features.translate.desc">DeepL ile entegre otomatik &ccedil;eviri.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================================
+         SECTION 4: GALLERY - Screenshot Gallery with Filter
+         ============================================================ -->
+    <section id="gallery" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <span class="inline-block px-4 py-1.5 text-sm font-semibold text-brand-green-500 bg-brand-green-50 rounded-full mb-4" data-i18n="gallery.tag">
+                    Galeri
+                </span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-700 mb-4" data-i18n="gallery.title">
+                    &Uuml;r&uuml;n Galerisi
+                </h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="gallery.subtitle">
+                    YesPDF'in g&uuml;&ccedil;l&uuml; &ouml;zelliklerini yak&inodot;ndan inceleyin.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-btn active px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 bg-navy-700 text-white shadow-md" data-filter="all" onclick="filterGallery('all')" data-i18n="gallery.filter.all">
+                    T&uuml;m&uuml;
+                </button>
+                <button class="filter-btn px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-navy-50 hover:text-navy-700" data-filter="tools" onclick="filterGallery('tools')" data-i18n="gallery.filter.tools">
+                    PDF Ara&ccedil;lar&inodot;
+                </button>
+                <button class="filter-btn px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-navy-50 hover:text-navy-700" data-filter="editor" onclick="filterGallery('editor')" data-i18n="gallery.filter.editor">
+                    Edit&ouml;r
+                </button>
+                <button class="filter-btn px-6 py-2.5 text-sm font-semibold rounded-full transition-all duration-200 bg-gray-100 text-gray-700 hover:bg-navy-50 hover:text-navy-700" data-filter="admin" onclick="filterGallery('admin')" data-i18n="gallery.filter.admin">
+                    Y&ouml;netim
+                </button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- ===== TOOLS (10 items) ===== -->
+
+                <!-- Tools: Ana Sayfa -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/anasayfa.webp" data-full="img/screenshots/tools/anasayfa.webp" alt="Ana Sayfa" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.anasayfa">Ana Sayfa</p>
+                </div>
+
+                <!-- Tools: Word'e Dönüştür -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/word-donustur.webp" data-full="img/screenshots/tools/word-donustur.webp" alt="Word'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.word-donustur">Word'e D&ouml;n&uuml;&scedil;t&uuml;r</p>
+                </div>
+
+                <!-- Tools: Excel'e Dönüştür -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/excel-donustur.webp" data-full="img/screenshots/tools/excel-donustur.webp" alt="Excel'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.excel-donustur">Excel'e D&ouml;n&uuml;&scedil;t&uuml;r</p>
+                </div>
+
+                <!-- Tools: HTML'e Dönüştür -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/html-donustur.webp" data-full="img/screenshots/tools/html-donustur.webp" alt="HTML'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.html-donustur">HTML'e D&ouml;n&uuml;&scedil;t&uuml;r</p>
+                </div>
+
+                <!-- Tools: Görüntüye Dönüştür -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/image-donustur.webp" data-full="img/screenshots/tools/image-donustur.webp" alt="Görüntüye Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.image-donustur">G&ouml;r&uuml;nt&uuml;ye D&ouml;n&uuml;&scedil;t&uuml;r</p>
+                </div>
+
+                <!-- Tools: Aranabilir PDF (OCR) -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/searchable-pdf.webp" data-full="img/screenshots/tools/searchable-pdf.webp" alt="Aranabilir PDF (OCR)" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.searchable-pdf">Aranabilir PDF (OCR)</p>
+                </div>
+
+                <!-- Tools: PDF Birleştir -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/pdf-birlestir.webp" data-full="img/screenshots/tools/pdf-birlestir.webp" alt="PDF Birleştir" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.pdf-birlestir">PDF Birle&scedil;tir</p>
+                </div>
+
+                <!-- Tools: PDF Böl -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/pdf-bol.webp" data-full="img/screenshots/tools/pdf-bol.webp" alt="PDF Böl" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.pdf-bol">PDF B&ouml;l</p>
+                </div>
+
+                <!-- Tools: PDF Sıkıştır -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/pdf-sikistir.webp" data-full="img/screenshots/tools/pdf-sikistir.webp" alt="PDF Sıkıştır" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.pdf-sikistir">PDF S&inodot;k&inodot;&scedil;t&inodot;r</p>
+                </div>
+
+                <!-- Tools: Filigran Ekle -->
+                <div class="gallery-item" data-category="tools" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/tools/filigran.webp" data-full="img/screenshots/tools/filigran.webp" alt="Filigran Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.filigran">Filigran Ekle</p>
+                </div>
+
+                <!-- ===== EDITOR (10 items) ===== -->
+
+                <!-- Editor: PDF Editörü -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/editor-full.webp" data-full="img/screenshots/editor/editor-full.webp" alt="PDF Editörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.editor-full">PDF Edit&ouml;r&uuml;</p>
+                </div>
+
+                <!-- Editor: Metin Düzenleme -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/metin-duzenle.webp" data-full="img/screenshots/editor/metin-duzenle.webp" alt="Metin Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.metin-duzenle">Metin D&uuml;zenleme</p>
+                </div>
+
+                <!-- Editor: Düzenleme Araçları -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/duzenleme.webp" data-full="img/screenshots/editor/duzenleme.webp" alt="Düzenleme Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.duzenleme">D&uuml;zenleme Ara&ccedil;lar&inodot;</p>
+                </div>
+
+                <!-- Editor: Şekiller -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/sekiller.webp" data-full="img/screenshots/editor/sekiller.webp" alt="Şekiller" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.sekiller">&Scedil;ekiller</p>
+                </div>
+
+                <!-- Editor: Ölçüm Araçları -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/olcum.webp" data-full="img/screenshots/editor/olcum.webp" alt="Ölçüm Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.olcum">&Ouml;l&ccedil;&uuml;m Ara&ccedil;lar&inodot;</p>
+                </div>
+
+                <!-- Editor: Karartma -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/karartma.webp" data-full="img/screenshots/editor/karartma.webp" alt="Karartma" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.karartma">Karartma</p>
+                </div>
+
+                <!-- Editor: Doldur ve İmzala -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/doldur-imzala.webp" data-full="img/screenshots/editor/doldur-imzala.webp" alt="Doldur ve İmzala" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.doldur-imzala">Doldur ve &Idot;mzala</p>
+                </div>
+
+                <!-- Editor: PDF Formları -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/formlar.webp" data-full="img/screenshots/editor/formlar.webp" alt="PDF Formları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.formlar">PDF Formlar&inodot;</p>
+                </div>
+
+                <!-- Editor: Pullar ve Damgalar -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/pullar.webp" data-full="img/screenshots/editor/pullar.webp" alt="Pullar ve Damgalar" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.pullar">Pullar ve Damgalar</p>
+                </div>
+
+                <!-- Editor: Akıllı Düzenleme -->
+                <div class="gallery-item" data-category="editor" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/editor/akilli-duzenleme.webp" data-full="img/screenshots/editor/akilli-duzenleme.webp" alt="Akıllı Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.akilli-duzenleme">Ak&inodot;ll&inodot; D&uuml;zenleme</p>
+                </div>
+
+                <!-- ===== ADMIN (10 items) ===== -->
+
+                <!-- Admin: Kontrol Paneli -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/kontrol-paneli.webp" data-full="img/screenshots/admin/kontrol-paneli.webp" alt="Kontrol Paneli" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.kontrol-paneli">Kontrol Paneli</p>
+                </div>
+
+                <!-- Admin: Kullanıcı Yönetimi -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/kullanici-yonetimi.webp" data-full="img/screenshots/admin/kullanici-yonetimi.webp" alt="Kullanıcı Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.kullanici-yonetimi">Kullan&inodot;c&inodot; Y&ouml;netimi</p>
+                </div>
+
+                <!-- Admin: Kullanıcı Ekle -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/kullanici-ekle.webp" data-full="img/screenshots/admin/kullanici-ekle.webp" alt="Kullanıcı Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.kullanici-ekle">Kullan&inodot;c&inodot; Ekle</p>
+                </div>
+
+                <!-- Admin: LDAP/AD Entegrasyonu -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/ldap-ad.webp" data-full="img/screenshots/admin/ldap-ad.webp" alt="LDAP/AD Entegrasyonu" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.ldap-ad">LDAP/AD Entegrasyonu</p>
+                </div>
+
+                <!-- Admin: İş Kuyruğu Monitörü -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/is-kuyrugu.webp" data-full="img/screenshots/admin/is-kuyrugu.webp" alt="İş Kuyruğu Monitörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.is-kuyrugu">&Idot;&scedil; Kuyru&gcirc;u Monit&ouml;r&uuml;</p>
+                </div>
+
+                <!-- Admin: Güvenlik Ayarları -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/guvenlik-ayarlari.webp" data-full="img/screenshots/admin/guvenlik-ayarlari.webp" alt="Güvenlik Ayarları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.guvenlik-ayarlari">G&uuml;venlik Ayarlar&inodot;</p>
+                </div>
+
+                <!-- Admin: Denetim Kayıtları -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/denetim-kayitlari.webp" data-full="img/screenshots/admin/denetim-kayitlari.webp" alt="Denetim Kayıtları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.denetim-kayitlari">Denetim Kay&inodot;tlar&inodot;</p>
+                </div>
+
+                <!-- Admin: Kullanım İstatistikleri -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/kullanim-istatistikleri.webp" data-full="img/screenshots/admin/kullanim-istatistikleri.webp" alt="Kullanım İstatistikleri" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.kullanim-istatistikleri">Kullan&inodot;m &Idot;statistikleri</p>
+                </div>
+
+                <!-- Admin: Sertifika Yönetimi -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/sertifika-yonetimi.webp" data-full="img/screenshots/admin/sertifika-yonetimi.webp" alt="Sertifika Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.sertifika-yonetimi">Sertifika Y&ouml;netimi</p>
+                </div>
+
+                <!-- Admin: Giriş Ekranı -->
+                <div class="gallery-item" data-category="admin" data-aos="fade-up">
+                    <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
+                        <img src="img/thumbnails/admin/giris-ekrani.webp" data-full="img/screenshots/admin/giris-ekrani.webp" alt="Giriş Ekranı" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
+                            <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+                        </div>
+                    </div>
+                    <p class="mt-2 text-sm font-medium text-gray-700 text-center" data-i18n="gallery.giris-ekrani">Giri&scedil; Ekran&inodot;</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 5: WHY YESPDF ==================== -->
+    <section id="why" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4" data-i18n="why.title">Neden YesPDF?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="why.subtitle">Kurumsal PDF y&ouml;netiminde fark yaratan avantajlar</p>
+            </div>
+
+            <!-- Advantage Cards 2x2 -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+                <!-- Card 1: On-Premise -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up">
+                    <div class="w-14 h-14 bg-brand-green-50 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 17.25v-.228a4.5 4.5 0 00-.12-1.03l-2.268-9.64a3.375 3.375 0 00-3.285-2.602H7.923a3.375 3.375 0 00-3.285 2.602l-2.268 9.64a4.5 4.5 0 00-.12 1.03v.228m19.5 0a3 3 0 01-3 3H5.25a3 3 0 01-3-3m19.5 0a3 3 0 00-3-3H5.25a3 3 0 00-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3" data-i18n="why.onprem.title">%100 On-Premise</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="why.onprem.desc">T&uuml;m verileriniz kendi sunucunuzda kalır. Air-gapped (internetsiz) ortamlarda dahi &ccedil;alışır. Veri egemenliğiniz tamamen sizde.</p>
+                </div>
+
+                <!-- Card 2: Cost Advantage -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-green-50 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3" data-i18n="why.cost.title">Maliyet Avantajı</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="why.cost.desc">Kullanıcı başına lisans &uuml;creti yok. Tek seferlik lisans ile sınırsız kullanıcı. Rakiplere g&ouml;re %90+ tasarruf sağlayın.</p>
+                </div>
+
+                <!-- Card 3: Browser-Based -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-green-50 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3" data-i18n="why.browser.title">Tarayıcı Tabanlı</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="why.browser.desc">Kurulum gerektirmez. Herhangi bir cihazdan tarayıcı &uuml;zerinden erişin. Masaüstü, tablet ve mobil uyumlu.</p>
+                </div>
+
+                <!-- Card 4: KVKK & BDDK -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-brand-green-50 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-7 h-7 text-brand-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3" data-i18n="why.compliance.title">KVKK &amp; BDDK Uyumlu</h3>
+                    <p class="text-gray-600 leading-relaxed" data-i18n="why.compliance.desc">T&uuml;rkiye'deki yasal d&uuml;zenlemelere tam uyumluluk. KVKK, BDDK ve kurumsal denetim gereksinimlerini karşılar.</p>
+                </div>
+            </div>
+
+            <!-- Cost Comparison Table -->
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <h3 class="text-2xl font-bold text-navy-900 text-center mb-8" data-i18n="why.compare.title">Maliyet Karşılaştırması</h3>
+                <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-lg">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="bg-navy-700 text-white">
+                                <th class="px-6 py-4 font-semibold" data-i18n="why.compare.users">Kullanıcı Sayısı</th>
+                                <th class="px-6 py-4 font-semibold">Adobe Acrobat Pro</th>
+                                <th class="px-6 py-4 font-semibold">YesPDF</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 font-medium text-navy-900" data-i18n="why.compare.row1.users">50 Kullanıcı</td>
+                                <td class="px-6 py-4 text-red-600 font-semibold">$12,000 / <span data-i18n="why.compare.yearly">yıl</span></td>
+                                <td class="px-6 py-4 text-brand-green-600 font-bold" data-i18n="why.compare.single">Tek Lisans</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="px-6 py-4 font-medium text-navy-900" data-i18n="why.compare.row2.users">200 Kullanıcı</td>
+                                <td class="px-6 py-4 text-red-600 font-semibold">$48,000 / <span data-i18n="why.compare.yearly">yıl</span></td>
+                                <td class="px-6 py-4 text-brand-green-600 font-bold" data-i18n="why.compare.single">Tek Lisans</td>
+                            </tr>
+                            <tr class="bg-white">
+                                <td class="px-6 py-4 font-medium text-navy-900" data-i18n="why.compare.row3.users">500 Kullanıcı</td>
+                                <td class="px-6 py-4 text-red-600 font-semibold">$120,000 / <span data-i18n="why.compare.yearly">yıl</span></td>
+                                <td class="px-6 py-4 text-brand-green-600 font-bold" data-i18n="why.compare.single">Tek Lisans</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 6: SECURITY ==================== -->
+    <section id="security" class="py-20 bg-navy-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="security.title">Kurumsal G&uuml;venlik</h2>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto" data-i18n="security.subtitle">End&uuml;stri standartlarında g&uuml;venlik &ouml;nlemleri ile verileriniz koruma altında</p>
+            </div>
+
+            <!-- Security Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: KVKK -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.kvkk.title">KVKK Uyumluluk</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.kvkk.desc">Kişisel verilerin korunması kanununa tam uyumluluk. Veri işleme ve saklama standartlarını karşılar.</p>
+                </div>
+
+                <!-- Card 2: OWASP -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0112 12.75zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 01-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75V8.25m0 0L9.75 6m2.25 2.25L14.25 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.owasp.title">OWASP Top 10</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.owasp.desc">OWASP Top 10 g&uuml;venlik a&ccedil;ıklarına karşı kapsamlı koruma. XSS, CSRF, SQL Injection &ouml;nlemleri.</p>
+                </div>
+
+                <!-- Card 3: AES-256 -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.aes.title">AES-256 Şifreleme</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.aes.desc">Askeri d&uuml;zeyde AES-256 şifreleme. Dosyalar sunucuda şifreli saklanır, her dosya i&ccedil;in benzersiz anahtar.</p>
+                </div>
+
+                <!-- Card 4: Virus Scan -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.virus.title">Vir&uuml;s Tarama</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.virus.desc">Y&uuml;klenen t&uuml;m dosyalar otomatik vir&uuml;s taramasından ge&ccedil;er. Zararlı i&ccedil;erik tespit edilirse işlem engellenir.</p>
+                </div>
+
+                <!-- Card 5: Audit Logs -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15a2.25 2.25 0 012.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.audit.title">Denetim Kayıtları</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.audit.desc">T&uuml;m kullanıcı işlemleri detaylı log kaydı altında. Kim, ne zaman, hangi dosyada ne yaptı — tam izlenebilirlik.</p>
+                </div>
+
+                <!-- Card 6: IP Restriction -->
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-brand-green-500/20 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-green-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2" data-i18n="security.ip.title">IP Kısıtlama</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed" data-i18n="security.ip.desc">IP bazlı erişim kontrolü ve rate limiting. Yetkisiz erişim girişimleri otomatik engellenir ve raporlanır.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 7: DOCUMENTS ==================== -->
+    <section id="docs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4" data-i18n="docs.title">D&ouml;k&uuml;manlar</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto" data-i18n="docs.subtitle">Teknik dok&uuml;mantasyon, kullanıcı kılavuzları ve raporlar</p>
+            </div>
+
+            <!-- Document Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Doc 1: Kullanıcı Kılavuzu TR -->
+                <a href="docs/YesPDF_Kullanici_Kilavuzu_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.user_guide_tr">Kullanıcı Kılavuzu</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 2: User Guide EN -->
+                <a href="docs/YesPDF_User_Guide_EN.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="50">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.user_guide_en">User Guide</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 3: Yönetici Kılavuzu TR -->
+                <a href="docs/YesPDF_Admin_Guide_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.admin_guide_tr">Y&ouml;netici Kılavuzu</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 4: Admin Guide EN -->
+                <a href="docs/YesPDF_Admin_Guide_EN.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="150">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.admin_guide_en">Admin Guide</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 5: Teknik Whitepaper TR -->
+                <a href="docs/YesPDF_Teknik_Whitepaper_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.whitepaper_tr">Teknik Whitepaper</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 6: KVKK Raporu TR -->
+                <a href="docs/YesPDF_KVKK_Raporu_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="250">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.kvkk_tr">KVKK Uyumluluk Raporu</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 7: Sistem Gereksinimleri TR -->
+                <a href="docs/YesPDF_Sistem_Gereksinimleri_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_tr">Sistem Gereksinimleri</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 8: System Requirements EN -->
+                <a href="docs/YesPDF_System_Requirements_EN.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="350">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_en">System Requirements</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 9: Rakip Karşılaştırması TR -->
+                <a href="docs/YesPDF_Rakip_Karsilastirmasi_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_tr">Rakip Karşılaştırması</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 10: Competitor Comparison EN -->
+                <a href="docs/YesPDF_vs_Competitors_EN.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="450">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_en">Competitor Comparison</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 11: Yük Testi Raporu TR -->
+                <a href="docs/YesPDF_Load_Test_TR.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="500">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_tr">Y&uuml;k Testi Raporu</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 12: Load Test Report EN -->
+                <a href="docs/YesPDF_Load_Test_EN.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="550">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_en">Load Test Report</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Doc 13: Sürüm Geçmişi -->
+                <a href="docs/YesPDF_Release_History.pdf" download class="doc-card block bg-white rounded-xl p-5 shadow-md hover:shadow-lg border border-gray-100 transition-shadow duration-300" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/>
+                            </svg>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.release_history">S&uuml;r&uuml;m Ge&ccedil;mişi</h4>
+                            <span class="inline-block mt-2 px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-medium rounded">TR/EN</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 8: CONTACT ==================== -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+                <!-- LEFT: Info (2 cols) -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4" data-i18n="contact.title">Demo Talep Edin</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="contact.subtitle">YesPDF'i kurumunuzda test edin. Uzman ekibimiz sizinle iletişime ge&ccedil;ecektir.</p>
+
+                    <!-- Motivation Items -->
+                    <div class="space-y-4 mb-10">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-brand-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-gray-700" data-i18n="contact.benefit1">&Uuml;cretsiz kurulum ve yapılandırma desteği</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-brand-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-gray-700" data-i18n="contact.benefit2">30 g&uuml;n &uuml;cretsiz deneme s&uuml;resi</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-6 h-6 text-brand-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="text-gray-700" data-i18n="contact.benefit3">T&uuml;rk&ccedil;e teknik destek</span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+                            </svg>
+                            <a href="mailto:support@yespdf.com.tr" class="text-gray-700 hover:text-brand-green-600 transition-colors">support@yespdf.com.tr</a>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/>
+                            </svg>
+                            <span class="text-gray-700" data-i18n="contact.phone">+90 (XXX) XXX XX XX</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <svg class="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+                            </svg>
+                            <a href="https://www.yesbilisim.com" target="_blank" class="text-gray-700 hover:text-brand-green-600 transition-colors">www.yesbilisim.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Form (3 cols) -->
+                <div class="lg:col-span-3">
+                    <form id="demo-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.company">Kurum Adı</label>
+                                <input type="text" name="company" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green-500 focus:border-brand-green-500 transition-colors" data-i18n-placeholder="contact.form.company_ph" placeholder="Kurum adınız">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.name">Ad Soyad <span class="text-red-500">*</span></label>
+                                <input type="text" name="name" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green-500 focus:border-brand-green-500 transition-colors" data-i18n-placeholder="contact.form.name_ph" placeholder="Adınız ve soyadınız">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.email">E-posta <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green-500 focus:border-brand-green-500 transition-colors" data-i18n-placeholder="contact.form.email_ph" placeholder="ornek@kurum.com.tr">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.phone">Telefon</label>
+                                <input type="tel" name="phone" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green-500 focus:border-brand-green-500 transition-colors" data-i18n-placeholder="contact.form.phone_ph" placeholder="+90 (5XX) XXX XX XX">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-2" data-i18n="contact.form.message">Mesaj</label>
+                            <textarea name="message" rows="4" class="form-input w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-green-500 focus:border-brand-green-500 transition-colors resize-none" data-i18n-placeholder="contact.form.message_ph" placeholder="Projeniz hakkında bilgi verin..."></textarea>
+                        </div>
+                        <button type="submit" id="form-submit" class="w-full bg-brand-green-600 hover:bg-brand-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg shadow-brand-green-600/25" data-i18n="contact.form.submit">Demo Talep Et</button>
+
+                        <!-- Success Message -->
+                        <div id="form-success" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-sm" data-i18n="contact.form.success">Talebiniz başarıyla g&ouml;nderildi. En kısa s&uuml;rede sizinle iletişime ge&ccedil;eceğiz.</div>
+
+                        <!-- Error Message -->
+                        <div id="form-error" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm" data-i18n="contact.form.error">Bir hata oluştu. L&uuml;tfen daha sonra tekrar deneyin veya doğrudan e-posta g&ouml;nderin.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ==================== SECTION 9: FOOTER ==================== -->
+    <footer class="bg-navy-950 py-12 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+                <!-- Column 1: Brand -->
+                <div>
+                    <img src="img/logo-nav.webp" alt="YesPDF" class="h-8 mb-4 brightness-0 invert">
+                    <p class="text-sm leading-relaxed" data-i18n="footer.brand.desc">Kurumsal PDF y&ouml;netim platformu. T&uuml;m PDF işlemleriniz i&ccedil;in g&uuml;venli, hızlı ve on-premise &ccedil;&ouml;z&uuml;m.</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.links.title">Hızlı Bağlantılar</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white transition-colors" data-i18n="footer.links.features">&Ouml;zellikler</a></li>
+                        <li><a href="#gallery" class="hover:text-white transition-colors" data-i18n="footer.links.gallery">Ekran G&ouml;r&uuml;nt&uuml;leri</a></li>
+                        <li><a href="#why" class="hover:text-white transition-colors" data-i18n="footer.links.why">Neden YesPDF?</a></li>
+                        <li><a href="#security" class="hover:text-white transition-colors" data-i18n="footer.links.security">G&uuml;venlik</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Documents -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.docs.title">D&ouml;k&uuml;manlar</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#docs" class="hover:text-white transition-colors" data-i18n="footer.docs.all">T&uuml;m D&ouml;k&uuml;manlar</a></li>
+                        <li><a href="docs/YesPDF_Kullanici_Kilavuzu_TR.pdf" download class="hover:text-white transition-colors" data-i18n="footer.docs.user_guide">Kullanıcı Kılavuzu</a></li>
+                        <li><a href="docs/YesPDF_Admin_Guide_TR.pdf" download class="hover:text-white transition-colors" data-i18n="footer.docs.admin_guide">Y&ouml;netici Kılavuzu</a></li>
+                        <li><a href="docs/YesPDF_Teknik_Whitepaper_TR.pdf" download class="hover:text-white transition-colors" data-i18n="footer.docs.whitepaper">Teknik Whitepaper</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact -->
+                <div>
+                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact.title">İletişim</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:support@yespdf.com.tr" class="hover:text-white transition-colors">support@yespdf.com.tr</a></li>
+                        <li><span data-i18n="footer.contact.phone">+90 (XXX) XXX XX XX</span></li>
+                        <li><span data-i18n="footer.contact.company">Yes Bilişim Teknolojileri</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+                <p data-i18n="footer.copyright">&copy; 2026 Yes Bilişim Teknolojileri. T&uuml;m hakları saklıdır.</p>
+                <p>Powered by <a href="https://www.yesbilisim.com" target="_blank" class="text-brand-green-400 hover:text-brand-green-300 transition-colors">Yes Bilişim</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ==================== LIGHTBOX MODAL ==================== -->
+    <div id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+        </button>
+        <img id="lightbox-img" src="" alt="">
+        <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </button>
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/form.js"></script>
+
+</body>
+</html>
