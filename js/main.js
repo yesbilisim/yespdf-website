@@ -149,4 +149,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     observer.observe(heroSection);
   }
+
+  // KVKK Cookie Banner
+  if (!localStorage.getItem('kvkk-consent')) {
+    const banner = document.getElementById('kvkk-banner');
+    if (banner) banner.classList.remove('hidden');
+  }
 });
+
+function acceptKVKK() {
+  localStorage.setItem('kvkk-consent', 'accepted');
+  document.getElementById('kvkk-banner').classList.add('hidden');
+}
+
+function rejectKVKK() {
+  localStorage.setItem('kvkk-consent', 'rejected');
+  document.getElementById('kvkk-banner').classList.add('hidden');
+}

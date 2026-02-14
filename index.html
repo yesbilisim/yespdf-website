@@ -1252,6 +1252,26 @@
     </div>
 
 
+    <!-- ==================== KVKK COOKIE BANNER ==================== -->
+    <div id="kvkk-banner" class="fixed bottom-0 left-0 right-0 z-50 hidden">
+        <div class="bg-navy-900/95 backdrop-blur-lg border-t border-navy-700 shadow-2xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-4">
+                    <div class="flex items-start gap-3 flex-1">
+                        <svg class="w-6 h-6 text-brand-green-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+                        <p class="text-sm text-gray-300 leading-relaxed" data-i18n="kvkk.text">
+                            Bu web sitesi, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında, kişisel verileriniz gizlilik politikamıza uygun olarak işlenmektedir. Siteyi kullanmaya devam ederek çerez kullanımını kabul etmiş sayılırsınız.
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 flex-shrink-0">
+                        <button onclick="acceptKVKK()" class="px-5 py-2 text-sm font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-lg transition-colors" data-i18n="kvkk.accept">Kabul Et</button>
+                        <button onclick="rejectKVKK()" class="px-5 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-600 hover:border-gray-400 rounded-lg transition-colors" data-i18n="kvkk.reject">Reddet</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ==================== SCRIPTS ==================== -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/i18n.js"></script>
