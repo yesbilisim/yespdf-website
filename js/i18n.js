@@ -366,6 +366,16 @@ function applyLanguage(lang) {
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active-lang', btn.dataset.lang === lang);
   });
+
+  // Filter documents by language
+  document.querySelectorAll('[data-doc-lang]').forEach(el => {
+    const docLang = el.getAttribute('data-doc-lang');
+    if (docLang === 'both' || docLang === lang) {
+      el.style.display = '';
+    } else {
+      el.style.display = 'none';
+    }
+  });
 }
 
 // Toggle between TR and EN
