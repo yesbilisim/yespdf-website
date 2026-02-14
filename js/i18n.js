@@ -368,7 +368,25 @@ function applyLanguage(lang) {
   });
 }
 
+// Toggle between TR and EN
+function toggleLanguage() {
+  const newLang = currentLang === 'tr' ? 'en' : 'tr';
+  applyLanguage(newLang);
+  updateLangLabels();
+}
+
+// Update toggle button labels
+function updateLangLabels() {
+  const label = currentLang === 'tr' ? 'EN' : 'TR';
+  const el = document.getElementById('lang-label');
+  if (el) el.textContent = label;
+  document.querySelectorAll('.lang-label-mobile').forEach(el => {
+    el.textContent = label;
+  });
+}
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
   applyLanguage(currentLang);
+  updateLangLabels();
 });
