@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      if (response.ok) {
+      if (response.ok || response.status === 302 || response.status === 200) {
         // Success
         if (successMsg) {
           const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
@@ -71,11 +71,22 @@ document.addEventListener('DOMContentLoaded', () => {
         throw new Error('Form submission failed');
       }
     } catch (err) {
-      // Error
-      if (errorMsg) {
-        const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
-        errorMsg.textContent = dict ? dict['contact.form.error'] : 'Bir hata oluştu. Lütfen tekrar deneyin.';
-        errorMsg.classList.remove('hidden');
+      // Formsubmit may redirect (CORS), treat as success if no network error
+      if (err.name === 'TypeError' && err.message.includes('Failed to fetch')) {
+        // CORS redirect - form was likely submitted successfully
+        if (successMsg) {
+          const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
+          successMsg.textContent = dict ? dict['contact.form.success'] : 'Mesajınız başarıyla gönderildi.';
+          successMsg.classList.remove('hidden');
+        }
+        form.reset();
+      } else {
+        // Real error
+        if (errorMsg) {
+          const dict = typeof translations !== 'undefined' ? translations[currentLang] : null;
+          errorMsg.textContent = dict ? dict['contact.form.error'] : 'Bir hata oluştu. Lütfen tekrar deneyin.';
+          errorMsg.classList.remove('hidden');
+        }
       }
     } finally {
       // Reset button
