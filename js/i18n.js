@@ -173,6 +173,11 @@ const translations = {
     'footer.contact.phone': '+90 212 347 47 16',
     'footer.contact.company': 'Yes Bilişim',
     'footer.copyright': '© 2026 Yes Bilişim. Tüm hakları saklıdır.',
+
+    // KVKK Banner
+    'kvkk.text': 'Bu web sitesi, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. 6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında, kişisel verileriniz gizlilik politikamıza uygun olarak işlenmektedir. Siteyi kullanmaya devam ederek çerez kullanımını kabul etmiş sayılırsınız.',
+    'kvkk.accept': 'Kabul Et',
+    'kvkk.reject': 'Reddet',
   },
 
   en: {
@@ -348,6 +353,11 @@ const translations = {
     'footer.contact.phone': '+90 212 347 47 16',
     'footer.contact.company': 'Yes Bilişim',
     'footer.copyright': '© 2026 Yes Bilişim. All rights reserved.',
+
+    // KVKK Banner
+    'kvkk.text': 'This website uses cookies to improve user experience. In accordance with the Personal Data Protection Law (KVKK No. 6698), your personal data is processed in compliance with our privacy policy. By continuing to use the site, you accept the use of cookies.',
+    'kvkk.accept': 'Accept',
+    'kvkk.reject': 'Decline',
   }
 };
 
