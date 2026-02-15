@@ -19,28 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
   handleScroll(); // Initial check
 
   // === Mobile Menu Toggle ===
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
-  const closeIcon = document.getElementById('close-icon');
-
-  if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('open');
-      const isOpen = mobileMenu.classList.contains('open');
-      if (menuIcon) menuIcon.classList.toggle('hidden', isOpen);
-      if (closeIcon) closeIcon.classList.toggle('hidden', !isOpen);
-    });
-
-    // Close mobile menu when a link is clicked
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        if (menuIcon) menuIcon.classList.remove('hidden');
-        if (closeIcon) closeIcon.classList.add('hidden');
-      });
-    });
-  }
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
 
   // === Smooth Scroll for Anchor Links ===
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -156,6 +137,27 @@ document.addEventListener('DOMContentLoaded', () => {
     if (banner) banner.classList.remove('hidden');
   }
 });
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  if (!menu) return;
+
+  const isHidden = menu.classList.contains('hidden');
+  menu.classList.toggle('hidden', !isHidden);
+  if (iconOpen) iconOpen.classList.toggle('hidden', isHidden);
+  if (iconClose) iconClose.classList.toggle('hidden', !isHidden);
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+  if (menu) menu.classList.add('hidden');
+  if (iconOpen) iconOpen.classList.remove('hidden');
+  if (iconClose) iconClose.classList.add('hidden');
+}
 
 function acceptKVKK() {
   localStorage.setItem('kvkk-consent', 'accepted');
