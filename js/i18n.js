@@ -135,6 +135,7 @@ const translations = {
     'docs.competitor_en': 'Competitor Comparison',
     'docs.loadtest_tr': 'Yük Testi Raporu',
     'docs.loadtest_en': 'Load Test Report',
+    'docs.gdpr_en': 'GDPR Uyumluluk Raporu',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Contact
@@ -315,6 +316,7 @@ const translations = {
     'docs.competitor_en': 'Competitor Comparison',
     'docs.loadtest_tr': 'Load Test Report (Turkish)',
     'docs.loadtest_en': 'Load Test Report',
+    'docs.gdpr_en': 'GDPR Compliance Report',
     'docs.release_history': 'Release History',
 
     // Contact
