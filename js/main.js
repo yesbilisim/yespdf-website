@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
+        closeMobileMenu();
         const navHeight = navbar ? navbar.offsetHeight : 0;
         const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
         window.scrollTo({ top: targetPos, behavior: 'smooth' });
