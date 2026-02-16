@@ -400,6 +400,38 @@ function applyLanguage(lang) {
     btn.classList.toggle('active-lang', btn.dataset.lang === lang);
   });
 
+  // Swap gallery screenshots for language
+  const enScreenshots = [
+    'anasayfa', 'word-donustur', 'excel-donustur', 'searchable-pdf',
+    'pdf-birlestir', 'pdf-bol', 'pdf-sikistir', 'filigran',
+    'editor-full', 'metin-duzenle', 'duzenleme', 'sekiller', 'olcum',
+    'karartma', 'doldur-imzala', 'formlar', 'pullar', 'akilli-duzenleme',
+    'kontrol-paneli', 'kullanici-yonetimi', 'kullanici-ekle', 'ldap-ad',
+    'is-kuyrugu', 'guvenlik-ayarlari', 'denetim-kayitlari',
+    'kullanim-istatistikleri', 'sertifika-yonetimi', 'giris-ekrani'
+  ];
+  document.querySelectorAll('.gallery-item img').forEach(img => {
+    const src = img.getAttribute('src') || '';
+    const full = img.getAttribute('data-full') || '';
+    enScreenshots.forEach(name => {
+      if (lang === 'en') {
+        if (src.includes(name + '.webp') && !src.includes(name + '-en.webp')) {
+          img.setAttribute('src', src.replace(name + '.webp', name + '-en.webp'));
+        }
+        if (full.includes(name + '.webp') && !full.includes(name + '-en.webp')) {
+          img.setAttribute('data-full', full.replace(name + '.webp', name + '-en.webp'));
+        }
+      } else {
+        if (src.includes(name + '-en.webp')) {
+          img.setAttribute('src', src.replace(name + '-en.webp', name + '.webp'));
+        }
+        if (full.includes(name + '-en.webp')) {
+          img.setAttribute('data-full', full.replace(name + '-en.webp', name + '.webp'));
+        }
+      }
+    });
+  });
+
   // Filter documents by language
   document.querySelectorAll('[data-doc-lang]').forEach(el => {
     const docLang = el.getAttribute('data-doc-lang');
