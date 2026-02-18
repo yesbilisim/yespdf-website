@@ -6,6 +6,7 @@ const translations = {
     'nav.gallery': 'Galeri',
     'nav.why': 'Neden YesPDF',
     'nav.security': 'Güvenlik',
+    'nav.verticals': 'Sektörel',
     'nav.docs': 'Dokümanlar',
     'nav.contact': 'İletişim',
     'nav.demo': 'Demo Talep Et',
@@ -123,6 +124,23 @@ const translations = {
     'security.ip.title': 'IP Kısıtlama',
     'security.ip.desc': 'Yönetim paneline IP bazlı erişim kontrolü. Beyaz liste ile güvenli yönetim.',
 
+    // Verticals
+    'verticals.tag': 'Sektörel Çözümler',
+    'verticals.title': 'Her Sektöre Özel PDF Çözümleri',
+    'verticals.subtitle': 'YesPDF, farklı sektörlerin benzersiz belge yönetimi ihtiyaçlarına özel çözümler sunar.',
+    'verticals.banking.title': 'Bankacılık & Finans',
+    'verticals.banking.desc': 'BDDK uyumlu belge yönetimi, güvenli kredi dosyaları, dijital imza ve denetim kayıtları.',
+    'verticals.dicom.title': 'Sağlık & DICOM',
+    'verticals.dicom.desc': 'Tıbbi görüntüleme, DICOM dönüşümü, hasta dosyaları ve sağlık sektörü uyumluluğu.',
+    'verticals.government.title': 'Kamu & Devlet',
+    'verticals.government.desc': 'e-Devlet uyumlu belge yönetimi, resmi yazışma, arşivleme ve dijital dönüşüm.',
+    'verticals.insurance.title': 'Sigortacılık',
+    'verticals.insurance.desc': 'Poliçe yönetimi, hasar dosyaları, aktüerya raporları ve uyumluluk belgeleri.',
+    'verticals.legal.title': 'Hukuk',
+    'verticals.legal.desc': 'Sözleşme yönetimi, dava dosyaları, karartma (redaction) ve dijital imza çözümleri.',
+    'verticals.cad.title': 'CAD & Mühendislik',
+    'verticals.cad.desc': 'Teknik çizim dönüşümü, büyük format baskı, ölçüm araçları ve proje arşivleme.',
+
     // Documents
     'docs.title': 'Dokümanlar',
     'docs.subtitle': 'Teknik dokümantasyon, kullanıcı kılavuzları ve raporlar',
@@ -187,6 +205,7 @@ const translations = {
     'nav.gallery': 'Gallery',
     'nav.why': 'Why YesPDF',
     'nav.security': 'Security',
+    'nav.verticals': 'Industries',
     'nav.docs': 'Documents',
     'nav.contact': 'Contact',
     'nav.demo': 'Request Demo',
@@ -303,6 +322,23 @@ const translations = {
     'security.audit.desc': 'Every action logged: user, action, IP address, timestamp, device information.',
     'security.ip.title': 'IP Restriction',
     'security.ip.desc': 'IP-based access control for admin panel. Secure management with whitelisting.',
+
+    // Verticals
+    'verticals.tag': 'Industry Solutions',
+    'verticals.title': 'PDF Solutions for Every Industry',
+    'verticals.subtitle': 'YesPDF provides tailored solutions for the unique document management needs of different industries.',
+    'verticals.banking.title': 'Banking & Finance',
+    'verticals.banking.desc': 'Regulatory-compliant document management, secure loan files, digital signatures and audit trails.',
+    'verticals.dicom.title': 'Healthcare & DICOM',
+    'verticals.dicom.desc': 'Medical imaging, DICOM conversion, patient records and healthcare compliance.',
+    'verticals.government.title': 'Government & Public Sector',
+    'verticals.government.desc': 'e-Government compliant document management, official correspondence, archiving and digital transformation.',
+    'verticals.insurance.title': 'Insurance',
+    'verticals.insurance.desc': 'Policy management, claims files, actuarial reports and compliance documentation.',
+    'verticals.legal.title': 'Legal',
+    'verticals.legal.desc': 'Contract management, case files, redaction and digital signature solutions.',
+    'verticals.cad.title': 'CAD & Engineering',
+    'verticals.cad.desc': 'Technical drawing conversion, large format printing, measurement tools and project archiving.',
 
     // Documents
     'docs.title': 'Documents',
