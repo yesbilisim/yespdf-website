@@ -144,6 +144,8 @@ const translations = {
     // Documents
     'docs.title': 'Dokümanlar',
     'docs.subtitle': 'Teknik dokümantasyon, kullanıcı kılavuzları ve raporlar',
+    'docs.brochure_tr': 'Ürün Broşürü',
+    'docs.brochure_en': 'Product Brochure',
     'docs.user_guide_tr': 'Kullanıcı Kılavuzu',
     'docs.whitepaper_tr': 'Teknik Whitepaper',
     'docs.kvkk_tr': 'KVKK Uyumluluk Raporu',
@@ -343,6 +345,8 @@ const translations = {
     // Documents
     'docs.title': 'Documents',
     'docs.subtitle': 'Technical documentation, user guides and reports',
+    'docs.brochure_tr': 'Product Brochure (Turkish)',
+    'docs.brochure_en': 'Product Brochure',
     'docs.user_guide_tr': 'User Guide (Turkish)',
     'docs.whitepaper_tr': 'Technical Whitepaper',
     'docs.kvkk_tr': 'KVKK Compliance Report',
