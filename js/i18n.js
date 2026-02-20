@@ -164,6 +164,8 @@ const translations = {
     'docs.hipaa_en': 'HIPAA Uyumluluk Raporu',
     'docs.soc2_tr': 'SOC 2 Uyumluluk Raporu',
     'docs.soc2_en': 'SOC 2 Uyumluluk Raporu',
+    'docs.iso27001_tr': 'ISO 27001 Uyumluluk Raporu',
+    'docs.iso27001_en': 'ISO 27001 Uyumluluk Raporu',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Contact
@@ -373,6 +375,8 @@ const translations = {
     'docs.hipaa_en': 'HIPAA Compliance Report',
     'docs.soc2_tr': 'SOC 2 Compliance Report (Turkish)',
     'docs.soc2_en': 'SOC 2 Compliance Report',
+    'docs.iso27001_tr': 'ISO 27001 Compliance Report (Turkish)',
+    'docs.iso27001_en': 'ISO 27001 Compliance Report',
     'docs.release_history': 'Release History',
 
     // Contact
