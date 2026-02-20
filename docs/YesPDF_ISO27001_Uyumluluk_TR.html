@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — ISO 27001 Uyumluluk Raporu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.structure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.structure-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.structure-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.structure-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.sector-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+.sector-card strong { display: block; color: var(--gray-900); font-size: 14px; margin-bottom: 4px; }
+.sector-card p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.soa-list { list-style: none; padding: 0; margin: 16px 0; }
+.soa-list li { padding: 12px 16px 12px 36px; position: relative; font-size: 14px; background: var(--green-light); border: 1px solid rgba(5,150,105,0.15); border-radius: 8px; margin-bottom: 8px; color: #065F46; }
+.soa-list li::before { content: '✓'; position: absolute; left: 14px; font-weight: 700; color: var(--green); }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .structure-grid { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Uyumluluk Raporu</div>
+  <h1>ISO 27001 Uyumluluk Raporu</h1>
+  <p class="subtitle">Bilgi Güvenliği Yönetim Sistemi İçin Belge Yönetimi Kontrolleri</p>
+  <p class="version">v1.0 — Şubat 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>ISO 27001 Nedir?</h2>
+  <div class="badge">ISO/IEC 27001:2022 — ISMS</div>
+  <p><strong>ISO/IEC 27001:2022</strong>, Uluslararası Standardizasyon Örgütü (ISO) ve Uluslararası Elektroteknik Komisyonu (IEC) tarafından yayımlanan, bilgi güvenliği yönetim sistemi (BGYS / ISMS) gereksinimleri standardıdır. Dünya genelinde en yaygın kabul gören bilgi güvenliği sertifikasyon standardıdır.</p>
+  <p>ISO 27001, kuruluşların bilgi varlıklarını sistematik olarak korumasını sağlayan bir yönetim çerçevesi sunar. Standard, risk değerlendirme, güvenlik kontrolleri, sürekli iyileştirme ve düzenli denetim süreçlerini kapsar.</p>
+  <p>Türkiye'de <strong>TSE (Türk Standardları Enstitüsü)</strong> ve <strong>TÜRKAK</strong> akreditasyonlu belgelendirme kuruluşları tarafından verilen ISO 27001 sertifikaları, <strong>IAF (International Accreditation Forum)</strong> üyeliği sayesinde 100'den fazla ülkede uluslararası geçerliliğe sahiptir.</p>
+  <p>Bu rapor, YesPDF'in ISO 27001 Ek A kontrollerini nasıl desteklediğini madde madde açıklar.</p>
+</div>
+
+<div class="section">
+  <h2>ISO 27001:2022 Yapısı</h2>
+  <p>ISO 27001:2022 standardı iki ana bölümden oluşur:</p>
+  <div class="structure-grid">
+    <div class="structure-card"><strong>Madde 4-10: BGYS Gereksinimleri</strong><p>Organizasyonel bağlam, liderlik, planlama, destek, operasyon, performans değerlendirme ve iyileştirme süreçlerini tanımlar.</p></div>
+    <div class="structure-card"><strong>Ek A: Bilgi Güvenliği Kontrolleri</strong><p>93 kontrol, 4 kategoride: Organizasyonel (37), Kişisel (8), Fiziksel (14) ve Teknolojik (34). Kuruluşlar risk değerlendirmesine göre uygulanacak kontrolleri seçer.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>İlgili Ek A Kontrolleri ve YesPDF Çözümleri</h2>
+  <p>Aşağıda, belge yönetimiyle doğrudan ilgili ISO 27001:2022 Ek A kontrolleri ve YesPDF'in bu kontrolleri nasıl desteklediği açıklanmaktadır.</p>
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.15 — Erişim Kontrolü</h3><p>Bilgi ve bilgi işleme tesislerine erişimi kısıtlamak için fiziksel ve mantıksal erişim kontrol kuralları oluşturulmalı ve uygulanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Rol Bazlı Erişim Kontrolü (RBAC):</strong> Yönetici, editör, görüntüleyici ve departman bazlı roller ile granüler yetkilendirme.</li>
+      <li><strong>En Az Yetki İlkesi:</strong> Kullanıcılar yalnızca görevleri için gerekli belgelere erişebilir.</li>
+      <li><strong>LDAP/Active Directory Entegrasyonu:</strong> Kurumun mevcut kimlik doğrulama altyapısıyla merkezi erişim yönetimi.</li>
+      <li><strong>IP Kısıtlama:</strong> Belgelere yalnızca belirlenen ağ segmentlerinden erişim izni verilebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.33 — Kayıtların Korunması</h3><p>Kayıtlar, yasal, düzenleyici, sözleşmesel ve iş gereksinimlerine uygun olarak kayıp, imha, tahrifat ve yetkisiz erişime karşı korunmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>AES-256 Şifreleme:</strong> Tüm belgeler depolama ve aktarım sırasında şifrelenir.</li>
+      <li><strong>Saklama Politikaları:</strong> Belge türüne göre otomatik saklama süreleri tanımlanabilir.</li>
+      <li><strong>Saklama Kilidi:</strong> Süresi dolmadan belgelerin silinmesi engellenebilir.</li>
+      <li><strong>Güvenli İmha:</strong> Saklama süresi dolan belgeler güvenli şekilde silinir ve imha kaydı tutulur.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.34 — Gizlilik ve Kişisel Bilgi Koruması</h3><p>Kuruluş, ilgili mevzuat ve düzenlemelere uygun olarak kişisel bilgilerin gizliliğini ve korunmasını sağlamalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>On-Premise Mimari:</strong> Kişisel veriler kurum altyapısı dışına çıkmaz — KVKK/GDPR uyumluluğu desteklenir.</li>
+      <li><strong>Kalıcı Karartma (Redaction):</strong> Kişisel bilgiler belgelerden geri dönüşümsüz olarak kaldırılabilir.</li>
+      <li><strong>Toplu Karartma:</strong> Birden fazla belgede kişisel verilerin aynı anda karartılması.</li>
+      <li><strong>Veri Minimizasyonu:</strong> YesPDF yalnızca belge yönetimi için gerekli verileri toplar.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.3 — Bilgiye Erişim Kısıtlama</h3><p>Bilgiye ve uygulama sistem fonksiyonlarına erişim, erişim kontrol politikasına uygun olarak kısıtlanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Dosya Düzeyinde İzinler:</strong> Her belge için okuma, düzenleme, indirme ve yazdırma izinleri ayrı ayrı tanımlanabilir.</li>
+      <li><strong>Departman Bazlı Erişim:</strong> Departmanlar arası belge erişimi politikalarla kontrol edilir.</li>
+      <li><strong>Otomatik Oturum Sonlandırma:</strong> Belirlenen süre sonunda aktif olmayan oturumlar kapatılır.</li>
+      <li><strong>Benzersiz Kullanıcı Kimliği:</strong> Paylaşılan hesap kullanımı engellenir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.4 — Kaynak Koduna Erişim</h3><p>Kaynak koduna, geliştirme araçlarına ve yazılım kütüphanelerine okuma ve yazma erişimi uygun şekilde yönetilmelidir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>On-Premise Dağıtım:</strong> YesPDF kurumun kendi sunucusunda çalışır — kaynak koda üçüncü taraf erişimi yoktur.</li>
+      <li><strong>Yönetim Paneli Kısıtlaması:</strong> Sistem yapılandırması ve yönetim paneli yalnızca yetkili yöneticilere açıktır.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.9 — Konfigürasyon Yönetimi</h3><p>Donanım, yazılım, hizmetler ve ağların güvenlik konfigürasyonları oluşturulmalı, belgelenmeli, uygulanmalı, izlenmeli ve gözden geçirilmelidir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Merkezi Yapılandırma:</strong> Tüm güvenlik ayarları yönetim panelinden merkezi olarak yönetilir.</li>
+      <li><strong>Yapılandırma Değişiklik Kaydı:</strong> Sistem ayarlarındaki değişiklikler denetim günlüğünde kaydedilir.</li>
+      <li><strong>.env Tabanlı Yapılandırma:</strong> Hassas yapılandırma değerleri (şifreleme anahtarı, veritabanı bağlantısı) güvenli yapılandırma dosyasında saklanır.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.10 — Bilgi Silme</h3><p>Bilgi sistemlerinde, cihazlarda ve diğer depolama ortamlarında saklanan bilgiler artık gerekli olmadığında silinmelidir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Otomatik Saklama Süreleri:</strong> Belge türüne göre saklama politikaları tanımlanabilir.</li>
+      <li><strong>Güvenli Silme:</strong> Süresi dolan belgeler güvenli şekilde imha edilir.</li>
+      <li><strong>İmha Kaydı:</strong> Silinen belgelerin imha kayıtları tutulur — denetim için kanıt sağlar.</li>
+      <li><strong>Toplu Silme:</strong> Saklama süresi dolan belgeler toplu olarak işlenebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.11 — Veri Maskeleme</h3><p>Veri maskeleme, erişim kontrol politikası ve iş gereksinimlerine uygun olarak uygulanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kalıcı Karartma:</strong> TCKN, adres, sağlık bilgileri ve diğer hassas veriler belgelerden geri dönüşümsüz olarak kaldırılabilir.</li>
+      <li><strong>Karartma Doğrulama:</strong> Karartılan verilerin gerçekten kaldırıldığı doğrulanır — metadata sızıntısı olmaz.</li>
+      <li><strong>Seçici Karartma:</strong> Farklı alıcılar için farklı karartma seviyeleri uygulanabilir.</li>
+      <li><strong>Karartma Şablonları:</strong> Tekrar eden karartma işlemleri için şablonlar oluşturulabilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.12 — Veri Sızıntısı Önleme</h3><p>Veri sızıntısı önleme tedbirleri, hassas bilgi işleyen, saklayan veya ileten sistemlere, ağlara ve diğer cihazlara uygulanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>İndirme/Yazdırma Kısıtlaması:</strong> Belge bazında indirme ve yazdırma işlemleri engellenebilir.</li>
+      <li><strong>Filigran (Watermark):</strong> Belgelere kullanıcı bilgisi içeren görünür veya görünmez filigran eklenebilir.</li>
+      <li><strong>PDF İzin Kısıtlamaları:</strong> Kopyalama, düzenleme ve yazdırma izinleri PDF düzeyinde kontrol edilebilir.</li>
+      <li><strong>Denetim İzleme:</strong> Tüm belge indirme ve paylaşım işlemleri kayıt altındadır.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.15 — Günlük Tutma (Logging)</h3><p>Aktiviteleri, istisnaları, hataları ve diğer ilgili olayları kaydeden günlükler üretilmeli, saklanmalı, korunmalı ve analiz edilmelidir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kapsamlı Denetim Günlüğü:</strong> Her belge erişimi, düzenleme, indirme, yazdırma ve paylaşım işlemi otomatik olarak kaydedilir.</li>
+      <li><strong>Değiştirilemez Kayıtlar:</strong> Denetim kayıtları değiştirilemez ve silinemez.</li>
+      <li><strong>Detaylı İzleme:</strong> Kullanıcı ID, zaman damgası, belge adı, işlem türü, IP adresi ve cihaz bilgisi kaydedilir.</li>
+      <li><strong>Raporlama ve Analiz:</strong> Kullanıcı, belge veya zaman aralığı bazında erişim raporları oluşturulabilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.24 — Kriptografi Kullanımı</h3><p>Kriptografi kullanımına ilişkin kurallar (anahtar yönetimi dahil) tanımlanmalı ve uygulanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>AES-256 Şifreleme:</strong> Depolama sırasında tüm belgeler AES-256 ile şifrelenir.</li>
+      <li><strong>Merkezi Anahtar Yönetimi:</strong> Şifreleme anahtarı güvenli yapılandırma dosyasında saklanır ve tüm sunucularda tutarlıdır.</li>
+      <li><strong>PDF Şifreleme:</strong> Bireysel PDF dosyaları ek parola ile korunabilir.</li>
+      <li><strong>Dijital İmza:</strong> Belge bütünlüğü ve kaynak doğrulaması için dijital imza desteği.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.25 — Güvenli Geliştirme Yaşam Döngüsü</h3><p>Yazılım ve sistemlerin güvenli geliştirilmesi için kurallar oluşturulmalı ve uygulanmalıdır.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Güvenli Tasarım:</strong> YesPDF, OWASP güvenlik ilkelerine uygun olarak geliştirilmiştir.</li>
+      <li><strong>Düzenli Güvenlik Güncellemeleri:</strong> Güvenlik yamaları ve güncellemeler düzenli olarak yayınlanır.</li>
+      <li><strong>Güvenlik Testleri:</strong> Her sürüm öncesi güvenlik testleri (penetrasyon testi dahil) gerçekleştirilir.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>Türkiye'de ISO 27001 ve BGYS</h2>
+  <p>ISO 27001 sertifikasyonu Türkiye'de özellikle aşağıdaki sektörler için kritik öneme sahiptir:</p>
+  <div class="sector-card"><strong>Kamu Kurumları</strong><p>Cumhurbaşkanlığı Dijital Dönüşüm Ofisi tarafından yayımlanan Bilgi ve İletişim Güvenliği Rehberi, kamu kurumlarına ISO 27001 uyumluluğu önerir.</p></div>
+  <div class="sector-card"><strong>Finans Sektörü</strong><p>BDDK (Bankacılık Düzenleme ve Denetleme Kurumu) düzenlemeleri, bankaların ve finansal kuruluşların bilgi güvenliği yönetim sistemi kurmasını zorunlu kılar.</p></div>
+  <div class="sector-card"><strong>Sağlık Sektörü</strong><p>Sağlık Bakanlığı düzenlemeleri, hasta verilerinin korunması için bilgi güvenliği standartlarına uyumu gerektirir.</p></div>
+  <div class="sector-card"><strong>Telekomünikasyon</strong><p>BTK (Bilgi Teknolojileri ve İletişim Kurumu) düzenlemeleri, operatörlerin bilgi güvenliği kontrollerini uygulamasını zorunlu kılar.</p></div>
+  <div class="sector-card"><strong>Savunma ve Kritik Altyapı</strong><p>Savunma sanayii ve kritik altyapı operatörleri için ISO 27001 sertifikasyonu genellikle zorunlu bir ihale kriteridir.</p></div>
+  <div class="info-box green">Türkiye'de ISO 27001 sertifikaları <strong>TSE</strong> ve <strong>TÜRKAK</strong> akreditasyonlu belgelendirme kuruluşları tarafından verilir. Bu sertifikalar <strong>IAF MLA (Multilateral Recognition Arrangement)</strong> kapsamında uluslararası geçerliliğe sahiptir.</div>
+</div>
+
+<div class="section">
+  <h2>On-Premise ve Bulut Karşılaştırması</h2>
+  <p>ISO 27001 uyumluluğu açısından on-premise ve bulut çözümlerin karşılaştırması:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriter</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Bulut PDF Araçları</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Veri Konumu (A.5.23)</strong></td><td class="col-yespdf">Kurumun kendi sunucusu — tam kontrol</td><td class="col-cloud">Üçüncü taraf veri merkezi — sınırlı kontrol</td></tr>
+    <tr><td><strong>Tedarikçi Riski (A.5.21)</strong></td><td class="col-yespdf">Minimum — veri dışarı çıkmaz</td><td class="col-cloud">Tedarikçi güvenlik denetimi gerekli</td></tr>
+    <tr><td><strong>Erişim Kontrolü (A.5.15)</strong></td><td class="col-yespdf">Kurumun BGYS politikalarına tam entegre</td><td class="col-cloud">Sağlayıcı politikalarına bağımlı</td></tr>
+    <tr><td><strong>Günlük Tutma (A.8.15)</strong></td><td class="col-yespdf">Tüm loglar yerel — doğrudan denetim</td><td class="col-cloud">Sağlayıcıdan log talep etme gerekli</td></tr>
+    <tr><td><strong>Kriptografi (A.8.24)</strong></td><td class="col-yespdf">Anahtar yönetimi kurum kontrolünde</td><td class="col-cloud">Sağlayıcı anahtar yönetimi</td></tr>
+    <tr><td><strong>Konfigürasyon (A.8.9)</strong></td><td class="col-yespdf">Tam özelleştirme</td><td class="col-cloud">Sınırlı yapılandırma seçenekleri</td></tr>
+    <tr><td><strong>Veri Sızıntısı Önleme (A.8.12)</strong></td><td class="col-yespdf">Kurumun DLP politikalarıyla entegre</td><td class="col-cloud">Sınırlı DLP seçenekleri</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Uygulanabilirlik Bildirgesi (SoA) Desteği</h2>
+  <p>ISO 27001 sertifikasyonu sürecinde kuruluşlar <strong>Uygulanabilirlik Bildirgesi (Statement of Applicability — SoA)</strong> hazırlamalıdır. YesPDF, SoA'da belge yönetimiyle ilgili kontrollerin uygulandığını kanıtlamak için gerekli teknik altyapıyı sağlar:</p>
+  <ul class="soa-list">
+    <li>Erişim kontrol politikalarının uygulandığının kanıtı (RBAC yapılandırma kayıtları)</li>
+    <li>Denetim kayıtlarının tutulduğunun kanıtı (değiştirilemez audit logları)</li>
+    <li>Şifreleme kontrollerinin uygulandığının kanıtı (AES-256 yapılandırma)</li>
+    <li>Veri maskeleme/karartma yeteneklerinin kanıtı</li>
+    <li>Saklama ve imha politikalarının uygulandığının kanıtı</li>
+    <li>Konfigürasyon yönetimi kayıtları</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>ISO 27001 Uyumluluk Kontrol Listesi</h2>
+  <p>YesPDF ile ISO 27001 Ek A kontrollerini desteklemek için:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Varlık envanterine ekleyin</strong><p>YesPDF'i bilgi varlıkları envanterinize ekleyin ve varlık sahibi atayın (A.5.9).</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Risk değerlendirmesi yapın</strong><p>YesPDF üzerinde işlenen belge türlerini ve ilgili riskleri değerlendirin (A.5.12).</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Erişim politikalarını yapılandırın</strong><p>RBAC rolleri ve izinleri tanımlayarak en az yetki ilkesini uygulayın (A.5.15, A.8.3).</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Denetim kayıtlarını aktifleştirin</strong><p>Tüm belge erişimlerinin loglanmasını sağlayın ve düzenli gözden geçirme planı oluşturun (A.8.15).</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Şifrelemeyi doğrulayın</strong><p>AES-256 şifrelemenin aktif olduğunu doğrulayın ve anahtar yönetim prosedürünü belirleyin (A.8.24).</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Saklama politikalarını tanımlayın</strong><p>Belge türlerine göre saklama süreleri belirleyin ve otomatik uyarıları aktifleştirin (A.5.33, A.8.10).</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Karartma prosedürlerini oluşturun</strong><p>Kişisel veri içeren belgelerin paylaşımı için karartma standart prosedürü belirleyin (A.8.11).</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Yedekleme planını doğrulayın</strong><p>Düzenli yedekleme alındığını ve kurtarma prosedürlerinin test edildiğini doğrulayın (A.8.13).</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Personel farkındalık eğitimi verin</strong><p>Bilgi güvenliği farkındalığı ve YesPDF güvenli kullanımı hakkında eğitim verin (A.6.3).</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>İç denetim gerçekleştirin</strong><p>Belge yönetimi kontrollerinin etkinliğini düzenli olarak denetleyin ve SoA'yı güncelleyin.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Özet</h2>
+  <div class="summary-box"><p>YesPDF, on-premise mimarisi, kapsamlı erişim kontrolü, değiştirilemez denetim kayıtları, AES-256 şifreleme, kalıcı karartma, veri sızıntısı önleme kontrolleri ve esnek saklama politikalarıyla kuruluşların ISO 27001:2022 Ek A kontrollerini karşılamasını destekler. On-premise yapı sayesinde veriler kurum kontrolünde kalır, tedarikçi riski minimize edilir ve kuruluşun BGYS'sine doğal olarak entegre olur. Türkiye'de TSE/TÜRKAK sertifikasyonu uluslararası geçerliliğe sahiptir.</p></div>
+</div>
+
+<div class="section">
+  <h2>Teknik Destek</h2>
+  <div class="contact-box">
+    <p>ISO 27001 uyumluluğu ve YesPDF yapılandırması hakkında:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Bu doküman YesPDF teknik ekibi tarafından hazırlanmıştır. Bu rapor hukuki veya denetim danışmanlığı niteliği taşımaz. ISO 27001 sertifikasyon hazırlığı için kurumunuzun bilgi güvenliği danışmanına ve akreditasyonlu belgelendirme kuruluşuna başvurmanızı öneririz.</p></div>
+
+</div></div>
+</body></html>
