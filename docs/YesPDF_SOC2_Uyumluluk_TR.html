@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — SOC 2 Uyumluluk Raporu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.type-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.type-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.type-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.tsc-grid { display: grid; gap: 12px; margin: 20px 0; }
+.tsc-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 18px 20px; display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; }
+.tsc-card .icon { font-size: 24px; text-align: center; }
+.tsc-card .info strong { display: block; color: var(--gray-900); font-size: 15px; margin-bottom: 4px; }
+.tsc-card .info p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.tsc-card .tag { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+.tsc-card .tag.required { background: #FEE2E2; color: #991B1B; }
+.tsc-card .tag.optional { background: var(--gray-100); color: var(--gray-500); }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.coso-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+.coso-card strong { display: block; color: var(--gray-900); font-size: 14px; margin-bottom: 4px; }
+.coso-card .desc { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
+.coso-card .yespdf { font-size: 13px; color: var(--accent-dark); font-style: italic; padding-top: 8px; border-top: 1px solid var(--gray-200); }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.vendor-list { list-style: none; padding: 0; margin: 16px 0; }
+.vendor-list li { padding: 12px 16px 12px 36px; position: relative; font-size: 14px; background: var(--green-light); border: 1px solid rgba(5,150,105,0.15); border-radius: 8px; margin-bottom: 8px; color: #065F46; }
+.vendor-list li::before { content: '✓'; position: absolute; left: 14px; font-weight: 700; color: var(--green); }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .types-grid { grid-template-columns: 1fr; } .tsc-card { grid-template-columns: 40px 1fr; } .tsc-card .tag { grid-column: 2; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Uyumluluk Raporu</div>
+  <h1>SOC 2 Uyumluluk Raporu</h1>
+  <p class="subtitle">Kurumsal Belge Yönetiminde Güven Hizmeti Kriterleri</p>
+  <p class="version">v1.0 — Şubat 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>SOC 2 Nedir?</h2>
+  <div class="badge">SOC 2 — AICPA Trust Services Criteria</div>
+  <p><strong>SOC 2 (System and Organization Controls 2)</strong>, Amerikan Yeminli Mali Müşavirler Enstitüsü (AICPA) tarafından geliştirilen ve hizmet kuruluşlarının müşteri verilerini nasıl yönettiğini değerlendiren bir denetim çerçevesidir. SOC 2, özellikle bulut hizmetleri, SaaS sağlayıcıları ve veri işleyen kuruluşlar için kritik bir güvenlik standardıdır.</p>
+  <p>SOC 2 denetimi, beş <strong>Güven Hizmeti Kriteri (Trust Services Criteria — TSC)</strong> üzerine kuruludur: Güvenlik, Erişilebilirlik, İşlem Bütünlüğü, Gizlilik ve Mahremiyet. Bu kriterler, kuruluşların bilgi sistemlerini nasıl koruduğunu ve yönettiğini değerlendirir.</p>
+  <p>Bu rapor, YesPDF'in SOC 2 Güven Hizmeti Kriterlerini nasıl desteklediğini madde madde açıklar.</p>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Rapor Türleri</h2>
+  <div class="types-grid">
+    <div class="type-card"><strong>SOC 2 Tip I</strong><p>Belirli bir tarih itibarıyla kontrollerin tasarımının uygunluğunu değerlendirir. "Kontroller doğru tasarlanmış mı?" sorusuna yanıt verir.</p></div>
+    <div class="type-card"><strong>SOC 2 Tip II</strong><p>Belirli bir dönem boyunca (genellikle 6-12 ay) kontrollerin hem tasarımını hem de işletim etkinliğini değerlendirir. "Kontroller tasarlandığı gibi çalışıyor mu?" sorusuna yanıt verir.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Beş Güven Hizmeti Kriteri (TSC)</h2>
+  <p>SOC 2 denetimi aşağıdaki beş kriter üzerine kuruludur. <strong>Güvenlik (Security)</strong> kriteri zorunludur; diğerleri kuruluşun ihtiyacına göre seçilebilir.</p>
+  <div class="tsc-grid">
+    <div class="tsc-card">
+      <div class="icon">🛡️</div>
+      <div class="info"><strong>Güvenlik (Security)</strong><p>Bilgi ve sistemlerin yetkisiz erişim, kullanım, değişiklik ve imhaya karşı korunması. SOC 2'nin temel ve zorunlu kriteridir.</p></div>
+      <span class="tag required">Zorunlu</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">⏱️</div>
+      <div class="info"><strong>Erişilebilirlik (Availability)</strong><p>Sistemlerin ve bilgilerin taahhüt edilen şekilde erişilebilir ve kullanılabilir olması.</p></div>
+      <span class="tag optional">İsteğe Bağlı</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">⚙️</div>
+      <div class="info"><strong>İşlem Bütünlüğü (Processing Integrity)</strong><p>Sistem işlemlerinin eksiksiz, doğru, zamanında ve yetkili olarak gerçekleştirilmesi.</p></div>
+      <span class="tag optional">İsteğe Bağlı</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">🔐</div>
+      <div class="info"><strong>Gizlilik (Confidentiality)</strong><p>Gizli olarak belirlenen bilgilerin yetkisiz ifşaya karşı korunması.</p></div>
+      <span class="tag optional">İsteğe Bağlı</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">👤</div>
+      <div class="info"><strong>Mahremiyet (Privacy)</strong><p>Kişisel bilgilerin toplanması, kullanılması, saklanması, ifşası ve imhası ile ilgili kontroller.</p></div>
+      <span class="tag optional">İsteğe Bağlı</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Kriterleri ve YesPDF Çözümleri</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Güvenlik — Mantıksal ve Fiziksel Erişim Kontrolleri (CC6)</h3><p>Kuruluş, bilgi varlıklarına yetkisiz erişimi önlemek için mantıksal ve fiziksel erişim kontrolleri uygular.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Rol Bazlı Erişim Kontrolü (RBAC):</strong> Yönetici, editör, görüntüleyici ve departman bazlı roller ile granüler yetkilendirme.</li>
+      <li><strong>Dosya Düzeyinde İzinler:</strong> Her belge için okuma, düzenleme, indirme ve yazdırma izinleri ayrı ayrı tanımlanabilir.</li>
+      <li><strong>LDAP/Active Directory Entegrasyonu:</strong> Kurumun mevcut kimlik doğrulama altyapısıyla entegre çalışarak merkezi erişim yönetimi sağlar.</li>
+      <li><strong>IP Kısıtlama:</strong> Belgelere yalnızca kurum ağından veya belirlenen IP aralıklarından erişim izni verilebilir.</li>
+      <li><strong>Otomatik Oturum Sonlandırma:</strong> Belirlenen süre sonunda aktif olmayan oturumlar otomatik kapatılır.</li>
+      <li><strong>On-Premise Mimari:</strong> Fiziksel erişim kontrolü kurumun kendi tesislerinde sağlanır — üçüncü taraf veri merkezine bağımlılık yoktur.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Güvenlik — İzleme ve Denetim (CC7)</h3><p>Kuruluş, güvenlik olaylarını tespit etmek ve müdahale etmek için izleme ve denetim mekanizmaları uygular.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kapsamlı Denetim Günlüğü:</strong> Her belge erişimi, düzenleme, indirme, yazdırma ve paylaşım işlemi otomatik olarak kaydedilir.</li>
+      <li><strong>Değiştirilemez Kayıtlar:</strong> Denetim kayıtları değiştirilemez ve silinemez — SOC 2 denetimleri için güvenilir kanıt sağlar.</li>
+      <li><strong>Detaylı İzleme:</strong> Kullanıcı ID, zaman damgası, belge adı, işlem türü, IP adresi ve cihaz bilgisi — tüm detaylar kayıt altındadır.</li>
+      <li><strong>Aktivite Raporları:</strong> Belirli kullanıcı, belge veya zaman aralığı bazında erişim raporları oluşturulabilir.</li>
+      <li><strong>Güvenlik Olayı Tespiti:</strong> Anormal erişim kalıpları ve şüpheli aktiviteler raporlarla tespit edilebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Güvenlik — Değişiklik Yönetimi (CC8)</h3><p>Kuruluş, altyapı, veri, yazılım ve prosedürlerdeki değişiklikleri yönetmek için kontroller uygular.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Sürüm Kontrolü:</strong> Belge değişiklikleri sürüm geçmişi ile takip edilir — her değişiklik kim tarafından, ne zaman yapıldığı kaydedilir.</li>
+      <li><strong>Yapılandırma Yönetimi:</strong> Sistem ayarları yalnızca yönetici rolündeki kullanıcılar tarafından değiştirilebilir.</li>
+      <li><strong>Güncelleme Kontrolleri:</strong> YesPDF güncellemeleri kontrollü ortamda test edildikten sonra uygulanır.</li>
+      <li><strong>Geri Alma:</strong> Belge düzeyinde önceki sürümlere geri dönülebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. Erişilebilirlik (A1)</h3><p>Kuruluş, sistemlerin ve bilgilerin taahhüt edilen şekilde erişilebilir olmasını sağlamak için kontroller uygular.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Yük Dengeleyici Desteği:</strong> F5 BIG-IP ve Citrix NetScaler gibi yük dengeleyiciler arkasında çalışarak yüksek erişilebilirlik sağlar.</li>
+      <li><strong>Yedekleme ve Kurtarma:</strong> Otomatik yedekleme planları ile veri kaybı önlenir ve hızlı kurtarma sağlanır.</li>
+      <li><strong>Performans İzleme:</strong> Sistem kaynakları ve yanıt süreleri izlenerek performans sorunları erken tespit edilir.</li>
+      <li><strong>İş Sürekliliği:</strong> On-premise mimari sayesinde internet kesintilerinde bile yerel ağdan erişim devam eder.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. İşlem Bütünlüğü (PI1)</h3><p>Kuruluş, sistem işlemlerinin eksiksiz, doğru, zamanında ve yetkili olarak gerçekleştirilmesini sağlar.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>İş Kuyruğu Yönetimi:</strong> PDF dönüştürme, OCR ve diğer işlemler kuyruk sistemiyle yönetilir — hiçbir iş kaybolmaz.</li>
+      <li><strong>İşlem Durumu Takibi:</strong> Her işlemin durumu (beklemede, işleniyor, tamamlandı, başarısız) gerçek zamanlı izlenebilir.</li>
+      <li><strong>Otomatik Yeniden Deneme:</strong> Başarısız işlemler yapılandırılabilir yeniden deneme politikasıyla tekrar çalıştırılır.</li>
+      <li><strong>Dijital İmza:</strong> Belge bütünlüğü dijital imza ile doğrulanabilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Gizlilik (C1)</h3><p>Kuruluş, gizli olarak belirlenen bilgilerin yetkisiz erişim ve ifşaya karşı korunmasını sağlar.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>AES-256 Şifreleme:</strong> Tüm belgeler hem aktarım hem de depolama sırasında AES-256 ile şifrelenir.</li>
+      <li><strong>Kalıcı Karartma (Redaction):</strong> Gizli bilgiler belgelerden geri dönüşümsüz olarak kaldırılabilir.</li>
+      <li><strong>PDF Şifreleme:</strong> Bireysel PDF dosyaları parola ile korunabilir ve izin kısıtlamaları uygulanabilir.</li>
+      <li><strong>Güvenli Silme:</strong> Saklama süresi dolan gizli belgeler güvenli şekilde imha edilir ve imha kaydı tutulur.</li>
+      <li><strong>Sınıflandırma:</strong> Belgeler gizlilik seviyesine göre kategorize edilebilir (Genel, Dahili, Gizli, Çok Gizli).</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>7. Mahremiyet (P1)</h3><p>Kuruluş, kişisel bilgilerin gizlilik bildiriminde belirtilen şekilde toplanması, kullanılması, saklanması ve imhası için kontroller uygular.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Veri Minimizasyonu:</strong> YesPDF yalnızca belge yönetimi için gerekli kişisel verileri toplar.</li>
+      <li><strong>On-Premise Veri Kontrolü:</strong> Kişisel veriler kurum altyapısı dışına çıkmaz — üçüncü taraf sunuculara gönderilmez.</li>
+      <li><strong>Saklama Politikaları:</strong> Kişisel veri içeren belgelere otomatik saklama süreleri tanımlanabilir.</li>
+      <li><strong>Erişim Hakları:</strong> Kullanıcılar yalnızca yetkilendirildikleri kişisel verilere erişebilir.</li>
+      <li><strong>Toplu Karartma:</strong> KVKK/GDPR taleplerine uygun olarak kişisel veriler belgelerden toplu olarak karartılabilir.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>SOC 2 Ortak Kriterler (Common Criteria)</h2>
+  <p>SOC 2, COSO (Committee of Sponsoring Organizations) iç kontrol çerçevesini temel alır. Ortak kriterler tüm Güven Hizmeti Kriterleri için geçerlidir:</p>
+  <div class="coso-card"><strong>Kontrol Ortamı (CC1)</strong><div class="desc">Kuruluşun güvenlik ve etik değerlere bağlılığını gösterir.</div><div class="yespdf">YesPDF'in rol bazlı yapısı ve merkezi yönetim paneli, kontrol ortamının oluşturulmasını destekler.</div></div>
+  <div class="coso-card"><strong>İletişim ve Bilgi (CC2)</strong><div class="desc">Güvenlik politikaları ve prosedürlerinin etkin iletişimini sağlar.</div><div class="yespdf">Denetim kayıtları ve raporlama özellikleri, güvenlik bilgisinin paylaşımını kolaylaştırır.</div></div>
+  <div class="coso-card"><strong>Risk Değerlendirme (CC3)</strong><div class="desc">Kuruluşun hedeflerine yönelik riskleri tanımlar ve değerlendirir.</div><div class="yespdf">Erişim raporları ve aktivite logları, risk değerlendirme süreçlerini destekler.</div></div>
+  <div class="coso-card"><strong>İzleme Aktiviteleri (CC4)</strong><div class="desc">İç kontrollerin etkinliğinin sürekli izlenmesini sağlar.</div><div class="yespdf">Kapsamlı denetim günlüğü ve raporlama, izleme aktivitelerinin temelini oluşturur.</div></div>
+  <div class="coso-card"><strong>Kontrol Aktiviteleri (CC5)</strong><div class="desc">Riskleri azaltmak için politikalar ve prosedürler uygular.</div><div class="yespdf">RBAC, şifreleme, karartma ve saklama politikaları doğrudan kontrol aktiviteleridir.</div></div>
+</div>
+
+<div class="section">
+  <h2>Tedarikçi Değerlendirmesi ve SOC 2</h2>
+  <p>Kurumsal müşteriler, tedarikçi değerlendirme süreçlerinde sıklıkla SOC 2 uyumluluğu talep eder. YesPDF'in on-premise mimarisi bu değerlendirmelerde önemli avantajlar sağlar:</p>
+  <ul class="vendor-list">
+    <li>Veri kurum dışına çıkmadığı için üçüncü taraf veri işleme riski yoktur</li>
+    <li>SOC 2 denetim kapsamı sağlayıcı yerine kurumun kendi kontrollerini kapsar</li>
+    <li>Alt hizmet sağlayıcı (subservice organization) bağımlılığı ortadan kalkar</li>
+    <li>Kurumun mevcut SOC 2 kontrol çerçevesine doğal olarak entegre olur</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>On-Premise ve Bulut Karşılaştırması</h2>
+  <p>SOC 2 uyumluluğu açısından on-premise ve bulut çözümlerin karşılaştırması:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriter</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Bulut PDF Araçları</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Veri Konumu</strong></td><td class="col-yespdf">Kurumun kendi sunucusu</td><td class="col-cloud">Üçüncü taraf veri merkezi</td></tr>
+    <tr><td><strong>Kontrol Kapsamı</strong></td><td class="col-yespdf">%100 kurum kontrolünde</td><td class="col-cloud">Paylaşımlı sorumluluk modeli</td></tr>
+    <tr><td><strong>Denetim Kolaylığı</strong></td><td class="col-yespdf">Tüm loglar yerel — doğrudan erişim</td><td class="col-cloud">Sağlayıcı raporlarına bağımlı</td></tr>
+    <tr><td><strong>Alt Hizmet Sağlayıcı Riski</strong></td><td class="col-yespdf">Yok</td><td class="col-cloud">Zincirleme bağımlılık riski</td></tr>
+    <tr><td><strong>Fiziksel Güvenlik</strong></td><td class="col-yespdf">Kurum tesisleri kontrolünde</td><td class="col-cloud">Sağlayıcı veri merkezi kontrolünde</td></tr>
+    <tr><td><strong>Yapılandırma Kontrolü</strong></td><td class="col-yespdf">Tam özelleştirme</td><td class="col-cloud">Sınırlı yapılandırma seçenekleri</td></tr>
+    <tr><td><strong>Olay Müdahalesi</strong></td><td class="col-yespdf">Doğrudan müdahale imkanı</td><td class="col-cloud">Sağlayıcı koordinasyonu gerekli</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Uyumluluk Kontrol Listesi</h2>
+  <p>YesPDF ile SOC 2 kriterlerini desteklemek için:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Erişim politikalarını tanımlayın</strong><p>RBAC rolleri ve izinleri yapılandırarak en az yetki (least privilege) ilkesini uygulayın.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Denetim kayıtlarını aktifleştirin</strong><p>Tüm belge erişimlerinin loglanmasını sağlayın. Düzenli olarak erişim raporlarını denetçilerle paylaşın.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Şifrelemeyi doğrulayın</strong><p>AES-256 şifrelemenin aktif olduğunu ve tüm belgelerin şifreli depolandığını kontrol edin.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Değişiklik yönetimi uygulayın</strong><p>Sistem yapılandırma değişikliklerinin kayıt altına alındığını ve onay sürecinden geçtiğini doğrulayın.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Yedekleme planını test edin</strong><p>Düzenli yedekleme alındığını ve kurtarma prosedürlerinin çalıştığını doğrulayın.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Saklama politikalarını ayarlayın</strong><p>Belge türlerine göre saklama sürelerini tanımlayın ve otomatik uyarıları aktifleştirin.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Olay müdahale planı oluşturun</strong><p>Güvenlik olaylarında izlenecek adımları belirleyin, sorumlulukları atayın ve planı test edin.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Personel eğitimi verin</strong><p>Güvenlik farkındalığı ve YesPDF kullanımı hakkında ilgili personeli eğitin.</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Periyodik risk değerlendirmesi yapın</strong><p>Belge yönetim süreçlerindeki riskleri düzenli olarak değerlendirin ve kontrolleri güncelleyin.</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>Denetim hazırlığı</strong><p>SOC 2 denetçilerine sunulmak üzere erişim raporları, yapılandırma kayıtları ve politika belgelerini hazırlayın.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Özet</h2>
+  <div class="summary-box"><p>YesPDF, on-premise mimarisi, kapsamlı erişim kontrolü, değiştirilemez denetim kayıtları, AES-256 şifreleme, kalıcı karartma, sürüm kontrolü ve esnek saklama politikalarıyla kuruluşların SOC 2 Güven Hizmeti Kriterlerini karşılamasını destekler. On-premise yapı sayesinde veri kontrolü tamamen kurumda kalır, üçüncü taraf bağımlılığı ortadan kalkar ve SOC 2 denetim kapsamı basitleşir.</p></div>
+</div>
+
+<div class="section">
+  <h2>Teknik Destek</h2>
+  <div class="contact-box">
+    <p>SOC 2 uyumluluğu ve YesPDF yapılandırması hakkında:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Bu doküman YesPDF teknik ekibi tarafından hazırlanmıştır. Bu rapor hukuki veya denetim danışmanlığı niteliği taşımaz. SOC 2 denetim hazırlığı için kurumunuzun bağımsız denetçisine başvurmanızı öneririz.</p></div>
+
+</div></div>
+</body></html>

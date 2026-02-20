@@ -1,0 +1,299 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — SOC 2 Compliance Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.types-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.type-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.type-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.type-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.tsc-grid { display: grid; gap: 12px; margin: 20px 0; }
+.tsc-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 18px 20px; display: grid; grid-template-columns: 40px 1fr auto; gap: 16px; align-items: center; }
+.tsc-card .icon { font-size: 24px; text-align: center; }
+.tsc-card .info strong { display: block; color: var(--gray-900); font-size: 15px; margin-bottom: 4px; }
+.tsc-card .info p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.tsc-card .tag { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 100px; white-space: nowrap; }
+.tsc-card .tag.required { background: #FEE2E2; color: #991B1B; }
+.tsc-card .tag.optional { background: var(--gray-100); color: var(--gray-500); }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.coso-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+.coso-card strong { display: block; color: var(--gray-900); font-size: 14px; margin-bottom: 4px; }
+.coso-card .desc { font-size: 13px; color: var(--gray-500); margin-bottom: 8px; }
+.coso-card .yespdf { font-size: 13px; color: var(--accent-dark); font-style: italic; padding-top: 8px; border-top: 1px solid var(--gray-200); }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.vendor-list { list-style: none; padding: 0; margin: 16px 0; }
+.vendor-list li { padding: 12px 16px 12px 36px; position: relative; font-size: 14px; background: var(--green-light); border: 1px solid rgba(5,150,105,0.15); border-radius: 8px; margin-bottom: 8px; color: #065F46; }
+.vendor-list li::before { content: '✓'; position: absolute; left: 14px; font-weight: 700; color: var(--green); }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .types-grid { grid-template-columns: 1fr; } .tsc-card { grid-template-columns: 40px 1fr; } .tsc-card .tag { grid-column: 2; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Compliance Report</div>
+  <h1>SOC 2 Compliance Report</h1>
+  <p class="subtitle">Trust Services Criteria for Enterprise Document Management</p>
+  <p class="version">v1.0 — February 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>What is SOC 2?</h2>
+  <div class="badge">SOC 2 — AICPA Trust Services Criteria</div>
+  <p><strong>SOC 2 (System and Organization Controls 2)</strong> is an auditing framework developed by the American Institute of Certified Public Accountants (AICPA) that evaluates how service organizations manage customer data. SOC 2 is a critical security standard especially for cloud services, SaaS providers and data processing organizations.</p>
+  <p>SOC 2 audits are built on five <strong>Trust Services Criteria (TSC)</strong>: Security, Availability, Processing Integrity, Confidentiality and Privacy. These criteria evaluate how organizations protect and manage their information systems.</p>
+  <p>This report explains how YesPDF supports SOC 2 Trust Services Criteria point by point.</p>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Report Types</h2>
+  <div class="types-grid">
+    <div class="type-card"><strong>SOC 2 Type I</strong><p>Evaluates the suitability of control design as of a specific date. Answers: "Are controls properly designed?"</p></div>
+    <div class="type-card"><strong>SOC 2 Type II</strong><p>Evaluates both design and operating effectiveness of controls over a period (typically 6-12 months). Answers: "Are controls working as designed?"</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Five Trust Services Criteria (TSC)</h2>
+  <p>SOC 2 audits are built on the following five criteria. <strong>Security</strong> is mandatory; others are selected based on the organization's needs.</p>
+  <div class="tsc-grid">
+    <div class="tsc-card">
+      <div class="icon">🛡️</div>
+      <div class="info"><strong>Security</strong><p>Protection of information and systems against unauthorized access, use, modification and destruction. The foundational and mandatory criterion of SOC 2.</p></div>
+      <span class="tag required">Required</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">⏱️</div>
+      <div class="info"><strong>Availability</strong><p>Systems and information are available for operation and use as committed.</p></div>
+      <span class="tag optional">Optional</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">⚙️</div>
+      <div class="info"><strong>Processing Integrity</strong><p>System processing is complete, accurate, timely and authorized.</p></div>
+      <span class="tag optional">Optional</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">🔐</div>
+      <div class="info"><strong>Confidentiality</strong><p>Information designated as confidential is protected against unauthorized disclosure.</p></div>
+      <span class="tag optional">Optional</span>
+    </div>
+    <div class="tsc-card">
+      <div class="icon">👤</div>
+      <div class="info"><strong>Privacy</strong><p>Personal information is collected, used, retained, disclosed and disposed of in accordance with commitments.</p></div>
+      <span class="tag optional">Optional</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Criteria and YesPDF Solutions</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Security — Logical and Physical Access Controls (CC6)</h3><p>The organization implements logical and physical access controls to prevent unauthorized access to information assets.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Role-Based Access Control (RBAC):</strong> Granular authorization with administrator, editor, viewer and department-based roles.</li>
+      <li><strong>Document-Level Permissions:</strong> Read, edit, download and print permissions can be defined separately for each document.</li>
+      <li><strong>LDAP/Active Directory Integration:</strong> Centralized access management through integration with the organization's existing authentication infrastructure.</li>
+      <li><strong>IP Restriction:</strong> Document access can be restricted to the corporate network or specified IP ranges.</li>
+      <li><strong>Automatic Session Timeout:</strong> Inactive sessions are automatically terminated after a configured period.</li>
+      <li><strong>On-Premise Architecture:</strong> Physical access control is managed at the organization's own facilities — no dependency on third-party data centers.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Security — Monitoring and Auditing (CC7)</h3><p>The organization implements monitoring and auditing mechanisms to detect and respond to security events.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Comprehensive Audit Log:</strong> Every document access, edit, download, print and sharing operation is automatically recorded.</li>
+      <li><strong>Immutable Records:</strong> Audit logs cannot be modified or deleted — providing reliable evidence for SOC 2 audits.</li>
+      <li><strong>Detailed Tracking:</strong> User ID, timestamp, document name, operation type, IP address and device information — all details are recorded.</li>
+      <li><strong>Activity Reports:</strong> Access reports can be generated by user, document or time period.</li>
+      <li><strong>Security Event Detection:</strong> Abnormal access patterns and suspicious activities can be detected through reports.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Security — Change Management (CC8)</h3><p>The organization implements controls to manage changes to infrastructure, data, software and procedures.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Version Control:</strong> Document changes are tracked with version history — who made each change and when is recorded.</li>
+      <li><strong>Configuration Management:</strong> System settings can only be modified by users with administrator roles.</li>
+      <li><strong>Update Controls:</strong> YesPDF updates are tested in a controlled environment before deployment.</li>
+      <li><strong>Rollback:</strong> Previous document versions can be restored at the document level.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. Availability (A1)</h3><p>The organization implements controls to ensure systems and information are available as committed.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Load Balancer Support:</strong> High availability through load balancers such as F5 BIG-IP and Citrix NetScaler.</li>
+      <li><strong>Backup and Recovery:</strong> Automated backup plans prevent data loss and enable rapid recovery.</li>
+      <li><strong>Performance Monitoring:</strong> System resources and response times are monitored to detect performance issues early.</li>
+      <li><strong>Business Continuity:</strong> On-premise architecture ensures local network access continues even during internet outages.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. Processing Integrity (PI1)</h3><p>The organization ensures that system processing is complete, accurate, timely and authorized.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Job Queue Management:</strong> PDF conversion, OCR and other operations are managed through a queue system — no job is lost.</li>
+      <li><strong>Job Status Tracking:</strong> Every job's status (pending, processing, completed, failed) can be monitored in real-time.</li>
+      <li><strong>Automatic Retry:</strong> Failed operations are retried with configurable retry policies.</li>
+      <li><strong>Digital Signatures:</strong> Document integrity can be verified through digital signatures.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Confidentiality (C1)</h3><p>The organization ensures that information designated as confidential is protected against unauthorized access and disclosure.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>AES-256 Encryption:</strong> All documents are encrypted with AES-256 both in transit and at rest.</li>
+      <li><strong>Permanent Redaction:</strong> Confidential information can be irreversibly removed from documents.</li>
+      <li><strong>PDF Encryption:</strong> Individual PDF files can be password-protected with permission restrictions.</li>
+      <li><strong>Secure Deletion:</strong> Confidential documents past their retention period are securely destroyed with deletion records maintained.</li>
+      <li><strong>Classification:</strong> Documents can be categorized by confidentiality level (Public, Internal, Confidential, Highly Confidential).</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>7. Privacy (P1)</h3><p>The organization implements controls for the collection, use, retention, disclosure and disposal of personal information as stated in the privacy notice.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Data Minimization:</strong> YesPDF collects only personal data necessary for document management.</li>
+      <li><strong>On-Premise Data Control:</strong> Personal data never leaves institutional infrastructure — not sent to third-party servers.</li>
+      <li><strong>Retention Policies:</strong> Automatic retention periods can be defined for documents containing personal data.</li>
+      <li><strong>Access Rights:</strong> Users can only access personal data they are authorized for.</li>
+      <li><strong>Batch Redaction:</strong> Personal data can be redacted from documents in bulk for GDPR/KVKK compliance requests.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>SOC 2 Common Criteria</h2>
+  <p>SOC 2 is based on the COSO (Committee of Sponsoring Organizations) internal control framework. Common criteria apply to all Trust Services Criteria:</p>
+  <div class="coso-card"><strong>Control Environment (CC1)</strong><div class="desc">Demonstrates the organization's commitment to security and ethical values.</div><div class="yespdf">YesPDF's role-based structure and centralized admin panel support establishing the control environment.</div></div>
+  <div class="coso-card"><strong>Communication and Information (CC2)</strong><div class="desc">Ensures effective communication of security policies and procedures.</div><div class="yespdf">Audit logs and reporting features facilitate sharing of security information.</div></div>
+  <div class="coso-card"><strong>Risk Assessment (CC3)</strong><div class="desc">Identifies and assesses risks to the organization's objectives.</div><div class="yespdf">Access reports and activity logs support risk assessment processes.</div></div>
+  <div class="coso-card"><strong>Monitoring Activities (CC4)</strong><div class="desc">Ensures ongoing monitoring of internal control effectiveness.</div><div class="yespdf">Comprehensive audit logging and reporting form the foundation of monitoring activities.</div></div>
+  <div class="coso-card"><strong>Control Activities (CC5)</strong><div class="desc">Implements policies and procedures to mitigate risks.</div><div class="yespdf">RBAC, encryption, redaction and retention policies are direct control activities.</div></div>
+</div>
+
+<div class="section">
+  <h2>Vendor Assessment and SOC 2</h2>
+  <p>Enterprise customers frequently require SOC 2 compliance in vendor assessment processes. YesPDF's on-premise architecture provides significant advantages in these evaluations:</p>
+  <ul class="vendor-list">
+    <li>No third-party data processing risk since data never leaves the organization</li>
+    <li>SOC 2 audit scope covers the organization's own controls rather than a provider's</li>
+    <li>Subservice organization dependency is eliminated</li>
+    <li>Naturally integrates into the organization's existing SOC 2 control framework</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>On-Premise vs. Cloud Comparison</h2>
+  <p>Comparing on-premise and cloud solutions for SOC 2 compliance:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Criteria</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Cloud PDF Tools</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Data Location</strong></td><td class="col-yespdf">Organization's own server</td><td class="col-cloud">Third-party data center</td></tr>
+    <tr><td><strong>Control Scope</strong></td><td class="col-yespdf">100% under organization control</td><td class="col-cloud">Shared responsibility model</td></tr>
+    <tr><td><strong>Audit Ease</strong></td><td class="col-yespdf">All logs local — direct access</td><td class="col-cloud">Dependent on provider reports</td></tr>
+    <tr><td><strong>Subservice Organization Risk</strong></td><td class="col-yespdf">None</td><td class="col-cloud">Chain dependency risk</td></tr>
+    <tr><td><strong>Physical Security</strong></td><td class="col-yespdf">Under organization facility control</td><td class="col-cloud">Under provider data center control</td></tr>
+    <tr><td><strong>Configuration Control</strong></td><td class="col-yespdf">Full customization</td><td class="col-cloud">Limited configuration options</td></tr>
+    <tr><td><strong>Incident Response</strong></td><td class="col-yespdf">Direct intervention capability</td><td class="col-cloud">Provider coordination required</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>SOC 2 Compliance Checklist</h2>
+  <p>To support SOC 2 criteria with YesPDF:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Define access policies</strong><p>Configure RBAC roles and permissions to enforce the least privilege principle.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Enable audit logging</strong><p>Ensure all document access is logged. Regularly share access reports with auditors.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Verify encryption</strong><p>Confirm AES-256 encryption is active and all documents are stored encrypted.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Implement change management</strong><p>Verify that system configuration changes are logged and go through an approval process.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Test backup plan</strong><p>Verify that regular backups are taken and recovery procedures work correctly.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Configure retention policies</strong><p>Define retention periods by document type and enable automatic alerts.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Create incident response plan</strong><p>Define steps for security incidents, assign responsibilities and test the plan.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Train staff</strong><p>Educate relevant staff on security awareness and YesPDF usage.</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Perform periodic risk assessment</strong><p>Regularly assess risks in document management processes and update controls.</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>Prepare for audit</strong><p>Prepare access reports, configuration records and policy documents for SOC 2 auditors.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Summary</h2>
+  <div class="summary-box"><p>YesPDF supports organizations in meeting SOC 2 Trust Services Criteria through its on-premise architecture, comprehensive access controls, immutable audit logs, AES-256 encryption, permanent redaction, version control and flexible retention policies. The on-premise architecture ensures data control remains entirely with the organization, eliminates third-party dependencies and simplifies SOC 2 audit scope.</p></div>
+</div>
+
+<div class="section">
+  <h2>Technical Support</h2>
+  <div class="contact-box">
+    <p>For questions about SOC 2 compliance and YesPDF configuration:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>This document was prepared by the YesPDF technical team. This report does not constitute legal or audit advice. We recommend consulting your organization's independent auditor for SOC 2 audit preparation.</p></div>
+
+</div></div>
+</body></html>
