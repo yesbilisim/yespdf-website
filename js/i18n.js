@@ -162,6 +162,8 @@ const translations = {
     'docs.ferpa_en': 'FERPA Uyumluluk Raporu',
     'docs.hipaa_tr': 'HIPAA Uyumluluk Raporu',
     'docs.hipaa_en': 'HIPAA Uyumluluk Raporu',
+    'docs.soc2_tr': 'SOC 2 Uyumluluk Raporu',
+    'docs.soc2_en': 'SOC 2 Uyumluluk Raporu',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Contact
@@ -369,6 +371,8 @@ const translations = {
     'docs.ferpa_en': 'FERPA Compliance Report',
     'docs.hipaa_tr': 'HIPAA Compliance Report (Turkish)',
     'docs.hipaa_en': 'HIPAA Compliance Report',
+    'docs.soc2_tr': 'SOC 2 Compliance Report (Turkish)',
+    'docs.soc2_en': 'SOC 2 Compliance Report',
     'docs.release_history': 'Release History',
 
     // Contact
