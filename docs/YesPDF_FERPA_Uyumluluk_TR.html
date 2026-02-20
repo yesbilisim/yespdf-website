@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — FERPA Uyumluluk Raporu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge-ferpa { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.right-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.right-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.right-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.scope-list { list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.scope-list li { padding: 8px 12px 8px 28px; position: relative; font-size: 14px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; }
+.scope-list li::before { content: '📄'; position: absolute; left: 8px; font-size: 12px; }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.dir-items { list-style: none; padding: 0; margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.dir-items li { background: var(--accent-light); color: var(--accent-dark); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 100px; }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; counter-reset: check; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .rights-grid, .scope-list { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Uyumluluk Raporu</div>
+  <h1>FERPA Uyumluluk Raporu</h1>
+  <p class="subtitle">Eğitim Kurumları İçin Öğrenci Kayıtlarının Korunması</p>
+  <p class="version">v1.0 — Şubat 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>FERPA Nedir?</h2>
+  <div class="badge-ferpa">FERPA — 20 U.S.C. § 1232g</div>
+  <p><strong>FERPA (Family Educational Rights and Privacy Act)</strong>, Amerika Birleşik Devletleri'nde 1974 yılında yürürlüğe giren ve öğrenci eğitim kayıtlarının gizliliğini koruyan federal bir yasadır. FERPA, federal fon alan tüm eğitim kurumları için bağlayıcıdır.</p>
+  <p>FERPA kapsamında eğitim kurumları, öğrenci kayıtlarına erişimi kontrol etmek, yetkisiz paylaşımı önlemek ve kayıt erişimlerini belgelemekle yükümlüdür. Bu gereksinimler, kurumların kullandığı tüm belge yönetim sistemlerini doğrudan etkiler.</p>
+  <p>Bu rapor, YesPDF'in FERPA gereksinimlerini nasıl karşıladığını madde madde açıklar.</p>
+</div>
+
+<div class="section">
+  <h2>FERPA Temel Haklar</h2>
+  <div class="rights-grid">
+    <div class="right-card"><strong>Kayıtlara Erişim Hakkı</strong><p>Veliler (ve 18 yaşından büyük öğrenciler) eğitim kayıtlarını inceleme hakkına sahiptir.</p></div>
+    <div class="right-card"><strong>Kayıt Düzeltme Hakkı</strong><p>Veliler, yanlış veya yanıltıcı bilgilerin düzeltilmesini talep edebilir.</p></div>
+    <div class="right-card"><strong>Paylaşım Onayı</strong><p>Eğitim kayıtları, yazılı onay olmadan üçüncü taraflarla paylaşılamaz (belirli istisnalar hariç).</p></div>
+    <div class="right-card"><strong>Şikayet Hakkı</strong><p>Veliler, FERPA ihlallerini ABD Eğitim Bakanlığı'na bildirebilir.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Korunan Kayıt Türleri</h2>
+  <p>FERPA kapsamında korunan eğitim kayıtları şunlardır:</p>
+  <ul class="scope-list">
+    <li>Transkriptler ve not çizelgeleri</li>
+    <li>Sınıf listeleri ve devam kayıtları</li>
+    <li>Disiplin dosyaları</li>
+    <li>Öğrenci sağlık kayıtları (eğitim kurumu tarafından tutulan)</li>
+    <li>Mali yardım ve burs belgeleri</li>
+    <li>Öğrenci kimlik bilgileri (TCKN, pasaport no, vb.)</li>
+    <li>Özel eğitim kayıtları (IEP/504 planları)</li>
+    <li>Mezuniyet ve diploma bilgileri</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>FERPA Gereksinimleri ve YesPDF Çözümleri</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Erişim Kontrolü</h3><p>FERPA, öğrenci kayıtlarına yalnızca "meşru eğitim çıkarı" olan yetkili personelin erişmesini gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Rol Bazlı Erişim Kontrolü (RBAC):</strong> Dekan, bölüm başkanı, öğretim üyesi, öğrenci işleri personeli ve danışman rolleri ile granüler yetkilendirme.</li>
+      <li><strong>Dosya Düzeyinde İzinler:</strong> Her belge için okuma, düzenleme, indirme ve yazdırma izinleri ayrı ayrı tanımlanabilir.</li>
+      <li><strong>LDAP/Active Directory Entegrasyonu:</strong> Kurumun mevcut kimlik doğrulama altyapısıyla entegre çalışarak merkezi erişim yönetimi sağlar.</li>
+      <li><strong>IP Kısıtlama:</strong> Belgelere yalnızca kurum ağından erişim izni verilebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Denetim Kayıtları (Audit Trail)</h3><p>FERPA, eğitim kayıtlarına kimlerin eriştiğinin ve hangi bilgilerin paylaşıldığının kaydedilmesini gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kapsamlı Denetim Günlüğü:</strong> Her belge erişimi, düzenleme, indirme ve yazdırma işlemi otomatik olarak kaydedilir.</li>
+      <li><strong>Değiştirilemez Kayıtlar:</strong> Denetim kayıtları değiştirilemez ve silinemez — FERPA denetimleri için güvenilir kanıt sağlar.</li>
+      <li><strong>Detaylı İzleme:</strong> Kim, ne zaman, hangi belgeye, hangi cihazdan erişti — tüm detaylar kayıt altındadır.</li>
+      <li><strong>Raporlama:</strong> Belirli öğrenci veya belge bazında erişim raporları oluşturulabilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Veri Güvenliği</h3><p>FERPA, eğitim kayıtlarının yetkisiz erişim, değişiklik ve imhaya karşı korunmasını gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>AES-256 Şifreleme:</strong> Tüm öğrenci belgeleri hem aktarım hem de depolama sırasında AES-256 ile şifrelenir.</li>
+      <li><strong>On-Premise Mimari:</strong> Veriler üçüncü taraf bulut sunucularına gönderilmez — tamamen kurum altyapısında kalır.</li>
+      <li><strong>PDF Şifreleme:</strong> Bireysel PDF dosyaları parola ile korunabilir ve izin kısıtlamaları uygulanabilir.</li>
+      <li><strong>Güvenli Silme:</strong> Saklama süresi dolan belgeler güvenli şekilde imha edilebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. Kalıcı Karartma (Redaction)</h3><p>FERPA istisnalarına göre bilgi paylaşılırken, ilgisiz öğrenci bilgilerinin karartılması gerekir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kalıcı Karartma:</strong> Öğrenci kimlik numaraları, adresler, sağlık bilgileri ve diğer PII verileri belgelerden geri dönüşümsüz olarak kaldırılabilir.</li>
+      <li><strong>Toplu Karartma:</strong> Birden fazla belgede aynı anda karartma işlemi yapılabilir.</li>
+      <li><strong>Karartma Doğrulama:</strong> Karartılan verilerin gerçekten kaldırıldığı doğrulanır — gizli katman veya metadata sızıntısı olmaz.</li>
+      <li><strong>Seçici Paylaşım:</strong> Aynı belgeden farklı alıcılar için farklı karartma seviyeleri uygulanabilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. Kayıt Saklama ve İmha</h3><p>FERPA, belirli kayıtların belirli süreler boyunca saklanmasını ve sonrasında güvenli şekilde imha edilmesini gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Saklama Politikaları:</strong> Belge türüne göre otomatik saklama süreleri tanımlanabilir.</li>
+      <li><strong>Süre Uyarıları:</strong> Saklama süresi dolmak üzere olan belgeler için otomatik bildirim.</li>
+      <li><strong>Güvenli Arşivleme:</strong> Uzun süreli saklama gerektiren belgeler şifreli arşivde korunur.</li>
+      <li><strong>İmha Kaydı:</strong> Silinen belgelerin imha kaydı tutulur — denetim gereksinimlerini karşılar.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Onay ve Bilgilendirme</h3><p>FERPA, kayıt paylaşımı öncesinde yazılı onay alınmasını ve velilerin/öğrencilerin haklarının bildirilmesini gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Doldur & İmzala:</strong> Onay formları dijital olarak doldurulup e-imza ile onaylanabilir.</li>
+      <li><strong>Form Şablonları:</strong> FERPA onay formları ve bilgilendirme belgeleri şablon olarak hazırlanabilir.</li>
+      <li><strong>Dijital İmza:</strong> Yasal geçerliliği olan e-imza ile onay süreçleri hızlandırılır.</li>
+      <li><strong>Belge Takibi:</strong> Hangi onayların alındığı, hangi bilgilerin paylaşıldığı kayıt altındadır.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>Dizin Bilgisi (Directory Information) Yönetimi</h2>
+  <p>FERPA, belirli "dizin bilgisi" kategorilerinin onay olmadan paylaşılmasına izin verir (öğrenciler opt-out hakkına sahiptir). Bu bilgiler:</p>
+  <ul class="dir-items">
+    <li>Öğrenci adı ve soyadı</li>
+    <li>Adres ve telefon</li>
+    <li>E-posta adresi</li>
+    <li>Doğum tarihi ve yeri</li>
+    <li>Çalışma alanı / bölüm</li>
+    <li>Kayıt durumu ve katılım tarihleri</li>
+    <li>Alınan derece ve ödüller</li>
+  </ul>
+  <div class="info-box purple">YesPDF'de dizin bilgileri ayrı erişim seviyesiyle yönetilebilir. Opt-out talep eden öğrencilerin bilgileri otomatik olarak paylaşım dışı tutulabilir.</div>
+</div>
+
+<div class="section">
+  <h2>On-Premise ve Bulut Karşılaştırması</h2>
+  <p>FERPA uyumluluğu açısından on-premise ve bulut çözümlerin karşılaştırması:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriter</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Bulut PDF Araçları</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Veri Konumu</strong></td><td class="col-yespdf">Kurumun kendi sunucusu</td><td class="col-cloud">Üçüncü taraf veri merkezi</td></tr>
+    <tr><td><strong>Veri Kontrolü</strong></td><td class="col-yespdf">%100 kurum kontrolünde</td><td class="col-cloud">Hizmet sağlayıcıya bağımlı</td></tr>
+    <tr><td><strong>Üçüncü Taraf Erişimi</strong></td><td class="col-yespdf">Yok</td><td class="col-cloud">Sağlayıcı personeli erişebilir</td></tr>
+    <tr><td><strong>BAA Gereksinimi</strong></td><td class="col-yespdf">Gerekli değil</td><td class="col-cloud">Business Associate Agreement gerekli</td></tr>
+    <tr><td><strong>Veri İhlali Riski</strong></td><td class="col-yespdf">Minimize — iç ağda kalır</td><td class="col-cloud">Dış saldırılara açık</td></tr>
+    <tr><td><strong>Denetim Kolaylığı</strong></td><td class="col-yespdf">Tüm loglar yerel</td><td class="col-cloud">Sağlayıcıya bağımlı</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>FERPA Uyumluluk Kontrol Listesi</h2>
+  <p>YesPDF ile FERPA uyumluluğunuzu sağlamak için:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Erişim politikalarını tanımlayın</strong><p>Hangi rollerin hangi öğrenci kayıtlarına erişebileceğini belirleyin ve YesPDF RBAC ile uygulayın.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Denetim kayıtlarını aktifleştirin</strong><p>Tüm belge erişimlerinin loglanmasını sağlayın. Düzenli olarak erişim raporlarını inceleyin.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Karartma prosedürlerini oluşturun</strong><p>Belge paylaşımı öncesinde hangi bilgilerin karartılacağına dair standart prosedür belirleyin.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Saklama politikalarını ayarlayın</strong><p>Belge türlerine göre saklama sürelerini tanımlayın ve otomatik uyarıları aktifleştirin.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Şifrelemeyi doğrulayın</strong><p>AES-256 şifrelemenin aktif olduğunu ve tüm belgelerin şifreli depolandığını kontrol edin.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Personel eğitimi verin</strong><p>FERPA gereksinimleri ve YesPDF kullanımı hakkında ilgili personeli eğitin.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Yıllık bildirim yayınlayın</strong><p>FERPA haklarını öğrencilere ve velilere yıllık olarak bildirin.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>İhlal müdahale planı oluşturun</strong><p>Veri ihlali durumunda izlenecek adımları belirleyin ve test edin.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Özet</h2>
+  <div class="summary-box"><p>YesPDF, on-premise mimarisi, kapsamlı erişim kontrolü, denetim kayıtları, AES-256 şifreleme ve kalıcı karartma özellikleriyle eğitim kurumlarının FERPA gereksinimlerini karşılamasına yardımcı olur. Öğrenci kayıtları kurum altyapısı dışına çıkmaz, her erişim kayıt altına alınır ve hassas bilgiler paylaşım öncesinde güvenle karartılabilir.</p></div>
+</div>
+
+<div class="section">
+  <h2>Teknik Destek</h2>
+  <div class="contact-box">
+    <p>FERPA uyumluluğu ve YesPDF yapılandırması hakkında:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Bu doküman YesPDF teknik ekibi tarafından hazırlanmıştır. Bu rapor hukuki danışmanlık niteliği taşımaz. FERPA uyumluluk değerlendirmesi için kurumunuzun hukuk danışmanına başvurmanızı öneririz.</p></div>
+
+</div></div>
+</body></html>
