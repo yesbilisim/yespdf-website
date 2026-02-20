@@ -142,6 +142,8 @@ const translations = {
     'verticals.cad.desc': 'Teknik çizim dönüşümü, büyük format baskı, ölçüm araçları ve proje arşivleme.',
     'verticals.education.title': 'Eğitim',
     'verticals.education.desc': 'Transkript, diploma, sınav evrakları, öğrenci dosyaları ve akademik belge yönetimi.',
+    'verticals.sts.title': 'Service to Software',
+    'verticals.sts.desc': 'SaaS değil, Service to Software. Verileriniz sizde kalır, biz size hizmet sunarız.',
 
     // Documents
     'docs.title': 'Dokümanlar',
@@ -355,6 +357,8 @@ const translations = {
     'verticals.cad.desc': 'Technical drawing conversion, large format printing, measurement tools and project archiving.',
     'verticals.education.title': 'Education',
     'verticals.education.desc': 'Transcripts, diplomas, exam papers, student files and academic document management.',
+    'verticals.sts.title': 'Service to Software',
+    'verticals.sts.desc': 'Not SaaS, Service to Software. Your data stays with you, we deliver the service.',
 
     // Documents
     'docs.title': 'Documents',
