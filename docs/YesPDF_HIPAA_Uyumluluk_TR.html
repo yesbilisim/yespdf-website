@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — HIPAA Uyumluluk Raporu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7; --red: #DC2626; --red-light: #FEE2E2;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge-hipaa { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.rule-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.rule-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.rule-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.phi-list { list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.phi-list li { padding: 8px 12px 8px 28px; position: relative; font-size: 14px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; }
+.phi-list li::before { content: '🔒'; position: absolute; left: 8px; font-size: 12px; }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.safeguard-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+.safeguard-card h3 { margin-bottom: 12px; }
+.safeguard-card ul { margin: 0 0 12px 20px; padding: 0; }
+.safeguard-card li { font-size: 14px; padding: 4px 0; }
+.safeguard-card .note { font-size: 13px; color: var(--accent-dark); font-style: italic; padding-top: 8px; border-top: 1px solid var(--gray-200); }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.info-box.red { background: var(--red-light); border: 1px solid rgba(220,38,38,0.15); color: #991B1B; }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.penalty-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.penalty-table th { background: #991B1B; color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.penalty-table th:first-child { border-radius: 8px 0 0 0; }
+.penalty-table th:last-child { border-radius: 0 8px 0 0; }
+.penalty-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.penalty-table tr:nth-child(even) td { background: #FFF5F5; }
+.penalty-table .amount { color: var(--red); font-weight: 700; }
+.checklist { list-style: none; padding: 0; margin: 16px 0; counter-reset: check; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .rules-grid, .phi-list { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Uyumluluk Raporu</div>
+  <h1>HIPAA Uyumluluk Raporu</h1>
+  <p class="subtitle">Sağlık Kuruluşları İçin Hasta Sağlık Bilgilerinin Korunması</p>
+  <p class="version">v1.0 — Şubat 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>HIPAA Nedir?</h2>
+  <div class="badge-hipaa">HIPAA — 42 U.S.C. § 1320d</div>
+  <p><strong>HIPAA (Health Insurance Portability and Accountability Act)</strong>, Amerika Birleşik Devletleri'nde 1996 yılında yürürlüğe giren ve hastaların sağlık bilgilerinin gizliliğini, bütünlüğünü ve erişilebilirliğini koruyan federal bir yasadır. HIPAA, sağlık hizmeti sağlayıcıları, sağlık sigortası şirketleri, sağlık veri merkezleri ve iş ortaklarını kapsar.</p>
+  <p>HIPAA kapsamında "Korunan Sağlık Bilgisi" (PHI — Protected Health Information) olarak adlandırılan hasta verileri, yetkisiz erişime, ifşaya ve değişikliğe karşı korunmalıdır. Bu gereksinimler, sağlık kuruluşlarının kullandığı tüm belge yönetim sistemlerini doğrudan etkiler.</p>
+  <p>Bu rapor, YesPDF'in HIPAA gereksinimlerini nasıl karşıladığını madde madde açıklar.</p>
+</div>
+
+<div class="section">
+  <h2>HIPAA Temel Kurallar</h2>
+  <div class="rules-grid">
+    <div class="rule-card"><strong>Gizlilik Kuralı (Privacy Rule)</strong><p>Hastaların PHI üzerindeki haklarını tanımlar. Sağlık bilgilerinin ne zaman ve nasıl kullanılabileceğini, kimlerle paylaşılabileceğini düzenler.</p></div>
+    <div class="rule-card"><strong>Güvenlik Kuralı (Security Rule)</strong><p>Elektronik PHI (ePHI) için idari, fiziksel ve teknik güvenlik önlemlerini zorunlu kılar. Şifreleme, erişim kontrolü ve denetim kayıtları bu kuralın temel gereksinimleridir.</p></div>
+    <div class="rule-card"><strong>İhlal Bildirim Kuralı (Breach Notification Rule)</strong><p>Güvenli olmayan PHI ihlallerinin bireylere, HHS'ye (Sağlık ve İnsan Hizmetleri Bakanlığı) ve bazı durumlarda medyaya bildirilmesini zorunlu kılar.</p></div>
+    <div class="rule-card"><strong>Yaptırım Kuralı (Enforcement Rule)</strong><p>HIPAA ihlalleri için para cezaları ve yaptırımları tanımlar. Cezalar ihlal başına 100$ ile 1.5 milyon$ arasında değişebilir.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Korunan Sağlık Bilgisi (PHI) Türleri</h2>
+  <p>HIPAA kapsamında korunan 18 tanımlayıcı bilgi türü:</p>
+  <ul class="phi-list">
+    <li>Hasta adı ve soyadı</li>
+    <li>Adres bilgileri (mahalle, şehir, posta kodu)</li>
+    <li>Tarihler (doğum, tedavi, taburcu, ölüm)</li>
+    <li>Telefon ve faks numaraları</li>
+    <li>E-posta adresleri</li>
+    <li>Sosyal Güvenlik Numarası (SSN)</li>
+    <li>Tıbbi kayıt numaraları</li>
+    <li>Sağlık sigortası plan numaraları</li>
+    <li>Hesap numaraları</li>
+    <li>Sertifika/lisans numaraları</li>
+    <li>Araç ve cihaz seri numaraları</li>
+    <li>Web URL'leri ve IP adresleri</li>
+    <li>Biyometrik tanımlayıcılar (parmak izi, retina)</li>
+    <li>Yüz fotoğrafları ve benzeri görüntüler</li>
+    <li>Diğer benzersiz tanımlayıcı numaralar</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>HIPAA Gereksinimleri ve YesPDF Çözümleri</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Erişim Kontrolü (§ 164.312(a))</h3><p>HIPAA Güvenlik Kuralı, ePHI içeren sistemlere yalnızca yetkili kişilerin erişmesini sağlayan teknik politikalar ve prosedürler gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Rol Bazlı Erişim Kontrolü (RBAC):</strong> Doktor, hemşire, laborant, idari personel, faturalama uzmanı rolleri ile granüler yetkilendirme.</li>
+      <li><strong>Dosya Düzeyinde İzinler:</strong> Her hasta belgesi için okuma, düzenleme, indirme ve yazdırma izinleri ayrı ayrı tanımlanabilir.</li>
+      <li><strong>Benzersiz Kullanıcı Kimliği:</strong> Her kullanıcı benzersiz kimlik bilgileri ile sisteme giriş yapar — paylaşılan hesap kullanımı engellenir.</li>
+      <li><strong>Otomatik Oturum Sonlandırma:</strong> Belirli bir süre işlem yapılmadığında oturum otomatik olarak kapatılır.</li>
+      <li><strong>Acil Erişim Prosedürü:</strong> Acil durumlarda yetkili personel ePHI'ye erişebilir ve bu erişim ayrıca kaydedilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Denetim Kontrolleri (§ 164.312(b))</h3><p>HIPAA, ePHI içeren bilgi sistemlerindeki aktivitelerin kaydedilmesi ve incelenmesi için donanım, yazılım ve/veya prosedürel mekanizmalar gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kapsamlı Denetim Günlüğü:</strong> Her belge erişimi, düzenleme, indirme, yazdırma ve paylaşım işlemi otomatik olarak kaydedilir.</li>
+      <li><strong>Değiştirilemez Kayıtlar:</strong> Denetim kayıtları değiştirilemez ve silinemez — HIPAA denetimleri için güvenilir kanıt sağlar.</li>
+      <li><strong>Detaylı İzleme:</strong> Kullanıcı ID, zaman damgası, belge adı, işlem türü, IP adresi ve cihaz bilgisi — tüm detaylar kayıt altındadır.</li>
+      <li><strong>Düzenli Raporlama:</strong> Hasta veya belge bazında erişim raporları oluşturulabilir. Şüpheli aktiviteler tespit edilebilir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Bütünlük (§ 164.312(c))</h3><p>HIPAA, ePHI'nin yetkisiz değişiklik veya imhaya karşı korunmasını gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Sürüm Kontrolü:</strong> Belge değişiklikleri sürüm geçmişi ile takip edilir — her değişiklik kaydedilir.</li>
+      <li><strong>Dijital İmza:</strong> Belgeler dijital olarak imzalanarak değiştirilmediği doğrulanabilir.</li>
+      <li><strong>Erişim Kısıtlamaları:</strong> Düzenleme yetkisi olmayan kullanıcılar belgeleri salt okunur modda görüntüler.</li>
+      <li><strong>Yedekleme ve Kurtarma:</strong> Belgelerin düzenli yedekleri alınarak veri kaybı önlenir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. İletim Güvenliği (§ 164.312(e))</h3><p>HIPAA, elektronik ağ üzerinden iletilen ePHI'nin yetkisiz erişime karşı korunmasını gerektirir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>AES-256 Şifreleme:</strong> Tüm hasta belgeleri hem aktarım hem de depolama sırasında AES-256 ile şifrelenir.</li>
+      <li><strong>On-Premise Mimari:</strong> Veriler üçüncü taraf bulut sunucularına gönderilmez — tamamen kurum altyapısında kalır.</li>
+      <li><strong>PDF Şifreleme:</strong> Bireysel PDF dosyaları parola ile korunabilir ve izin kısıtlamaları uygulanabilir.</li>
+      <li><strong>Yük Dengeleyici SSL Desteği:</strong> Yük dengeleyici arkasında SSL/TLS sertifikası ile güvenli iletişim sağlanır.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. Kalıcı Karartma (De-identification)</h3><p>HIPAA kapsamında PHI paylaşılırken, "Safe Harbor" yöntemiyle 18 tanımlayıcının kaldırılması veya "Expert Determination" yöntemiyle istatistiksel anonimleştirme gerekir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Kalıcı Karartma (Redaction):</strong> Hasta adı, SSN, adres, doğum tarihi ve diğer PHI verileri belgelerden geri dönüşümsüz olarak kaldırılabilir.</li>
+      <li><strong>Toplu Karartma:</strong> Birden fazla belgede aynı anda karartma işlemi yapılabilir — araştırma veri setleri hızla anonimleştirilebilir.</li>
+      <li><strong>18 Tanımlayıcı Desteği:</strong> HIPAA Safe Harbor yöntemindeki tüm 18 tanımlayıcı kategori için karartma şablonları oluşturulabilir.</li>
+      <li><strong>Karartma Doğrulama:</strong> Karartılan verilerin gerçekten kaldırıldığı doğrulanır — gizli katman, metadata sızıntısı veya OCR ile geri okuma mümkün değildir.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Kayıt Saklama ve İmha</h3><p>HIPAA, belirli kayıtların en az 6 yıl boyunca saklanmasını ve sonrasında güvenli şekilde imha edilmesini gerektirir. Eyalet yasaları daha uzun süreler öngörebilir.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Çözümü</h4><ul>
+      <li><strong>Saklama Politikaları:</strong> Belge türüne göre otomatik saklama süreleri tanımlanabilir (6 yıl federal minimum + eyalet gereksinimleri).</li>
+      <li><strong>Saklama Kilidi:</strong> Saklama süresi dolmadan belgelerin silinmesi engellenebilir (litigation hold).</li>
+      <li><strong>Süre Uyarıları:</strong> Saklama süresi dolmak üzere olan belgeler için otomatik bildirim.</li>
+      <li><strong>Güvenli İmha:</strong> Süresi dolan belgeler güvenli şekilde silinir ve imha kaydı tutulur.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>HIPAA Güvenlik Önlemleri Kategorileri</h2>
+  <p>HIPAA Güvenlik Kuralı üç ana güvenlik önlemi kategorisi tanımlar:</p>
+  <div class="safeguard-card"><h3>İdari Güvenlik Önlemleri</h3><ul>
+    <li>Güvenlik yönetimi süreci (risk analizi)</li>
+    <li>Güvenlik sorumlusu atama</li>
+    <li>İş gücü güvenlik eğitimi</li>
+    <li>Erişim yönetimi politikaları</li>
+    <li>Olay müdahale prosedürleri</li>
+  </ul><div class="note">YesPDF'in RBAC, denetim kayıtları ve raporlama özellikleri idari güvenlik önlemlerini destekler.</div></div>
+  <div class="safeguard-card"><h3>Fiziksel Güvenlik Önlemleri</h3><ul>
+    <li>Tesis erişim kontrolleri</li>
+    <li>İş istasyonu güvenliği</li>
+    <li>Cihaz ve medya kontrolleri</li>
+    <li>Güvenli imha prosedürleri</li>
+  </ul><div class="note">YesPDF'in on-premise mimarisi, kurum tesislerinin fiziksel güvenlik kontrollerinden faydalanmasını sağlar.</div></div>
+  <div class="safeguard-card"><h3>Teknik Güvenlik Önlemleri</h3><ul>
+    <li>Erişim kontrolü mekanizmaları</li>
+    <li>Denetim kontrolleri ve loglar</li>
+    <li>Veri bütünlüğü koruması</li>
+    <li>İletim güvenliği (şifreleme)</li>
+    <li>Kimlik doğrulama mekanizmaları</li>
+  </ul><div class="note">YesPDF, teknik güvenlik önlemlerinin tamamını karşılayan yerleşik özellikler sunar.</div></div>
+</div>
+
+<div class="section">
+  <h2>İş Ortağı Anlaşması (BAA) ve On-Premise Avantajı</h2>
+  <p>HIPAA, PHI'ye erişen üçüncü taraflarla <strong>Business Associate Agreement (BAA)</strong> imzalanmasını zorunlu kılar. Bulut tabanlı PDF araçları kullanıldığında, hizmet sağlayıcı bir "iş ortağı" olarak kabul edilir ve BAA gereklidir.</p>
+  <div class="info-box green"><strong>YesPDF on-premise avantajı:</strong> YesPDF kurumun kendi sunucusunda çalıştığı için, PHI üçüncü taraf sunucularına asla gönderilmez. Bu nedenle YesPDF ile ilgili ayrı bir BAA gerekli değildir — veriler tamamen kurum kontrolünde kalır.</div>
+</div>
+
+<div class="section">
+  <h2>On-Premise ve Bulut Karşılaştırması</h2>
+  <p>HIPAA uyumluluğu açısından on-premise ve bulut çözümlerin karşılaştırması:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriter</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Bulut PDF Araçları</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Veri Konumu</strong></td><td class="col-yespdf">Kurumun kendi sunucusu</td><td class="col-cloud">Üçüncü taraf veri merkezi</td></tr>
+    <tr><td><strong>BAA Gereksinimi</strong></td><td class="col-yespdf">Gerekli değil</td><td class="col-cloud">Business Associate Agreement zorunlu</td></tr>
+    <tr><td><strong>ePHI Kontrolü</strong></td><td class="col-yespdf">%100 kurum kontrolünde</td><td class="col-cloud">Sağlayıcıya bağımlı</td></tr>
+    <tr><td><strong>Üçüncü Taraf Erişimi</strong></td><td class="col-yespdf">Yok</td><td class="col-cloud">Sağlayıcı personeli erişebilir</td></tr>
+    <tr><td><strong>İhlal Riski</strong></td><td class="col-yespdf">Minimize — iç ağda kalır</td><td class="col-cloud">İnternet üzerinden saldırılara açık</td></tr>
+    <tr><td><strong>Denetim Kolaylığı</strong></td><td class="col-yespdf">Tüm loglar yerel — anlık erişim</td><td class="col-cloud">Sağlayıcıdan rapor talep etme gerekli</td></tr>
+    <tr><td><strong>Maliyet Öngörülebilirliği</strong></td><td class="col-yespdf">Sabit lisans — sürpriz yok</td><td class="col-cloud">Kullanım bazlı — değişken maliyet</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>HIPAA İhlal Cezaları</h2>
+  <p>HIPAA ihlalleri ciddi mali yaptırımlarla sonuçlanabilir:</p>
+  <table class="penalty-table">
+    <thead><tr>
+      <th>Seviye</th>
+      <th>Açıklama</th>
+      <th>Ceza Aralığı</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Seviye 1 — Bilgisizlik</strong></td><td>Kuruluş ihlalden habersiz ve makul özen göstermiş</td><td class="amount">100$ – 50,000$ / ihlal</td></tr>
+    <tr><td><strong>Seviye 2 — Makul Neden</strong></td><td>İhlalin farkında olunması gereken durumlar (kasıt yok)</td><td class="amount">1,000$ – 50,000$ / ihlal</td></tr>
+    <tr><td><strong>Seviye 3 — Kasıtlı İhmal (Düzeltilmiş)</strong></td><td>Kasıtlı ihmal ancak belirli sürede düzeltilmiş</td><td class="amount">10,000$ – 50,000$ / ihlal</td></tr>
+    <tr><td><strong>Seviye 4 — Kasıtlı İhmal (Düzeltilmemiş)</strong></td><td>Kasıtlı ihmal ve düzeltme girişimi yok</td><td class="amount">50,000$ – 1,500,000$ / ihlal</td></tr>
+    </tbody>
+  </table>
+  <div class="info-box red">Yıllık maksimum ceza aynı ihlal kategorisi için 1.5 milyon dolardır. Cezai yaptırımlar 250,000$ para cezası ve 10 yıla kadar hapis cezası içerebilir.</div>
+</div>
+
+<div class="section">
+  <h2>HIPAA Uyumluluk Kontrol Listesi</h2>
+  <p>YesPDF ile HIPAA uyumluluğunuzu sağlamak için:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Risk analizi yapın</strong><p>ePHI içeren tüm sistemleri ve belge akışlarını tanımlayın. YesPDF'in hangi PHI türlerini işlediğini belirleyin.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Erişim politikalarını tanımlayın</strong><p>Minimum gerekli erişim (minimum necessary) ilkesine göre rolleri ve izinleri yapılandırın.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Denetim kayıtlarını aktifleştirin</strong><p>Tüm ePHI erişimlerinin loglanmasını sağlayın. Düzenli olarak erişim raporlarını inceleyin.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Şifrelemeyi doğrulayın</strong><p>AES-256 şifrelemenin aktif olduğunu ve tüm belgelerin şifreli depolandığını kontrol edin.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Karartma prosedürlerini oluşturun</strong><p>Araştırma veya paylaşım amaçlı belgelerde PHI karartma standart prosedürü belirleyin.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Saklama politikalarını ayarlayın</strong><p>Federal minimum 6 yıl + eyalet gereksinimlerine göre saklama sürelerini yapılandırın.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Personel eğitimi verin</strong><p>HIPAA gereksinimleri ve YesPDF kullanımı hakkında ilgili personeli yıllık olarak eğitin.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>İhlal müdahale planı oluşturun</strong><p>Veri ihlali durumunda 60 gün içinde bildirim dahil izlenecek adımları belirleyin ve test edin.</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Yedekleme ve kurtarma planını test edin</strong><p>ePHI yedeklerinin düzenli alındığını ve kurtarma prosedürünün çalıştığını doğrulayın.</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>Yıllık denetim gerçekleştirin</strong><p>HIPAA uyumluluk durumunu yıllık olarak gözden geçirin ve eksiklikleri giderin.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Özet</h2>
+  <div class="summary-box"><p>YesPDF, on-premise mimarisi, kapsamlı erişim kontrolü, değiştirilemez denetim kayıtları, AES-256 şifreleme, kalıcı karartma ve esnek saklama politikalarıyla sağlık kuruluşlarının HIPAA gereksinimlerini karşılamasına yardımcı olur. Hasta sağlık bilgileri kurum altyapısı dışına çıkmaz, her erişim kayıt altına alınır ve hassas PHI verileri paylaşım öncesinde güvenle karartılabilir. On-premise yapı sayesinde ayrı bir BAA gereksinimi ortadan kalkar.</p></div>
+</div>
+
+<div class="section">
+  <h2>Teknik Destek</h2>
+  <div class="contact-box">
+    <p>HIPAA uyumluluğu ve YesPDF yapılandırması hakkında:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Bu doküman YesPDF teknik ekibi tarafından hazırlanmıştır. Bu rapor hukuki danışmanlık niteliği taşımaz. HIPAA uyumluluk değerlendirmesi için kurumunuzun hukuk danışmanına ve uyumluluk sorumlusuna başvurmanızı öneririz.</p></div>
+
+</div></div>
+</body></html>
