@@ -1,0 +1,265 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>YesPDF — SaaS Değil, Service to Software</title>
+<meta name="description" content="Biz yazılımı hizmet olarak sunmuyoruz. Yazılıma hizmet sunuyoruz. Verileriniz sizde kalır, biz arkanızdayız.">
+<meta property="og:title" content="YesPDF — SaaS Değil, Service to Software">
+<meta property="og:description" content="Biz yazılımı hizmet olarak sunmuyoruz. Yazılıma hizmet sunuyoruz. Verileriniz sizde kalır, biz arkanızdayız.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.yespdf.com.tr">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YesPDF — SaaS Değil, Service to Software">
+<meta name="twitter:description" content="Biz yazılımı hizmet olarak sunmuyoruz. Yazılıma hizmet sunuyoruz. Verileriniz sizde kalır, biz arkanızdayız.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+:root {
+    --bg: #0A0A0A; --bg-card: #141414; --bg-card-hover: #1a1a1a;
+    --border: #222; --border-light: #333;
+    --text: #E5E5E5; --text-muted: #888; --text-dim: #555;
+    --white: #FFFFFF;
+    --green: #10B981; --green-dark: #064E3B; --green-glow: rgba(16,185,129,0.15);
+    --red: #EF4444; --red-dark: #450A0A; --red-glow: rgba(239,68,68,0.1);
+    --accent: #7C3AED; --accent-glow: rgba(124,58,237,0.15);
+    --radius: 16px; --radius-sm: 10px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,h5 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--white); line-height: 1.2; }
+.container { max-width: 860px; margin: 0 auto; padding: 0 28px; }
+
+/* Hero */
+.hero { padding: 80px 0 60px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -200px; left: 50%; transform: translateX(-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--green-glow) 0%, transparent 70%); pointer-events: none; }
+.hero .badge { display: inline-block; background: var(--bg-card); border: 1px solid var(--border); color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 3px; padding: 8px 20px; border-radius: 100px; margin-bottom: 32px; }
+.hero h1 { font-size: 56px; font-weight: 900; letter-spacing: -2px; margin-bottom: 24px; }
+.hero h1 .line1 { display: block; color: var(--text-muted); font-weight: 700; font-size: 44px; }
+.hero h1 .line2 { display: block; background: linear-gradient(135deg, var(--green) 0%, #34D399 50%, var(--white) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero .subtitle { font-size: 20px; color: var(--text-muted); margin-bottom: 16px; font-weight: 400; }
+.hero .desc { font-size: 16px; color: var(--text-dim); max-width: 520px; margin: 0 auto; }
+.hero .logo { font-size: 18px; font-weight: 800; color: var(--white); margin-bottom: 40px; }
+.hero .logo span { color: var(--green); }
+
+/* Divider */
+.divider { text-align: center; padding: 32px 0; }
+.divider span { display: inline-block; width: 60px; height: 1px; background: var(--border); }
+
+/* Flip section */
+.flip { padding: 40px 0; }
+.flip h2 { text-align: center; font-size: 28px; font-weight: 800; margin-bottom: 32px; }
+.flip-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch; }
+.flip-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; position: relative; overflow: hidden; }
+.flip-card.saas { border-color: rgba(239,68,68,0.2); }
+.flip-card.saas::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); }
+.flip-card.sts { border-color: rgba(16,185,129,0.2); }
+.flip-card.sts::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); }
+.flip-card .abbr { font-size: 32px; font-weight: 900; margin-bottom: 4px; }
+.flip-card.saas .abbr { color: var(--red); }
+.flip-card.sts .abbr { color: var(--green); }
+.flip-card .full { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; letter-spacing: 0.5px; }
+.flip-card .meaning { font-size: 14px; color: var(--text-dim); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); font-style: italic; }
+.flip-vs { display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--text-dim); letter-spacing: 2px; text-transform: uppercase; }
+
+/* Sections */
+.sect { padding: 48px 0; }
+.sect h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+.sect .sect-sub { color: var(--text-dim); font-size: 14px; margin-bottom: 28px; }
+.card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; transition: border-color 0.2s; }
+.card:hover { border-color: var(--border-light); }
+.card .icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-bottom: 14px; }
+.card.green .icon { background: var(--green-glow); }
+.card.purple .icon { background: var(--accent-glow); }
+.card h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.card p { font-size: 13px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+/* Truth section */
+.truth-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 24px; margin-bottom: 12px; }
+.truth-item .question { font-size: 15px; font-weight: 700; color: var(--red); margin-bottom: 8px; }
+.truth-item .answer { font-size: 14px; color: var(--green); font-weight: 500; }
+
+/* Numbers */
+.numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.num-card { text-align: center; padding: 28px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+.num-card .val { font-size: 36px; font-weight: 900; color: var(--green); margin-bottom: 4px; font-family: 'Plus Jakarta Sans', sans-serif; }
+.num-card .label { font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.num-card .sub { font-size: 11px; color: var(--text-dim); }
+
+/* Quote */
+.quote { text-align: center; padding: 56px 0; }
+.quote blockquote { font-size: 28px; font-weight: 800; color: var(--white); letter-spacing: -0.5px; font-family: 'Plus Jakarta Sans', sans-serif; margin-bottom: 12px; }
+.quote cite { font-size: 14px; color: var(--green); font-style: normal; font-weight: 500; }
+
+/* CTA */
+.cta { text-align: center; padding: 56px 0 80px; }
+.cta h2 { font-size: 36px; font-weight: 900; margin-bottom: 12px; }
+.cta p { font-size: 16px; color: var(--text-muted); margin-bottom: 28px; }
+.cta a.btn { display: inline-block; background: var(--green); color: #000; font-size: 16px; font-weight: 700; padding: 16px 40px; border-radius: 100px; text-decoration: none; transition: all 0.2s; }
+.cta a.btn:hover { background: #34D399; box-shadow: 0 0 30px var(--green-glow); }
+
+/* Footer */
+.foot { text-align: center; padding: 32px 0; border-top: 1px solid var(--border); }
+.foot .logo { font-size: 16px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+.foot .logo span { color: var(--green); }
+.foot p { font-size: 12px; color: var(--text-dim); }
+.foot a { color: var(--green); text-decoration: none; }
+
+@media (max-width: 700px) {
+    .hero h1 { font-size: 36px; }
+    .hero h1 .line1 { font-size: 28px; }
+    .flip-grid { grid-template-columns: 1fr; }
+    .flip-vs { padding: 8px 0; }
+    .card-grid { grid-template-columns: 1fr; }
+    .numbers-grid { grid-template-columns: 1fr 1fr; }
+}
+</style></head><body>
+
+<div class="hero"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="badge">BİR MANİFESTO</div>
+  <h1><span class="line1">SaaS Değil,</span><span class="line2">Service to Software.</span></h1>
+  <p class="subtitle">Biz yazılımı hizmet olarak sunmuyoruz.<br>Yazılıma hizmet sunuyoruz.</p>
+  <p class="desc">Verileriniz sizin sunucunuzda kalır. Biz size kurulum, eğitim, güncelleme ve 7/24 destek sunarız.</p>
+</div></div>
+
+<div class="divider"><span></span></div>
+
+<div class="flip"><div class="container">
+  <h2>Farkı Anlamak</h2>
+  <div class="flip-grid">
+    <div class="flip-card saas">
+      <div class="abbr">SaaS</div>
+      <div class="full">Software as a Service</div>
+      <p>Yazılım bir hizmet olarak sunulur</p>
+      <div class="meaning">Yazılım bizde, veri bizde, kontrol bizde. Siz sadece kiracısınız.</div>
+    </div>
+    <div class="flip-vs">vs</div>
+    <div class="flip-card sts">
+      <div class="abbr">StS</div>
+      <div class="full">Service to Software</div>
+      <p>Yazılıma hizmet sunulur</p>
+      <div class="meaning">Yazılım sizde, veri sizde, kontrol sizde. Biz sadece hizmet sunuyoruz.</div>
+    </div>
+  </div>
+</div></div>
+
+<div class="divider"><span></span></div>
+
+<div class="sect"><div class="container">
+  <h2>Sizde Kalan</h2>
+  <div class="card-grid">
+    <div class="card green">
+      <div class="icon">🔒</div>
+      <h4>Verileriniz</h4>
+      <p>Belgeleriniz kurumunuzun sunucusunda, AES-256 ile şifreli. Hiçbir veri dışarı çıkmaz.</p>
+    </div>
+    <div class="card green">
+      <div class="icon">🔒</div>
+      <h4>Kontrolünüz</h4>
+      <p>Erişim politikaları, saklama süreleri, şifreleme anahtarları — hepsi sizin elinizde.</p>
+    </div>
+    <div class="card green">
+      <div class="icon">🔒</div>
+      <h4>Uyumluluğunuz</h4>
+      <p>KVKK, GDPR, ISO 27001, HIPAA, SOC 2 — veriler sizde olduğu için uyumluluk basitleşir.</p>
+    </div>
+    <div class="card green">
+      <div class="icon">🔒</div>
+      <h4>Bağımsızlığınız</h4>
+      <p>İnternet kesintisi? Sorun değil. YesPDF yerel ağınızda çalışmaya devam eder.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="sect"><div class="container">
+  <h2>Bizden Gelen</h2>
+  <div class="card-grid">
+    <div class="card purple">
+      <div class="icon">🔧</div>
+      <h4>Kurulum & Entegrasyon</h4>
+      <p>Sunucunuza kurulum, Active Directory entegrasyonu, mevcut sistemlerinizle bağlantı.</p>
+    </div>
+    <div class="card purple">
+      <div class="icon">🎓</div>
+      <h4>Eğitim</h4>
+      <p>Yönetici ve kullanıcı eğitimleri. Ekibiniz ilk günden verimli kullanır.</p>
+    </div>
+    <div class="card purple">
+      <div class="icon">🔄</div>
+      <h4>Güncellemeler</h4>
+      <p>Düzenli güvenlik yamaları ve özellik güncellemeleri. Siz yüklersiniz, biz destekleriz.</p>
+    </div>
+    <div class="card purple">
+      <div class="icon">🛟</div>
+      <h4>7/24 Destek</h4>
+      <p>Teknik destek ekibimiz her zaman yanınızda. Sorun çözme, optimizasyon, danışmanlık.</p>
+    </div>
+  </div>
+</div></div>
+
+<div class="divider"><span></span></div>
+
+<div class="sect"><div class="container">
+  <h2>Rahatsız Edici Gerçek</h2>
+  <div class="truth-item">
+    <div class="question">SaaS sözleşmeniz bittiğinde verilerinize ne olur?</div>
+    <div class="answer">YesPDF'de veriler her zaman sizindir. Lisans biterse bile veriler sunucunuzda kalır.</div>
+  </div>
+  <div class="truth-item">
+    <div class="question">SaaS sağlayıcınız kapanırsa?</div>
+    <div class="answer">YesPDF on-premise çalışır. Bizim varlığımız verilerinizin erişilebilirliğini etkilemez.</div>
+  </div>
+  <div class="truth-item">
+    <div class="question">SaaS sağlayıcınız fiyat artırırsa?</div>
+    <div class="answer">YesPDF sabit lisans modeliyle çalışır. Kullanıcı sayısı arttıkça maliyet katlanmaz.</div>
+  </div>
+  <div class="truth-item">
+    <div class="question">SaaS'ta verileriniz hangi ülkede?</div>
+    <div class="answer">YesPDF'de veriler kurumunuzun sunucusunda. Türkiye'de, sizin kontrol ettiğiniz yerde.</div>
+  </div>
+</div></div>
+
+<div class="divider"><span></span></div>
+
+<div class="sect"><div class="container">
+  <h2>Rakamlarla</h2>
+  <div style="height:16px"></div>
+  <div class="numbers-grid">
+    <div class="num-card">
+      <div class="val">0</div>
+      <div class="label">Üçüncü Taraf Sunucu</div>
+      <div class="sub">Verileriniz asla dış sunuculara gitmez</div>
+    </div>
+    <div class="num-card">
+      <div class="val">%100</div>
+      <div class="label">Veri Kontrolü</div>
+      <div class="sub">Tam kontrol sizde</div>
+    </div>
+    <div class="num-card">
+      <div class="val">20+</div>
+      <div class="label">PDF Özelliği</div>
+      <div class="sub">Dönüştürme, OCR, karartma, imza ve daha fazlası</div>
+    </div>
+    <div class="num-card">
+      <div class="val">7/24</div>
+      <div class="label">Destek</div>
+      <div class="sub">Her zaman yanınızdayız</div>
+    </div>
+  </div>
+</div></div>
+
+<div class="quote"><div class="container">
+  <blockquote>"En güvenli veri, hiç dışarı çıkmayan veridir."</blockquote>
+  <cite>— Service to Software felsefesi</cite>
+</div></div>
+
+<div class="cta"><div class="container">
+  <h2>Hazır mısınız?</h2>
+  <p>Verilerinizin kontrolünü geri alın. Yazılıma hizmet sunan bir partner edinin.</p>
+  <a href="https://www.yespdf.com.tr" class="btn" target="_blank">Demo Talep Edin</a>
+</div></div>
+
+<div class="foot"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <p>YesPDF — On-Premise PDF Yönetim Platformu</p>
+  <p><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></p>
+</div></div>
+
+</body></html>
