@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — HIPAA Compliance Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7; --red: #DC2626; --red-light: #FEE2E2;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge-hipaa { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.rule-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.rule-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.rule-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.phi-list { list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.phi-list li { padding: 8px 12px 8px 28px; position: relative; font-size: 14px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; }
+.phi-list li::before { content: '🔒'; position: absolute; left: 8px; font-size: 12px; }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.safeguard-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
+.safeguard-card h3 { margin-bottom: 12px; }
+.safeguard-card ul { margin: 0 0 12px 20px; padding: 0; }
+.safeguard-card li { font-size: 14px; padding: 4px 0; }
+.safeguard-card .note { font-size: 13px; color: var(--accent-dark); font-style: italic; padding-top: 8px; border-top: 1px solid var(--gray-200); }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.info-box.red { background: var(--red-light); border: 1px solid rgba(220,38,38,0.15); color: #991B1B; }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.penalty-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.penalty-table th { background: #991B1B; color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.penalty-table th:first-child { border-radius: 8px 0 0 0; }
+.penalty-table th:last-child { border-radius: 0 8px 0 0; }
+.penalty-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.penalty-table tr:nth-child(even) td { background: #FFF5F5; }
+.penalty-table .amount { color: var(--red); font-weight: 700; }
+.checklist { list-style: none; padding: 0; margin: 16px 0; counter-reset: check; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .rules-grid, .phi-list { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Compliance Report</div>
+  <h1>HIPAA Compliance Report</h1>
+  <p class="subtitle">Protecting Patient Health Information for Healthcare Organizations</p>
+  <p class="version">v1.0 — February 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>What is HIPAA?</h2>
+  <div class="badge-hipaa">HIPAA — 42 U.S.C. § 1320d</div>
+  <p><strong>HIPAA (Health Insurance Portability and Accountability Act)</strong> is a United States federal law enacted in 1996 that protects the privacy, integrity and availability of patient health information. HIPAA covers healthcare providers, health insurance companies, healthcare clearinghouses and their business associates.</p>
+  <p>Under HIPAA, patient data referred to as "Protected Health Information" (PHI) must be safeguarded against unauthorized access, disclosure and modification. These requirements directly impact all document management systems used by healthcare organizations.</p>
+  <p>This report explains how YesPDF meets HIPAA requirements point by point.</p>
+</div>
+
+<div class="section">
+  <h2>HIPAA Key Rules</h2>
+  <div class="rules-grid">
+    <div class="rule-card"><strong>Privacy Rule</strong><p>Defines patients' rights over their PHI. Regulates when and how health information can be used and with whom it can be shared.</p></div>
+    <div class="rule-card"><strong>Security Rule</strong><p>Mandates administrative, physical and technical safeguards for electronic PHI (ePHI). Encryption, access controls and audit logs are core requirements of this rule.</p></div>
+    <div class="rule-card"><strong>Breach Notification Rule</strong><p>Requires notification of unsecured PHI breaches to individuals, HHS (Department of Health and Human Services) and in some cases the media.</p></div>
+    <div class="rule-card"><strong>Enforcement Rule</strong><p>Defines penalties and sanctions for HIPAA violations. Fines can range from $100 to $1.5 million per violation.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Protected Health Information (PHI) Types</h2>
+  <p>18 identifier types protected under HIPAA:</p>
+  <ul class="phi-list">
+    <li>Patient name</li>
+    <li>Address information (street, city, zip code)</li>
+    <li>Dates (birth, treatment, discharge, death)</li>
+    <li>Phone and fax numbers</li>
+    <li>Email addresses</li>
+    <li>Social Security Number (SSN)</li>
+    <li>Medical record numbers</li>
+    <li>Health plan beneficiary numbers</li>
+    <li>Account numbers</li>
+    <li>Certificate/license numbers</li>
+    <li>Vehicle and device serial numbers</li>
+    <li>Web URLs and IP addresses</li>
+    <li>Biometric identifiers (fingerprint, retina)</li>
+    <li>Full-face photographs and comparable images</li>
+    <li>Other unique identifying numbers</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>HIPAA Requirements and YesPDF Solutions</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Access Control (§ 164.312(a))</h3><p>The HIPAA Security Rule requires technical policies and procedures to ensure only authorized persons can access systems containing ePHI.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Role-Based Access Control (RBAC):</strong> Granular authorization with physician, nurse, lab technician, administrative staff and billing specialist roles.</li>
+      <li><strong>Document-Level Permissions:</strong> Read, edit, download and print permissions can be defined separately for each patient document.</li>
+      <li><strong>Unique User Identification:</strong> Each user logs in with unique credentials — shared account usage is prevented.</li>
+      <li><strong>Automatic Session Timeout:</strong> Sessions are automatically terminated after a period of inactivity.</li>
+      <li><strong>Emergency Access Procedure:</strong> Authorized personnel can access ePHI in emergencies, and this access is separately logged.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Audit Controls (§ 164.312(b))</h3><p>HIPAA requires hardware, software and/or procedural mechanisms to record and examine activity in information systems containing ePHI.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Comprehensive Audit Log:</strong> Every document access, edit, download, print and sharing operation is automatically recorded.</li>
+      <li><strong>Immutable Records:</strong> Audit logs cannot be modified or deleted — providing reliable evidence for HIPAA audits.</li>
+      <li><strong>Detailed Tracking:</strong> User ID, timestamp, document name, operation type, IP address and device information — all details are recorded.</li>
+      <li><strong>Regular Reporting:</strong> Access reports can be generated on a per-patient or per-document basis. Suspicious activities can be detected.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Integrity (§ 164.312(c))</h3><p>HIPAA requires protection of ePHI against unauthorized alteration or destruction.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Version Control:</strong> Document changes are tracked with version history — every modification is recorded.</li>
+      <li><strong>Digital Signatures:</strong> Documents can be digitally signed to verify they have not been altered.</li>
+      <li><strong>Access Restrictions:</strong> Users without edit permission view documents in read-only mode.</li>
+      <li><strong>Backup and Recovery:</strong> Regular document backups prevent data loss.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. Transmission Security (§ 164.312(e))</h3><p>HIPAA requires protection of ePHI transmitted over electronic networks against unauthorized access.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>AES-256 Encryption:</strong> All patient documents are encrypted with AES-256 both in transit and at rest.</li>
+      <li><strong>On-Premise Architecture:</strong> Data is never sent to third-party cloud servers — it remains entirely within institutional infrastructure.</li>
+      <li><strong>PDF Encryption:</strong> Individual PDF files can be password-protected with permission restrictions.</li>
+      <li><strong>Load Balancer SSL Support:</strong> Secure communication via SSL/TLS certificates behind a load balancer.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. Permanent Redaction (De-identification)</h3><p>Under HIPAA, when sharing PHI, the "Safe Harbor" method requires removal of 18 identifiers, or the "Expert Determination" method requires statistical de-identification.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Permanent Redaction:</strong> Patient names, SSNs, addresses, birth dates and other PHI can be irreversibly removed from documents.</li>
+      <li><strong>Batch Redaction:</strong> Apply redaction across multiple documents simultaneously — research datasets can be quickly de-identified.</li>
+      <li><strong>18-Identifier Support:</strong> Redaction templates can be created for all 18 identifier categories in the HIPAA Safe Harbor method.</li>
+      <li><strong>Redaction Verification:</strong> Confirms that redacted data is truly removed — no hidden layers, metadata leakage or OCR recovery possible.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Record Retention and Destruction</h3><p>HIPAA requires certain records to be maintained for at least 6 years and securely destroyed afterward. State laws may require longer periods.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Retention Policies:</strong> Automatic retention periods can be defined by document type (6-year federal minimum + state requirements).</li>
+      <li><strong>Retention Lock:</strong> Documents can be prevented from deletion before their retention period expires (litigation hold).</li>
+      <li><strong>Expiry Alerts:</strong> Automatic notifications for documents approaching their retention deadline.</li>
+      <li><strong>Secure Destruction:</strong> Expired documents are securely deleted and destruction records are maintained.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>HIPAA Safeguard Categories</h2>
+  <p>The HIPAA Security Rule defines three main safeguard categories:</p>
+  <div class="safeguard-card"><h3>Administrative Safeguards</h3><ul>
+    <li>Security management process (risk analysis)</li>
+    <li>Security officer designation</li>
+    <li>Workforce security training</li>
+    <li>Access management policies</li>
+    <li>Incident response procedures</li>
+  </ul><div class="note">YesPDF's RBAC, audit logs and reporting features support administrative safeguards.</div></div>
+  <div class="safeguard-card"><h3>Physical Safeguards</h3><ul>
+    <li>Facility access controls</li>
+    <li>Workstation security</li>
+    <li>Device and media controls</li>
+    <li>Secure disposal procedures</li>
+  </ul><div class="note">YesPDF's on-premise architecture leverages the physical security controls of the institution's own facilities.</div></div>
+  <div class="safeguard-card"><h3>Technical Safeguards</h3><ul>
+    <li>Access control mechanisms</li>
+    <li>Audit controls and logs</li>
+    <li>Data integrity protection</li>
+    <li>Transmission security (encryption)</li>
+    <li>Authentication mechanisms</li>
+  </ul><div class="note">YesPDF provides built-in features that address all technical safeguard requirements.</div></div>
+</div>
+
+<div class="section">
+  <h2>Business Associate Agreement (BAA) and On-Premise Advantage</h2>
+  <p>HIPAA requires signing a <strong>Business Associate Agreement (BAA)</strong> with third parties that access PHI. When cloud-based PDF tools are used, the service provider is considered a "business associate" and a BAA is required.</p>
+  <div class="info-box green"><strong>YesPDF on-premise advantage:</strong> Since YesPDF runs on the institution's own server, PHI is never sent to third-party servers. Therefore, a separate BAA is not required for YesPDF — data remains entirely under institutional control.</div>
+</div>
+
+<div class="section">
+  <h2>On-Premise vs. Cloud Comparison</h2>
+  <p>Comparing on-premise and cloud solutions for HIPAA compliance:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Criteria</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Cloud PDF Tools</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Data Location</strong></td><td class="col-yespdf">Institution's own server</td><td class="col-cloud">Third-party data center</td></tr>
+    <tr><td><strong>BAA Requirement</strong></td><td class="col-yespdf">Not required</td><td class="col-cloud">Business Associate Agreement mandatory</td></tr>
+    <tr><td><strong>ePHI Control</strong></td><td class="col-yespdf">100% under institution control</td><td class="col-cloud">Dependent on service provider</td></tr>
+    <tr><td><strong>Third-Party Access</strong></td><td class="col-yespdf">None</td><td class="col-cloud">Provider staff may access</td></tr>
+    <tr><td><strong>Breach Risk</strong></td><td class="col-yespdf">Minimized — stays on internal network</td><td class="col-cloud">Exposed to internet-based attacks</td></tr>
+    <tr><td><strong>Audit Ease</strong></td><td class="col-yespdf">All logs local — instant access</td><td class="col-cloud">Must request reports from provider</td></tr>
+    <tr><td><strong>Cost Predictability</strong></td><td class="col-yespdf">Fixed license — no surprises</td><td class="col-cloud">Usage-based — variable cost</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>HIPAA Violation Penalties</h2>
+  <p>HIPAA violations can result in significant financial penalties:</p>
+  <table class="penalty-table">
+    <thead><tr>
+      <th>Tier</th>
+      <th>Description</th>
+      <th>Penalty Range</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Tier 1 — Lack of Knowledge</strong></td><td>Organization unaware of violation and exercised reasonable diligence</td><td class="amount">$100 – $50,000 / violation</td></tr>
+    <tr><td><strong>Tier 2 — Reasonable Cause</strong></td><td>Violation should have been known (no willful neglect)</td><td class="amount">$1,000 – $50,000 / violation</td></tr>
+    <tr><td><strong>Tier 3 — Willful Neglect (Corrected)</strong></td><td>Willful neglect but corrected within required timeframe</td><td class="amount">$10,000 – $50,000 / violation</td></tr>
+    <tr><td><strong>Tier 4 — Willful Neglect (Not Corrected)</strong></td><td>Willful neglect with no correction attempt</td><td class="amount">$50,000 – $1,500,000 / violation</td></tr>
+    </tbody>
+  </table>
+  <div class="info-box red">Annual maximum penalty is $1.5 million for identical violation categories. Criminal penalties can include $250,000 in fines and up to 10 years imprisonment.</div>
+</div>
+
+<div class="section">
+  <h2>HIPAA Compliance Checklist</h2>
+  <p>To ensure HIPAA compliance with YesPDF:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Conduct risk analysis</strong><p>Identify all systems and document workflows containing ePHI. Determine which PHI types YesPDF processes.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Define access policies</strong><p>Configure roles and permissions according to the minimum necessary principle.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Enable audit logging</strong><p>Ensure all ePHI access is logged. Regularly review access reports.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Verify encryption</strong><p>Confirm AES-256 encryption is active and all documents are stored encrypted.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Establish redaction procedures</strong><p>Define standard procedures for PHI redaction in documents shared for research or other purposes.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Configure retention policies</strong><p>Set retention periods per federal minimum 6 years + state requirements.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Train staff</strong><p>Educate relevant staff on HIPAA requirements and YesPDF usage annually.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Create breach response plan</strong><p>Define and test steps including 60-day notification requirement in case of a data breach.</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Test backup and recovery</strong><p>Verify ePHI backups are taken regularly and recovery procedures work correctly.</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>Perform annual audit</strong><p>Review HIPAA compliance status annually and address any gaps.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Summary</h2>
+  <div class="summary-box"><p>YesPDF helps healthcare organizations meet HIPAA requirements through its on-premise architecture, comprehensive access controls, immutable audit logs, AES-256 encryption, permanent redaction capabilities and flexible retention policies. Patient health information never leaves institutional infrastructure, every access is logged, and sensitive PHI data can be securely redacted before sharing. The on-premise architecture eliminates the need for a separate BAA.</p></div>
+</div>
+
+<div class="section">
+  <h2>Technical Support</h2>
+  <div class="contact-box">
+    <p>For questions about HIPAA compliance and YesPDF configuration:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>This document was prepared by the YesPDF technical team. This report does not constitute legal advice. We recommend consulting your institution's legal counsel and compliance officer for HIPAA compliance assessment.</p></div>
+
+</div></div>
+</body></html>
