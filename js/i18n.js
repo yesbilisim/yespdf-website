@@ -166,6 +166,8 @@ const translations = {
     'docs.soc2_en': 'SOC 2 Uyumluluk Raporu',
     'docs.iso27001_tr': 'ISO 27001 Uyumluluk Raporu',
     'docs.iso27001_en': 'ISO 27001 Uyumluluk Raporu',
+    'docs.sts_tr': 'Service to Software',
+    'docs.sts_en': 'Service to Software',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Contact
@@ -377,6 +379,8 @@ const translations = {
     'docs.soc2_en': 'SOC 2 Compliance Report',
     'docs.iso27001_tr': 'ISO 27001 Compliance Report (Turkish)',
     'docs.iso27001_en': 'ISO 27001 Compliance Report',
+    'docs.sts_tr': 'Service to Software (Turkish)',
+    'docs.sts_en': 'Service to Software',
     'docs.release_history': 'Release History',
 
     // Contact
