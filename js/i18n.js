@@ -158,6 +158,8 @@ const translations = {
     'docs.loadtest_tr': 'Yük Testi Raporu',
     'docs.loadtest_en': 'Load Test Report',
     'docs.gdpr_en': 'GDPR Uyumluluk Raporu',
+    'docs.ferpa_tr': 'FERPA Uyumluluk Raporu',
+    'docs.ferpa_en': 'FERPA Uyumluluk Raporu',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Contact
@@ -361,6 +363,8 @@ const translations = {
     'docs.loadtest_tr': 'Load Test Report (Turkish)',
     'docs.loadtest_en': 'Load Test Report',
     'docs.gdpr_en': 'GDPR Compliance Report',
+    'docs.ferpa_tr': 'FERPA Compliance Report (Turkish)',
+    'docs.ferpa_en': 'FERPA Compliance Report',
     'docs.release_history': 'Release History',
 
     // Contact
