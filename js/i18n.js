@@ -140,6 +140,8 @@ const translations = {
     'verticals.legal.desc': 'Sözleşme yönetimi, dava dosyaları, karartma (redaction) ve dijital imza çözümleri.',
     'verticals.cad.title': 'CAD & Mühendislik',
     'verticals.cad.desc': 'Teknik çizim dönüşümü, büyük format baskı, ölçüm araçları ve proje arşivleme.',
+    'verticals.education.title': 'Eğitim',
+    'verticals.education.desc': 'Transkript, diploma, sınav evrakları, öğrenci dosyaları ve akademik belge yönetimi.',
 
     // Documents
     'docs.title': 'Dokümanlar',
@@ -341,6 +343,8 @@ const translations = {
     'verticals.legal.desc': 'Contract management, case files, redaction and digital signature solutions.',
     'verticals.cad.title': 'CAD & Engineering',
     'verticals.cad.desc': 'Technical drawing conversion, large format printing, measurement tools and project archiving.',
+    'verticals.education.title': 'Education',
+    'verticals.education.desc': 'Transcripts, diplomas, exam papers, student files and academic document management.',
 
     // Documents
     'docs.title': 'Documents',
