@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PDF Lisanslama Modelleri: Gizli Maliyetler ve Gerçek TCO — YesPDF</title>
+<meta name="description" content="Aylık 15$ masum görünür — ta ki 500 kullanıcıya ölçekleyene kadar.">
+<meta property="og:title" content="PDF Lisanslama Modelleri: Gizli Maliyetler ve Gerçek TCO">
+<meta property="og:description" content="Aylık 15$ masum görünür — ta ki 500 kullanıcıya ölçekleyene kadar.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.yespdf.com.tr/articles/licensing-models-tr.html">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+:root { --bg:#FAFAFA; --white:#FFF; --dark:#0F172A; --gray-50:#F8FAFC; --gray-100:#F1F5F9; --gray-200:#E2E8F0; --gray-500:#64748B; --gray-700:#334155; --gray-900:#0F172A; --green:#059669; --green-light:#D1FAE5; --red:#DC2626; --red-light:#FEE2E2; --accent:#7C3AED; --accent-light:#EDE9FE; --accent-dark:#6D28D9; --radius:12px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; color:var(--gray-700); line-height:1.8; background:var(--bg); }
+h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',-apple-system,sans-serif; color:var(--gray-900); line-height:1.3; }
+a { color:var(--accent); }
+
+.article-header { background:linear-gradient(135deg,#1a1030 0%,var(--accent-dark) 100%); padding:64px 0 52px; }
+.article-header .container { max-width:760px; margin:0 auto; padding:0 28px; }
+.article-header .logo { font-size:16px; font-weight:800; color:#fff; margin-bottom:32px; }
+.article-header .logo span { color:#A78BFA; }
+.article-header .logo a { color:inherit; text-decoration:none; }
+.article-header .tag { display:inline-block; background:rgba(167,139,250,0.2); border:1px solid rgba(167,139,250,0.3); color:#C4B5FD; font-size:11px; font-weight:700; letter-spacing:2px; padding:5px 14px; border-radius:100px; margin-bottom:20px; }
+.article-header h1 { color:#fff; font-size:36px; font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+.article-header .subtitle { color:rgba(255,255,255,0.6); font-size:17px; margin-bottom:20px; }
+.article-header .meta { color:rgba(255,255,255,0.35); font-size:13px; display:flex; gap:16px; flex-wrap:wrap; }
+
+.article-body { max-width:760px; margin:0 auto; padding:48px 28px 80px; }
+.article-body h2 { font-size:24px; font-weight:800; margin:40px 0 16px; padding-top:24px; border-top:1px solid var(--gray-200); }
+.article-body h2:first-child { border-top:none; padding-top:0; margin-top:0; }
+.article-body p { margin-bottom:16px; font-size:16px; }
+.article-body ul, .article-body ol.checklist { margin:16px 0; padding-left:24px; }
+.article-body li { margin-bottom:10px; font-size:15px; }
+.article-body ol.checklist { list-style:none; padding:0; counter-reset:cl; }
+.article-body ol.checklist li { counter-increment:cl; padding:14px 18px 14px 52px; background:var(--white); border:1px solid var(--gray-200); border-radius:10px; margin-bottom:8px; position:relative; }
+.article-body ol.checklist li::before { content:counter(cl); position:absolute; left:14px; top:14px; width:28px; height:28px; background:var(--accent-light); color:var(--accent-dark); border-radius:8px; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; }
+
+.threat-grid, .case-grid, .do-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+.threat-card, .case-card, .do-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:20px; }
+.threat-card h4, .case-card h4, .do-card h4 { font-size:15px; margin-bottom:8px; }
+.threat-card p, .case-card p, .do-card p { font-size:13px; color:var(--gray-500); margin:0; }
+.case-card.bad { border-left:3px solid var(--red); }
+.do-card.good { border-left:3px solid var(--green); }
+
+.comp-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+.comp-table th { background:var(--gray-900); color:#fff; padding:12px 16px; text-align:left; font-weight:600; }
+.comp-table th:first-child { border-radius:8px 0 0 0; } .comp-table th:last-child { border-radius:0 8px 0 0; }
+.comp-table td { padding:12px 16px; border-bottom:1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background:var(--gray-50); }
+.comp-table .good-col { color:var(--green); font-weight:600; }
+.comp-table .bad-col { color:var(--red); font-weight:600; }
+
+.cta-box { background:linear-gradient(135deg,var(--accent-light) 0%,#f5f3ff 100%); border:1px solid rgba(124,58,237,0.15); border-radius:var(--radius); padding:24px 28px; margin:24px 0; }
+.cta-box p { font-size:15px; margin-bottom:12px; }
+.cta-link { display:inline-block; color:var(--accent-dark); font-weight:700; font-size:15px; text-decoration:none; }
+.cta-link:hover { text-decoration:underline; }
+
+.article-footer { text-align:center; padding:24px 0; border-top:1px solid var(--gray-200); max-width:760px; margin:0 auto; padding-left:28px; padding-right:28px; }
+.article-footer p { font-size:12px; color:var(--gray-500); }
+.article-footer a { color:var(--accent); text-decoration:none; }
+.article-footer .logo { font-size:15px; font-weight:800; color:var(--gray-900); margin-bottom:4px; }
+.article-footer .logo span { color:var(--accent); }
+
+@media(max-width:700px) { .article-header h1 { font-size:26px; } .threat-grid,.case-grid,.do-grid { grid-template-columns:1fr; } }
+</style></head><body>
+
+<div class="article-header"><div class="container">
+  <div class="logo"><a href="https://www.yespdf.com.tr">Yes<span>PDF</span></a></div>
+  <div class="tag">LİSANSLAMA</div>
+  <h1>PDF Lisanslama Modelleri: Gizli Maliyetler ve Gerçek TCO</h1>
+  <p class="subtitle">Aylık 15$ masum görünür — ta ki 500 kullanıcıya ölçekleyene kadar.</p>
+  <div class="meta">
+    <span>YesPDF Teknik Ekip</span>
+    <span>·</span>
+    <span>21 Şubat 2026</span>
+    <span>·</span>
+    <span>9 dk okuma</span>
+  </div>
+</div></div>
+
+<div class="article-body">
+<h2>Lisanslama Modeli Neden Önemli?</h2>
+<p>Bir PDF aracı seçerken çoğu kurum yalnızca "kullanıcı başına aylık fiyat" a bakar. Ancak gerçek maliyet (TCO — Total Cost of Ownership), lisans ücretinin çok ötesindedir.</p>
+<p>SaaS modeli başlangıçta cazip görünür: düşük giriş maliyeti, hızlı başlangıç, bakım gerektirmez. Ama ölçek büyüdükçe, maliyet kontrolden çıkabilir.</p>
+
+<h2>SaaS vs. Kalıcı Lisans: Maliyet Karşılaştırması</h2>
+<table class="comp-table">
+<thead><tr><th>Kriter</th><th>SaaS (Kullanıcı Başı/Ay)</th><th>Kalıcı Lisans (On-Premise)</th></tr></thead>
+<tbody>
+<tr><td><strong>100 kullanıcı / yıl</strong></td><td class="bad-col">$15 × 100 × 12 = <strong>$18,000/yıl</strong></td><td class="good-col">Sabit lisans ücreti (tek seferlik)</td></tr>
+<tr><td><strong>500 kullanıcı / yıl</strong></td><td class="bad-col">$15 × 500 × 12 = <strong>$90,000/yıl</strong></td><td class="good-col">Aynı sabit lisans ücreti</td></tr>
+<tr><td><strong>5 yıllık TCO (500 kullanıcı)</strong></td><td class="bad-col"><strong>$450,000+</strong></td><td class="good-col">Lisans + bakım sözleşmesi</td></tr>
+<tr><td><strong>Kullanıcı artışı</strong></td><td class="bad-col">Maliyet doğrusal artar</td><td class="good-col">Sabit veya kademeli</td></tr>
+<tr><td><strong>Sözleşme bittiğinde</strong></td><td class="bad-col">Erişim kapanır</td><td class="good-col">Yazılım çalışmaya devam eder</td></tr>
+</tbody>
+</table>
+
+<h2>SaaS'ın Gizli Maliyetleri</h2>
+<div class="threat-grid">
+<div class="threat-card">
+<h4>📈 Fiyat Artışları</h4>
+<p>SaaS sağlayıcıları yıllık %10-20 fiyat artışı uygulayabilir. 5 yıl sonra başlangıç fiyatının 1.5-2 katını ödüyor olabilirsiniz.</p>
+</div>
+<div class="threat-card">
+<h4>🔒 Vendor Lock-in</h4>
+<p>Yıllar içinde biriken veriler, özelleştirmeler ve entegrasyonlar sizi sağlayıcıya bağımlı kılar. Geçiş maliyeti çok yüksektir.</p>
+</div>
+<div class="threat-card">
+<h4>💾 Veri Çıkış Maliyeti</h4>
+<p>Sağlayıcı değiştirmek istediğinizde verilerinizi çıkarmak ek ücrete tabi olabilir (egress fee).</p>
+</div>
+<div class="threat-card">
+<h4>⚡ Kullanım Limitleri</h4>
+<p>API çağrısı, depolama alanı, işlem sayısı — hepsi ayrı faturalandırılabilir. "Sınırsız" planlar bile küçük yazılarda limit içerir.</p>
+</div>
+</div>
+
+<h2>On-Premise Lisans Modeli Avantajları</h2>
+<ul>
+<li><strong>Öngörülebilir maliyet:</strong> Sabit lisans ücreti, sürpriz fiyat artışı yok.</li>
+<li><strong>Ölçeklenebilir:</strong> Kullanıcı sayısı arttıkça maliyetiniz katlanmaz.</li>
+<li><strong>Bağımsızlık:</strong> Sözleşme bitiminde yazılım çalışmaya devam eder, veriler sizde kalır.</li>
+<li><strong>Uzun vadede tasarruf:</strong> 3+ yıl kullanımda on-premise model genellikle daha ekonomiktir.</li>
+<li><strong>Bütçe planlaması:</strong> Yıllık BT bütçenizde sabit bir kalem olarak planlanabilir.</li>
+</ul>
+
+<h2>Doğru Modeli Seçmek</h2>
+<p>SaaS her kurum için kötü değildir — küçük ekipler ve kısa süreli projeler için mantıklı olabilir. Ancak şu durumlarda on-premise model tercih edilmelidir:</p>
+<ul>
+<li>100+ kullanıcı planlanıyorsa</li>
+<li>3 yıldan fazla kullanım öngörülüyorsa</li>
+<li>Hassas veri işleniyorsa (sağlık, finans, kamu)</li>
+<li>Düzenleyici uyumluluk gereksinimleri varsa</li>
+<li>Maliyet öngörülebilirliği önemliyse</li>
+</ul>
+
+<h2>Sonuç</h2>
+<p>Lisanslama modeli, teknik bir detay değil — stratejik bir karardır. Aylık düşük ücretler, yıllar içinde dev maliyetlere dönüşebilir. Doğru model, kurumunuzun büyüklüğüne, sektörüne ve uzun vadeli planlarına göre seçilmelidir.</p>
+<div class="cta-box">
+<p><strong>YesPDF</strong>, sabit lisans modeli ile öngörülebilir maliyet, ölçeklenebilirlik ve tam veri kontrolü sunar. Kullanıcı sayısı arttıkça maliyetiniz katlanmaz.</p>
+<a href="https://www.yespdf.com.tr" class="cta-link">www.yespdf.com.tr →</a>
+</div>
+
+
+</div>
+
+<div class="article-footer">
+  <div class="logo">Yes<span>PDF</span></div>
+  <p>On-Premise PDF Yönetim Platformu</p>
+  <p><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></p>
+</div>
+
+</body></html>
