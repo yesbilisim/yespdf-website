@@ -1,0 +1,148 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Merkezi PDF Yönetimi: Neden Kurumların Kontrollü Bir PDF Ortamına İhtiyacı Var? — YesPDF</title>
+<meta name="description" content="Dağınık PDF araçları, dağınık güvenlik demektir.">
+<meta property="og:title" content="Merkezi PDF Yönetimi: Neden Kurumların Kontrollü Bir PDF Ortamına İhtiyacı Var?">
+<meta property="og:description" content="Dağınık PDF araçları, dağınık güvenlik demektir.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.yespdf.com.tr/articles/central-pdf-management-tr.html">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+:root { --bg:#FAFAFA; --white:#FFF; --dark:#0F172A; --gray-50:#F8FAFC; --gray-100:#F1F5F9; --gray-200:#E2E8F0; --gray-500:#64748B; --gray-700:#334155; --gray-900:#0F172A; --green:#059669; --green-light:#D1FAE5; --red:#DC2626; --red-light:#FEE2E2; --accent:#7C3AED; --accent-light:#EDE9FE; --accent-dark:#6D28D9; --radius:12px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; color:var(--gray-700); line-height:1.8; background:var(--bg); }
+h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',-apple-system,sans-serif; color:var(--gray-900); line-height:1.3; }
+a { color:var(--accent); }
+
+.article-header { background:linear-gradient(135deg,#1a1030 0%,var(--accent-dark) 100%); padding:64px 0 52px; }
+.article-header .container { max-width:760px; margin:0 auto; padding:0 28px; }
+.article-header .logo { font-size:16px; font-weight:800; color:#fff; margin-bottom:32px; }
+.article-header .logo span { color:#A78BFA; }
+.article-header .logo a { color:inherit; text-decoration:none; }
+.article-header .tag { display:inline-block; background:rgba(167,139,250,0.2); border:1px solid rgba(167,139,250,0.3); color:#C4B5FD; font-size:11px; font-weight:700; letter-spacing:2px; padding:5px 14px; border-radius:100px; margin-bottom:20px; }
+.article-header h1 { color:#fff; font-size:36px; font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+.article-header .subtitle { color:rgba(255,255,255,0.6); font-size:17px; margin-bottom:20px; }
+.article-header .meta { color:rgba(255,255,255,0.35); font-size:13px; display:flex; gap:16px; flex-wrap:wrap; }
+
+.article-body { max-width:760px; margin:0 auto; padding:48px 28px 80px; }
+.article-body h2 { font-size:24px; font-weight:800; margin:40px 0 16px; padding-top:24px; border-top:1px solid var(--gray-200); }
+.article-body h2:first-child { border-top:none; padding-top:0; margin-top:0; }
+.article-body p { margin-bottom:16px; font-size:16px; }
+.article-body ul, .article-body ol.checklist { margin:16px 0; padding-left:24px; }
+.article-body li { margin-bottom:10px; font-size:15px; }
+.article-body ol.checklist { list-style:none; padding:0; counter-reset:cl; }
+.article-body ol.checklist li { counter-increment:cl; padding:14px 18px 14px 52px; background:var(--white); border:1px solid var(--gray-200); border-radius:10px; margin-bottom:8px; position:relative; }
+.article-body ol.checklist li::before { content:counter(cl); position:absolute; left:14px; top:14px; width:28px; height:28px; background:var(--accent-light); color:var(--accent-dark); border-radius:8px; font-weight:700; font-size:13px; display:flex; align-items:center; justify-content:center; }
+
+.threat-grid, .case-grid, .do-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+.threat-card, .case-card, .do-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:20px; }
+.threat-card h4, .case-card h4, .do-card h4 { font-size:15px; margin-bottom:8px; }
+.threat-card p, .case-card p, .do-card p { font-size:13px; color:var(--gray-500); margin:0; }
+.case-card.bad { border-left:3px solid var(--red); }
+.do-card.good { border-left:3px solid var(--green); }
+
+.comp-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:14px; }
+.comp-table th { background:var(--gray-900); color:#fff; padding:12px 16px; text-align:left; font-weight:600; }
+.comp-table th:first-child { border-radius:8px 0 0 0; } .comp-table th:last-child { border-radius:0 8px 0 0; }
+.comp-table td { padding:12px 16px; border-bottom:1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background:var(--gray-50); }
+.comp-table .good-col { color:var(--green); font-weight:600; }
+.comp-table .bad-col { color:var(--red); font-weight:600; }
+
+.cta-box { background:linear-gradient(135deg,var(--accent-light) 0%,#f5f3ff 100%); border:1px solid rgba(124,58,237,0.15); border-radius:var(--radius); padding:24px 28px; margin:24px 0; }
+.cta-box p { font-size:15px; margin-bottom:12px; }
+.cta-link { display:inline-block; color:var(--accent-dark); font-weight:700; font-size:15px; text-decoration:none; }
+.cta-link:hover { text-decoration:underline; }
+
+.article-footer { text-align:center; padding:24px 0; border-top:1px solid var(--gray-200); max-width:760px; margin:0 auto; padding-left:28px; padding-right:28px; }
+.article-footer p { font-size:12px; color:var(--gray-500); }
+.article-footer a { color:var(--accent); text-decoration:none; }
+.article-footer .logo { font-size:15px; font-weight:800; color:var(--gray-900); margin-bottom:4px; }
+.article-footer .logo span { color:var(--accent); }
+
+@media(max-width:700px) { .article-header h1 { font-size:26px; } .threat-grid,.case-grid,.do-grid { grid-template-columns:1fr; } }
+</style></head><body>
+
+<div class="article-header"><div class="container">
+  <div class="logo"><a href="https://www.yespdf.com.tr">Yes<span>PDF</span></a></div>
+  <div class="tag">YÖNETİM</div>
+  <h1>Merkezi PDF Yönetimi: Neden Kurumların Kontrollü Bir PDF Ortamına İhtiyacı Var?</h1>
+  <p class="subtitle">Dağınık PDF araçları, dağınık güvenlik demektir.</p>
+  <div class="meta">
+    <span>YesPDF Teknik Ekip</span>
+    <span>·</span>
+    <span>21 Şubat 2026</span>
+    <span>·</span>
+    <span>8 dk okuma</span>
+  </div>
+</div></div>
+
+<div class="article-body">
+<h2>PDF Kaosunu Tanıyor musunuz?</h2>
+<p>Bir düşünün: kurumunuzda kaç farklı PDF aracı kullanılıyor? Muhtemelen şöyle bir tablo var:</p>
+<ul>
+<li>Muhasebe departmanı Adobe Acrobat kullanıyor (lisanslı)</li>
+<li>Hukuk departmanı Foxit kullanıyor (kendi satın almış)</li>
+<li>Pazarlama ekibi online PDF araçları kullanıyor (ücretsiz)</li>
+<li>Genel müdür asistanı SmallPDF'e dosya yüklüyor</li>
+<li>BT departmanı bunların hiçbirinden haberdar değil</li>
+</ul>
+<p>Bu tablo, çoğu büyük kurum için normaldir. Ve son derece tehlikelidir.</p>
+
+<h2>Dağınık PDF Kullanımının Riskleri</h2>
+<div class="threat-grid">
+<div class="threat-card">
+<h4>🌐 Veri Sızıntısı</h4>
+<p>Online PDF araçlarına yüklenen her dosya, üçüncü taraf sunucularına gider. Gizli sözleşmeler, mali tablolar, müşteri listeleri — hepsi başka birinin sunucusunda.</p>
+</div>
+<div class="threat-card">
+<h4>📊 Görünürlük Yok</h4>
+<p>BT departmanı, hangi belgelerin nereye gittiğini bilmiyor. Shadow IT'nin en yaygın formlarından biri: kontrolsüz PDF araç kullanımı.</p>
+</div>
+<div class="threat-card">
+<h4>💰 Maliyet Çoğalması</h4>
+<p>Her departman kendi lisansını alıyor. Toplu alım avantajı yok, mükerrer harcamalar var. BT bütçesi kontrol edilemiyor.</p>
+</div>
+<div class="threat-card">
+<h4>⚖️ Uyumluluk Riski</h4>
+<p>KVKK, GDPR, ISO 27001 — hepsi veri kontrolü gerektirir. Belgelerin üçüncü taraf sunuculara gitmesi, uyumluluk ihlali oluşturabilir.</p>
+</div>
+</div>
+
+<h2>Merkezi PDF Yönetimi Ne Demek?</h2>
+<p>Merkezi PDF yönetimi, tüm kurum genelinde tek bir platform üzerinden belge işlemlerinin yapılması anlamına gelir:</p>
+<ul>
+<li><strong>Tek platform:</strong> Tüm departmanlar aynı aracı kullanır. Lisanslama, güncelleme ve destek tek noktadan yönetilir.</li>
+<li><strong>Merkezi politikalar:</strong> Erişim kontrolü, karartma kuralları, saklama süreleri — hepsi tek merkezden tanımlanır.</li>
+<li><strong>Tam görünürlük:</strong> Kim hangi belgeyi işliyor, hangi işlemleri yapıyor — BT departmanı her şeyi görebilir.</li>
+<li><strong>Denetim kaydı:</strong> Tüm işlemler loglanır. Uyumluluk denetimleri için hazır kanıt.</li>
+<li><strong>Maliyet kontrolü:</strong> Tek lisans, tek bütçe kalemi, öngörülebilir maliyet.</li>
+</ul>
+
+<h2>Merkezi Yönetim Panelinin Gücü</h2>
+<p>Etkili bir merkezi PDF platformu, yönetim paneli üzerinden şunları sağlamalıdır:</p>
+<ol class="checklist">
+<li><strong>Kullanıcı ve Rol Yönetimi:</strong> Active Directory entegrasyonu, departman bazlı roller, otomatik kullanıcı provisioning.</li>
+<li><strong>Politika Yönetimi:</strong> İndirme/yazdırma kısıtlamaları, filigran kuralları, şifreleme politikaları — merkezi tanımlama.</li>
+<li><strong>Kullanım Raporları:</strong> Hangi özellikler ne kadar kullanılıyor? Hangi departman en çok belge işliyor?</li>
+<li><strong>Güvenlik Raporları:</strong> Şüpheli erişimler, başarısız giriş denemeleri, anormal aktiviteler.</li>
+<li><strong>Lisans Yönetimi:</strong> Aktif kullanıcılar, tüketilen lisanslar, kalan kapasite — tek bakışta.</li>
+</ol>
+
+<h2>Sonuç</h2>
+<p>Dağınık PDF araç kullanımı, kurumlar için sessiz bir güvenlik açığıdır. Her departmanın kendi aracını kullanması, veri sızıntısı riskini artırır, maliyetleri şişirir ve uyumluluk sorunlarına yol açar. Merkezi bir PDF yönetim platformu, bu sorunların hepsini tek seferde çözer.</p>
+<div class="cta-box">
+<p><strong>YesPDF</strong>, merkezi yönetim paneli, RBAC, Active Directory entegrasyonu ve kapsamlı raporlama ile kurumunuzun tüm PDF ihtiyaçlarını tek platformdan karşılar.</p>
+<a href="https://www.yespdf.com.tr" class="cta-link">www.yespdf.com.tr →</a>
+</div>
+
+
+</div>
+
+<div class="article-footer">
+  <div class="logo">Yes<span>PDF</span></div>
+  <p>On-Premise PDF Yönetim Platformu</p>
+  <p><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></p>
+</div>
+
+</body></html>

@@ -172,6 +172,22 @@ const translations = {
     'docs.sts_en': 'Service to Software',
     'docs.release_history': 'Sürüm Geçmişi',
 
+    // Articles
+    'nav.articles': 'Makaleler',
+    'articles.tag': 'MAKALELER',
+    'articles.title': 'Bilgi Merkezi',
+    'articles.subtitle': 'Kurumsal belge güvenliği, PDF yönetimi ve uyumluluk konularında uzman içerikleri',
+    'articles.docsecurity.title': 'Belge Güvenliği',
+    'articles.docsecurity.desc': 'Kurumsal belge güvenliği stratejileri, tehdit vektörleri ve koruma yöntemleri.',
+    'articles.redaction.title': 'Karartma Tehditleri',
+    'articles.redaction.desc': 'Yanlış karartma uygulamaları, veri sızıntısı riskleri ve doğru yöntemler.',
+    'articles.licensing.title': 'Lisanslama Modelleri',
+    'articles.licensing.desc': 'PDF yazılım lisanslama modelleri, gizli maliyetler ve doğru seçim kriterleri.',
+    'articles.central.title': 'Merkezi PDF Yönetimi',
+    'articles.central.desc': 'Merkezi yönetilebilir PDF ortamları, kurumsal kontrol ve verimlilik avantajları.',
+    'articles.personal.title': 'Kişisel PDF Araçlarının Tehlikesi',
+    'articles.personal.desc': 'Kişisel PDF araçlarının kurumsal güvenliğe etkileri ve önleme stratejileri.',
+
     // Contact
     'contact.title': 'Demo Talep Edin',
     'contact.subtitle': 'YesPDF\'i kurumunuzda deneyimlemek için bizimle iletişime geçin.',
@@ -386,6 +402,22 @@ const translations = {
     'docs.sts_tr': 'Service to Software (Turkish)',
     'docs.sts_en': 'Service to Software',
     'docs.release_history': 'Release History',
+
+    // Articles
+    'nav.articles': 'Articles',
+    'articles.tag': 'ARTICLES',
+    'articles.title': 'Knowledge Center',
+    'articles.subtitle': 'Expert insights on enterprise document security, PDF management and compliance',
+    'articles.docsecurity.title': 'Document Security',
+    'articles.docsecurity.desc': 'Enterprise document security strategies, threat vectors and protection methods.',
+    'articles.redaction.title': 'Redaction Threats',
+    'articles.redaction.desc': 'Failed redaction practices, data leak risks and proper techniques.',
+    'articles.licensing.title': 'Licensing Models',
+    'articles.licensing.desc': 'PDF software licensing models, hidden costs and selection criteria.',
+    'articles.central.title': 'Central PDF Management',
+    'articles.central.desc': 'Centrally managed PDF environments, enterprise control and efficiency advantages.',
+    'articles.personal.title': 'Personal PDF Tools Danger',
+    'articles.personal.desc': 'Impact of personal PDF tools on enterprise security and prevention strategies.',
 
     // Contact
     'contact.title': 'Request a Demo',
