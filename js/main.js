@@ -5,18 +5,74 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const logoImg = document.getElementById('nav-logo');
 
-  function handleScroll() {
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-      if (logoImg) logoImg.classList.remove('brightness-0', 'invert');
-    } else {
-      navbar.classList.remove('scrolled');
-      if (logoImg) logoImg.classList.add('brightness-0', 'invert');
-    }
+  // Cache navbar height to avoid layout thrashing during smooth scroll
+  let cachedNavHeight = navbar ? navbar.offsetHeight : 0;
+
+  // Cache section positions to avoid repeated offsetTop/offsetHeight reads
+  const sections = document.querySelectorAll('section[id]');
+  let sectionCache = [];
+
+  function cacheSectionPositions() {
+    sectionCache = [];
+    sections.forEach(section => {
+      sectionCache.push({
+        id: section.getAttribute('id'),
+        top: section.offsetTop,
+        height: section.offsetHeight,
+      });
+    });
+  }
+  cacheSectionPositions();
+
+  // Single combined scroll handler: reads first, then writes (no forced reflow)
+  let scrollTicking = false;
+  function onScroll() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      // --- READ phase (no DOM writes before these) ---
+      const scrollY = window.scrollY;
+      const scrollPos = scrollY + 100;
+
+      // --- WRITE phase (all classList mutations) ---
+      // Navbar appearance
+      if (scrollY > 50) {
+        navbar.classList.add('scrolled');
+        if (logoImg) logoImg.classList.remove('brightness-0', 'invert');
+      } else {
+        navbar.classList.remove('scrolled');
+        if (logoImg) logoImg.classList.add('brightness-0', 'invert');
+      }
+
+      // Active nav link highlight (uses cached positions, no layout reads)
+      sectionCache.forEach(s => {
+        const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+        if (link) {
+          const top = s.top - 100;
+          if (scrollPos >= top && scrollPos < top + s.height) {
+            link.classList.add('!text-green-400');
+          } else {
+            link.classList.remove('!text-green-400');
+          }
+        }
+      });
+
+      scrollTicking = false;
+    });
   }
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll(); // Initial check
+  window.addEventListener('scroll', onScroll, { passive: true });
+  // Initial check (inline, no rAF needed before first paint)
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+    if (logoImg) logoImg.classList.remove('brightness-0', 'invert');
+  }
+
+  // Update caches on resize
+  window.addEventListener('resize', () => {
+    cachedNavHeight = navbar ? navbar.offsetHeight : 0;
+    cacheSectionPositions();
+  }, { passive: true });
 
   // === Mobile Menu Toggle ===
   const mobileMenu = document.getElementById('mobile-menu');
@@ -33,8 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) {
         e.preventDefault();
         closeMobileMenu();
-        const navHeight = navbar ? navbar.offsetHeight : 0;
-        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        const targetPos = target.getBoundingClientRect().top + window.pageYOffset - cachedNavHeight;
         window.scrollTo({ top: targetPos, behavior: 'smooth' });
       }
     });
@@ -50,29 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === Active Nav Link on Scroll ===
-  const sections = document.querySelectorAll('section[id]');
-
-  function highlightNavLink() {
-    const scrollPos = window.scrollY + 100;
-
-    sections.forEach(section => {
-      const top = section.offsetTop - 100;
-      const bottom = top + section.offsetHeight;
-      const id = section.getAttribute('id');
-      const link = document.querySelector(`.nav-link[href="#${id}"]`);
-
-      if (link) {
-        if (scrollPos >= top && scrollPos < bottom) {
-          link.classList.add('!text-green-400');
-        } else {
-          link.classList.remove('!text-green-400');
-        }
-      }
-    });
-  }
-
-  window.addEventListener('scroll', highlightNavLink, { passive: true });
+  // Active nav link highlighting is handled in the combined onScroll handler above
 
   // === Initialize AOS (Animate on Scroll) ===
   if (typeof AOS !== 'undefined') {

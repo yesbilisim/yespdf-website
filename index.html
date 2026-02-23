@@ -37,57 +37,17 @@
 
     <title>YesPDF - Kurumsal PDF Y&ouml;netim Platformu</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preload critical font (self-hosted) -->
+    <link rel="preload" href="css/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-    <!-- AOS Animations -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS Animations (deferred, self-hosted) -->
+    <link rel="stylesheet" href="css/aos.css" media="print" onload="this.media='all'">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            50:  '#f0f4f8',
-                            100: '#d9e2ec',
-                            200: '#bcccdc',
-                            300: '#9fb3c8',
-                            400: '#829ab1',
-                            500: '#627d98',
-                            600: '#486581',
-                            700: '#1B3A5C',
-                            800: '#143050',
-                            900: '#0F2440',
-                            950: '#091A30',
-                        },
-                        'brand-green': {
-                            50:  '#f0fdf0',
-                            100: '#dcfcdc',
-                            200: '#bbf7bb',
-                            300: '#86ef86',
-                            400: '#4ade4a',
-                            500: '#288C28',
-                            600: '#228222',
-                            700: '#1a6b1a',
-                            800: '#1a5a1a',
-                            900: '#164a16',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
+    <!-- Tailwind CSS (pre-built static) -->
+    <link rel="stylesheet" href="css/tailwind.css">
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <!-- Custom Styles (includes @font-face for Inter) -->
+    <link rel="stylesheet" href="css/style.css?v=4">
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
@@ -101,7 +61,7 @@
 
                 <!-- Logo -->
                 <a href="#" class="flex items-center flex-shrink-0">
-                    <img src="img/logo-nav.webp" alt="YesPDF Logo" class="h-9 w-auto">
+                    <img src="img/logo-nav.webp" alt="YesPDF Logo" class="h-9 w-auto" width="200" height="44">
                 </a>
 
                 <!-- Desktop Navigation -->
@@ -259,7 +219,7 @@
                             </div>
                         </div>
                         <!-- Screenshot -->
-                        <img src="img/screenshots/tools/anasayfa.webp" alt="YesPDF Ana Sayfa" class="w-full h-auto block" loading="eager">
+                        <img src="img/screenshots/tools/anasayfa.webp" alt="YesPDF Ana Sayfa" class="w-full h-auto block" loading="eager" width="1400" height="695">
                     </div>
                     <!-- Glow effect behind mockup -->
                     <div class="absolute -inset-4 bg-brand-green-500/10 rounded-3xl blur-2xl -z-10"></div>
@@ -467,7 +427,7 @@
                 <!-- Tools: Ana Sayfa -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/anasayfa.webp" data-full="img/screenshots/tools/anasayfa.webp" alt="Ana Sayfa" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/anasayfa.webp" data-full="img/screenshots/tools/anasayfa.webp" alt="Ana Sayfa" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -478,7 +438,7 @@
                 <!-- Tools: Word'e Dönüştür -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/word-donustur.webp" data-full="img/screenshots/tools/word-donustur.webp" alt="Word'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/word-donustur.webp" data-full="img/screenshots/tools/word-donustur.webp" alt="Word'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -489,7 +449,7 @@
                 <!-- Tools: Excel'e Dönüştür -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/excel-donustur.webp" data-full="img/screenshots/tools/excel-donustur.webp" alt="Excel'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/excel-donustur.webp" data-full="img/screenshots/tools/excel-donustur.webp" alt="Excel'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -500,7 +460,7 @@
                 <!-- Tools: HTML'e Dönüştür -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/html-donustur.webp" data-full="img/screenshots/tools/html-donustur.webp" alt="HTML'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/html-donustur.webp" data-full="img/screenshots/tools/html-donustur.webp" alt="HTML'e Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -511,7 +471,7 @@
                 <!-- Tools: Görüntüye Dönüştür -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/image-donustur.webp" data-full="img/screenshots/tools/image-donustur.webp" alt="Görüntüye Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/image-donustur.webp" data-full="img/screenshots/tools/image-donustur.webp" alt="Görüntüye Dönüştür" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -522,7 +482,7 @@
                 <!-- Tools: Aranabilir PDF (OCR) -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/searchable-pdf.webp" data-full="img/screenshots/tools/searchable-pdf.webp" alt="Aranabilir PDF (OCR)" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/searchable-pdf.webp" data-full="img/screenshots/tools/searchable-pdf.webp" alt="Aranabilir PDF (OCR)" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -533,7 +493,7 @@
                 <!-- Tools: PDF Birleştir -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/pdf-birlestir.webp" data-full="img/screenshots/tools/pdf-birlestir.webp" alt="PDF Birleştir" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/pdf-birlestir.webp" data-full="img/screenshots/tools/pdf-birlestir.webp" alt="PDF Birleştir" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -544,7 +504,7 @@
                 <!-- Tools: PDF Böl -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/pdf-bol.webp" data-full="img/screenshots/tools/pdf-bol.webp" alt="PDF Böl" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/pdf-bol.webp" data-full="img/screenshots/tools/pdf-bol.webp" alt="PDF Böl" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -555,7 +515,7 @@
                 <!-- Tools: PDF Sıkıştır -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/pdf-sikistir.webp" data-full="img/screenshots/tools/pdf-sikistir.webp" alt="PDF Sıkıştır" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/pdf-sikistir.webp" data-full="img/screenshots/tools/pdf-sikistir.webp" alt="PDF Sıkıştır" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -566,7 +526,7 @@
                 <!-- Tools: Filigran Ekle -->
                 <div class="gallery-item" data-category="tools" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/tools/filigran.webp" data-full="img/screenshots/tools/filigran.webp" alt="Filigran Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/tools/filigran.webp" data-full="img/screenshots/tools/filigran.webp" alt="Filigran Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -579,7 +539,7 @@
                 <!-- Editor: PDF Editörü -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/editor-full.webp" data-full="img/screenshots/editor/editor-full.webp" alt="PDF Editörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/editor-full.webp" data-full="img/screenshots/editor/editor-full.webp" alt="PDF Editörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -590,7 +550,7 @@
                 <!-- Editor: Metin Düzenleme -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/metin-duzenle.webp" data-full="img/screenshots/editor/metin-duzenle.webp" alt="Metin Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/metin-duzenle.webp" data-full="img/screenshots/editor/metin-duzenle.webp" alt="Metin Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -601,7 +561,7 @@
                 <!-- Editor: Düzenleme Araçları -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/duzenleme.webp" data-full="img/screenshots/editor/duzenleme.webp" alt="Düzenleme Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/duzenleme.webp" data-full="img/screenshots/editor/duzenleme.webp" alt="Düzenleme Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -612,7 +572,7 @@
                 <!-- Editor: Şekiller -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/sekiller.webp" data-full="img/screenshots/editor/sekiller.webp" alt="Şekiller" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/sekiller.webp" data-full="img/screenshots/editor/sekiller.webp" alt="Şekiller" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -623,7 +583,7 @@
                 <!-- Editor: Ölçüm Araçları -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/olcum.webp" data-full="img/screenshots/editor/olcum.webp" alt="Ölçüm Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/olcum.webp" data-full="img/screenshots/editor/olcum.webp" alt="Ölçüm Araçları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -634,7 +594,7 @@
                 <!-- Editor: Karartma -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/karartma.webp" data-full="img/screenshots/editor/karartma.webp" alt="Karartma" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/karartma.webp" data-full="img/screenshots/editor/karartma.webp" alt="Karartma" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -645,7 +605,7 @@
                 <!-- Editor: Doldur ve İmzala -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/doldur-imzala.webp" data-full="img/screenshots/editor/doldur-imzala.webp" alt="Doldur ve İmzala" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/doldur-imzala.webp" data-full="img/screenshots/editor/doldur-imzala.webp" alt="Doldur ve İmzala" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -656,7 +616,7 @@
                 <!-- Editor: PDF Formları -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/formlar.webp" data-full="img/screenshots/editor/formlar.webp" alt="PDF Formları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/formlar.webp" data-full="img/screenshots/editor/formlar.webp" alt="PDF Formları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -667,7 +627,7 @@
                 <!-- Editor: Pullar ve Damgalar -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/pullar.webp" data-full="img/screenshots/editor/pullar.webp" alt="Pullar ve Damgalar" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/pullar.webp" data-full="img/screenshots/editor/pullar.webp" alt="Pullar ve Damgalar" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -678,7 +638,7 @@
                 <!-- Editor: Akıllı Düzenleme -->
                 <div class="gallery-item" data-category="editor" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/editor/akilli-duzenleme.webp" data-full="img/screenshots/editor/akilli-duzenleme.webp" alt="Akıllı Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/editor/akilli-duzenleme.webp" data-full="img/screenshots/editor/akilli-duzenleme.webp" alt="Akıllı Düzenleme" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -691,7 +651,7 @@
                 <!-- Admin: Kontrol Paneli -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/kontrol-paneli.webp" data-full="img/screenshots/admin/kontrol-paneli.webp" alt="Kontrol Paneli" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/kontrol-paneli.webp" data-full="img/screenshots/admin/kontrol-paneli.webp" alt="Kontrol Paneli" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -702,7 +662,7 @@
                 <!-- Admin: Kullanıcı Yönetimi -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/kullanici-yonetimi.webp" data-full="img/screenshots/admin/kullanici-yonetimi.webp" alt="Kullanıcı Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/kullanici-yonetimi.webp" data-full="img/screenshots/admin/kullanici-yonetimi.webp" alt="Kullanıcı Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -713,7 +673,7 @@
                 <!-- Admin: Kullanıcı Ekle -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/kullanici-ekle.webp" data-full="img/screenshots/admin/kullanici-ekle.webp" alt="Kullanıcı Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/kullanici-ekle.webp" data-full="img/screenshots/admin/kullanici-ekle.webp" alt="Kullanıcı Ekle" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -724,7 +684,7 @@
                 <!-- Admin: LDAP/AD Entegrasyonu -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/ldap-ad.webp" data-full="img/screenshots/admin/ldap-ad.webp" alt="LDAP/AD Entegrasyonu" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/ldap-ad.webp" data-full="img/screenshots/admin/ldap-ad.webp" alt="LDAP/AD Entegrasyonu" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -735,7 +695,7 @@
                 <!-- Admin: İş Kuyruğu Monitörü -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/is-kuyrugu.webp" data-full="img/screenshots/admin/is-kuyrugu.webp" alt="İş Kuyruğu Monitörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/is-kuyrugu.webp" data-full="img/screenshots/admin/is-kuyrugu.webp" alt="İş Kuyruğu Monitörü" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -746,7 +706,7 @@
                 <!-- Admin: Güvenlik Ayarları -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/guvenlik-ayarlari.webp" data-full="img/screenshots/admin/guvenlik-ayarlari.webp" alt="Güvenlik Ayarları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/guvenlik-ayarlari.webp" data-full="img/screenshots/admin/guvenlik-ayarlari.webp" alt="Güvenlik Ayarları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -757,7 +717,7 @@
                 <!-- Admin: Denetim Kayıtları -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/denetim-kayitlari.webp" data-full="img/screenshots/admin/denetim-kayitlari.webp" alt="Denetim Kayıtları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/denetim-kayitlari.webp" data-full="img/screenshots/admin/denetim-kayitlari.webp" alt="Denetim Kayıtları" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -768,7 +728,7 @@
                 <!-- Admin: Kullanım İstatistikleri -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/kullanim-istatistikleri.webp" data-full="img/screenshots/admin/kullanim-istatistikleri.webp" alt="Kullanım İstatistikleri" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/kullanim-istatistikleri.webp" data-full="img/screenshots/admin/kullanim-istatistikleri.webp" alt="Kullanım İstatistikleri" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -779,7 +739,7 @@
                 <!-- Admin: Sertifika Yönetimi -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/sertifika-yonetimi.webp" data-full="img/screenshots/admin/sertifika-yonetimi.webp" alt="Sertifika Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/sertifika-yonetimi.webp" data-full="img/screenshots/admin/sertifika-yonetimi.webp" alt="Sertifika Yönetimi" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -790,7 +750,7 @@
                 <!-- Admin: Giriş Ekranı -->
                 <div class="gallery-item" data-category="admin" data-aos="fade-up">
                     <div class="relative overflow-hidden rounded-xl shadow-md cursor-pointer group" onclick="openLightbox(this)">
-                        <img src="img/thumbnails/admin/giris-ekrani.webp" data-full="img/screenshots/admin/giris-ekrani.webp" alt="Giriş Ekranı" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                        <img src="img/thumbnails/admin/giris-ekrani.webp" data-full="img/screenshots/admin/giris-ekrani.webp" alt="Giriş Ekranı" loading="lazy" class="w-full h-48 object-cover object-top transition-transform duration-500 group-hover:scale-105" width="400" height="200">
                         <div class="absolute inset-0 bg-navy-700/0 group-hover:bg-navy-700/40 transition-all duration-300 flex items-center justify-center">
                             <svg class="w-10 h-10 text-white opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
                         </div>
@@ -1742,7 +1702,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
                 <!-- Column 1: Brand -->
                 <div>
-                    <img src="img/logo-nav.webp" alt="YesPDF" class="h-8 mb-4 brightness-0 invert">
+                    <img src="img/logo-nav.webp" alt="YesPDF" class="h-8 mb-4 brightness-0 invert" width="200" height="44">
                     <p class="text-sm leading-relaxed" data-i18n="footer.brand.desc">Kurumsal PDF y&ouml;netim platformu. T&uuml;m PDF işlemleriniz i&ccedil;in g&uuml;venli, hızlı ve on-premise &ccedil;&ouml;z&uuml;m.</p>
                 </div>
 
@@ -1824,11 +1784,11 @@
     </div>
 
     <!-- ==================== SCRIPTS ==================== -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/i18n.js?v=3"></script>
-    <script src="js/main.js?v=3"></script>
-    <script src="js/gallery.js?v=3"></script>
-    <script src="js/form.js?v=3"></script>
+    <script src="js/aos.js" defer></script>
+    <script src="js/i18n.js?v=4"></script>
+    <script src="js/main.js?v=4" defer></script>
+    <script src="js/gallery.js?v=4" defer></script>
+    <script src="js/form.js?v=4" defer></script>
 
 </body>
 </html>
