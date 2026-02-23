@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
   const logoImg = document.getElementById('nav-logo');
 
-  // Cache navbar height to avoid layout thrashing during smooth scroll
-  let cachedNavHeight = navbar ? navbar.offsetHeight : 0;
-
-  // Cache section positions to avoid repeated offsetTop/offsetHeight reads
+  // Cache navbar height and section positions (deferred to avoid forced reflow)
+  let cachedNavHeight = 64; // sensible default until measured
   const sections = document.querySelectorAll('section[id]');
   let sectionCache = [];
 
@@ -22,7 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-  cacheSectionPositions();
+
+  // Defer all layout reads to after first paint (avoids forced reflow at DOMContentLoaded)
+  requestAnimationFrame(() => {
+    cachedNavHeight = navbar ? navbar.offsetHeight : 64;
+    cacheSectionPositions();
+  });
 
   // Single combined scroll handler: reads first, then writes (no forced reflow)
   let scrollTicking = false;
