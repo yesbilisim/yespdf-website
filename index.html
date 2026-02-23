@@ -155,6 +155,7 @@
     </nav>
 
 
+    <main>
     <!-- ============================================================
          SECTION 2: HERO - Dark Gradient, Full Screen
          ============================================================ -->
@@ -190,7 +191,7 @@
 
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-xl shadow-lg shadow-brand-green-500/25 hover:shadow-xl hover:shadow-brand-green-500/30 transition-all duration-200 transform hover:-translate-y-0.5" data-i18n="hero.cta_primary">
+                        <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-brand-green-700 hover:bg-brand-green-600 rounded-xl shadow-lg shadow-brand-green-500/25 hover:shadow-xl hover:shadow-brand-green-500/30 transition-all duration-200 transform hover:-translate-y-0.5" data-i18n="hero.cta_primary">
                             <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
                             Demo Talep Et
                         </a>
@@ -214,12 +215,15 @@
                             <div class="flex-1 ml-3">
                                 <div class="bg-gray-700 rounded-md px-3 py-1 flex items-center">
                                     <svg class="w-3.5 h-3.5 text-gray-400 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-                                    <span class="text-xs text-gray-400 truncate">https://yespdf.yourcompany.com</span>
+                                    <span class="text-xs text-gray-300 truncate">https://yespdf.yourcompany.com</span>
                                 </div>
                             </div>
                         </div>
                         <!-- Screenshot -->
-                        <img src="img/screenshots/tools/anasayfa.webp" alt="YesPDF Ana Sayfa" class="w-full h-auto block" loading="eager" width="1400" height="695">
+                        <img src="img/screenshots/tools/anasayfa.webp"
+                                 srcset="img/screenshots/tools/anasayfa-mobile.webp 700w, img/screenshots/tools/anasayfa.webp 1400w"
+                                 sizes="(max-width: 768px) 100vw, 700px"
+                                 alt="YesPDF Ana Sayfa" class="w-full h-auto block" loading="eager" fetchpriority="high" width="1400" height="695">
                     </div>
                     <!-- Glow effect behind mockup -->
                     <div class="absolute -inset-4 bg-brand-green-500/10 rounded-3xl blur-2xl -z-10"></div>
@@ -1263,7 +1267,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.brochure_tr">&Uuml;r&uuml;n Bro&scedil;&uuml;r&uuml;</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.brochure_tr">&Uuml;r&uuml;n Bro&scedil;&uuml;r&uuml;</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1278,7 +1282,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.brochure_en">Product Brochure</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.brochure_en">Product Brochure</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1293,7 +1297,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.user_guide_tr">Kullanıcı Kılavuzu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.user_guide_tr">Kullanıcı Kılavuzu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1308,7 +1312,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.whitepaper_tr">Teknik Whitepaper</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.whitepaper_tr">Teknik Whitepaper</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1323,7 +1327,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.kvkk_tr">KVKK Uyumluluk Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.kvkk_tr">KVKK Uyumluluk Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1338,7 +1342,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_tr">Sistem Gereksinimleri</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_tr">Sistem Gereksinimleri</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1353,7 +1357,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_en">System Requirements</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sysreq_en">System Requirements</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1368,7 +1372,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_tr">Rakip Karşılaştırması</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_tr">Rakip Karşılaştırması</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1383,7 +1387,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_en">Competitor Comparison</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.competitor_en">Competitor Comparison</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1398,7 +1402,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_tr">Y&uuml;k Testi Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_tr">Y&uuml;k Testi Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1413,7 +1417,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_en">Load Test Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.loadtest_en">Load Test Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1428,7 +1432,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.gdpr_en">GDPR Compliance Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.gdpr_en">GDPR Compliance Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1443,7 +1447,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.ferpa_tr">FERPA Uyumluluk Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.ferpa_tr">FERPA Uyumluluk Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1458,7 +1462,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.ferpa_en">FERPA Compliance Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.ferpa_en">FERPA Compliance Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1473,7 +1477,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.hipaa_tr">HIPAA Uyumluluk Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.hipaa_tr">HIPAA Uyumluluk Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1488,7 +1492,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.hipaa_en">HIPAA Compliance Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.hipaa_en">HIPAA Compliance Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1503,7 +1507,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.soc2_tr">SOC 2 Uyumluluk Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.soc2_tr">SOC 2 Uyumluluk Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1518,7 +1522,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.soc2_en">SOC 2 Compliance Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.soc2_en">SOC 2 Compliance Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1533,7 +1537,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.iso27001_tr">ISO 27001 Uyumluluk Raporu</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.iso27001_tr">ISO 27001 Uyumluluk Raporu</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1548,7 +1552,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.iso27001_en">ISO 27001 Compliance Report</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.iso27001_en">ISO 27001 Compliance Report</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1563,7 +1567,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sts_tr">Service to Software</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sts_tr">Service to Software</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-red-50 text-red-700 text-xs font-medium rounded">TR</span>
                         </div>
                     </div>
@@ -1578,7 +1582,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sts_en">Service to Software</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.sts_en">Service to Software</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-blue-50 text-blue-700 text-xs font-medium rounded">EN</span>
                         </div>
                     </div>
@@ -1593,7 +1597,7 @@
                             </svg>
                         </div>
                         <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-navy-900 text-sm" data-i18n="docs.release_history">S&uuml;r&uuml;m Ge&ccedil;mişi</h4>
+                            <h3 class="font-semibold text-navy-900 text-sm" data-i18n="docs.release_history">S&uuml;r&uuml;m Ge&ccedil;mişi</h3>
                             <span class="inline-block mt-2 px-2 py-0.5 bg-purple-50 text-purple-700 text-xs font-medium rounded">TR/EN</span>
                         </div>
                     </div>
@@ -1696,6 +1700,8 @@
     </section>
 
 
+    </main>
+
     <!-- ==================== SECTION 9: FOOTER ==================== -->
     <footer class="bg-navy-950 py-12 text-gray-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1708,7 +1714,7 @@
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.links.title">Hızlı Bağlantılar</h4>
+                    <h3 class="text-white font-semibold mb-4" data-i18n="footer.links.title">Hızlı Bağlantılar</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#features" class="hover:text-white transition-colors" data-i18n="footer.links.features">&Ouml;zellikler</a></li>
                         <li><a href="#gallery" class="hover:text-white transition-colors" data-i18n="footer.links.gallery">Ekran G&ouml;r&uuml;nt&uuml;leri</a></li>
@@ -1719,7 +1725,7 @@
 
                 <!-- Column 3: Documents -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.docs.title">D&ouml;k&uuml;manlar</h4>
+                    <h3 class="text-white font-semibold mb-4" data-i18n="footer.docs.title">D&ouml;k&uuml;manlar</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="#docs" class="hover:text-white transition-colors" data-i18n="footer.docs.all">T&uuml;m D&ouml;k&uuml;manlar</a></li>
                         <li><a href="docs/YesPDF_Kullanici_Kilavuzu.pdf" download class="hover:text-white transition-colors" data-i18n="footer.docs.user_guide">Kullanıcı Kılavuzu</a></li>
@@ -1729,7 +1735,7 @@
 
                 <!-- Column 4: Contact -->
                 <div>
-                    <h4 class="text-white font-semibold mb-4" data-i18n="footer.contact.title">İletişim</h4>
+                    <h3 class="text-white font-semibold mb-4" data-i18n="footer.contact.title">İletişim</h3>
                     <ul class="space-y-2 text-sm">
                         <li><a href="mailto:info@yespdf.com.tr" class="hover:text-white transition-colors">info@yespdf.com.tr</a></li>
                         <li><a href="mailto:support@yespdf.com.tr" class="hover:text-white transition-colors">support@yespdf.com.tr</a></li>
@@ -1775,7 +1781,7 @@
                         </p>
                     </div>
                     <div class="flex items-center gap-3 flex-shrink-0">
-                        <button onclick="acceptKVKK()" class="px-5 py-2 text-sm font-semibold text-white bg-brand-green-500 hover:bg-brand-green-600 rounded-lg transition-colors" data-i18n="kvkk.accept">Kabul Et</button>
+                        <button onclick="acceptKVKK()" class="px-5 py-2 text-sm font-semibold text-white bg-brand-green-700 hover:bg-brand-green-600 rounded-lg transition-colors" data-i18n="kvkk.accept">Kabul Et</button>
                         <button onclick="rejectKVKK()" class="px-5 py-2 text-sm font-medium text-gray-400 hover:text-white border border-gray-600 hover:border-gray-400 rounded-lg transition-colors" data-i18n="kvkk.reject">Reddet</button>
                     </div>
                 </div>
