@@ -144,6 +144,8 @@ const translations = {
     'verticals.education.desc': 'Transkript, diploma, sınav evrakları, öğrenci dosyaları ve akademik belge yönetimi.',
     'verticals.sts.title': 'Service to Software',
     'verticals.sts.desc': 'SaaS değil, Service to Software. Verileriniz sizde kalır, biz size hizmet sunarız.',
+    'verticals.audit.title': 'Denetim & Danışmanlık',
+    'verticals.audit.desc': 'Denetim raporları, finansal tablolar, uyumluluk belgeleri ve ABBYY FineReader karşılaştırması.',
 
     // Documents
     'docs.title': 'Dokümanlar',
@@ -375,6 +377,8 @@ const translations = {
     'verticals.education.desc': 'Transcripts, diplomas, exam papers, student files and academic document management.',
     'verticals.sts.title': 'Service to Software',
     'verticals.sts.desc': 'Not SaaS, Service to Software. Your data stays with you, we deliver the service.',
+    'verticals.audit.title': 'Audit & Advisory',
+    'verticals.audit.desc': 'Audit reports, financial statements, compliance documents and ABBYY FineReader comparison.',
 
     // Documents
     'docs.title': 'Documents',
