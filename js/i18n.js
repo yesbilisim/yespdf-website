@@ -174,6 +174,8 @@ const translations = {
     'docs.iso27001_en': 'ISO 27001 Uyumluluk Raporu',
     'docs.sts_tr': 'Service to Software',
     'docs.sts_en': 'Service to Software',
+    'docs.tsk_whitepaper_tr': 'Savunma Sanayii Whitepaper',
+    'docs.nato_stanag_en': 'NATO STANAG Uyumluluk',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Articles
@@ -409,6 +411,8 @@ const translations = {
     'docs.iso27001_en': 'ISO 27001 Compliance Report',
     'docs.sts_tr': 'Service to Software (Turkish)',
     'docs.sts_en': 'Service to Software',
+    'docs.tsk_whitepaper_tr': 'Defence Industry Whitepaper (Turkish)',
+    'docs.nato_stanag_en': 'NATO STANAG Compliance',
     'docs.release_history': 'Release History',
 
     // Articles
