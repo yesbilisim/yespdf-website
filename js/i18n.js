@@ -150,6 +150,8 @@ const translations = {
     'verticals.digsig.desc': 'Kurumsal dijital imza, e-imza entegrasyonu, sertifika yönetimi ve uyumluluk çözümleri.',
     'verticals.audit.title': 'Denetim & Danışmanlık',
     'verticals.audit.desc': 'Denetim raporları, finansal tablolar, uyumluluk belgeleri ve ABBYY FineReader karşılaştırması.',
+    'verticals.uyap.title': 'UYAP UDF Belge Yönetimi',
+    'verticals.uyap.desc': 'UYAP UDF dosyalarını PDF\'e dönüştürme, dijital imza doğrulama ve çift yönlü format desteği.',
 
     // Documents
     'docs.title': 'Dokümanlar',
@@ -399,6 +401,8 @@ const translations = {
     'verticals.digsig.desc': 'Enterprise digital signature, e-signature integration, certificate management and compliance solutions.',
     'verticals.audit.title': 'Audit & Advisory',
     'verticals.audit.desc': 'Audit reports, financial statements, compliance documents and ABBYY FineReader comparison.',
+    'verticals.uyap.title': 'UYAP UDF Document Management',
+    'verticals.uyap.desc': 'Convert UYAP UDF files to PDF, verify digital signatures and bidirectional format support.',
 
     // Documents
     'docs.title': 'Documents',
@@ -648,6 +652,8 @@ const translations = {
     'verticals.digsig.desc': 'Digitale Unternehmenssignatur, E-Signatur-Integration, Zertifikatsverwaltung und Compliance-L\u00f6sungen.',
     'verticals.audit.title': 'Wirtschaftspr\u00fcfung & Beratung',
     'verticals.audit.desc': 'Pr\u00fcfberichte, Jahresabschl\u00fcsse, Compliance-Dokumente und ABBYY FineReader-Vergleich.',
+    'verticals.uyap.title': 'UYAP UDF-Dokumentenverwaltung',
+    'verticals.uyap.desc': 'UYAP UDF-Dateien in PDF konvertieren, digitale Signaturen verifizieren und bidirektionale Formatunterst\u00fctzung.',
 
     // Documents
     'docs.title': 'Dokumente',
