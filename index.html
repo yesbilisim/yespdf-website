@@ -2162,7 +2162,7 @@ html {
                 <!-- LEFT: Info (2 cols) -->
                 <div class="lg:col-span-2">
                     <h2 class="text-3xl md:text-4xl font-bold text-navy-900 mb-4" data-i18n="contact.title">Demo Talep Edin</h2>
-                    <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="contact.subtitle">YesPDF'i kurumunuzda test edin. Uzman ekibimiz sizinle iletişime ge&ccedil;ecektir.</p>
+                    <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="contact.subtitle">YesPDF'i kurumunuzda deneyimlemek i&ccedil;in bizimle iletişime ge&ccedil;in.</p>
 
                     <!-- Motivation Items -->
                     <div class="space-y-4 mb-10">
@@ -2201,6 +2201,21 @@ html {
                             <span class="text-gray-700" data-i18n="contact.phone">+90 212 347 47 16</span>
                         </div>
                     </div>
+
+                    <!-- Demo Link -->
+                    <div class="mt-8 p-5 bg-brand-green-50 border border-brand-green-200 rounded-xl">
+                        <div class="flex items-center gap-3 mb-2">
+                            <svg class="w-5 h-5 text-brand-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+                            </svg>
+                            <span class="font-semibold text-navy-900" data-i18n="contact.demo.title">Online Demo Ortamı</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-3" data-i18n="contact.demo.desc">YesPDF'i hemen tarayıcınızdan deneyin. Kurulum gerektirmez.</p>
+                        <a href="https://demo.yespdf.com.tr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-green-600 hover:bg-brand-green-700 text-white text-sm font-semibold py-2.5 px-5 rounded-lg transition-colors">
+                            <span data-i18n="contact.demo.button">Demo'yu Deneyin</span>
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- RIGHT: Form (3 cols) -->
@@ -2209,6 +2224,8 @@ html {
                         <input type="hidden" name="_subject" value="YesPDF Demo Talebi">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_next" value="https://yespdf.com.tr/#contact">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="Demo URL" value="https://demo.yespdf.com.tr">
                         <input type="text" name="_honey" style="display:none">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                             <div>
