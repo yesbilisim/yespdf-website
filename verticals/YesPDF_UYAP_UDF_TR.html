@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YesPDF — UYAP UDF Belge Yönetimi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --primary: #1B3A6B;
+  --primary-light: #2563EB;
+  --primary-dark: #0F2347;
+  --accent: #E8EEF8;
+  --accent-warm: #C9A84C;
+  --accent-gold: #D4A843;
+  --accent-gold-light: #F5E6B8;
+  --dark: #0C1220;
+  --gray-900: #1a1a2e;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --red: #DC2626;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--gray-700);
+  line-height: 1.7;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .stat-number {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--dark) 0%, #0a1628 40%, var(--primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(37,99,235,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--primary-light), transparent);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,99,235,0.12);
+  border: 1px solid rgba(37,99,235,0.25);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #93B4FF;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.12;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #93B4FF, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 20px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+
+.stat-number {
+  font-size: 26px;
+  font-weight: 800;
+  color: #93B4FF;
+  display: block;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.hero-visual { position: relative; }
+
+/* UDF Card in Hero */
+.udf-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 36px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.udf-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-gold));
+}
+
+.udf-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.udf-seal {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-gold), #B8941F);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+}
+
+.udf-card-title h3 { color: var(--white); font-size: 16px; font-weight: 700; }
+.udf-card-title p { color: rgba(255,255,255,0.5); font-size: 13px; }
+
+.udf-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.udf-field:last-child { border-bottom: none; }
+.udf-field .label { color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 500; }
+.udf-field .value { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; }
+
+.udf-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(5,150,105,0.15);
+  border: 1px solid rgba(5,150,105,0.3);
+  color: #34D399;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+/* ===== SECTIONS ===== */
+.section { padding: 100px 0; position: relative; }
+.section-light { background: var(--white); }
+.section-blue { background: linear-gradient(165deg, #f0f4ff 0%, #e8eef8 100%); }
+.section-dark {
+  background: linear-gradient(165deg, var(--dark) 0%, #0a1628 100%);
+  color: var(--white);
+}
+.section-gold { background: linear-gradient(165deg, #FFFDF5 0%, #FFF8E7 100%); }
+
+.section-header { text-align: center; margin-bottom: 64px; }
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-dark .section-tag {
+  background: rgba(37,99,235,0.15);
+  color: #93B4FF;
+}
+
+.section-gold .section-tag {
+  background: rgba(212,168,67,0.15);
+  color: #96780A;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1.15;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+.section-dark .section-title { color: var(--white); }
+
+.section-subtitle {
+  font-size: 17px;
+  color: var(--gray-500);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section-dark .section-subtitle { color: rgba(255,255,255,0.6); }
+
+/* ===== FEATURE CARDS ===== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-gold));
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: transparent;
+}
+
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.icon-blue { background: linear-gradient(135deg, #EEF2FF, #DBEAFE); }
+.icon-gold { background: linear-gradient(135deg, #FFF8E7, var(--accent-gold-light)); }
+.icon-green { background: linear-gradient(135deg, #ECFDF5, var(--green-light)); }
+.icon-red { background: linear-gradient(135deg, #FEF2F2, #FECACA); }
+.icon-purple { background: linear-gradient(135deg, #F5F3FF, #E9D5FF); }
+.icon-teal { background: linear-gradient(135deg, #F0FDFA, #CCFBF1); }
+
+.feature-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+/* ===== TOOL SECTIONS (3 big vertical blocks) ===== */
+.tool-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.tool-section.reverse { direction: rtl; }
+.tool-section.reverse > * { direction: ltr; }
+
+.tool-content { max-width: 520px; }
+
+.tool-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.tag-blue { background: #EEF2FF; color: var(--primary-light); }
+.tag-gold { background: #FFF8E7; color: #96780A; }
+.tag-green { background: #ECFDF5; color: var(--green); }
+
+.tool-content h2 {
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin-bottom: 16px;
+}
+
+.section-dark .tool-content h2 { color: var(--white); }
+
+.tool-content .desc {
+  font-size: 16px;
+  color: var(--gray-500);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.section-dark .tool-content .desc { color: rgba(255,255,255,0.6); }
+
+.tool-steps {
+  list-style: none;
+  counter-reset: step;
+}
+
+.tool-steps li {
+  counter-increment: step;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+.section-dark .tool-steps li { border-bottom-color: rgba(255,255,255,0.06); }
+
+.tool-steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-light);
+  background: #EEF2FF;
+}
+
+.section-dark .tool-steps li::before {
+  background: rgba(37,99,235,0.15);
+  color: #93B4FF;
+}
+
+.tool-steps li strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 2px;
+}
+
+.section-dark .tool-steps li strong { color: var(--white); }
+
+.tool-steps li span {
+  font-size: 13px;
+  color: var(--gray-500);
+  line-height: 1.5;
+}
+
+.section-dark .tool-steps li span { color: rgba(255,255,255,0.5); }
+
+/* ===== MOCK UI ===== */
+.mock-ui {
+  background: #0D1B2A;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.3);
+}
+
+.mock-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.mock-dot {
+  width: 12px; height: 12px; border-radius: 50%;
+}
+.mock-dot.r { background: #EF4444; }
+.mock-dot.y { background: #F59E0B; }
+.mock-dot.g { background: #10B981; }
+
+.mock-titlebar span {
+  margin-left: 12px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+}
+
+.mock-body {
+  padding: 32px;
+}
+
+.mock-dropzone {
+  border: 2px dashed rgba(37,99,235,0.3);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  background: rgba(37,99,235,0.04);
+  margin-bottom: 20px;
+}
+
+.mock-dropzone .icon { font-size: 48px; margin-bottom: 12px; }
+.mock-dropzone .main-text { color: rgba(255,255,255,0.8); font-size: 15px; font-weight: 600; }
+.mock-dropzone .sub-text { color: rgba(255,255,255,0.35); font-size: 12px; margin-top: 4px; }
+
+.mock-file {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.mock-file .file-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.file-icon-udf { background: rgba(212,168,67,0.15); }
+.file-icon-pdf { background: rgba(239,68,68,0.15); }
+
+.mock-file .file-info { flex: 1; }
+.mock-file .file-name { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; }
+.mock-file .file-size { color: rgba(255,255,255,0.35); font-size: 11px; }
+
+.mock-btn {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: default;
+  text-align: center;
+  color: white;
+}
+
+.mock-btn-blue { background: linear-gradient(135deg, var(--primary-light), var(--primary)); }
+.mock-btn-gold { background: linear-gradient(135deg, var(--accent-gold), #B8941F); }
+
+/* Verify result mock */
+.mock-verify-result {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.verify-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.verify-row:last-child { border-bottom: none; }
+.verify-row .vr-label { color: rgba(255,255,255,0.4); font-size: 12px; }
+.verify-row .vr-value { color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 600; }
+.vr-valid { color: #34D399 !important; }
+.vr-signer { color: #93B4FF !important; }
+
+/* ===== PIPELINE ===== */
+.pipeline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 20px 0;
+  flex-wrap: wrap;
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 20px 28px;
+}
+
+.pipeline-icon {
+  width: 72px; height: 72px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.pipeline-step span {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  text-align: center;
+}
+
+.pipeline-arrow {
+  font-size: 28px;
+  color: var(--gray-300);
+  font-weight: 300;
+  margin: 0 4px;
+  padding-bottom: 28px;
+}
+
+/* ===== TABLE ===== */
+.comparison-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: var(--white);
+}
+
+.comparison-table th {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 18px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: 16px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.comparison-table tr:last-child td { border-bottom: none; }
+.comparison-table tr:hover td { background: #FAFBFF; }
+
+.check { color: var(--green); font-weight: 700; font-size: 18px; }
+.cross { color: var(--gray-300); font-size: 18px; }
+
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  padding: 100px 0;
+  background: linear-gradient(165deg, var(--dark) 0%, var(--primary-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37,99,235,0.1) 0%, transparent 100%);
+}
+
+.cta h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  position: relative;
+}
+
+.cta p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 40px;
+  max-width: 550px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,99,235,0.5);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--accent-gold), #B8941F);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(201,168,76,0.5);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 40px;
+  background: var(--dark);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer p {
+  color: rgba(255,255,255,0.3);
+  font-size: 13px;
+}
+
+.footer .brand {
+  color: rgba(255,255,255,0.5);
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner, .tool-section, .tool-section.reverse { grid-template-columns: 1fr; gap: 40px; }
+  .hero h1 { font-size: 34px; }
+  .section-title { font-size: 28px; }
+  .tool-content h2 { font-size: 26px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); }
+  .pipeline { gap: 0; }
+  .pipeline-step { padding: 12px 16px; }
+  .pipeline-icon { width: 56px; height: 56px; font-size: 24px; }
+  .container { padding: 0 20px; }
+  .cta h2 { font-size: 30px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">UYAP ENTEGRASYONU</div>
+        <h1>Mahkeme Evrakları<br><span>Artık PDF'de</span></h1>
+        <p class="hero-desc">
+          UYAP sistemi tarafından üretilen <strong>.udf</strong> dosyalarını PDF'e dönüştürün,
+          dijital imzalarını doğrulayın veya PDF belgelerinizi UDF formatına aktarın.
+          Hukuk profesyonelleri için tasarlandı.
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Araç</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">PKCS#7</span>
+            <span class="stat-label">İmza Doğrulama</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">%100</span>
+            <span class="stat-label">Türkçe Karakter</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="udf-card">
+          <div class="udf-card-header">
+            <div class="udf-seal">&#9878;</div>
+            <div class="udf-card-title">
+              <h3>UYAP Mahkeme Evrakı</h3>
+              <p>evrak_9677080399.udf</p>
+            </div>
+          </div>
+          <div class="udf-field">
+            <span class="label">Birim</span>
+            <span class="value">Ankara 3. Asliye Hukuk Mahkemesi</span>
+          </div>
+          <div class="udf-field">
+            <span class="label">Esas No</span>
+            <span class="value">2025/1847</span>
+          </div>
+          <div class="udf-field">
+            <span class="label">Evrak Türü</span>
+            <span class="value">Karar</span>
+          </div>
+          <div class="udf-field">
+            <span class="label">Tarih</span>
+            <span class="value">27.02.2026</span>
+          </div>
+          <div class="udf-field">
+            <span class="label">Doğrulama Kodu</span>
+            <span class="value" style="font-family: monospace;">A8F2-K9D4-M3N7</span>
+          </div>
+          <div class="udf-badge">&#10004; Dijital İmza Geçerli</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== UDF YAPISI ==================== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">TEKNİK ALTYAPI</div>
+      <h2 class="section-title">UDF Dosya Yapısı</h2>
+      <p class="section-subtitle">
+        UYAP sistemi tarafından üretilen .udf dosyaları, XML tabanlı içerik ve PKCS#7 dijital
+        imzayı tek bir ZIP arşivinde barındırır.
+      </p>
+    </div>
+
+    <div class="pipeline">
+      <div class="pipeline-step">
+        <div class="pipeline-icon icon-gold">&#128230;</div>
+        <span>evrak.udf<br><small style="color:var(--gray-500)">(ZIP Arşivi)</small></span>
+      </div>
+      <div class="pipeline-arrow">&#10132;</div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon icon-blue">&#128196;</div>
+        <span>content.xml<br><small style="color:var(--gray-500)">Metin &amp; Biçim</small></span>
+      </div>
+      <div class="pipeline-arrow">+</div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon icon-teal">&#128203;</div>
+        <span>properties.xml<br><small style="color:var(--gray-500)">Meta Veriler</small></span>
+      </div>
+      <div class="pipeline-arrow">+</div>
+      <div class="pipeline-step">
+        <div class="pipeline-icon icon-green">&#128274;</div>
+        <span>sign.sgn<br><small style="color:var(--gray-500)">PKCS#7 İmza</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ARAÇ 1: UDF → PDF ==================== -->
+<section class="section section-blue">
+  <div class="container">
+    <div class="tool-section">
+      <div class="tool-content">
+        <div class="tool-tag tag-blue">ARAÇ 1</div>
+        <h2>UDF'den PDF'e<br>Dönüştürme</h2>
+        <p class="desc">
+          Mahkeme evraklarını (.udf) okunabilir PDF formatına dönüştürün.
+          Metin biçimlendirmesi, tablolar, başlıklar ve meta veriler korunur.
+          Tüm Türkçe karakterler (İ, ı, ş, ğ, ç, ö, ü) eksiksiz desteklenir.
+        </p>
+        <ul class="tool-steps">
+          <li>
+            <div><strong>UDF dosyasını yükleyin</strong>
+            <span>Sürükle-bırak veya tıklayarak dosya seçin</span></div>
+          </li>
+          <li>
+            <div><strong>"PDF'e Dönüştür" butonuna tıklayın</strong>
+            <span>Sistem XML içeriğini ayrıştırır ve biçimlendirir</span></div>
+          </li>
+          <li>
+            <div><strong>PDF otomatik indirilir</strong>
+            <span>Meta veri kutusu, mahkeme bilgileri ve doğrulama kodu dahil</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mock-ui">
+          <div class="mock-titlebar">
+            <div class="mock-dot r"></div>
+            <div class="mock-dot y"></div>
+            <div class="mock-dot g"></div>
+            <span>YesPDF &mdash; UDF'den PDF'e</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-dropzone">
+              <div class="icon">&#9878;</div>
+              <div class="main-text">UDF dosyasını buraya sürükleyin</div>
+              <div class="sub-text">Desteklenen: .udf</div>
+            </div>
+            <div class="mock-file">
+              <div class="file-icon file-icon-udf">&#128230;</div>
+              <div class="file-info">
+                <div class="file-name">karar_2025_1847.udf</div>
+                <div class="file-size">142.3 KB</div>
+              </div>
+              <span style="color: #34D399; font-size: 18px;">&#10004;</span>
+            </div>
+            <div class="mock-btn mock-btn-blue">&#128196; PDF'e Dönüştür</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ARAÇ 2: PDF → UDF ==================== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="tool-section reverse">
+      <div class="tool-content">
+        <div class="tool-tag tag-gold">ARAÇ 2</div>
+        <h2>PDF'den UDF'e<br>Dönüştürme</h2>
+        <p class="desc">
+          PDF belgelerinizi UYAP uyumlu .udf formatına dönüştürün.
+          Metin içeriği ve biçimlendirme XML yapısına aktarılır,
+          UYAP sistemine yüklenmeye hazır hale gelir.
+        </p>
+        <ul class="tool-steps">
+          <li>
+            <div><strong>Kütüphaneden belge seçin</strong>
+            <span>Daha önce yüklediğiniz PDF dosyaları listelenir</span></div>
+          </li>
+          <li>
+            <div><strong>"UDF'e Dönüştür" butonuna tıklayın</strong>
+            <span>Apryse ile metin ve stiller çıkarılır, XML oluşturulur</span></div>
+          </li>
+          <li>
+            <div><strong>UDF dosyası indirilir</strong>
+            <span>content.xml + documentproperties.xml içeren ZIP arşivi</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mock-ui">
+          <div class="mock-titlebar">
+            <div class="mock-dot r"></div>
+            <div class="mock-dot y"></div>
+            <div class="mock-dot g"></div>
+            <span>YesPDF &mdash; PDF'den UDF'e</span>
+          </div>
+          <div class="mock-body">
+            <div style="margin-bottom: 16px;">
+              <div style="color: rgba(255,255,255,0.4); font-size: 12px; margin-bottom: 6px;">Belge Seçin</div>
+              <div style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 12px 16px; color: rgba(255,255,255,0.8); font-size: 13px; display: flex; justify-content: space-between; align-items: center;">
+                <span>&#128196; dava_dosyasi_2025.pdf</span>
+                <span style="color: rgba(255,255,255,0.3); font-size: 10px;">&#9660;</span>
+              </div>
+            </div>
+            <div class="mock-file">
+              <div class="file-icon file-icon-pdf">&#128196;</div>
+              <div class="file-info">
+                <div class="file-name">dava_dosyasi_2025.pdf</div>
+                <div class="file-size">3 sayfa &bull; 256 KB</div>
+              </div>
+            </div>
+            <div class="mock-btn mock-btn-gold">&#128230; UDF'e Dönüştür</div>
+            <div style="margin-top: 16px; padding: 12px; background: rgba(5,150,105,0.08); border: 1px solid rgba(5,150,105,0.2); border-radius: 10px; display: flex; align-items: center; gap: 8px;">
+              <span style="color: #34D399; font-size: 16px;">&#10004;</span>
+              <span style="color: #34D399; font-size: 13px; font-weight: 600;">UDF başarıyla oluşturuldu!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ARAÇ 3: İMZA DOĞRULAMA ==================== -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="tool-section">
+      <div class="tool-content">
+        <div class="tool-tag" style="background: rgba(5,150,105,0.15); color: #34D399;">ARAÇ 3</div>
+        <h2>UYAP Dijital İmza<br>Doğrulama</h2>
+        <p class="desc">
+          UDF dosyalarındaki PKCS#7/CMS dijital imzaları doğrulayın.
+          İmzalayan bilgisi, sertifika sağlayıcı, algoritma detayı ve
+          geçerlilik durumu tek tıkla görüntülenir.
+        </p>
+        <ul class="tool-steps">
+          <li>
+            <div><strong>UDF dosyasını yükleyin</strong>
+            <span>sign.sgn dosyası otomatik olarak arşivden çıkarılır</span></div>
+          </li>
+          <li>
+            <div><strong>"İmzayı Doğrula" butonuna tıklayın</strong>
+            <span>PKCS#7 SignedData yapısı ayrıştırılır ve kriptografik doğrulama yapılır</span></div>
+          </li>
+          <li>
+            <div><strong>Sonuçları görüntüleyin</strong>
+            <span>Bütünlük, imzalayan, sertifika sağlayıcı, geçerlilik süresi</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="mock-ui" style="border-color: rgba(255,255,255,0.12);">
+          <div class="mock-titlebar">
+            <div class="mock-dot r"></div>
+            <div class="mock-dot y"></div>
+            <div class="mock-dot g"></div>
+            <span>YesPDF &mdash; UYAP İmza Doğrulama</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-file">
+              <div class="file-icon file-icon-udf">&#128274;</div>
+              <div class="file-info">
+                <div class="file-name">evrak_9677080399.udf</div>
+                <div class="file-size">198.7 KB &bull; sign.sgn mevcut</div>
+              </div>
+              <span style="color: #34D399; font-size: 18px;">&#10004;</span>
+            </div>
+            <div class="mock-btn" style="background: linear-gradient(135deg, var(--green), #047857); margin-bottom: 0;">&#128274; İmzayı Doğrula</div>
+
+            <div class="mock-verify-result">
+              <div class="verify-row">
+                <span class="vr-label">Bütünlük</span>
+                <span class="vr-value vr-valid">&#10004; Geçerli</span>
+              </div>
+              <div class="verify-row">
+                <span class="vr-label">İmzalayan</span>
+                <span class="vr-value vr-signer">NURAY TASDELEN</span>
+              </div>
+              <div class="verify-row">
+                <span class="vr-label">Sertifika Sağlayıcı</span>
+                <span class="vr-value">Kamu Elektronik Sertifika Merkezi</span>
+              </div>
+              <div class="verify-row">
+                <span class="vr-label">Algoritma</span>
+                <span class="vr-value">ECDSA + SHA-256</span>
+              </div>
+              <div class="verify-row">
+                <span class="vr-label">Geçerlilik</span>
+                <span class="vr-value">2024-03-15 &mdash; 2027-03-15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== ÖZELLİKLER ==================== -->
+<section class="section section-gold">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag" style="background: rgba(212,168,67,0.15); color: #96780A;">ÖZELLİKLER</div>
+      <h2 class="section-title">Neden YesPDF ile UDF?</h2>
+      <p class="section-subtitle">
+        Hukuk sektörünün ihtiyaçlarına yönelik tasarlanmış, kurumsal düzeyde belge yönetimi
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon icon-blue">&#127988;</div>
+        <h3>Tam Türkçe Desteği</h3>
+        <p>İ, ı, ş, ğ, ç, ö, ü dahil tüm Türkçe karakterler Tinos TTF fontu ile eksiksiz desteklenir. xhtml2pdf yerine doğrudan reportlab Platypus kullanılır.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-green">&#128274;</div>
+        <h3>Kriptografik Doğrulama</h3>
+        <p>PKCS#7/CMS SignedData yapısı asn1crypto ile ayrıştırılır. ECDSA ve RSA algoritmaları desteklenir. Belge bütünlüğü kriptografik olarak doğrulanır.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-gold">&#128203;</div>
+        <h3>Meta Veri Koruma</h3>
+        <p>Mahkeme bilgisi, esas numarası, evrak türü, tarih ve UYAP doğrulama kodu PDF çıktısında otomatik olarak korunur ve gösterilir.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-purple">&#128260;</div>
+        <h3>Çift Yönlü Dönüşüm</h3>
+        <p>UDF'den PDF'e ve PDF'den UDF'e dönüşüm. Round-trip destekli: oluşturulan UDF dosyası tekrar PDF'e dönüştürülebilir.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-teal">&#128736;</div>
+        <h3>Yönetici Kontrolü</h3>
+        <p>Her üç araç da admin panelinden ayrı ayrı açılıp kapatılabilir. Kullanıcı bazında araç görünürlüğü ayarlanabilir.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon icon-red">&#127981;</div>
+        <h3>On-Premise Çalışır</h3>
+        <p>Tüm işlemler sunucu üzerinde yapılır, dış servise bağımlılık yoktur. Hassas mahkeme evrakları kurum dışına çıkmaz. KVKK uyumlu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KARŞILAŞTIRMA ==================== -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">KARŞILAŞTIRMA</div>
+      <h2 class="section-title">YesPDF UDF vs. Alternatifler</h2>
+    </div>
+
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th style="width: 40%;">Özellik</th>
+          <th style="width: 20%; text-align: center;">YesPDF</th>
+          <th style="width: 20%; text-align: center;">Manuel İşlem</th>
+          <th style="width: 20%; text-align: center;">Bulut Servisleri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UDF → PDF Dönüşüm</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+        </tr>
+        <tr>
+          <td>PDF → UDF Dönüşüm</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+        </tr>
+        <tr>
+          <td>PKCS#7 İmza Doğrulama</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+        </tr>
+        <tr>
+          <td>Türkçe İ/ı Karakter Desteği</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+        </tr>
+        <tr>
+          <td>On-Premise / KVKK Uyumlu</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+        </tr>
+        <tr>
+          <td>Toplu İşlem Desteği</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+        </tr>
+        <tr>
+          <td>Admin Araç Kontrolü</td>
+          <td style="text-align:center"><span class="check">&#10004;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+          <td style="text-align:center"><span class="cross">&#10008;</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== CTA ==================== -->
+<section class="cta">
+  <div class="container">
+    <h2>Mahkeme Evraklarınızı<br>Kolayca Yönetin</h2>
+    <p>
+      UYAP UDF dosyalarını PDF'e dönüştürün, dijital imzalarını doğrulayın
+      ve belge iş akışlarınızı hızlandırın.
+    </p>
+    <div class="cta-buttons">
+      <a href="/tools" class="btn-primary">&#9878; Araçlara Git</a>
+      <a href="/help" class="btn-gold">&#128214; Kullanım Kılavuzu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer">
+  <p>&copy; 2026 <span class="brand">Yes Bilişim</span>. Tüm hakları saklıdır. &mdash; <span class="brand">YesPDF</span> Kurumsal Belge Yönetim Sistemi</p>
+</footer>
+
+</body>
+</html>
