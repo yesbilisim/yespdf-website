@@ -146,6 +146,8 @@ const translations = {
     'verticals.education.desc': 'Transkript, diploma, sınav evrakları, öğrenci dosyaları ve akademik belge yönetimi.',
     'verticals.sts.title': 'Service to Software',
     'verticals.sts.desc': 'SaaS değil, Service to Software. Verileriniz sizde kalır, biz size hizmet sunarız.',
+    'verticals.digsig.title': 'Dijital İmza',
+    'verticals.digsig.desc': 'Kurumsal dijital imza, e-imza entegrasyonu, sertifika yönetimi ve uyumluluk çözümleri.',
     'verticals.audit.title': 'Denetim & Danışmanlık',
     'verticals.audit.desc': 'Denetim raporları, finansal tablolar, uyumluluk belgeleri ve ABBYY FineReader karşılaştırması.',
 
@@ -176,6 +178,8 @@ const translations = {
     'docs.sts_en': 'Service to Software',
     'docs.tsk_whitepaper_tr': 'Savunma Sanayii Whitepaper',
     'docs.nato_stanag_en': 'NATO STANAG Uyumluluk',
+    'docs.loadbalancer_tr': 'Yük Dengeleme & Yüksek Erişilebilirlik',
+    'docs.loadbalancer_en': 'Load Balancing & High Availability',
     'docs.release_history': 'Sürüm Geçmişi',
 
     // Articles
@@ -383,6 +387,8 @@ const translations = {
     'verticals.education.desc': 'Transcripts, diplomas, exam papers, student files and academic document management.',
     'verticals.sts.title': 'Service to Software',
     'verticals.sts.desc': 'Not SaaS, Service to Software. Your data stays with you, we deliver the service.',
+    'verticals.digsig.title': 'Digital Signature',
+    'verticals.digsig.desc': 'Enterprise digital signature, e-signature integration, certificate management and compliance solutions.',
     'verticals.audit.title': 'Audit & Advisory',
     'verticals.audit.desc': 'Audit reports, financial statements, compliance documents and ABBYY FineReader comparison.',
 
@@ -413,6 +419,8 @@ const translations = {
     'docs.sts_en': 'Service to Software',
     'docs.tsk_whitepaper_tr': 'Defence Industry Whitepaper (Turkish)',
     'docs.nato_stanag_en': 'NATO STANAG Compliance',
+    'docs.loadbalancer_tr': 'Load Balancing & High Availability (Turkish)',
+    'docs.loadbalancer_en': 'Load Balancing & High Availability',
     'docs.release_history': 'Release History',
 
     // Articles
