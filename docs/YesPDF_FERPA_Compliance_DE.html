@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="de"><head>
+    <link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_FERPA_Compliance_DE.html">
+    <link rel="alternate" hreflang="de" href="https://yespdf.com.tr/docs/YesPDF_FERPA_Compliance_DE.html">
+    <link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_FERPA_Compliance_EN.html">
+    <link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_FERPA_Uyumluluk_TR.html">
+    <link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/docs/YesPDF_FERPA_Compliance_EN.html"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — FERPA-Compliance-Bericht</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+    --font-mono: 'JetBrains Mono', 'Consolas', monospace;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge-ferpa { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.rights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.right-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.right-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.right-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.scope-list { list-style: none; padding: 0; margin: 16px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.scope-list li { padding: 8px 12px 8px 28px; position: relative; font-size: 14px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; }
+.scope-list li::before { content: '📄'; position: absolute; left: 8px; font-size: 12px; }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.dir-items { list-style: none; padding: 0; margin: 12px 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.dir-items li { background: var(--accent-light); color: var(--accent-dark); font-size: 13px; font-weight: 500; padding: 6px 14px; border-radius: 100px; }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; counter-reset: check; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .rights-grid, .scope-list { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Compliance-Bericht</div>
+  <h1>FERPA-Compliance-Bericht</h1>
+  <p class="subtitle">Schutz von Bildungsunterlagen für Bildungseinrichtungen</p>
+  <p class="version">v1.0 — Februar 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>Was ist FERPA?</h2>
+  <div class="badge-ferpa">FERPA — 20 U.S.C. § 1232g</div>
+  <p><strong>FERPA (Family Educational Rights and Privacy Act)</strong> ist ein US-amerikanisches Bundesgesetz aus dem Jahr 1974, das den Schutz der Privatsphäre von Bildungsunterlagen der Studierenden gewährleistet. FERPA gilt für alle Bildungseinrichtungen, die Bundesmittel erhalten.</p>
+  <p>Gemäß FERPA sind Bildungseinrichtungen verpflichtet, den Zugang zu Studierendenakten zu kontrollieren, unbefugte Offenlegung zu verhindern und Zugriffsprotokolle zu führen. Diese Anforderungen wirken sich direkt auf alle von Einrichtungen genutzten Dokumentenmanagementsysteme aus.</p>
+  <p>Dieser Bericht erläutert, wie YesPDF die FERPA-Anforderungen Punkt für Punkt erfüllt.</p>
+</div>
+
+<div class="section">
+  <h2>Wichtigste FERPA-Rechte</h2>
+  <div class="rights-grid">
+    <div class="right-card"><strong>Recht auf Einsicht in Unterlagen</strong><p>Eltern (und Studierende über 18 Jahre) haben das Recht, Bildungsunterlagen einzusehen und zu überprüfen.</p></div>
+    <div class="right-card"><strong>Recht auf Berichtigung von Unterlagen</strong><p>Eltern können die Berichtigung von Informationen beantragen, die sie für ungenau oder irreführend halten.</p></div>
+    <div class="right-card"><strong>Einwilligung zur Offenlegung</strong><p>Bildungsunterlagen dürfen ohne schriftliche Einwilligung nicht an Dritte weitergegeben werden (mit bestimmten Ausnahmen).</p></div>
+    <div class="right-card"><strong>Beschwerderecht</strong><p>Eltern können beim US-Bildungsministerium Beschwerden über FERPA-Verstöße einreichen.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Geschützte Unterlagenarten</h2>
+  <p>Unter FERPA geschützte Bildungsunterlagen umfassen:</p>
+  <ul class="scope-list">
+    <li>Zeugnisse und Notenberichte</li>
+    <li>Klassenlisten und Anwesenheitsprotokolle</li>
+    <li>Disziplinarakten</li>
+    <li>Gesundheitsakten der Studierenden (von der Bildungseinrichtung geführt)</li>
+    <li>Dokumente zu finanzieller Unterstützung und Stipendien</li>
+    <li>Identifikationsdaten der Studierenden (SSN, Passnummer usw.)</li>
+    <li>Sonderpädagogische Unterlagen (IEP/504-Pläne)</li>
+    <li>Abschluss- und Diplominformationen</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>FERPA-Anforderungen und YesPDF-Lösungen</h2>
+  <div class="req-block">
+    <div class="req-header"><h3>1. Zugriffskontrolle</h3><p>FERPA verlangt, dass nur autorisiertes Personal mit einem „berechtigten pädagogischen Interesse“ auf Studierendenakten zugreifen darf.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Role-Based Access Control (RBAC):</strong> Granulare Autorisierung mit Dekan-, Abteilungsleiter-, Dozenten-, Registrar- und Beraterrollen.</li>
+      <li><strong>Document-Level Permissions:</strong> Lese-, Bearbeitungs-, Download- und Druckberechtigungen können für jedes Dokument separat definiert werden.</li>
+      <li><strong>LDAP/Active Directory Integration:</strong> Zentralisierte Zugriffsverwaltung durch Integration mit der bestehenden Authentifizierungsinfrastruktur der Einrichtung.</li>
+      <li><strong>IP Restriction:</strong> Der Dokumentenzugriff kann auf das institutionelle Netzwerk beschränkt werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>2. Prüfprotokoll</h3><p>FERPA verlangt die Führung von Aufzeichnungen darüber, wer auf Bildungsunterlagen zugegriffen hat und welche Informationen offengelegt wurden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Comprehensive Audit Log:</strong> Jeder Dokumentenzugriff, jede Bearbeitung, jeder Download und jeder Druckvorgang wird automatisch protokolliert.</li>
+      <li><strong>Immutable Records:</strong> Prüfprotokolle können nicht geändert oder gelöscht werden — sie liefern zuverlässige Nachweise für FERPA-Prüfungen.</li>
+      <li><strong>Detailed Tracking:</strong> Wer, wann, welches Dokument, von welchem Gerät — alle Details werden aufgezeichnet.</li>
+      <li><strong>Reporting:</strong> Zugriffsberichte können pro Studierendem oder pro Dokument erstellt werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>3. Datensicherheit</h3><p>FERPA verlangt den Schutz von Bildungsunterlagen vor unbefugtem Zugriff, Änderung und Zerstörung.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>AES-256 Encryption:</strong> Alle Studierendendokumente werden sowohl bei der Übertragung als auch im Ruhezustand mit AES-256 verschlüsselt.</li>
+      <li><strong>On-Premise Architecture:</strong> Daten werden niemals an Cloud-Server von Drittanbietern gesendet — sie verbleiben vollständig innerhalb der institutionellen Infrastruktur.</li>
+      <li><strong>PDF Encryption:</strong> Einzelne PDF-Dateien können mit Passwortschutz und Berechtigungseinschränkungen versehen werden.</li>
+      <li><strong>Secure Deletion:</strong> Dokumente nach Ablauf ihrer Aufbewahrungsfrist können sicher vernichtet werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>4. Permanente Schwärzung</h3><p>Bei der Weitergabe von Informationen unter FERPA-Ausnahmen müssen nicht relevante Studierendendaten geschwärzt werden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Permanent Redaction:</strong> Studierenden-IDs, Adressen, Gesundheitsinformationen und andere personenbezogene Daten können unwiderruflich aus Dokumenten entfernt werden.</li>
+      <li><strong>Batch Redaction:</strong> Schwärzung gleichzeitig auf mehrere Dokumente anwenden.</li>
+      <li><strong>Redaction Verification:</strong> Bestätigt, dass geschwärzte Daten tatsächlich entfernt wurden — keine versteckten Ebenen oder Metadaten-Lecks.</li>
+      <li><strong>Selective Sharing:</strong> Verschiedene Schwärzungsstufen können für verschiedene Empfänger auf dasselbe Dokument angewendet werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>5. Aufbewahrung und Vernichtung von Unterlagen</h3><p>FERPA verlangt, dass bestimmte Unterlagen für festgelegte Zeiträume aufbewahrt und danach sicher vernichtet werden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Retention Policies:</strong> Automatische Aufbewahrungsfristen können nach Dokumenttyp definiert werden.</li>
+      <li><strong>Expiry Alerts:</strong> Automatische Benachrichtigungen für Dokumente, die sich ihrer Aufbewahrungsfrist nähern.</li>
+      <li><strong>Secure Archiving:</strong> Dokumente, die eine langfristige Aufbewahrung erfordern, werden in verschlüsselten Archiven geschützt.</li>
+      <li><strong>Destruction Records:</strong> Löschprotokolle werden für vernichtete Dokumente geführt — zur Erfüllung der Prüfungsanforderungen.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>6. Einwilligung und Benachrichtigung</h3><p>FERPA verlangt eine schriftliche Einwilligung vor der Offenlegung von Unterlagen sowie die Benachrichtigung der Eltern/Studierenden über ihre Rechte.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Fill & Sign:</strong> Einwilligungsformulare können digital ausgefüllt und mit E-Signatur genehmigt werden.</li>
+      <li><strong>Form Templates:</strong> FERPA-Einwilligungsformulare und Benachrichtigungsdokumente können als Vorlagen erstellt werden.</li>
+      <li><strong>Digital Signature:</strong> Rechtsgültige E-Signaturen beschleunigen Einwilligungsabläufe.</li>
+      <li><strong>Document Tracking:</strong> Welche Einwilligungen eingeholt und welche Informationen weitergegeben wurden, wird aufgezeichnet.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>Verwaltung von Verzeichnisinformationen</h2>
+  <p>FERPA erlaubt die Offenlegung bestimmter Kategorien von „Verzeichnisinformationen“ ohne Einwilligung (Studierende haben das Recht, dem zu widersprechen). Diese Informationen umfassen:</p>
+  <ul class="dir-items">
+    <li>Name des Studierenden</li>
+    <li>Adresse und Telefonnummer</li>
+    <li>E-Mail-Adresse</li>
+    <li>Geburtsdatum und -ort</li>
+    <li>Studiengang / Fachbereich</li>
+    <li>Immatrikulationsstatus und Anwesenheitsdaten</li>
+    <li>Erworbene Abschlüsse und Auszeichnungen</li>
+  </ul>
+  <div class="info-box purple">In YesPDF können Verzeichnisinformationen mit einer separaten Zugriffsebene verwaltet werden. Studierende, die einen Widerspruch einlegen, können ihre Informationen automatisch von der Weitergabe ausschließen lassen.</div>
+</div>
+
+<div class="section">
+  <h2>Vergleich: On-Premise vs. Cloud</h2>
+  <p>Vergleich von On-Premise- und Cloud-Lösungen für die FERPA-Compliance:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriterien</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Cloud-PDF-Tools</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Datenspeicherort</strong></td><td class="col-yespdf">Eigener Server der Einrichtung</td><td class="col-cloud">Rechenzentrum eines Drittanbieters</td></tr>
+    <tr><td><strong>Datenkontrolle</strong></td><td class="col-yespdf">100 % unter Kontrolle der Einrichtung</td><td class="col-cloud">Abhängig vom Dienstleister</td></tr>
+    <tr><td><strong>Zugriff durch Dritte</strong></td><td class="col-yespdf">Keiner</td><td class="col-cloud">Mitarbeiter des Anbieters können zugreifen</td></tr>
+    <tr><td><strong>BAA-Anforderung</strong></td><td class="col-yespdf">Nicht erforderlich</td><td class="col-cloud">Geschäftspartnervereinbarung erforderlich</td></tr>
+    <tr><td><strong>Datenverletzungsrisiko</strong></td><td class="col-yespdf">Minimiert — bleibt im internen Netzwerk</td><td class="col-cloud">Externen Angriffen ausgesetzt</td></tr>
+    <tr><td><strong>Prüfungsfreundlichkeit</strong></td><td class="col-yespdf">Alle Protokolle lokal</td><td class="col-cloud">Abhängig vom Anbieter</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>FERPA-Compliance-Checkliste</h2>
+  <p>Zur Sicherstellung der FERPA-Compliance mit YesPDF:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Zugriffsrichtlinien definieren</strong><p>Bestimmen Sie, welche Rollen auf welche Studierendenakten zugreifen können, und setzen Sie dies mit YesPDF RBAC durch.</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Prüfprotokollierung aktivieren</strong><p>Stellen Sie sicher, dass alle Dokumentenzugriffe protokolliert werden. Überprüfen Sie regelmäßig die Zugriffsberichte.</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Schwärzungsverfahren einrichten</strong><p>Definieren Sie Standardverfahren dafür, welche Informationen vor der Dokumentenweitergabe zu schwärzen sind.</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Aufbewahrungsrichtlinien konfigurieren</strong><p>Definieren Sie Aufbewahrungsfristen nach Dokumenttyp und aktivieren Sie automatische Warnungen.</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Verschlüsselung überprüfen</strong><p>Bestätigen Sie, dass die AES-256-Verschlüsselung aktiv ist und alle Dokumente verschlüsselt gespeichert werden.</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Personal schulen</strong><p>Schulen Sie das zuständige Personal zu FERPA-Anforderungen und der Nutzung von YesPDF.</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Jährliche Benachrichtigung veröffentlichen</strong><p>Benachrichtigen Sie Studierende und Eltern jährlich über ihre FERPA-Rechte.</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Notfallplan erstellen</strong><p>Definieren und testen Sie die Schritte, die im Falle einer Datenverletzung zu befolgen sind.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Zusammenfassung</h2>
+  <div class="summary-box"><p>YesPDF unterstützt Bildungseinrichtungen bei der Erfüllung der FERPA-Anforderungen durch seine On-Premise-Architektur, umfassende Zugriffskontrollen, Prüfprotokolle, AES-256-Verschlüsselung und permanente Schwärzungsfunktionen. Studierendenakten verlassen niemals die institutionelle Infrastruktur, jeder Zugriff wird protokolliert und sensible Informationen können vor der Weitergabe sicher geschwärzt werden.</p></div>
+</div>
+
+<div class="section">
+  <h2>Technischer Support</h2>
+  <div class="contact-box">
+    <p>Bei Fragen zur FERPA-Compliance und YesPDF-Konfiguration:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Dieses Dokument wurde vom technischen Team von YesPDF erstellt. Dieser Bericht stellt keine Rechtsberatung dar. Wir empfehlen, für die FERPA-Compliance-Bewertung den Rechtsberater Ihrer Einrichtung zu konsultieren.</p></div>
+
+</div></div>
+</body></html>
