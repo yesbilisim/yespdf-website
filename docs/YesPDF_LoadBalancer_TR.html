@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
+<link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_EN.html">
+<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
+<title>YesPDF — Y&uuml;ksek Erişilebilirlik &amp; Y&uuml;k Dengeleme</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --primary: #0D4F6B;
+  --primary-light: #0891B2;
+  --primary-dark: #083344;
+  --accent: #E0F7FA;
+  --accent-warm: #06B6D4;
+  --accent-teal: #14B8A6;
+  --accent-teal-light: #CCFBF1;
+  --dark: #0A1117;
+  --gray-900: #1a1a2e;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --orange: #EA580C;
+  --orange-light: #FFF7ED;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--gray-700);
+  line-height: 1.7;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .stat-number {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--dark) 0%, #061520 40%, var(--primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(8,145,178,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(20,184,166,0.06) 0%, transparent 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-teal), var(--primary-light), transparent);
+}
+
+.hero-inner { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(8,145,178,0.12); border: 1px solid rgba(8,145,178,0.25);
+  border-radius: 100px; padding: 8px 20px;
+  font-size: 13px; font-weight: 600; color: #67E8F9; letter-spacing: 0.5px; margin-bottom: 28px;
+}
+
+.hero h1 { font-size: 48px; font-weight: 800; color: var(--white); line-height: 1.1; margin-bottom: 20px; letter-spacing: -1.5px; }
+.hero h1 span { background: linear-gradient(135deg, #67E8F9, var(--accent-teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+.hero-desc { font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 36px; line-height: 1.7; max-width: 500px; }
+
+.hero-buttons { display: flex; gap: 16px; margin-bottom: 48px; }
+
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(8,145,178,0.4); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(8,145,178,0.5); }
+
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 16px 32px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 15px; transition: all 0.3s; }
+.btn-outline:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.4); }
+
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.stat-item { text-align: center; padding: 16px 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; }
+.stat-number { font-size: 22px; font-weight: 800; color: #67E8F9; display: block; }
+.stat-label { font-size: 11px; color: rgba(255,255,255,0.5); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+/* Architecture visual */
+.arch-visual { position: relative; }
+.arch-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; padding: 32px; backdrop-filter: blur(10px); }
+.arch-node { display: flex; align-items: center; gap: 14px; padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s; }
+.arch-node:hover { background: rgba(8,145,178,0.1); border-color: rgba(8,145,178,0.3); }
+.arch-node .node-icon { width: 40px; height: 40px; background: rgba(8,145,178,0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.arch-node .node-info h4 { font-size: 14px; font-weight: 700; color: var(--white); }
+.arch-node .node-info p { font-size: 12px; color: rgba(255,255,255,0.4); }
+.arch-node.active { border-color: rgba(20,184,166,0.4); background: rgba(20,184,166,0.08); }
+.arch-node.active .node-icon { background: rgba(20,184,166,0.2); }
+.arch-connector { text-align: center; color: rgba(255,255,255,0.15); font-size: 20px; margin: 4px 0; letter-spacing: 4px; }
+.arch-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* ===== SECTIONS ===== */
+.section { padding: 100px 0; position: relative; }
+.section-light { background: var(--white); }
+.section-teal { background: linear-gradient(165deg, #f0fdfa 0%, #e0f7fa 100%); }
+.section-dark { background: linear-gradient(165deg, var(--dark) 0%, #061520 100%); color: var(--white); }
+.section-warm { background: linear-gradient(165deg, #FFF7ED 0%, #FFEDD5 100%); }
+
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-tag { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: var(--primary); padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px; }
+.section-dark .section-tag { background: rgba(8,145,178,0.12); color: #67E8F9; }
+.section-warm .section-tag { background: rgba(234,88,12,0.1); color: #C2410C; }
+.section-header h2 { font-size: 42px; font-weight: 800; color: var(--dark); letter-spacing: -1px; margin-bottom: 16px; line-height: 1.15; }
+.section-dark .section-header h2 { color: var(--white); }
+.section-header p { font-size: 18px; color: var(--gray-500); max-width: 650px; margin: 0 auto; }
+.section-dark .section-header p { color: rgba(255,255,255,0.6); }
+
+/* ===== FEATURE CARDS ===== */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+.features-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px; }
+.feature-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 28px; transition: all 0.3s; position: relative; overflow: hidden; }
+.feature-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); opacity: 0; transition: opacity 0.3s; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+.feature-card:hover::before { opacity: 1; }
+.feature-icon { width: 44px; height: 44px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; }
+.feature-card h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.feature-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+.section-dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+.section-dark .feature-card::before { background: linear-gradient(90deg, #67E8F9, var(--accent-teal)); }
+.section-dark .feature-card h4 { color: var(--white); }
+.section-dark .feature-card p { color: rgba(255,255,255,0.5); }
+.section-dark .feature-icon { background: rgba(8,145,178,0.12); }
+
+/* ===== CAPABILITY TABLE ===== */
+.cap-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft); margin-bottom: 40px; }
+.cap-table thead th { background: var(--primary-dark); color: var(--white); padding: 14px 20px; font-size: 13px; font-weight: 700; text-align: left; }
+.cap-table tbody td { padding: 12px 20px; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.cap-table tbody tr:nth-child(even) { background: var(--accent); }
+.cap-table tbody tr:hover { background: #cfe8ee; }
+.cap-table .badge-active { display: inline-flex; align-items: center; gap: 4px; background: var(--green-light); color: #065F46; padding: 3px 10px; border-radius: 100px; font-size: 11px; font-weight: 700; }
+
+/* ===== MODE CARDS ===== */
+.mode-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.mode-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 32px; transition: all 0.3s; position: relative; overflow: hidden; }
+.mode-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--primary), var(--primary-light)); }
+.mode-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.mode-card .mode-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; margin-bottom: 16px; }
+.mode-single .mode-badge { background: #E0E7FF; color: #3730A3; }
+.mode-ha .mode-badge { background: var(--green-light); color: #065F46; }
+.mode-scale .mode-badge { background: #FFF7ED; color: #C2410C; }
+.mode-card h4 { font-size: 18px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+.mode-card p { font-size: 14px; color: var(--gray-500); margin-bottom: 16px; line-height: 1.6; }
+.mode-card .env-block { background: #1e1e2e; border-radius: 10px; padding: 16px; font-family: 'Consolas', monospace; font-size: 12px; line-height: 1.5; color: rgba(255,255,255,0.7); overflow-x: auto; }
+.mode-card .env-block .key { color: #67E8F9; }
+.mode-card .env-block .val { color: #34D399; }
+.mode-card .env-block .comment { color: rgba(255,255,255,0.3); }
+
+/* ===== CONFIG TABLE ===== */
+.config-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft); }
+.config-table thead th { background: var(--primary-dark); color: var(--white); padding: 14px 16px; font-size: 13px; font-weight: 700; text-align: left; }
+.config-table tbody td { padding: 12px 16px; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,0.04); }
+.config-table tbody tr:nth-child(even) { background: var(--accent); }
+.config-table code { background: #1e1e2e; color: #67E8F9; padding: 2px 8px; border-radius: 4px; font-family: 'Consolas', monospace; font-size: 12px; }
+
+/* ===== FAILOVER ===== */
+.failover-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.failover-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 24px; transition: all 0.3s; }
+.failover-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); }
+.failover-card .scenario { font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.failover-card .behavior { font-size: 13px; color: rgba(255,255,255,0.6); margin-bottom: 8px; line-height: 1.5; }
+.failover-card .recovery { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 100px; }
+.recovery-fast { background: rgba(20,184,166,0.15); color: #5EEAD4; }
+.recovery-medium { background: rgba(234,179,8,0.15); color: #FDE047; }
+.recovery-depends { background: rgba(234,88,12,0.15); color: #FB923C; }
+
+/* ===== INFRA ===== */
+.infra-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.infra-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
+.infra-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.infra-card .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.infra-card .card-header .icon { width: 44px; height: 44px; background: var(--accent); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+.infra-card .card-header h4 { font-size: 16px; font-weight: 700; color: var(--dark); }
+.infra-detail { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 13px; }
+.infra-detail:last-child { border-bottom: none; }
+.infra-detail .label { color: var(--gray-500); font-weight: 500; }
+.infra-detail .value { color: var(--dark); font-weight: 600; }
+
+/* ===== SECURITY ===== */
+.security-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.sec-item { text-align: center; padding: 24px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); }
+.sec-item .icon { font-size: 28px; margin-bottom: 8px; }
+.sec-item .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; }
+.sec-item .value { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.9); }
+
+/* ===== NOTE BOX ===== */
+.note-box { text-align: center; padding: 28px 40px; background: linear-gradient(135deg, var(--accent) 0%, #b2ebf2 100%); border-radius: var(--radius); border: 1px solid rgba(13,79,107,0.1); margin-top: 40px; }
+.note-box p { font-size: 15px; color: var(--gray-700); line-height: 1.7; }
+.note-box strong { color: var(--primary); }
+
+/* ===== CTA ===== */
+.cta-section { background: linear-gradient(165deg, var(--dark) 0%, #061520 40%, var(--primary-dark) 100%); padding: 100px 0; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(8,145,178,0.08) 0%, transparent 100%); }
+.cta-section h2 { font-size: 42px; font-weight: 800; color: var(--white); text-align: center; margin-bottom: 12px; letter-spacing: -1px; }
+.cta-section .subtitle { font-size: 18px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 48px; }
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+.contact-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 24px 16px; text-align: center; }
+.contact-card .icon { font-size: 28px; margin-bottom: 8px; }
+.contact-card .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 6px; }
+.contact-card .value { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); word-break: break-all; }
+.contact-card a { color: #67E8F9; text-decoration: none; font-weight: 600; }
+.cta-buttons { text-align: center; margin-top: 40px; }
+.cta-final-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: white; padding: 18px 40px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 17px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(8,145,178,0.4); }
+.cta-final-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(8,145,178,0.5); }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--dark); padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer .container { display: flex; justify-content: space-between; align-items: center; }
+.footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+.footer .brand { font-weight: 700; color: rgba(255,255,255,0.7); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero h1 { font-size: 36px; }
+  .features-grid, .mode-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .failover-grid, .infra-grid { grid-template-columns: 1fr; }
+  .security-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .section-header h2 { font-size: 28px; }
+  .features-grid, .features-grid-2, .mode-grid { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid, .security-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 20px; }
+  .section { padding: 60px 0; }
+  .arch-row { grid-template-columns: 1fr; }
+}
+@media print {
+  .feature-card:hover, .mode-card:hover, .infra-card:hover, .failover-card:hover { transform: none; }
+  .hero { min-height: auto; padding: 40px 0; }
+  .section { padding: 40px 0; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+<div class="container">
+<div class="hero-inner">
+
+  <div class="hero-content">
+    <div class="hero-badge">&#x1F680; Aktif-Aktif &middot; S&#305;f&#305;r Kesinti &middot; Yatay &Ouml;l&ccedil;ekleme</div>
+    <h1>Y&uuml;ksek Eri&#351;ilebilirlik &amp;<br><span>Y&uuml;k Dengeleme</span></h1>
+    <p class="hero-desc">PDF altyap&#305;n&#305;z&#305; yatay olarak &ouml;l&ccedil;ekleyin. Aktif-aktif istek i&#351;leme, veritaban&#305; tabanl&#305; oturumlar, da&#287;&#305;t&#305;k i&#351; kuyru&#287;u ve ak&#305;ll&#305; lider se&ccedil;imi &mdash; yap&#305;&#351;kan oturum gerekmez.</p>
+    <div class="hero-buttons">
+      <a href="https://www.yespdf.com.tr" class="btn-primary">Mimari &#304;nceleme Talep Edin &#x2192;</a>
+      <a href="https://www.yespdf.com.tr" class="btn-outline">Kurulum K&#305;lavuzu</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">N+1</span>
+        <span class="stat-label">Yedeklilik</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">~0sn</span>
+        <span class="stat-label">Yedekleme Ge&ccedil;i&#351;i</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">%100</span>
+        <span class="stat-label">On-Premise</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">&#x221E;</span>
+        <span class="stat-label">&Ouml;l&ccedil;ekleme</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mimari g&ouml;rseli -->
+  <div class="arch-visual">
+    <div class="arch-card">
+      <div class="arch-node active">
+        <div class="node-icon">&#x1F310;</div>
+        <div class="node-info">
+          <h4>A&#287; Y&uuml;k Dengeleyici</h4>
+          <p>HTTPS Sonland&#305;rma &middot; Sa&#287;l&#305;k Kontrol&uuml; &middot; Round-Robin</p>
+        </div>
+      </div>
+
+      <div class="arch-connector">&#x2502; &nbsp; &nbsp; &nbsp; &#x2502;</div>
+
+      <div class="arch-row">
+        <div class="arch-node">
+          <div class="node-icon">&#x1F5A5;&#xFE0F;</div>
+          <div class="node-info">
+            <h4>YesPDF #1 &middot; Birincil</h4>
+            <p>HTTP + Kuyruk + Hot Folder + Uyar&#305;lar</p>
+          </div>
+        </div>
+        <div class="arch-node">
+          <div class="node-icon">&#x1F5A5;&#xFE0F;</div>
+          <div class="node-info">
+            <h4>YesPDF #2 &middot; &#304;&#351;&ccedil;i</h4>
+            <p>HTTP + Kuyruk (Hot Folder bekleme)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-connector">&#x2502; &nbsp; &nbsp; &nbsp; &#x2502;</div>
+
+      <div class="arch-row">
+        <div class="arch-node active">
+          <div class="node-icon">&#x1F5C3;&#xFE0F;</div>
+          <div class="node-info">
+            <h4>PostgreSQL (Payla&#351;&#305;ml&#305;)</h4>
+            <p>Oturumlar &middot; Kuyruk &middot; Lider Se&ccedil;imi</p>
+          </div>
+        </div>
+        <div class="arch-node active">
+          <div class="node-icon">&#x1F4C1;</div>
+          <div class="node-info">
+            <h4>Payla&#351;&#305;ml&#305; Dosya Depolama</h4>
+            <p>NFS / SMB &middot; AES-256 &#350;ifreli</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==================== AKT&#304;F-AKT&#304;F YETENEKLER ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x26A1; Aktif-Aktif &#304;&#351;leme</div>
+    <h2>Her &Ouml;rnek Her &#350;eyi &#304;&#351;ler</h2>
+    <p>T&uuml;m YesPDF &ouml;rnekleri gelen HTTP isteklerini e&#351; zamanl&#305; i&#351;ler. Yap&#305;&#351;kan oturum gerekmez &mdash; y&uuml;k dengeleyici round-robin veya en az ba&#287;lant&#305; ile da&#287;&#305;t&#305;r.</p>
+  </div>
+
+  <table class="cap-table">
+    <thead>
+      <tr>
+        <th>Yetenek</th>
+        <th>Mod</th>
+        <th>Detaylar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>PDF Ara&ccedil;lar&#305;</strong> (birle&#351;tirme, b&ouml;lme, d&ouml;nd&uuml;rme, s&#305;k&#305;&#351;t&#305;rma)</td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>Herhangi bir &ouml;rnek herhangi bir iste&#287;i i&#351;ler</td>
+      </tr>
+      <tr>
+        <td><strong>OCR &#304;&#351;leme</strong></td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>CPU yo&#287;un i&#351;ler t&uuml;m &ouml;rneklere da&#287;&#305;t&#305;l&#305;r</td>
+      </tr>
+      <tr>
+        <td><strong>Belge D&ouml;n&uuml;&#351;t&uuml;rme</strong> (Word, Excel, HTML, CAD)</td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>T&uuml;m d&uuml;&#287;&uuml;mlerde e&#351; zamanl&#305; i&#351;leme</td>
+      </tr>
+      <tr>
+        <td><strong>Dijital &#304;mza</strong></td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>Herhangi bir &ouml;rnekten imzalama/do&#287;rulama</td>
+      </tr>
+      <tr>
+        <td><strong>Web G&ouml;r&uuml;nt&uuml;leyici &amp; Edit&ouml;r</strong></td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>Durumsuz render, herhangi bir d&uuml;&#287;&uuml;mden &ccedil;al&#305;&#351;&#305;r</td>
+      </tr>
+      <tr>
+        <td><strong>Dosya Y&uuml;kleme / &#304;ndirme</strong></td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>Payla&#351;&#305;ml&#305; depolama dosya eri&#351;imini garanti eder</td>
+      </tr>
+      <tr>
+        <td><strong>REST API (v1)</strong></td>
+        <td><span class="badge-active">&#x2714; Aktif-Aktif</span></td>
+        <td>Payla&#351;&#305;ml&#305; oturum do&#287;rulamas&#305; ile durumsuz API</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    <p><strong>Yap&#305;&#351;kan Oturum Gerekmez.</strong> Kullan&#305;c&#305; oturumlar&#305; PostgreSQL'de saklan&#305;r &mdash; kullan&#305;c&#305; &Ouml;rnek A &uuml;zerinden giri&#351; yap&#305;p &Ouml;rnek B &uuml;zerinden yeniden kimlik do&#287;rulamas&#305; yapmadan devam edebilir.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== TEMEL &Ouml;ZELL&#304;KLER ==================== -->
+<section class="section section-teal">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x2699; Temel &Ouml;zellikler</div>
+    <h2>Kurumsal Dayan&#305;kl&#305;l&#305;k &#304;&ccedil;in Tasarland&#305;</h2>
+    <p>Her bile&#351;en s&#305;f&#305;rdan &ccedil;ok sunuculu kurulumlar i&ccedil;in tasarlanm&#305;&#351;t&#305;r.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F511;</div>
+      <h4>Veritaban&#305; Tabanl&#305; Oturumlar</h4>
+      <p>Oturumlar sunucu belle&#287;inde de&#287;il PostgreSQL'de saklan&#305;r. HTTP-only Secure &ccedil;erezler, tek oturum uygulamas&#305;, bo&#351;ta kalma zaman a&#351;&#305;m&#305; ve DB yazma y&uuml;k&uuml;n&uuml; azaltan aktivite k&#305;s&#305;tlama.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4E6;</div>
+      <h4>Da&#287;&#305;t&#305;k &#304;&#351; Kuyru&#287;u</h4>
+      <p>Atomik veritaban&#305; kilitleme (SELECT ... FOR UPDATE SKIP LOCKED) her i&#351;in tam olarak bir kez i&#351;lenmesini sa&#287;lar. Yap&#305;land&#305;r&#305;labilir e&#351;zamanl&#305;l&#305;k limitleri ve otomatik bayat i&#351; kurtarma.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F451;</div>
+      <h4>Lider Se&ccedil;imi (Hot Folder)</h4>
+      <p>Hot folder imzalama i&ccedil;in veritaban&#305; tabanl&#305; lider se&ccedil;imi. ~30 saniyede otomatik yedekleme ge&ccedil;i&#351;i. D&uuml;zg&uuml;n kapat&#305;lmada anl&#305;k devir teslim. Redis veya ZooKeeper gerekmez.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F6E1;</div>
+      <h4>Payla&#351;&#305;ml&#305; H&#305;z S&#305;n&#305;rlama</h4>
+      <p>H&#305;z s&#305;n&#305;rlama durumu veritaban&#305;nda saklan&#305;r, global olarak uygulan&#305;r. API h&#305;z limitleri, giri&#351; kilitleme, IP k&#305;s&#305;tlamalar&#305; &mdash; t&uuml;m&uuml; d&uuml;&#287;&uuml;mler aras&#305;nda senkronize.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F50D;</div>
+      <h4>Sa&#287;l&#305;k Kontrol&uuml; Endpoint'i</h4>
+      <p>GET /api/health y&uuml;k dengeleyici entegrasyonu i&ccedil;in 200 OK d&ouml;nd&uuml;r&uuml;r. Sa&#287;l&#305;ks&#305;z &ouml;rneklerden otomatik trafik y&ouml;nlendirmesi.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F512;</div>
+      <h4>Durumsuz CSRF</h4>
+      <p>&Ccedil;ift g&ouml;nderimli &ccedil;erez deseni sunucu taraf&#305;nda durum gerektirmez. Oturum ba&#287;&#305;ml&#305;l&#305;&#287;&#305; olmadan &ccedil;ok sunuculu ortamlarda m&uuml;kemmel &ccedil;al&#305;&#351;&#305;r.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== KURULUM MODLARI ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4E6; Kurulum Modlar&#305;</div>
+    <h2>Tek Sunucudan &Ouml;l&ccedil;eklemeye</h2>
+    <p>Eri&#351;ilebilirlik gereksinimlerinize uygun kurulum modunu se&ccedil;in. &#304;&#351;&ccedil;i &ouml;rnekleri ekleyerek yatay olarak &ouml;l&ccedil;ekleyin.</p>
+  </div>
+
+  <div class="mode-grid">
+    <div class="mode-card mode-single">
+      <div class="mode-badge">&#x1F4BB; VARSAYILAN</div>
+      <h4>Tek Sunucu</h4>
+      <p>K&uuml;&ccedil;&uuml;k ve orta &ouml;l&ccedil;ekli kurumlar i&ccedil;in standart kurulum. Tek YesPDF &ouml;rne&#287;i her &#351;eyi y&ouml;netir.</p>
+      <div class="env-block">
+<span class="key">INSTANCE_ROLE</span>=<span class="val">primary</span>
+<span class="key">DATABASE_URL</span>=<span class="val">sqlite:///./yespdf.db</span>
+      </div>
+    </div>
+
+    <div class="mode-card mode-ha">
+      <div class="mode-badge">&#x2714; &Ouml;NER&#304;LEN</div>
+      <h4>&#304;ki D&uuml;&#287;&uuml;ml&uuml; YE</h4>
+      <p>&Uuml;retim ortamlar&#305; i&ccedil;in &ouml;nerilir. S&#305;f&#305;r kesinti i&ccedil;in otomatik yedekleme ge&ccedil;i&#351;i ile hata tolerans&#305;.</p>
+      <div class="env-block">
+<span class="comment"># &Ouml;rnek A</span>
+<span class="key">INSTANCE_ROLE</span>=<span class="val">primary</span>
+<span class="key">DATABASE_URL</span>=<span class="val">postgresql://...</span>
+<span class="key">UPLOAD_DIR</span>=<span class="val">\\dosyasunucu\yuklemeler</span>
+<span class="key">SERVER_ID</span>=<span class="val">yespdf-dugum-1</span>
+
+<span class="comment"># &Ouml;rnek B</span>
+<span class="key">INSTANCE_ROLE</span>=<span class="val">worker</span>
+<span class="key">SERVER_ID</span>=<span class="val">yespdf-dugum-2</span>
+      </div>
+    </div>
+
+    <div class="mode-card mode-scale">
+      <div class="mode-badge">&#x1F680; KURUMSAL</div>
+      <h4>&Ouml;l&ccedil;ekleme (3+ D&uuml;&#287;&uuml;m)</h4>
+      <p>Y&uuml;ksek i&#351; hacimli ortamlar. Talep artt&#305;k&ccedil;a i&#351;&ccedil;i &ouml;rnekleri ekleyin.</p>
+      <div class="env-block">
+<span class="comment"># N adet i&#351;&ccedil;i &ouml;rne&#287;i ekleyin</span>
+<span class="key">INSTANCE_ROLE</span>=<span class="val">worker</span>
+<span class="key">DATABASE_URL</span>=<span class="val">postgresql://...</span>
+<span class="key">UPLOAD_DIR</span>=<span class="val">\\dosyasunucu\yuklemeler</span>
+<span class="key">SERVER_ID</span>=<span class="val">yespdf-dugum-N</span>
+<span class="key">TRUSTED_PROXIES</span>=<span class="val">10.0.0.100</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== YAPILANDIRMA ==================== -->
+<section class="section section-teal">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F527; Yap&#305;land&#305;rma</div>
+    <h2>Basit Ortam De&#287;i&#351;keni Tabanl&#305; Yap&#305;land&#305;rma</h2>
+    <p>T&uuml;m ayarlar ortam de&#287;i&#351;kenleri ile y&ouml;netilir. Karma&#351;&#305;k XML veya YAML dosyalar&#305; yok.</p>
+  </div>
+
+  <table class="config-table">
+    <thead>
+      <tr>
+        <th>Ayar</th>
+        <th>Varsay&#305;lan</th>
+        <th>A&ccedil;&#305;klama</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>INSTANCE_ROLE</code></td>
+        <td>primary</td>
+        <td><strong>primary</strong> t&uuml;m arka plan daemon'lar&#305;n&#305; &ccedil;al&#305;&#351;t&#305;r&#305;r; <strong>worker</strong> yaln&#305;zca HTTP + kuyruk</td>
+      </tr>
+      <tr>
+        <td><code>SERVER_ID</code></td>
+        <td><em>otomatik</em></td>
+        <td>&Ouml;rnek ba&#351;&#305;na benzersiz tan&#305;mlay&#305;c&#305; (lider se&ccedil;imi ve oturum takibi)</td>
+      </tr>
+      <tr>
+        <td><code>DATABASE_URL</code></td>
+        <td>sqlite:///./yespdf.db</td>
+        <td>&Ccedil;ok sunuculu kurulumlar i&ccedil;in PostgreSQL olmal&#305;</td>
+      </tr>
+      <tr>
+        <td><code>UPLOAD_DIR</code></td>
+        <td>./uploads</td>
+        <td>&Ccedil;ok sunucu i&ccedil;in payla&#351;&#305;ml&#305; depolama (NFS/SMB) olmal&#305;</td>
+      </tr>
+      <tr>
+        <td><code>TRUSTED_PROXIES</code></td>
+        <td><em>bo&#351;</em></td>
+        <td>Do&#287;ru istemci IP tespiti i&ccedil;in y&uuml;k dengeleyici IP'leri</td>
+      </tr>
+      <tr>
+        <td><code>SESSION_COOKIE_SECURE</code></td>
+        <td>False</td>
+        <td>NLB HTTPS sonland&#305;rd&#305;&#287;&#305;nda True yap&#305;n</td>
+      </tr>
+      <tr>
+        <td><code>QUEUE_MAX_WORKERS</code></td>
+        <td>8</td>
+        <td>&Ouml;rnek ba&#351;&#305;na toplam e&#351; zamanl&#305; i&#351;&ccedil;i say&#305;s&#305;</td>
+      </tr>
+      <tr>
+        <td><code>QUEUE_MAX_OCR</code></td>
+        <td>2</td>
+        <td>&Ouml;rnek ba&#351;&#305;na maks. e&#351; zamanl&#305; OCR i&#351;i</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
+
+
+<!-- ==================== YEDEKLEME GE&Ccedil;&#304;&#350;&#304; ==================== -->
+<section class="section section-dark">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F6E1; Yedekleme Ge&ccedil;i&#351;i &amp; Kurtarma</div>
+    <h2>Tasar&#305;m Gere&#287;i Dayan&#305;kl&#305;l&#305;k</h2>
+    <p>Her ar&#305;za senaryosu otomatik kurtarma ile tasarlanm&#305;&#351;t&#305;r. Sorun oldu&#287;unda ne olaca&#287;&#305;n&#305; tam olarak bilin.</p>
+  </div>
+
+  <div class="failover-grid">
+    <div class="failover-card">
+      <div class="scenario">&#x1F534; &#304;&#351;&ccedil;i &Ouml;rne&#287;i &#199;&ouml;k&uuml;yor</div>
+      <div class="behavior">NLB sa&#287;l&#305;k kontrol&uuml; ile y&ouml;nlendirmeyi durdurur. Devam eden kuyruk i&#351;leri zaman a&#351;&#305;m&#305; sonras&#305; ba&#351;ka &ouml;rnek taraf&#305;ndan al&#305;n&#305;r.</div>
+      <div class="recovery recovery-fast">&#x26A1; Anl&#305;k (NLB sa&#287;l&#305;k kontrol&uuml;)</div>
+    </div>
+    <div class="failover-card">
+      <div class="scenario">&#x1F534; Birincil &Ouml;rnek &Ccedil;&ouml;k&uuml;yor</div>
+      <div class="behavior">NLB y&ouml;nlendirmeyi durdurur. Hot folder liderli&#287;i bekleme &ouml;rne&#287;ine transfer edilir. Di&#287;er daemon'lar birincil d&ouml;nene kadar durur.</div>
+      <div class="recovery recovery-medium">&#x23F1; Hot folder: ~30sn</div>
+    </div>
+    <div class="failover-card">
+      <div class="scenario">&#x1F7E1; Veritaban&#305; Kullan&#305;lamaz</div>
+      <div class="behavior">T&uuml;m &ouml;rnekler 503 d&ouml;nd&uuml;r&uuml;r. Oturumlar DB'de korunur. Veritaban&#305; geri geldi&#287;inde tam kurtarma.</div>
+      <div class="recovery recovery-depends">&#x1F504; DB kurtarmas&#305;na ba&#287;l&#305;</div>
+    </div>
+    <div class="failover-card">
+      <div class="scenario">&#x1F7E1; Payla&#351;&#305;ml&#305; Depolama Kullan&#305;lamaz</div>
+      <div class="behavior">Dosya i&#351;lemleri d&uuml;zg&uuml;nce ba&#351;ar&#305;s&#305;z olur. Kuyruk i&#351;leri depolama geri geldi&#287;inde otomatik yeniden dener.</div>
+      <div class="recovery recovery-depends">&#x1F504; Depolama kurtarmas&#305;na ba&#287;l&#305;</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <h3 style="color:var(--white); font-size:20px; font-weight:800; text-align:center; margin-bottom:24px;">&Ccedil;ok Sunuculu Modda G&uuml;venlik</h3>
+    <div class="security-grid">
+      <div class="sec-item">
+        <div class="icon">&#x1F512;</div>
+        <div class="label">Ta&#351;&#305;ma</div>
+        <div class="value">NLB ile HTTPS</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F511;</div>
+        <div class="label">Oturumlar</div>
+        <div class="value">DB Tabanl&#305; G&uuml;venli</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F5C4;</div>
+        <div class="label">Dosya &#350;ifreleme</div>
+        <div class="value">Dosya ba&#351;&#305;na AES-256</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F6E1;</div>
+        <div class="label">H&#305;z S&#305;n&#305;rlama</div>
+        <div class="value">DB Senkronize</div>
+      </div>
+    </div>
+    <div class="security-grid" style="margin-top:16px;">
+      <div class="sec-item">
+        <div class="icon">&#x1F6AB;</div>
+        <div class="label">CSRF</div>
+        <div class="value">Durumsuz &Ccedil;erez</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F310;</div>
+        <div class="label">&#304;stemci IP</div>
+        <div class="value">G&uuml;venilir Proxy</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F4DD;</div>
+        <div class="label">Denetim</div>
+        <div class="value">Merkezi G&uuml;nl&uuml;k</div>
+      </div>
+      <div class="sec-item">
+        <div class="icon">&#x1F510;</div>
+        <div class="label">Anahtarlar</div>
+        <div class="value">D&uuml;&#287;&uuml;mler Aras&#305; Payla&#351;&#305;ml&#305;</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== ALTYAPI GEREKS&#304;N&#304;MLER&#304; ==================== -->
+<section class="section section-warm">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F3D7; Altyap&#305; Gereksinimleri</div>
+    <h2>Ba&#351;lamak &#304;&ccedil;in Neler Gerekli</h2>
+    <p>Standart kurumsal altyap&#305;. Egzotik ba&#287;&#305;ml&#305;l&#305;k veya &uuml;&ccedil;&uuml;nc&uuml; taraf hizmet gerekmez.</p>
+  </div>
+
+  <div class="infra-grid">
+    <div class="infra-card">
+      <div class="card-header">
+        <div class="icon">&#x2696;&#xFE0F;</div>
+        <h4>Y&uuml;k Dengeleyici</h4>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Protokol</span>
+        <span class="value">HTTPS (TLS sonland&#305;rma) veya TCP</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Algoritma</span>
+        <span class="value">Round-robin veya en az ba&#287;lant&#305;</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Sa&#287;l&#305;k Kontrol&uuml;</span>
+        <span class="value">GET /api/health &#x2192; 200</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Zaman A&#351;&#305;m&#305;</span>
+        <span class="value">300sn (b&uuml;y&uuml;k dosya i&#351;leme)</span>
+      </div>
+    </div>
+
+    <div class="infra-card">
+      <div class="card-header">
+        <div class="icon">&#x1F5C3;&#xFE0F;</div>
+        <h4>Veritaban&#305;</h4>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Motor</span>
+        <span class="value">PostgreSQL 14+</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Mod</span>
+        <span class="value">T&uuml;m YesPDF d&uuml;&#287;&uuml;mleri taraf&#305;ndan payla&#351;&#305;ml&#305;</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Ba&#287;lant&#305;lar</span>
+        <span class="value">&Ouml;rnek ba&#351;&#305;na 20 (yap&#305;land&#305;r&#305;labilir)</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">YE Se&ccedil;ene&#287;i</span>
+        <span class="value">Streaming replikasyon</span>
+      </div>
+    </div>
+
+    <div class="infra-card">
+      <div class="card-header">
+        <div class="icon">&#x1F4C1;</div>
+        <h4>Dosya Depolama</h4>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Tip</span>
+        <span class="value">NFS, SMB/CIFS veya SAN</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Ba&#287;lama</span>
+        <span class="value">T&uuml;m &ouml;rneklerde ayn&#305; yol</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">&#350;ifreleme</span>
+        <span class="value">YesPDF taraf&#305;ndan durgun AES-256</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">&Ouml;nerilen</span>
+        <span class="value">OCR/d&ouml;n&uuml;&#351;t&uuml;rme i&ccedil;in SSD tabanl&#305;</span>
+      </div>
+    </div>
+
+    <div class="infra-card">
+      <div class="card-header">
+        <div class="icon">&#x1F310;</div>
+        <h4>A&#287;</h4>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Portlar</span>
+        <span class="value">&Ouml;rnek ba&#351;&#305;na 8000 (HTTP)</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">G&uuml;venlik Duvar&#305;</span>
+        <span class="value">NLB &#x2192; &ouml;rnekler &#x2192; PG + depolama</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">DNS</span>
+        <span class="value">Tek FQDN &#x2192; NLB VIP</span>
+      </div>
+      <div class="infra-detail">
+        <span class="label">Dahili</span>
+        <span class="value">D&uuml;&#351;&uuml;k gecikme &ouml;nerilir</span>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== &#304;ZLEME ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4CA; &#304;zleme</div>
+    <h2>K&uuml;menize Tam G&ouml;r&uuml;n&uuml;rl&uuml;k</h2>
+    <p>Yerle&#351;ik izleme ara&ccedil;lar&#305; her d&uuml;&#287;&uuml;m hakk&#305;nda ger&ccedil;ek zamanl&#305; i&ccedil;g&ouml;r&uuml; sa&#287;lar.</p>
+  </div>
+
+  <div class="features-grid-2">
+    <div class="feature-card" style="border-left:4px solid var(--primary);">
+      <div class="feature-icon">&#x2764;&#xFE0F;</div>
+      <h4>Sa&#287;l&#305;k Kontrol&uuml; Endpoint'i</h4>
+      <p style="margin-bottom:12px;">Otomatik y&ouml;nlendirme ile y&uuml;k dengeleyici entegrasyonu.</p>
+      <div style="background:#1e1e2e; border-radius:10px; padding:16px; font-family:'Consolas',monospace; font-size:13px; color:rgba(255,255,255,0.7);">
+        <span style="color:#67E8F9;">GET</span> <span style="color:#34D399;">/api/health</span> <span style="color:rgba(255,255,255,0.3);">&#x2192; 200 OK</span>
+      </div>
+    </div>
+    <div class="feature-card" style="border-left:4px solid var(--accent-teal);">
+      <div class="feature-icon">&#x1F4CB;</div>
+      <h4>Y&ouml;netim Panosu</h4>
+      <p>Ger&ccedil;ek zamanl&#305; sistem istatistikleri, aktif kullan&#305;c&#305;lar, depolama kullan&#305;m&#305;, i&#351;lem say&#305;lar&#305;, kullan&#305;c&#305; bazl&#305; d&ouml;k&uuml;mler ve filtrelenebilir denetim g&uuml;nl&uuml;kleri &mdash; t&uuml;m&uuml; web y&ouml;netim panelinden eri&#351;ilebilir.</p>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4C8;</div>
+      <h4>&#304;statistikler</h4>
+      <p>&#304;&#351;lem say&#305;lar&#305;, trendler ve kullan&#305;c&#305; bazl&#305; d&ouml;k&uuml;mler. Tarih aral&#305;&#287;&#305;, kullan&#305;c&#305; veya kategori ile filtreleyin.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4DD;</div>
+      <h4>Denetim G&uuml;nl&uuml;&#287;&uuml;</h4>
+      <p>Kullan&#305;c&#305; kimli&#287;i, IP adresi ve zaman damgas&#305; ile t&uuml;m i&#351;lemlerin eksiksiz izi. Payla&#351;&#305;ml&#305; DB'de merkezi.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F514;</div>
+      <h4>Bildirimler</h4>
+      <p>Sertifika s&uuml;re dolumu, depolama e&#351;ikleri, i&#351; ba&#351;ar&#305;s&#305;zl&#305;klar&#305; ve sistem sa&#287;l&#305;&#287;&#305; uyar&#305;lar&#305; i&ccedil;in uygulama i&ccedil;i uyar&#305;lar.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== L&#304;SANSLAMA ==================== -->
+<section class="section section-teal">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4B0; Lisanslama</div>
+    <h2>&Ouml;rnek Ba&#351;&#305;na Lisanslama</h2>
+    <p>Her YesPDF &ouml;rne&#287;i sunucunun donan&#305;m parmak izine ba&#287;l&#305; ge&ccedil;erli bir lisans dosyas&#305; gerektirir. &Ccedil;ok sunuculu lisanslama se&ccedil;enekleri i&ccedil;in YesPDF temsilcinizle ileti&#351;ime ge&ccedil;in.</p>
+  </div>
+
+  <div class="features-grid" style="margin-bottom:0;">
+    <div class="feature-card" style="text-align:center;">
+      <div style="font-size:40px; margin-bottom:12px;">&#x1F4BB;</div>
+      <h4>Tek Sunucu</h4>
+      <p>Bir lisans, tam i&#351;levsellik. SQLite veya PostgreSQL. K&uuml;&ccedil;&uuml;k ekipler i&ccedil;in ideal.</p>
+    </div>
+    <div class="feature-card" style="text-align:center; border:2px solid var(--primary-light);">
+      <div style="font-size:40px; margin-bottom:12px;">&#x1F504;</div>
+      <h4>&#304;ki D&uuml;&#287;&uuml;ml&uuml; YE</h4>
+      <p>Birincil + i&#351;&ccedil;i i&ccedil;in iki lisans. PostgreSQL gerekli. &Uuml;retim i&ccedil;in &ouml;nerilir.</p>
+    </div>
+    <div class="feature-card" style="text-align:center;">
+      <div style="font-size:40px; margin-bottom:12px;">&#x1F680;</div>
+      <h4>Kurumsal &Ouml;l&ccedil;ekleme</h4>
+      <p>3+ d&uuml;&#287;&uuml;m i&ccedil;in hacim lisanslamas&#305;. PostgreSQL + payla&#351;&#305;ml&#305; depolama. &Ouml;zel SLA mevcut.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section">
+<div class="container">
+  <h2>PDF Altyap&#305;n&#305;z&#305; &Ouml;l&ccedil;eklemeye Haz&#305;r m&#305;s&#305;n&#305;z?</h2>
+  <p class="subtitle">Kurumsal PDF y&ouml;netimi, kendi altyap&#305;n&#305;zda. Bulut yok. S&#305;n&#305;r yok.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">&#x1F310;</div>
+      <div class="label">Web Sitesi</div>
+      <div class="value"><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x2709;&#xFE0F;</div>
+      <div class="label">E-posta</div>
+      <div class="value"><a href="mailto:info@yesbilisim.com">info@yesbilisim.com</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x1F4DE;</div>
+      <div class="label">Telefon</div>
+      <div class="value">+90 212 347 4715</div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x1F4CD;</div>
+      <div class="label">Konum</div>
+      <div class="value">&#304;stanbul, T&uuml;rkiye</div>
+    </div>
+  </div>
+
+  <div class="cta-buttons">
+    <a href="https://www.yespdf.com.tr" class="cta-final-btn">Mimari &#304;nceleme Planlay&#305;n &#x2192;</a>
+  </div>
+
+  <p style="text-align:center; margin-top:40px; font-size:12px; color:rgba(255,255,255,0.3);">YES B&#304;L&#304;&#350;&#304;M TEKNOLOJ&#304;LER&#304; YAZILIM DANI&#350;MANLIK SAN. VE T&#304;C. A.&#350;.</p>
+</div>
+</section>
+
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+<div class="container">
+  <p><span class="brand">YesPDF</span> &middot; Kurumsal Belge Y&ouml;netimi</p>
+  <p>S&uuml;r&uuml;m 1.3.0 &middot; &#350;ubat 2026</p>
+</div>
+</div>
+
+</body>
+</html>
