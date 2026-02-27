@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
+    <link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_DE.html">
+    <link rel="alternate" hreflang="de" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_DE.html">
+    <link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_EN.html">
+    <link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
+    <link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_EN.html">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_EN.html">
-<link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_EN.html">
-<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
-<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_TR.html">
-    <link rel="alternate" hreflang="de" href="https://yespdf.com.tr/docs/YesPDF_LoadBalancer_DE.html">
-<title>YesPDF — High Availability &amp; Load Balancing</title>
+<title>YesPDF — Hochverfügbarkeit &amp; Lastverteilung</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -906,17 +906,17 @@ h1, h2, h3, h4, .stat-number {
 <div class="hero-inner">
 
   <div class="hero-content">
-    <div class="hero-badge">&#x1F680; Active-Active &middot; Zero Downtime &middot; Horizontal Scaling</div>
-    <h1>High Availability &amp;<br><span>Load Balancing</span></h1>
-    <p class="hero-desc">Scale your PDF infrastructure horizontally. Active-active request processing, database-backed sessions, distributed job queues, and intelligent leader election &mdash; all without sticky sessions.</p>
+    <div class="hero-badge">&#x1F680; Active-Active &middot; Keine Ausfallzeit &middot; Horizontale Skalierung</div>
+    <h1>Hochverfügbarkeit &amp;<br><span>Lastverteilung</span></h1>
+    <p class="hero-desc">Skalieren Sie Ihre PDF-Infrastruktur horizontal. Active-Active-Anfrageverarbeitung, datenbankgestützte Sitzungen, verteilte Auftragswarteschlangen und intelligente Leader-Election &mdash; alles ohne Sticky Sessions.</p>
     <div class="hero-buttons">
-      <a href="https://www.yespdf.com.tr" class="btn-primary">Request Architecture Review &#x2192;</a>
-      <a href="https://www.yespdf.com.tr" class="btn-outline">Installation Guide</a>
+      <a href="https://www.yespdf.com.tr" class="btn-primary">Architekturberatung anfordern &#x2192;</a>
+      <a href="https://www.yespdf.com.tr" class="btn-outline">Installationsanleitung</a>
     </div>
     <div class="hero-stats">
       <div class="stat-item">
         <span class="stat-number">N+1</span>
-        <span class="stat-label">Redundancy</span>
+        <span class="stat-label">Redundanz</span>
       </div>
       <div class="stat-item">
         <span class="stat-number">~0s</span>
@@ -939,8 +939,8 @@ h1, h2, h3, h4, .stat-number {
       <div class="arch-node active">
         <div class="node-icon">&#x1F310;</div>
         <div class="node-info">
-          <h4>Network Load Balancer</h4>
-          <p>HTTPS Termination &middot; Health Checks &middot; Round-Robin</p>
+          <h4>Netzwerk-Load-Balancer</h4>
+          <p>HTTPS-Terminierung &middot; Health Checks &middot; Round-Robin</p>
         </div>
       </div>
 
@@ -950,15 +950,15 @@ h1, h2, h3, h4, .stat-number {
         <div class="arch-node">
           <div class="node-icon">&#x1F5A5;&#xFE0F;</div>
           <div class="node-info">
-            <h4>YesPDF #1 &middot; Primary</h4>
-            <p>HTTP + Queue + Hot Folder + Alerts</p>
+            <h4>YesPDF #1 &middot; Primär</h4>
+            <p>HTTP + Queue + Hot Folder + Benachrichtigungen</p>
           </div>
         </div>
         <div class="arch-node">
           <div class="node-icon">&#x1F5A5;&#xFE0F;</div>
           <div class="node-info">
             <h4>YesPDF #2 &middot; Worker</h4>
-            <p>HTTP + Queue (Hot Folder standby)</p>
+            <p>HTTP + Queue (Hot Folder Standby)</p>
           </div>
         </div>
       </div>
@@ -969,15 +969,15 @@ h1, h2, h3, h4, .stat-number {
         <div class="arch-node active">
           <div class="node-icon">&#x1F5C3;&#xFE0F;</div>
           <div class="node-info">
-            <h4>PostgreSQL (Shared)</h4>
-            <p>Sessions &middot; Queue &middot; Leader Election</p>
+            <h4>PostgreSQL (Gemeinsam)</h4>
+            <p>Sitzungen &middot; Queue &middot; Leader-Election</p>
           </div>
         </div>
         <div class="arch-node active">
           <div class="node-icon">&#x1F4C1;</div>
           <div class="node-info">
-            <h4>Shared File Storage</h4>
-            <p>NFS / SMB &middot; AES-256 Encrypted</p>
+            <h4>Gemeinsamer Dateispeicher</h4>
+            <p>NFS / SMB &middot; AES-256 verschlüsselt</p>
           </div>
         </div>
       </div>
@@ -994,15 +994,15 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x26A1; Active-Active Processing</div>
-    <h2>Every Instance Handles Everything</h2>
-    <p>All YesPDF instances simultaneously process incoming HTTP requests. No sticky sessions needed &mdash; the load balancer distributes using round-robin or least-connections.</p>
+    <h2>Jede Instanz verarbeitet alles</h2>
+    <p>Alle YesPDF-Instanzen verarbeiten gleichzeitig eingehende HTTP-Anfragen. Keine Sticky Sessions erforderlich &mdash; der Load Balancer verteilt mittels Round-Robin oder Least-Connections.</p>
   </div>
 
   <table class="cap-table">
     <thead>
       <tr>
-        <th>Capability</th>
-        <th>Mode</th>
+        <th>Fähigkeit</th>
+        <th>Modus</th>
         <th>Details</th>
       </tr>
     </thead>
@@ -1010,43 +1010,43 @@ h1, h2, h3, h4, .stat-number {
       <tr>
         <td><strong>PDF Tools</strong> (merge, split, rotate, compress)</td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Any instance handles any request</td>
+        <td>Jede Instanz verarbeitet jede Anfrage</td>
       </tr>
       <tr>
         <td><strong>OCR Processing</strong></td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>CPU-intensive jobs distributed across all instances</td>
+        <td>CPU-intensive Aufträge werden auf alle Instanzen verteilt</td>
       </tr>
       <tr>
         <td><strong>Document Conversion</strong> (Word, Excel, HTML, CAD)</td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Concurrent processing on all nodes</td>
+        <td>Parallele Verarbeitung auf allen Knoten</td>
       </tr>
       <tr>
         <td><strong>Digital Signature</strong></td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Sign/verify from any instance</td>
+        <td>Signieren/Verifizieren von jeder Instanz</td>
       </tr>
       <tr>
         <td><strong>Web Viewer &amp; Editor</strong></td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Stateless rendering, works from any node</td>
+        <td>Zustandsloses Rendering, funktioniert von jedem Knoten</td>
       </tr>
       <tr>
         <td><strong>File Upload / Download</strong></td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Shared storage ensures file availability</td>
+        <td>Gemeinsamer Speicher stellt Dateiverfügbarkeit sicher</td>
       </tr>
       <tr>
         <td><strong>REST API (v1)</strong></td>
         <td><span class="badge-active">&#x2714; Active-Active</span></td>
-        <td>Stateless API with shared session validation</td>
+        <td>Zustandslose API mit gemeinsamer Sitzungsvalidierung</td>
       </tr>
     </tbody>
   </table>
 
   <div class="note-box">
-    <p><strong>No Sticky Sessions Required.</strong> User sessions are stored in PostgreSQL &mdash; a user can log in through Instance A and seamlessly continue on Instance B without re-authenticating.</p>
+    <p><strong>Keine Sticky Sessions erforderlich.</strong> Benutzersitzungen werden in PostgreSQL gespeichert &mdash; ein Benutzer kann sich über Instanz A anmelden und nahtlos auf Instanz B fortfahren, ohne sich erneut zu authentifizieren.</p>
   </div>
 </div>
 </section>
@@ -1057,40 +1057,40 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x2699; Key Features</div>
-    <h2>Built for Enterprise Resilience</h2>
-    <p>Every component designed for multi-server deployments from the ground up.</p>
+    <h2>Entwickelt für Enterprise-Resilienz</h2>
+    <p>Jede Komponente von Grund auf für Multi-Server-Bereitstellungen konzipiert.</p>
   </div>
 
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">&#x1F511;</div>
-      <h4>Database-Backed Sessions</h4>
-      <p>Sessions stored in PostgreSQL, not server memory. HTTP-only Secure cookies, single-session enforcement, idle timeout, and activity throttling to minimize DB writes.</p>
+      <h4>Datenbankgestützte Sitzungen</h4>
+      <p>Sitzungen in PostgreSQL gespeichert, nicht im Serverspeicher. HTTP-only-Secure-Cookies, Einzelsitzungsdurchsetzung, Leerlauf-Timeout und Aktivitätsdrosselung zur Minimierung von DB-Schreibvorgängen.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F4E6;</div>
-      <h4>Distributed Job Queue</h4>
-      <p>Atomic database locking (SELECT ... FOR UPDATE SKIP LOCKED) ensures each job is processed exactly once. Configurable concurrency limits and automatic stale job recovery.</p>
+      <h4>Verteilte Auftragswarteschlange</h4>
+      <p>Atomare Datenbanksperre (SELECT ... FOR UPDATE SKIP LOCKED) stellt sicher, dass jeder Auftrag genau einmal verarbeitet wird. Konfigurierbare Parallelitätslimits und automatische Wiederherstellung veralteter Aufträge.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F451;</div>
-      <h4>Leader Election (Hot Folder)</h4>
-      <p>Database-based leader election for hot folder signing. Automatic failover in ~30s. Graceful handoff on shutdown. No Redis or ZooKeeper required.</p>
+      <h4>Leader-Election (Hot Folder)</h4>
+      <p>Datenbankbasierte Leader-Election für Hot-Folder-Signierung. Automatisches Failover in ~30s. Geordnete Übergabe beim Herunterfahren. Kein Redis oder ZooKeeper erforderlich.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F6E1;</div>
-      <h4>Shared Rate Limiting</h4>
-      <p>Rate limiting state stored in database, enforced globally. API rate limits, login lockout, IP restrictions &mdash; all synchronized across nodes.</p>
+      <h4>Gemeinsame Ratenbegrenzung</h4>
+      <p>Ratenbegrenzungsstatus in der Datenbank gespeichert, global durchgesetzt. API-Ratenlimits, Login-Sperre, IP-Einschränkungen &mdash; alles über Knoten synchronisiert.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F50D;</div>
-      <h4>Health Check Endpoint</h4>
-      <p>GET /api/health returns 200 OK for load balancer integration. Automatic traffic routing away from unhealthy instances.</p>
+      <h4>Health-Check-Endpunkt</h4>
+      <p>GET /api/health gibt 200 OK für die Load-Balancer-Integration zurück. Automatische Verkehrsumleitung von ungesunden Instanzen.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F512;</div>
-      <h4>Stateless CSRF</h4>
-      <p>Double-submit cookie pattern requires no server-side state. Works perfectly in multi-server environments without session affinity.</p>
+      <h4>Zustandsloses CSRF</h4>
+      <p>Double-Submit-Cookie-Muster erfordert keinen serverseitigen Zustand. Funktioniert perfekt in Multi-Server-Umgebungen ohne Sitzungsaffinität.</p>
     </div>
   </div>
 </div>
@@ -1102,15 +1102,15 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F4E6; Deployment Modes</div>
-    <h2>From Single Server to Scale-Out</h2>
-    <p>Choose the deployment mode that matches your availability requirements. Scale horizontally by simply adding worker instances.</p>
+    <h2>Vom Einzelserver zum Scale-Out</h2>
+    <p>Wählen Sie den Bereitstellungsmodus, der Ihren Verfügbarkeitsanforderungen entspricht. Skalieren Sie horizontal, indem Sie einfach Worker-Instanzen hinzufügen.</p>
   </div>
 
   <div class="mode-grid">
     <div class="mode-card mode-single">
       <div class="mode-badge">&#x1F4BB; DEFAULT</div>
-      <h4>Single Server</h4>
-      <p>Standard deployment for small to mid-size organizations. One YesPDF instance handles everything.</p>
+      <h4>Einzelserver</h4>
+      <p>Standardbereitstellung für kleine bis mittelgroße Organisationen. Eine YesPDF-Instanz erledigt alles.</p>
       <div class="env-block">
 <span class="key">INSTANCE_ROLE</span>=<span class="val">primary</span>
 <span class="key">DATABASE_URL</span>=<span class="val">sqlite:///./yespdf.db</span>
@@ -1119,8 +1119,8 @@ h1, h2, h3, h4, .stat-number {
 
     <div class="mode-card mode-ha">
       <div class="mode-badge">&#x2714; RECOMMENDED</div>
-      <h4>Two-Node HA</h4>
-      <p>Recommended for production. Fault tolerance with automatic failover for zero downtime.</p>
+      <h4>Zwei-Knoten-HA</h4>
+      <p>Empfohlen für Produktion. Fehlertoleranz mit automatischem Failover für keine Ausfallzeit.</p>
       <div class="env-block">
 <span class="comment"># Instance A</span>
 <span class="key">INSTANCE_ROLE</span>=<span class="val">primary</span>
@@ -1136,8 +1136,8 @@ h1, h2, h3, h4, .stat-number {
 
     <div class="mode-card mode-scale">
       <div class="mode-badge">&#x1F680; ENTERPRISE</div>
-      <h4>Scale-Out (3+ Nodes)</h4>
-      <p>High-throughput environments. Add worker instances as demand grows.</p>
+      <h4>Scale-Out (3+ Knoten)</h4>
+      <p>Hochdurchsatzumgebungen. Fügen Sie Worker-Instanzen hinzu, wenn die Nachfrage steigt.</p>
       <div class="env-block">
 <span class="comment"># Add N worker instances</span>
 <span class="key">INSTANCE_ROLE</span>=<span class="val">worker</span>
@@ -1157,58 +1157,58 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F527; Configuration</div>
-    <h2>Simple Environment-Based Configuration</h2>
-    <p>All settings managed through environment variables. No complex XML or YAML files.</p>
+    <h2>Einfache umgebungsbasierte Konfiguration</h2>
+    <p>Alle Einstellungen werden über Umgebungsvariablen verwaltet. Keine komplexen XML- oder YAML-Dateien.</p>
   </div>
 
   <table class="config-table">
     <thead>
       <tr>
-        <th>Setting</th>
-        <th>Default</th>
-        <th>Description</th>
+        <th>Einstellung</th>
+        <th>Standard</th>
+        <th>Beschreibung</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td><code>INSTANCE_ROLE</code></td>
         <td>primary</td>
-        <td><strong>primary</strong> runs all background daemons; <strong>worker</strong> runs HTTP + queue only</td>
+        <td><strong>primary</strong> runs all background daemons; <strong>worker</strong> führt nur HTTP + Queue aus</td>
       </tr>
       <tr>
         <td><code>SERVER_ID</code></td>
         <td><em>auto-detect</em></td>
-        <td>Unique identifier per instance (leader election &amp; session tracking)</td>
+        <td>Eindeutiger Bezeichner pro Instanz (Leader-Election &amp; Sitzungsverfolgung)</td>
       </tr>
       <tr>
         <td><code>DATABASE_URL</code></td>
         <td>sqlite:///./yespdf.db</td>
-        <td>Must be PostgreSQL for multi-server deployments</td>
+        <td>Muss PostgreSQL für Multi-Server-Bereitstellungen sein</td>
       </tr>
       <tr>
         <td><code>UPLOAD_DIR</code></td>
         <td>./uploads</td>
-        <td>Must be shared storage (NFS/SMB) for multi-server</td>
+        <td>Muss gemeinsamer Speicher (NFS/SMB) für Multi-Server sein</td>
       </tr>
       <tr>
         <td><code>TRUSTED_PROXIES</code></td>
         <td><em>empty</em></td>
-        <td>Load balancer IP(s) for correct client IP detection</td>
+        <td>Load-Balancer-IP(s) für korrekte Client-IP-Erkennung</td>
       </tr>
       <tr>
         <td><code>SESSION_COOKIE_SECURE</code></td>
         <td>False</td>
-        <td>Set to True when NLB terminates HTTPS</td>
+        <td>Auf True setzen, wenn NLB HTTPS terminiert</td>
       </tr>
       <tr>
         <td><code>QUEUE_MAX_WORKERS</code></td>
         <td>8</td>
-        <td>Total concurrent workers per instance</td>
+        <td>Gesamtanzahl gleichzeitiger Worker pro Instanz</td>
       </tr>
       <tr>
         <td><code>QUEUE_MAX_OCR</code></td>
         <td>2</td>
-        <td>Max concurrent OCR jobs per instance</td>
+        <td>Maximale gleichzeitige OCR-Aufträge pro Instanz</td>
       </tr>
     </tbody>
   </table>
@@ -1221,35 +1221,35 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F6E1; Failover &amp; Recovery</div>
-    <h2>Resilience by Design</h2>
-    <p>Every failure scenario has been engineered with automatic recovery. Know exactly what happens when things go wrong.</p>
+    <h2>Resilienz durch Design</h2>
+    <p>Jedes Fehlerszenario wurde mit automatischer Wiederherstellung entwickelt. Wissen Sie genau, was passiert, wenn etwas schiefgeht.</p>
   </div>
 
   <div class="failover-grid">
     <div class="failover-card">
       <div class="scenario">&#x1F534; Worker Instance Crashes</div>
-      <div class="behavior">NLB stops routing to it via health check. In-flight queue jobs recovered after timeout and picked up by another instance.</div>
+      <div class="behavior">NLB stoppt das Routing über Health Check. Laufende Queue-Aufträge werden nach Timeout wiederhergestellt und von einer anderen Instanz übernommen.</div>
       <div class="recovery recovery-fast">&#x26A1; Instant (NLB health check)</div>
     </div>
     <div class="failover-card">
       <div class="scenario">&#x1F534; Primary Instance Crashes</div>
-      <div class="behavior">NLB stops routing. Hot folder leadership transfers to standby instance. Other daemons pause until primary returns.</div>
+      <div class="behavior">NLB stoppt das Routing. Hot-Folder-Führung wird auf Standby-Instanz übertragen. Andere Daemons pausieren, bis die primäre Instanz zurückkehrt.</div>
       <div class="recovery recovery-medium">&#x23F1; Hot folder: ~30s</div>
     </div>
     <div class="failover-card">
       <div class="scenario">&#x1F7E1; Database Unavailable</div>
-      <div class="behavior">All instances return 503. Sessions preserved in DB. Full recovery when database comes back online.</div>
+      <div class="behavior">Alle Instanzen geben 503 zurück. Sitzungen in DB erhalten. Vollständige Wiederherstellung, wenn die Datenbank wieder online ist.</div>
       <div class="recovery recovery-depends">&#x1F504; Depends on DB recovery</div>
     </div>
     <div class="failover-card">
       <div class="scenario">&#x1F7E1; Shared Storage Unavailable</div>
-      <div class="behavior">File operations fail gracefully. Queue jobs automatically retry when storage is restored.</div>
+      <div class="behavior">Dateioperationen schlagen kontrolliert fehl. Queue-Aufträge werden automatisch wiederholt, wenn der Speicher wiederhergestellt ist.</div>
       <div class="recovery recovery-depends">&#x1F504; Depends on storage recovery</div>
     </div>
   </div>
 
   <div style="margin-top:48px;">
-    <h3 style="color:var(--white); font-size:20px; font-weight:800; text-align:center; margin-bottom:24px;">Security in Multi-Server Mode</h3>
+    <h3 style="color:var(--white); font-size:20px; font-weight:800; text-align:center; margin-bottom:24px;">Sicherheit im Multi-Server-Modus</h3>
     <div class="security-grid">
       <div class="sec-item">
         <div class="icon">&#x1F512;</div>
@@ -1258,17 +1258,17 @@ h1, h2, h3, h4, .stat-number {
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F511;</div>
-        <div class="label">Sessions</div>
+        <div class="label">Sitzungen</div>
         <div class="value">DB-Backed Secure</div>
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F5C4;</div>
-        <div class="label">File Encryption</div>
+        <div class="label">Dateiverschlüsselung</div>
         <div class="value">AES-256 per-file</div>
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F6E1;</div>
-        <div class="label">Rate Limiting</div>
+        <div class="label">Ratenbegrenzung</div>
         <div class="value">DB-Synchronized</div>
       </div>
     </div>
@@ -1280,18 +1280,18 @@ h1, h2, h3, h4, .stat-number {
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F310;</div>
-        <div class="label">Client IP</div>
+        <div class="label">Client-IP</div>
         <div class="value">Trusted Proxy</div>
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F4DD;</div>
-        <div class="label">Audit</div>
-        <div class="value">Centralized Log</div>
+        <div class="label">Prüfung</div>
+        <div class="value">Zentralisiertes Protokoll</div>
       </div>
       <div class="sec-item">
         <div class="icon">&#x1F510;</div>
-        <div class="label">Keys</div>
-        <div class="value">Shared Across Nodes</div>
+        <div class="label">Schlüssel</div>
+        <div class="value">Über Knoten geteilt</div>
       </div>
     </div>
   </div>
@@ -1304,8 +1304,8 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F3D7; Infrastructure Requirements</div>
-    <h2>What You Need to Get Started</h2>
-    <p>Standard enterprise infrastructure. No exotic dependencies or third-party services required.</p>
+    <h2>Was Sie für den Anfang benötigen</h2>
+    <p>Standard-Enterprise-Infrastruktur. Keine exotischen Abhängigkeiten oder Drittanbieterdienste erforderlich.</p>
   </div>
 
   <div class="infra-grid">
@@ -1315,11 +1315,11 @@ h1, h2, h3, h4, .stat-number {
         <h4>Load Balancer</h4>
       </div>
       <div class="infra-detail">
-        <span class="label">Protocol</span>
+        <span class="label">Protokoll</span>
         <span class="value">HTTPS (TLS termination) or TCP</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Algorithm</span>
+        <span class="label">Algorithmus</span>
         <span class="value">Round-robin or least-connections</span>
       </div>
       <div class="infra-detail">
@@ -1328,60 +1328,60 @@ h1, h2, h3, h4, .stat-number {
       </div>
       <div class="infra-detail">
         <span class="label">Timeout</span>
-        <span class="value">300s (large file processing)</span>
+        <span class="value">300s (große Dateiverarbeitung)</span>
       </div>
     </div>
 
     <div class="infra-card">
       <div class="card-header">
         <div class="icon">&#x1F5C3;&#xFE0F;</div>
-        <h4>Database</h4>
+        <h4>Datenbank</h4>
       </div>
       <div class="infra-detail">
         <span class="label">Engine</span>
         <span class="value">PostgreSQL 14+</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Mode</span>
-        <span class="value">Shared by all YesPDF nodes</span>
+        <span class="label">Modus</span>
+        <span class="value">Von allen YesPDF-Knoten gemeinsam genutzt</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Connections</span>
-        <span class="value">20 per instance (configurable)</span>
+        <span class="label">Verbindungen</span>
+        <span class="value">20 pro Instanz (konfigurierbar)</span>
       </div>
       <div class="infra-detail">
-        <span class="label">HA Option</span>
-        <span class="value">Streaming replication</span>
+        <span class="label">HA-Option</span>
+        <span class="value">Streaming-Replikation</span>
       </div>
     </div>
 
     <div class="infra-card">
       <div class="card-header">
         <div class="icon">&#x1F4C1;</div>
-        <h4>File Storage</h4>
+        <h4>Dateispeicher</h4>
       </div>
       <div class="infra-detail">
-        <span class="label">Type</span>
+        <span class="label">Typ</span>
         <span class="value">NFS, SMB/CIFS, or SAN</span>
       </div>
       <div class="infra-detail">
         <span class="label">Mount</span>
-        <span class="value">Same path on all instances</span>
+        <span class="value">Gleicher Pfad auf allen Instanzen</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Encryption</span>
+        <span class="label">Verschlüsselung</span>
         <span class="value">AES-256 at rest by YesPDF</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Recommended</span>
-        <span class="value">SSD-backed for OCR/conversion</span>
+        <span class="label">Empfohlen</span>
+        <span class="value">SSD-basiert für OCR/Konvertierung</span>
       </div>
     </div>
 
     <div class="infra-card">
       <div class="card-header">
         <div class="icon">&#x1F310;</div>
-        <h4>Network</h4>
+        <h4>Netzwerk</h4>
       </div>
       <div class="infra-detail">
         <span class="label">Ports</span>
@@ -1396,8 +1396,8 @@ h1, h2, h3, h4, .stat-number {
         <span class="value">Single FQDN &#x2192; NLB VIP</span>
       </div>
       <div class="infra-detail">
-        <span class="label">Internal</span>
-        <span class="value">Low-latency recommended</span>
+        <span class="label">Intern</span>
+        <span class="value">Niedrige Latenz empfohlen</span>
       </div>
     </div>
   </div>
@@ -1410,41 +1410,41 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F4CA; Monitoring</div>
-    <h2>Full Visibility Into Your Cluster</h2>
-    <p>Built-in monitoring tools give you real-time insight into every node.</p>
+    <h2>Volle Sichtbarkeit in Ihren Cluster</h2>
+    <p>Integrierte Überwachungstools geben Ihnen Echtzeit-Einblick in jeden Knoten.</p>
   </div>
 
   <div class="features-grid-2">
     <div class="feature-card" style="border-left:4px solid var(--primary);">
       <div class="feature-icon">&#x2764;&#xFE0F;</div>
-      <h4>Health Check Endpoint</h4>
-      <p style="margin-bottom:12px;">Load balancer integration with automatic routing.</p>
+      <h4>Health-Check-Endpunkt</h4>
+      <p style="margin-bottom:12px;">Load-Balancer-Integration mit automatischem Routing.</p>
       <div style="background:#1e1e2e; border-radius:10px; padding:16px; font-family:'Consolas',monospace; font-size:13px; color:rgba(255,255,255,0.7);">
         <span style="color:#67E8F9;">GET</span> <span style="color:#34D399;">/api/health</span> <span style="color:rgba(255,255,255,0.3);">&#x2192; 200 OK</span>
       </div>
     </div>
     <div class="feature-card" style="border-left:4px solid var(--accent-teal);">
       <div class="feature-icon">&#x1F4CB;</div>
-      <h4>Admin Dashboard</h4>
-      <p>Real-time system stats, active users, storage usage, operation counts, per-user breakdowns, and filterable audit logs &mdash; all accessible from the web admin panel.</p>
+      <h4>Admin-Dashboard</h4>
+      <p>Echtzeit-Systemstatistiken, aktive Benutzer, Speichernutzung, Vorgangszähler, Aufschlüsselung pro Benutzer und filterbare Prüfprotokolle &mdash; alles zugänglich über das Web-Admin-Panel.</p>
     </div>
   </div>
 
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">&#x1F4C8;</div>
-      <h4>Statistics</h4>
-      <p>Operation counts, trends, and per-user breakdowns. Filter by date range, user, or category.</p>
+      <h4>Statistiken</h4>
+      <p>Vorgangszähler, Trends und Aufschlüsselung pro Benutzer. Filtern nach Zeitraum, Benutzer oder Kategorie.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F4DD;</div>
-      <h4>Audit Log</h4>
-      <p>Complete trail of all operations with user identity, IP address, and timestamp. Centralized in shared DB.</p>
+      <h4>Prüfprotokoll</h4>
+      <p>Vollständiges Protokoll aller Vorgänge mit Benutzeridentität, IP-Adresse und Zeitstempel. Zentralisiert in gemeinsamer DB.</p>
     </div>
     <div class="feature-card">
       <div class="feature-icon">&#x1F514;</div>
-      <h4>Notifications</h4>
-      <p>In-app alerts for certificate expiry, storage thresholds, job failures, and system health warnings.</p>
+      <h4>Benachrichtigungen</h4>
+      <p>In-App-Benachrichtigungen für Zertifikatsablauf, Speicherschwellenwerte, Auftragsfehler und Systemgesundheitswarnungen.</p>
     </div>
   </div>
 </div>
@@ -1456,25 +1456,25 @@ h1, h2, h3, h4, .stat-number {
 <div class="container">
   <div class="section-header">
     <div class="section-tag">&#x1F4B0; Licensing</div>
-    <h2>Per-Instance Licensing</h2>
-    <p>Each YesPDF instance requires a valid license file bound to the server's hardware fingerprint. Contact your YesPDF representative for multi-server licensing options.</p>
+    <h2>Pro-Instanz-Lizenzierung</h2>
+    <p>Jede YesPDF-Instanz benötigt eine gültige Lizenzdatei, die an den Hardware-Fingerabdruck des Servers gebunden ist. Kontaktieren Sie Ihren YesPDF-Vertreter für Multi-Server-Lizenzierungsoptionen.</p>
   </div>
 
   <div class="features-grid" style="margin-bottom:0;">
     <div class="feature-card" style="text-align:center;">
       <div style="font-size:40px; margin-bottom:12px;">&#x1F4BB;</div>
-      <h4>Single Server</h4>
-      <p>One license, full functionality. SQLite or PostgreSQL. Ideal for small teams.</p>
+      <h4>Einzelserver</h4>
+      <p>Eine Lizenz, volle Funktionalität. SQLite oder PostgreSQL. Ideal für kleine Teams.</p>
     </div>
     <div class="feature-card" style="text-align:center; border:2px solid var(--primary-light);">
       <div style="font-size:40px; margin-bottom:12px;">&#x1F504;</div>
-      <h4>Two-Node HA</h4>
-      <p>Two licenses for primary + worker. PostgreSQL required. Recommended for production.</p>
+      <h4>Zwei-Knoten-HA</h4>
+      <p>Zwei Lizenzen für Primär + Worker. PostgreSQL erforderlich. Empfohlen für Produktion.</p>
     </div>
     <div class="feature-card" style="text-align:center;">
       <div style="font-size:40px; margin-bottom:12px;">&#x1F680;</div>
-      <h4>Enterprise Scale</h4>
-      <p>Volume licensing for 3+ nodes. PostgreSQL + shared storage. Custom SLA available.</p>
+      <h4>Enterprise-Skalierung</h4>
+      <p>Volumenlizenzierung für 3+ Knoten. PostgreSQL + gemeinsamer Speicher. Individuelles SLA verfügbar.</p>
     </div>
   </div>
 </div>
@@ -1484,34 +1484,34 @@ h1, h2, h3, h4, .stat-number {
 <!-- ==================== CTA ==================== -->
 <section class="cta-section">
 <div class="container">
-  <h2>Ready to Scale Your PDF Infrastructure?</h2>
-  <p class="subtitle">Enterprise PDF management, on your infrastructure. No cloud. No limits.</p>
+  <h2>Bereit, Ihre PDF-Infrastruktur zu skalieren?</h2>
+  <p class="subtitle">Enterprise-PDF-Verwaltung, auf Ihrer Infrastruktur. Keine Cloud. Keine Grenzen.</p>
 
   <div class="contact-grid">
     <div class="contact-card">
       <div class="icon">&#x1F310;</div>
-      <div class="label">Website</div>
+      <div class="label">Webseite</div>
       <div class="value"><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
     </div>
     <div class="contact-card">
       <div class="icon">&#x2709;&#xFE0F;</div>
-      <div class="label">Email</div>
+      <div class="label">E-Mail</div>
       <div class="value"><a href="mailto:info@yesbilisim.com">info@yesbilisim.com</a></div>
     </div>
     <div class="contact-card">
       <div class="icon">&#x1F4DE;</div>
-      <div class="label">Phone</div>
+      <div class="label">Telefon</div>
       <div class="value">+90 212 347 4715</div>
     </div>
     <div class="contact-card">
       <div class="icon">&#x1F4CD;</div>
-      <div class="label">Location</div>
-      <div class="value">Istanbul, Turkey</div>
+      <div class="label">Standort</div>
+      <div class="value">Istanbul, Türkei</div>
     </div>
   </div>
 
   <div class="cta-buttons">
-    <a href="https://www.yespdf.com.tr" class="cta-final-btn">Schedule Architecture Review &#x2192;</a>
+    <a href="https://www.yespdf.com.tr" class="cta-final-btn">Architekturberatung vereinbaren &#x2192;</a>
   </div>
 
   <p style="text-align:center; margin-top:40px; font-size:12px; color:rgba(255,255,255,0.3);">YES BILISIM TEKNOLOJILERI YAZILIM DANISMANLIK SAN. VE TIC. A.S.</p>
@@ -1522,8 +1522,8 @@ h1, h2, h3, h4, .stat-number {
 <!-- ==================== FOOTER ==================== -->
 <div class="footer">
 <div class="container">
-  <p><span class="brand">YesPDF</span> &middot; Enterprise Document Management</p>
-  <p>Version 1.3.0 &middot; February 2026</p>
+  <p><span class="brand">YesPDF</span> &middot; Enterprise-Dokumentenverwaltung</p>
+  <p>Version 1.3.0 &middot; Februar 2026</p>
 </div>
 </div>
 

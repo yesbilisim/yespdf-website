@@ -1,0 +1,310 @@
+<!DOCTYPE html><html lang="de"><head>
+    <link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_ISO27001_Compliance_DE.html">
+    <link rel="alternate" hreflang="de" href="https://yespdf.com.tr/docs/YesPDF_ISO27001_Compliance_DE.html">
+    <link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_ISO27001_Compliance_EN.html">
+    <link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_ISO27001_Uyumluluk_TR.html">
+    <link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/docs/YesPDF_ISO27001_Compliance_EN.html"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>YesPDF — ISO 27001 Compliance-Bericht</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --primary: #0F172A; --accent: #7C3AED; --accent-light: #EDE9FE;
+    --accent-dark: #6D28D9; --green: #059669; --green-light: #D1FAE5;
+    --orange: #D97706; --orange-light: #FEF3C7;
+    --gray-50: #F8FAFC; --gray-100: #F1F5F9; --gray-200: #E2E8F0;
+    --gray-500: #64748B; --gray-700: #334155; --gray-900: #0F172A;
+    --white: #FFFFFF; --radius: 12px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: var(--gray-700); line-height: 1.7; background: var(--gray-50); }
+h1,h2,h3,h4 { font-family: 'Plus Jakarta Sans', -apple-system, sans-serif; color: var(--gray-900); }
+.header { background: linear-gradient(135deg, #1a1030 0%, var(--accent-dark) 100%); padding: 60px 0 50px; text-align: center; }
+.header .doc-type { display: inline-block; background: rgba(167,139,250,0.2); border: 1px solid rgba(167,139,250,0.3); color: #C4B5FD; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; margin-bottom: 20px; }
+.header h1 { color: var(--white); font-size: 34px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 12px; }
+.header .subtitle { color: rgba(255,255,255,0.6); font-size: 17px; }
+.header .version { color: rgba(255,255,255,0.35); font-size: 13px; margin-top: 16px; }
+.header .logo { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 24px; }
+.header .logo span { color: #A78BFA; }
+.container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+.content { padding: 48px 0 80px; }
+.section { margin-bottom: 48px; }
+.section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 2px solid var(--gray-200); }
+.section h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+.section p { margin-bottom: 16px; font-size: 15px; }
+.badge { display: inline-block; background: var(--accent-light); color: var(--accent-dark); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; letter-spacing: 0.5px; }
+.structure-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.structure-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; border-left: 4px solid var(--accent); }
+.structure-card strong { display: block; color: var(--gray-900); margin-bottom: 6px; font-size: 14px; }
+.structure-card p { font-size: 13px; margin: 0; color: var(--gray-500); }
+.req-block { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); margin-bottom: 24px; overflow: hidden; }
+.req-header { padding: 20px 24px; border-bottom: 1px solid var(--gray-200); }
+.req-header h3 { margin-bottom: 6px; font-size: 17px; }
+.req-header p { font-size: 14px; color: var(--gray-500); margin: 0; }
+.req-solution { padding: 20px 24px; background: var(--gray-50); }
+.req-solution h4 { font-size: 14px; font-weight: 700; color: var(--accent-dark); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.req-solution ul { list-style: none; padding: 0; }
+.req-solution li { padding: 10px 0; border-bottom: 1px solid var(--gray-200); font-size: 14px; line-height: 1.6; }
+.req-solution li:last-child { border-bottom: none; }
+.sector-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 20px; margin-bottom: 12px; }
+.sector-card strong { display: block; color: var(--gray-900); font-size: 14px; margin-bottom: 4px; }
+.sector-card p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.info-box { padding: 16px 20px; border-radius: 10px; font-size: 14px; margin: 16px 0; }
+.info-box.purple { background: var(--accent-light); border: 1px solid rgba(124,58,237,0.15); color: var(--accent-dark); }
+.info-box.green { background: var(--green-light); border: 1px solid rgba(5,150,105,0.2); color: #065F46; }
+.info-box.amber { background: var(--orange-light); border: 1px solid rgba(217,119,6,0.2); color: #92400E; }
+.soa-list { list-style: none; padding: 0; margin: 16px 0; }
+.soa-list li { padding: 12px 16px 12px 36px; position: relative; font-size: 14px; background: var(--green-light); border: 1px solid rgba(5,150,105,0.15); border-radius: 8px; margin-bottom: 8px; color: #065F46; }
+.soa-list li::before { content: '✓'; position: absolute; left: 14px; font-weight: 700; color: var(--green); }
+.comp-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+.comp-table th { background: var(--gray-900); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 600; }
+.comp-table th:first-child { border-radius: 8px 0 0 0; }
+.comp-table th:last-child { border-radius: 0 8px 0 0; }
+.comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); }
+.comp-table tr:nth-child(even) td { background: var(--gray-50); }
+.comp-table .col-yespdf { color: var(--green); font-weight: 600; }
+.comp-table .col-cloud { color: var(--gray-500); }
+.checklist { list-style: none; padding: 0; margin: 16px 0; }
+.checklist li { padding: 16px 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; display: flex; gap: 16px; align-items: flex-start; }
+.checklist .num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-light); color: var(--accent-dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+.checklist .check-content strong { display: block; font-size: 14px; color: var(--gray-900); margin-bottom: 4px; }
+.checklist .check-content p { font-size: 13px; color: var(--gray-500); margin: 0; }
+.summary-box { background: linear-gradient(135deg, var(--accent-light) 0%, #f5f3ff 100%); border: 1px solid rgba(124,58,237,0.15); border-radius: var(--radius); padding: 24px 28px; margin: 16px 0; }
+.summary-box p { font-size: 15px; color: var(--gray-700); margin: 0; line-height: 1.8; }
+.contact-box { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 28px; text-align: center; }
+.contact-box .links { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+.contact-box a { color: var(--accent); text-decoration: none; font-weight: 600; }
+.footer { text-align: center; padding: 32px 0; border-top: 1px solid var(--gray-200); margin-top: 48px; }
+.footer p { font-size: 12px; color: var(--gray-500); max-width: 600px; margin: 0 auto; }
+@media (max-width: 700px) { .structure-grid { grid-template-columns: 1fr; } .header h1 { font-size: 24px; } }
+</style></head><body>
+<div class="header"><div class="container">
+  <div class="logo">Yes<span>PDF</span></div>
+  <div class="doc-type">Compliance-Bericht</div>
+  <h1>ISO 27001 Compliance-Bericht</h1>
+  <p class="subtitle">Kontrollen des Informationssicherheits-Managementsystems für das Dokumentenmanagement</p>
+  <p class="version">v1.0 — Februar 2026</p>
+</div></div>
+<div class="content"><div class="container">
+
+<div class="section">
+  <h2>Was ist ISO 27001?</h2>
+  <div class="badge">ISO/IEC 27001:2022 — ISMS</div>
+  <p><strong>ISO/IEC 27001:2022</strong> ist ein Anforderungsstandard für Informationssicherheits-Managementsysteme (ISMS), veröffentlicht von der Internationalen Organisation für Normung (ISO) und der Internationalen Elektrotechnischen Kommission (IEC). Es ist der weltweit am weitesten anerkannte Zertifizierungsstandard für Informationssicherheit.</p>
+  <p>ISO 27001 bietet ein Management-Rahmenwerk, das Organisationen ermöglicht, ihre Informationswerte systematisch zu schützen. Der Standard umfasst Risikobewertung, Sicherheitskontrollen, kontinuierliche Verbesserung und regelmäßige Prüfprozesse.</p>
+  <p>ISO 27001-Zertifikate, die von akkreditierten Zertifizierungsstellen in einem beliebigen Land ausgestellt werden, sind durch die <strong>IAF (International Accreditation Forum) MLA (Multilateral Recognition Arrangement)</strong> <strong>international anerkannt</strong> und gewährleisten die gegenseitige Anerkennung in über 100 Ländern.</p>
+  <p>Dieser Bericht erläutert, wie YesPDF die ISO 27001 Annex A-Kontrollen Punkt für Punkt unterstützt.</p>
+</div>
+
+<div class="section">
+  <h2>Struktur von ISO 27001:2022</h2>
+  <p>Der ISO 27001:2022-Standard besteht aus zwei Hauptteilen:</p>
+  <div class="structure-grid">
+    <div class="structure-card"><strong>Abschnitte 4-10: ISMS-Anforderungen</strong><p>Definiert Prozesse für organisatorischen Kontext, Führung, Planung, Unterstützung, Betrieb, Leistungsbewertung und Verbesserung.</p></div>
+    <div class="structure-card"><strong>Anhang A: Informationssicherheitskontrollen</strong><p>93 Kontrollen in 4 Kategorien: Organisatorisch (37), Personal (8), Physisch (14) und Technologisch (34). Organisationen wählen anwendbare Kontrollen basierend auf der Risikobewertung aus.</p></div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Relevante Anhang-A-Kontrollen und YesPDF-Lösungen</h2>
+  <p>Nachfolgend finden Sie die ISO 27001:2022 Anhang A-Kontrollen, die direkt mit dem Dokumentenmanagement zusammenhängen, und wie YesPDF diese unterstützt.</p>
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.15 — Zugriffskontrolle</h3><p>Regeln zur Beschränkung des physischen und logischen Zugriffs auf Informationen und Informationsverarbeitungseinrichtungen sind zu erstellen und umzusetzen.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Role-Based Access Control (RBAC):</strong> Granulare Autorisierung mit Administrator-, Bearbeiter-, Betrachter- und abteilungsbasierten Rollen.</li>
+      <li><strong>Least Privilege Principle:</strong> Benutzer können nur auf Dokumente zugreifen, die für ihre Aufgaben erforderlich sind.</li>
+      <li><strong>LDAP/Active Directory Integration:</strong> Zentralisierte Zugriffsverwaltung über die bestehende Authentifizierungsinfrastruktur der Organisation.</li>
+      <li><strong>IP Restriction:</strong> Der Dokumentenzugriff kann auf bestimmte Netzwerksegmente beschränkt werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.33 — Schutz von Aufzeichnungen</h3><p>Aufzeichnungen sind gemäß gesetzlichen, regulatorischen, vertraglichen und geschäftlichen Anforderungen vor Verlust, Zerstörung, Fälschung und unbefugtem Zugriff zu schützen.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>AES-256 Encryption:</strong> Alle Dokumente werden bei Speicherung und Übertragung verschlüsselt.</li>
+      <li><strong>Retention Policies:</strong> Automatische Aufbewahrungsfristen können nach Dokumenttyp definiert werden.</li>
+      <li><strong>Retention Lock:</strong> Dokumente können vor Ablauf ihrer Aufbewahrungsfrist vor Löschung geschützt werden.</li>
+      <li><strong>Secure Destruction:</strong> Abgelaufene Dokumente werden sicher gelöscht und Vernichtungsprotokolle geführt.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.5.34 — Datenschutz und Schutz personenbezogener Daten</h3><p>Die Organisation muss den Datenschutz und den Schutz personenbezogener Daten gemäß den geltenden Gesetzen und Vorschriften gewährleisten.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>On-Premise Architecture:</strong> Personenbezogene Daten verlassen niemals die institutionelle Infrastruktur — unterstützt die DSGVO-Compliance.</li>
+      <li><strong>Permanent Redaction:</strong> Personenbezogene Daten können unwiderruflich aus Dokumenten entfernt werden.</li>
+      <li><strong>Batch Redaction:</strong> Personenbezogene Daten können gleichzeitig aus mehreren Dokumenten geschwärzt werden.</li>
+      <li><strong>Data Minimization:</strong> YesPDF erhebt nur Daten, die für das Dokumentenmanagement erforderlich sind.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.3 — Einschränkung des Informationszugriffs</h3><p>Der Zugriff auf Informationen und Anwendungssystemfunktionen ist gemäß der Zugriffskontrollrichtlinie einzuschränken.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Document-Level Permissions:</strong> Lese-, Bearbeitungs-, Download- und Druckberechtigungen können für jedes Dokument separat definiert werden.</li>
+      <li><strong>Department-Based Access:</strong> Der abteilungsübergreifende Dokumentenzugriff wird über Richtlinien gesteuert.</li>
+      <li><strong>Automatic Session Timeout:</strong> Inaktive Sitzungen werden nach einem konfigurierten Zeitraum beendet.</li>
+      <li><strong>Unique User Identification:</strong> Gemeinsame Kontonutzung wird verhindert.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.4 — Zugriff auf Quellcode</h3><p>Lese- und Schreibzugriff auf Quellcode, Entwicklungstools und Softwarebibliotheken sind angemessen zu verwalten.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>On-Premise Deployment:</strong> YesPDF läuft auf dem eigenen Server der Organisation — kein Drittanbieterzugriff auf den Quellcode.</li>
+      <li><strong>Admin Panel Restriction:</strong> Systemkonfiguration und Admin-Panel sind nur für autorisierte Administratoren zugänglich.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.9 — Konfigurationsmanagement</h3><p>Sicherheitskonfigurationen von Hardware, Software, Diensten und Netzwerken sind zu erstellen, zu dokumentieren, umzusetzen, zu überwachen und zu überprüfen.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Centralized Configuration:</strong> Alle Sicherheitseinstellungen werden zentral über das Admin-Panel verwaltet.</li>
+      <li><strong>Configuration Change Logging:</strong> Systemänderungen werden im Prüfprotokoll aufgezeichnet.</li>
+      <li><strong>Environment-Based Configuration:</strong> Sensible Konfigurationswerte (Verschlüsselungsschlüssel, Datenbankverbindung) werden in sicheren Konfigurationsdateien gespeichert.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.10 — Informationslöschung</h3><p>In Informationssystemen, Geräten und anderen Speichermedien gespeicherte Informationen sind zu löschen, wenn sie nicht mehr benötigt werden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Automatic Retention Periods:</strong> Aufbewahrungsrichtlinien können nach Dokumenttyp definiert werden.</li>
+      <li><strong>Secure Deletion:</strong> Abgelaufene Dokumente werden sicher vernichtet.</li>
+      <li><strong>Destruction Records:</strong> Löschprotokolle werden geführt — sie liefern Nachweise für Prüfungen.</li>
+      <li><strong>Batch Deletion:</strong> Dokumente nach Ablauf der Aufbewahrungsfrist können in Stapelverarbeitung bearbeitet werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.11 — Datenmaskierung</h3><p>Datenmaskierung ist gemäß der Zugriffskontrollrichtlinie und den Geschäftsanforderungen anzuwenden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Permanent Redaction:</strong> SSNs, Adressen, Gesundheitsinformationen und andere sensible Daten können unwiderruflich aus Dokumenten entfernt werden.</li>
+      <li><strong>Redaction Verification:</strong> Bestätigt, dass geschwärzte Daten tatsächlich entfernt wurden — keine Metadaten-Lecks.</li>
+      <li><strong>Selective Redaction:</strong> Verschiedene Schwärzungsstufen können für verschiedene Empfänger angewendet werden.</li>
+      <li><strong>Redaction Templates:</strong> Vorlagen können für wiederkehrende Schwärzungsvorgänge erstellt werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.12 — Verhinderung von Datenlecks</h3><p>Maßnahmen zur Verhinderung von Datenlecks sind auf Systeme, Netzwerke und andere Geräte anzuwenden, die sensible Informationen verarbeiten, speichern oder übertragen.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Download/Print Restriction:</strong> Download- und Druckvorgänge können pro Dokument gesperrt werden.</li>
+      <li><strong>Watermark:</strong> Sichtbare oder unsichtbare Wasserzeichen mit Benutzerinformationen können zu Dokumenten hinzugefügt werden.</li>
+      <li><strong>PDF Permission Restrictions:</strong> Kopier-, Bearbeitungs- und Druckberechtigungen werden auf PDF-Ebene gesteuert.</li>
+      <li><strong>Audit Tracking:</strong> Alle Dokumenten-Download- und Freigabevorgänge werden protokolliert.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.15 — Protokollierung</h3><p>Protokolle, die Aktivitäten, Ausnahmen, Fehler und andere relevante Ereignisse aufzeichnen, sind zu erstellen, zu speichern, zu schützen und zu analysieren.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Comprehensive Audit Log:</strong> Jeder Dokumentenzugriff, jede Bearbeitung, jeder Download, Druckvorgang und jede Freigabe wird automatisch protokolliert.</li>
+      <li><strong>Immutable Records:</strong> Prüfprotokolle können nicht geändert oder gelöscht werden.</li>
+      <li><strong>Detailed Tracking:</strong> Benutzer-ID, Zeitstempel, Dokumentname, Vorgangstyp, IP-Adresse und Geräteinformationen werden aufgezeichnet.</li>
+      <li><strong>Reporting and Analysis:</strong> Zugriffsberichte können nach Benutzer, Dokument oder Zeitraum erstellt werden.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.24 — Einsatz von Kryptographie</h3><p>Regeln für den Einsatz von Kryptographie, einschließlich der Verwaltung kryptographischer Schlüssel, sind zu definieren und umzusetzen.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>AES-256 Encryption:</strong> Alle Dokumente werden im Ruhezustand mit AES-256 verschlüsselt.</li>
+      <li><strong>Centralized Key Management:</strong> Verschlüsselungsschlüssel werden in sicheren Konfigurationsdateien gespeichert und sind über alle Server konsistent.</li>
+      <li><strong>PDF Encryption:</strong> Einzelne PDF-Dateien können zusätzlich mit Passwort geschützt werden.</li>
+      <li><strong>Digital Signatures:</strong> Dokumentintegrität und Quellenverifizierung durch Unterstützung digitaler Signaturen.</li>
+    </ul></div>
+  </div>
+
+  <div class="req-block">
+    <div class="req-header"><h3>A.8.25 — Sicherer Entwicklungslebenszyklus</h3><p>Regeln für die sichere Entwicklung von Software und Systemen sind zu erstellen und anzuwenden.</p></div>
+    <div class="req-solution"><h4>✅ YesPDF Solution</h4><ul>
+      <li><strong>Secure Design:</strong> YesPDF wird gemäß den OWASP-Sicherheitsprinzipien entwickelt.</li>
+      <li><strong>Regular Security Updates:</strong> Sicherheitspatches und Updates werden regelmäßig veröffentlicht.</li>
+      <li><strong>Security Testing:</strong> Sicherheitstests (einschließlich Penetrationstests) werden vor jeder Veröffentlichung durchgeführt.</li>
+    </ul></div>
+  </div>
+
+</div>
+
+<div class="section">
+  <h2>Internationale Anerkennung von ISO 27001</h2>
+  <p>Die ISO 27001-Zertifizierung ist branchenübergreifend weltweit von entscheidender Bedeutung:</p>
+  <div class="sector-card"><strong>Öffentlicher Sektor</strong><p>Regierungsbehörden und öffentliche Einrichtungen verlangen zunehmend ISO 27001-Compliance für IT-Systeme, die Bürgerdaten verarbeiten.</p></div>
+  <div class="sector-card"><strong>Finanzdienstleistungen</strong><p>Bankenaufsichtsbehörden weltweit schreiben Informationssicherheits-Managementsysteme für Finanzinstitute vor.</p></div>
+  <div class="sector-card"><strong>Gesundheitswesen</strong><p>Gesundheitsvorschriften erfordern Informationssicherheitsstandards zum Schutz von Patientendaten.</p></div>
+  <div class="sector-card"><strong>Telekommunikation</strong><p>Telekommunikationsregulierer verlangen von Betreibern die Implementierung von Informationssicherheitskontrollen.</p></div>
+  <div class="sector-card"><strong>Verteidigung und kritische Infrastruktur</strong><p>Die ISO 27001-Zertifizierung ist häufig ein obligatorisches Beschaffungskriterium für Verteidigungs- und kritische Infrastrukturbetreiber.</p></div>
+  <div class="info-box green">ISO 27001-Zertifikate, die von akkreditierten Zertifizierungsstellen ausgestellt werden, sind durch die <strong>IAF MLA (Multilateral Recognition Arrangement)</strong> <strong>international anerkannt</strong>. Ob in der Türkei (TSE/TÜRKAK), den USA (ANAB), Großbritannien (UKAS) oder einem anderen IAF-Mitglied ausgestellt — das Zertifikat hat die gleiche internationale Gültigkeit.</div>
+</div>
+
+<div class="section">
+  <h2>Vergleich: On-Premise vs. Cloud</h2>
+  <p>Vergleich von On-Premise- und Cloud-Lösungen für die ISO 27001-Compliance:</p>
+  <table class="comp-table">
+    <thead><tr>
+      <th>Kriterien</th>
+      <th>YesPDF (On-Premise)</th>
+      <th>Cloud-PDF-Tools</th>
+    </tr></thead>
+    <tbody>
+    <tr><td><strong>Datenspeicherort (A.5.23)</strong></td><td class="col-yespdf">Eigener Server der Organisation — full control</td><td class="col-cloud">Rechenzentrum eines Drittanbieters — limited control</td></tr>
+    <tr><td><strong>Lieferantenrisiko (A.5.21)</strong></td><td class="col-yespdf">Minimal — Daten verlassen niemals die Einrichtung</td><td class="col-cloud">Sicherheitsprüfung des Lieferanten erforderlich</td></tr>
+    <tr><td><strong>Zugriffskontrolle (A.5.15)</strong></td><td class="col-yespdf">Vollständig in die ISMS-Richtlinien der Organisation integriert</td><td class="col-cloud">Abhängig von Anbieterrichtlinien</td></tr>
+    <tr><td><strong>Protokollierung (A.8.15)</strong></td><td class="col-yespdf">Alle Protokolle lokal — direkter Prüfungszugriff</td><td class="col-cloud">Protokolle müssen beim Anbieter angefordert werden</td></tr>
+    <tr><td><strong>Kryptographie (A.8.24)</strong></td><td class="col-yespdf">Schlüsselverwaltung unter Kontrolle der Organisation</td><td class="col-cloud">Schlüsselverwaltung des Anbieters</td></tr>
+    <tr><td><strong>Konfiguration (A.8.9)</strong></td><td class="col-yespdf">Vollständige Anpassung</td><td class="col-cloud">Begrenzte Konfigurationsoptionen</td></tr>
+    <tr><td><strong>DLP (A.8.12)</strong></td><td class="col-yespdf">In die DLP-Richtlinien der Organisation integriert</td><td class="col-cloud">Begrenzte DLP-Optionen</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section">
+  <h2>Unterstützung der Erklärung zur Anwendbarkeit (SoA)</h2>
+  <p>Während der ISO 27001-Zertifizierung müssen Organisationen eine <strong>Erklärung zur Anwendbarkeit (SoA)</strong> erstellen. YesPDF stellt die technische Infrastruktur bereit, um nachzuweisen, dass dokumentenmanagementbezogene Kontrollen implementiert sind:</p>
+  <ul class="soa-list">
+    <li>Nachweis der Implementierung der Zugriffskontrollrichtlinie (RBAC-Konfigurationsaufzeichnungen)</li>
+    <li>Nachweis der Prüfprotokollführung (unveränderliche Prüfprotokolle)</li>
+    <li>Nachweis der Verschlüsselungskontrollen (AES-256-Konfiguration)</li>
+    <li>Nachweis der Datenmaskierungs-/Schwärzungsfunktionen</li>
+    <li>Nachweis der Aufbewahrungs- und Vernichtungsrichtlinien</li>
+    <li>Konfigurationsmanagement-Aufzeichnungen</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h2>ISO 27001 Compliance-Checkliste</h2>
+  <p>Zur Unterstützung der ISO 27001 Anhang A-Kontrollen mit YesPDF:</p>
+  <ol class="checklist">
+    <li><div class="num">1</div><div class="check-content"><strong>Zum Anlagenverzeichnis hinzufügen</strong><p>Fügen Sie YesPDF zu Ihrem Informationsanlagenverzeichnis hinzu und weisen Sie einen Anlagenverantwortlichen zu (A.5.9).</p></div></li>
+    <li><div class="num">2</div><div class="check-content"><strong>Risikobewertung durchführen</strong><p>Bewerten Sie die auf YesPDF verarbeiteten Dokumenttypen und die damit verbundenen Risiken (A.5.12).</p></div></li>
+    <li><div class="num">3</div><div class="check-content"><strong>Zugriffsrichtlinien konfigurieren</strong><p>Definieren Sie RBAC-Rollen und -Berechtigungen zur Durchsetzung des Prinzips der geringsten Berechtigung (A.5.15, A.8.3).</p></div></li>
+    <li><div class="num">4</div><div class="check-content"><strong>Prüfprotokollierung aktivieren</strong><p>Stellen Sie sicher, dass alle Dokumentenzugriffe protokolliert werden, und erstellen Sie einen regelmäßigen Überprüfungsplan (A.8.15).</p></div></li>
+    <li><div class="num">5</div><div class="check-content"><strong>Verschlüsselung überprüfen</strong><p>Bestätigen Sie, dass die AES-256-Verschlüsselung aktiv ist, und definieren Sie Schlüsselverwaltungsverfahren (A.8.24).</p></div></li>
+    <li><div class="num">6</div><div class="check-content"><strong>Aufbewahrungsrichtlinien definieren</strong><p>Legen Sie Aufbewahrungsfristen nach Dokumenttyp fest und aktivieren Sie automatische Warnungen (A.5.33, A.8.10).</p></div></li>
+    <li><div class="num">7</div><div class="check-content"><strong>Schwärzungsverfahren einrichten</strong><p>Definieren Sie Standard-Schwärzungsverfahren für Dokumente mit personenbezogenen Daten (A.8.11).</p></div></li>
+    <li><div class="num">8</div><div class="check-content"><strong>Sicherungsplan überprüfen</strong><p>Bestätigen Sie, dass regelmäßige Sicherungen erstellt und Wiederherstellungsverfahren getestet werden (A.8.13).</p></div></li>
+    <li><div class="num">9</div><div class="check-content"><strong>Sensibilisierungsschulung durchführen</strong><p>Bieten Sie Schulungen zum Informationssicherheitsbewusstsein und zur sicheren YesPDF-Nutzung an (A.6.3).</p></div></li>
+    <li><div class="num">10</div><div class="check-content"><strong>Interne Prüfung durchführen</strong><p>Prüfen Sie regelmäßig die Wirksamkeit der Dokumentenmanagementkontrollen und aktualisieren Sie die SoA.</p></div></li>
+  </ol>
+</div>
+
+<div class="section">
+  <h2>Zusammenfassung</h2>
+  <div class="summary-box"><p>YesPDF unterstützt Organisationen bei der Erfüllung der ISO 27001:2022 Anhang A-Kontrollen durch seine On-Premise-Architektur, umfassende Zugriffskontrollen, unveränderliche Prüfprotokolle, AES-256-Verschlüsselung, permanente Schwärzung, Kontrollen zur Verhinderung von Datenlecks und flexible Aufbewahrungsrichtlinien. Die On-Premise-Architektur hält die Daten unter organisatorischer Kontrolle, minimiert das Lieferantenrisiko und lässt sich natürlich in das ISMS der Organisation integrieren. ISO 27001-Zertifikate von akkreditierten Stellen genießen volle internationale Anerkennung.</p></div>
+</div>
+
+<div class="section">
+  <h2>Technischer Support</h2>
+  <div class="contact-box">
+    <p>Bei Fragen zur ISO 27001-Compliance und YesPDF-Konfiguration:</p>
+    <div class="links">
+      <div>🌐 <a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+      <div>📧 <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a></div>
+      <div>📞 <a href="tel:+902123474716">+90 212 347 47 16</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="footer"><p>Dieses Dokument wurde vom technischen Team von YesPDF erstellt. Dieser Bericht stellt keine Rechts- oder Prüfungsberatung dar. Wir empfehlen, für die Vorbereitung der ISO 27001-Zertifizierung den Informationssicherheitsberater Ihrer Organisation und eine akkreditierte Zertifizierungsstelle zu konsultieren.</p></div>
+
+</div></div>
+</body></html>
