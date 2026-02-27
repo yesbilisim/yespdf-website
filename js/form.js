@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!name.value.trim() || !email.value.trim()) {
       if (errorMsg) {
-        errorMsg.textContent = currentLang === 'en'
-          ? 'Please fill in the required fields.'
-          : 'Lütfen zorunlu alanları doldurun.';
+        const msgs = { tr: 'Lütfen zorunlu alanları doldurun.', en: 'Please fill in the required fields.', de: 'Bitte füllen Sie die Pflichtfelder aus.' };
+        errorMsg.textContent = msgs[currentLang] || msgs.tr;
         errorMsg.classList.remove('hidden');
       }
       return;
@@ -35,9 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.value)) {
       if (errorMsg) {
-        errorMsg.textContent = currentLang === 'en'
-          ? 'Please enter a valid email address.'
-          : 'Lütfen geçerli bir e-posta adresi girin.';
+        const msgs = { tr: 'Lütfen geçerli bir e-posta adresi girin.', en: 'Please enter a valid email address.', de: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.' };
+        errorMsg.textContent = msgs[currentLang] || msgs.tr;
         errorMsg.classList.remove('hidden');
       }
       return;
@@ -46,7 +44,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show loading state
     const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = currentLang === 'en' ? 'Sending...' : 'Gönderiliyor...';
+    const sendingMsgs = { tr: 'Gönderiliyor...', en: 'Sending...', de: 'Wird gesendet...' };
+    submitBtn.textContent = sendingMsgs[currentLang] || sendingMsgs.tr;
 
     try {
       const formData = new FormData(form);
