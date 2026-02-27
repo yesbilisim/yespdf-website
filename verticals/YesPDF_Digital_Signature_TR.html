@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_TR.html">
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_TR.html">
+<link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_EN.html">
+<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_TR.html">
+<title>YesPDF — Kurumsal Dijital İmza Platformu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --primary: #1B3A6B;
+  --primary-light: #2563EB;
+  --primary-dark: #0F2347;
+  --accent: #E8EEF8;
+  --accent-warm: #C9A84C;
+  --accent-gold: #D4A843;
+  --accent-gold-light: #F5E6B8;
+  --dark: #0C1220;
+  --gray-900: #1a1a2e;
+  --gray-700: #374151;
+  --gray-500: #6B7280;
+  --gray-300: #D1D5DB;
+  --gray-100: #F3F4F6;
+  --white: #FFFFFF;
+  --green: #059669;
+  --green-light: #D1FAE5;
+  --red: #DC2626;
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.06);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.1);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--gray-700);
+  line-height: 1.7;
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .stat-number {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--dark) 0%, #0a1628 40%, var(--primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(37,99,235,0.12) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,168,76,0.06) 0%, transparent 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), var(--primary-light), transparent);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,99,235,0.12);
+  border: 1px solid rgba(37,99,235,0.25);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #93B4FF;
+  letter-spacing: 0.5px;
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  background: linear-gradient(135deg, #93B4FF, var(--accent-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-desc {
+  font-size: 17px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(37,99,235,0.5);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 16px 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+
+.stat-number {
+  font-size: 22px;
+  font-weight: 800;
+  color: #93B4FF;
+  display: block;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.hero-visual { position: relative; }
+
+.cert-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 40px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-light), var(--accent-gold));
+}
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.cert-seal {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent-gold), #B8941F);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 16px rgba(201,168,76,0.3);
+}
+
+.cert-title-block h3 { color: var(--white); font-size: 16px; font-weight: 700; }
+.cert-title-block p { color: rgba(255,255,255,0.5); font-size: 13px; }
+
+.cert-field {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.cert-field:last-child { border-bottom: none; }
+.cert-field .label { color: rgba(255,255,255,0.4); font-size: 13px; font-weight: 500; }
+.cert-field .value { color: rgba(255,255,255,0.85); font-size: 13px; font-weight: 600; }
+
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(5,150,105,0.15);
+  border: 1px solid rgba(5,150,105,0.3);
+  color: #34D399;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.cert-sig-line {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(255,255,255,0.15);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.cert-sig-line .sig-text {
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--accent-gold);
+  opacity: 0.8;
+}
+
+.cert-sig-line .sig-date { color: rgba(255,255,255,0.4); font-size: 12px; }
+
+/* ===== SECTIONS ===== */
+.section { padding: 100px 0; position: relative; }
+.section-light { background: var(--white); }
+.section-blue { background: linear-gradient(165deg, #f0f4ff 0%, #e8eef8 100%); }
+.section-dark {
+  background: linear-gradient(165deg, var(--dark) 0%, #0a1628 100%);
+  color: var(--white);
+}
+.section-gold { background: linear-gradient(165deg, #FFFDF5 0%, #FFF8E7 100%); }
+
+.section-header { text-align: center; margin-bottom: 64px; }
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent);
+  color: var(--primary);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.section-dark .section-tag { background: rgba(37,99,235,0.12); color: #93B4FF; }
+.section-gold .section-tag { background: rgba(201,168,76,0.15); color: #8B6914; }
+
+.section-header h2 {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.section-dark .section-header h2 { color: var(--white); }
+
+.section-header p { font-size: 18px; color: var(--gray-500); max-width: 650px; margin: 0 auto; }
+.section-dark .section-header p { color: rgba(255,255,255,0.6); }
+
+/* ===== FEATURE CARDS ===== */
+.features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+.features-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 40px; }
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+.feature-card:hover::before { opacity: 1; }
+
+.feature-icon {
+  width: 44px; height: 44px;
+  background: var(--accent);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px; font-size: 20px;
+}
+
+.feature-card h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.feature-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+.section-dark .feature-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+.section-dark .feature-card::before { background: linear-gradient(90deg, #93B4FF, var(--accent-gold)); }
+.section-dark .feature-card h4 { color: var(--white); }
+.section-dark .feature-card p { color: rgba(255,255,255,0.5); }
+.section-dark .feature-icon { background: rgba(37,99,235,0.12); }
+
+/* ===== PADES TABLE ===== */
+.pades-table {
+  width: 100%; border-collapse: separate; border-spacing: 0;
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-soft); margin-bottom: 40px;
+}
+.pades-table thead th { background: var(--primary-dark); color: var(--white); padding: 16px 20px; font-size: 14px; font-weight: 700; text-align: left; }
+.pades-table tbody td { padding: 14px 20px; font-size: 14px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.pades-table tbody tr:nth-child(even) { background: var(--accent); }
+.pades-table tbody tr:hover { background: #dfe6f5; }
+
+.pades-table .level-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 100px; font-size: 12px; font-weight: 700; }
+.level-b { background: #E0E7FF; color: #3730A3; }
+.level-t { background: #D1FAE5; color: #065F46; }
+.level-lt { background: #FEF3C7; color: #92400E; }
+
+/* ===== 2-COL LAYOUT ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+
+/* ===== WORKFLOW ===== */
+.workflow-visual { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 40px; text-align: center; }
+.workflow-steps { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.workflow-step { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 12px; min-width: 100px; }
+.workflow-step .step-icon { width: 52px; height: 52px; background: rgba(37,99,235,0.12); border: 1px solid rgba(37,99,235,0.2); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+.workflow-step .step-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); text-align: center; }
+.workflow-arrow { color: rgba(255,255,255,0.2); font-size: 24px; }
+
+/* ===== API CARD ===== */
+.api-block { background: #1e1e2e; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 24px; }
+.api-block-header { display: flex; align-items: center; gap: 10px; padding: 12px 20px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.api-method { padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 800; letter-spacing: 0.5px; }
+.method-post { background: rgba(5,150,105,0.2); color: #34D399; }
+.method-get { background: rgba(37,99,235,0.2); color: #93B4FF; }
+.api-endpoint { color: rgba(255,255,255,0.6); font-size: 13px; font-family: 'Consolas', monospace; }
+.api-block pre { padding: 20px; color: rgba(255,255,255,0.75); font-size: 13px; font-family: 'Consolas', monospace; line-height: 1.6; overflow-x: auto; margin: 0; }
+.api-block pre .key { color: #93B4FF; }
+.api-block pre .string { color: #34D399; }
+.api-block pre .comment { color: rgba(255,255,255,0.3); font-style: italic; }
+
+/* ===== COMPLIANCE ===== */
+.compliance-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.compliance-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 24px; transition: all 0.3s; }
+.compliance-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-soft); }
+.compliance-card .badge { display: inline-flex; align-items: center; gap: 6px; background: var(--accent); color: var(--primary); padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 800; margin-bottom: 10px; }
+.compliance-card h4 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.compliance-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+
+/* ===== ENCRYPTION ROW ===== */
+.encryption-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.enc-item { text-align: center; padding: 24px 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); }
+.enc-item .icon { font-size: 28px; margin-bottom: 8px; }
+.enc-item .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; }
+.enc-item .value { font-size: 15px; font-weight: 700; color: rgba(255,255,255,0.9); }
+
+/* ===== HOT FOLDER ===== */
+.hotfolder-visual { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-soft); }
+.flow-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.flow-box { background: var(--accent); border: 1px solid rgba(27,58,107,0.1); border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 140px; }
+.flow-box .icon { font-size: 24px; margin-bottom: 6px; }
+.flow-box .label { font-size: 13px; font-weight: 700; color: var(--dark); }
+.flow-box .sub { font-size: 11px; color: var(--gray-500); }
+.flow-box.highlight { background: linear-gradient(135deg, var(--primary), var(--primary-light)); border-color: transparent; }
+.flow-box.highlight .label { color: var(--white); }
+.flow-box.highlight .sub { color: rgba(255,255,255,0.7); }
+.flow-arrow { color: var(--gray-300); font-size: 24px; }
+.flow-split { display: flex; gap: 24px; justify-content: center; margin-top: 8px; }
+
+/* ===== NOTE BOX ===== */
+.note-box { text-align: center; padding: 28px 40px; background: linear-gradient(135deg, #FFF8E7 0%, #FFF3D6 100%); border-radius: var(--radius); border: 1px solid rgba(201,168,76,0.2); margin-top: 40px; }
+.note-box p { font-size: 15px; color: var(--gray-700); line-height: 1.7; }
+.note-box strong { color: #8B6914; }
+
+/* ===== LICENSE ===== */
+.license-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.license-card { background: var(--white); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--radius); padding: 28px; text-align: center; transition: all 0.3s; }
+.license-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.license-card .check { color: var(--green); font-size: 24px; margin-bottom: 12px; }
+.license-card h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.license-card p { font-size: 12px; color: var(--gray-500); }
+
+/* ===== CTA ===== */
+.cta-section { background: linear-gradient(165deg, var(--dark) 0%, #0a1628 40%, var(--primary-dark) 100%); padding: 100px 0; position: relative; overflow: hidden; }
+.cta-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(37,99,235,0.08) 0%, transparent 100%); }
+.cta-section h2 { font-size: 42px; font-weight: 800; color: var(--white); text-align: center; margin-bottom: 12px; letter-spacing: -1px; }
+.cta-section .subtitle { font-size: 18px; color: rgba(255,255,255,0.6); text-align: center; margin-bottom: 48px; }
+.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+.contact-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); padding: 24px 16px; text-align: center; }
+.contact-card .icon { font-size: 28px; margin-bottom: 8px; }
+.contact-card .label { font-size: 11px; color: rgba(255,255,255,0.4); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 6px; }
+.contact-card .value { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); word-break: break-all; }
+.contact-card a { color: #93B4FF; text-decoration: none; font-weight: 600; }
+.cta-buttons { text-align: center; margin-top: 40px; }
+.cta-final-btn { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--primary-light), var(--primary)); color: white; padding: 18px 40px; border-radius: 14px; text-decoration: none; font-weight: 700; font-size: 17px; transition: all 0.3s; box-shadow: 0 4px 20px rgba(37,99,235,0.4); }
+.cta-final-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.5); }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--dark); padding: 28px 0; border-top: 1px solid rgba(255,255,255,0.06); }
+.footer .container { display: flex; justify-content: space-between; align-items: center; }
+.footer p { font-size: 13px; color: rgba(255,255,255,0.4); }
+.footer .brand { font-weight: 700; color: rgba(255,255,255,0.7); }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner, .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .hero h1 { font-size: 36px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: repeat(2, 1fr); }
+  .compliance-grid { grid-template-columns: 1fr; }
+  .encryption-grid { grid-template-columns: repeat(2, 1fr); }
+  .license-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 28px; }
+  .section-header h2 { font-size: 28px; }
+  .features-grid, .features-grid-2 { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .container { padding: 0 20px; }
+  .section { padding: 60px 0; }
+  .flow-row { flex-direction: column; }
+}
+
+@media print {
+  .feature-card:hover, .compliance-card:hover, .license-card:hover { transform: none; }
+  .hero { min-height: auto; padding: 40px 0; }
+  .section { padding: 40px 0; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero">
+<div class="container">
+<div class="hero-inner">
+
+  <div class="hero-content">
+    <div class="hero-badge">&#x1F512; PAdES Uyumlu &middot; eIDAS &middot; On-Premise &middot; Bulut Yok</div>
+    <h1>Kurumsal Dijital<br>&#304;mza <span>Platformu</span></h1>
+    <p class="hero-desc">PDF belgelerinizi hukuken ge&ccedil;erli PAdES imzalar&#305; ile imzalay&#305;n, do&#287;rulay&#305;n ve y&ouml;netin. Kurumsal sertifika havuzu, toplu imzalama, hot folder ve tam politika uygulamas&#305; &mdash; tamamen kendi sunucunuzda.</p>
+    <div class="hero-buttons">
+      <a href="https://www.yespdf.com.tr" class="btn-primary">Demo Talep Edin &#x2192;</a>
+      <a href="https://www.yespdf.com.tr" class="btn-outline">Teknik Detaylar</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">PAdES</span>
+        <span class="stat-label">B / T / LT</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">AES-256</span>
+        <span class="stat-label">&#350;ifreleme</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">%100</span>
+        <span class="stat-label">On-Premise</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">eIDAS</span>
+        <span class="stat-label">Uyumlu</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="cert-card">
+      <div class="cert-header">
+        <div class="cert-seal">&#x1F3C5;</div>
+        <div class="cert-title-block">
+          <h3>Dijital &#304;mza Sertifikas&#305;</h3>
+          <p>PAdES-T &middot; Zaman Damgas&#305; Do&#287;rulanm&#305;&#351;</p>
+        </div>
+      </div>
+      <div class="cert-field">
+        <span class="label">&#304;mzalayan</span>
+        <span class="value">Ahmet Y&#305;lmaz, CFO</span>
+      </div>
+      <div class="cert-field">
+        <span class="label">Kurum</span>
+        <span class="value">ABC Finans A.&#350;.</span>
+      </div>
+      <div class="cert-field">
+        <span class="label">Sertifika Otoritesi</span>
+        <span class="value">GlobalSign CA</span>
+      </div>
+      <div class="cert-field">
+        <span class="label">Hash Algoritmas&#305;</span>
+        <span class="value">SHA-256</span>
+      </div>
+      <div class="cert-field">
+        <span class="label">Zaman Damgas&#305; Otoritesi</span>
+        <span class="value">RFC 3161 &middot; Do&#287;rulanm&#305;&#351;</span>
+      </div>
+      <div class="cert-badge">&#x2714; &#304;mza Ge&ccedil;erli &middot; Belge De&#287;i&#351;tirilmemi&#351;</div>
+      <div class="cert-sig-line">
+        <span class="sig-text">Ahmet Y&#305;lmaz</span>
+        <span class="sig-date">27 &#350;ubat 2026 &middot; 14:32 UTC</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ==================== &#304;MZA STANDARTLARI ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4DC; &#304;mza Standartlar&#305;</div>
+    <h2>PAdES Uyumlu Dijital &#304;mzalar</h2>
+    <p>YesPDF, ETSI EN 319 142 taraf&#305;ndan tan&#305;mlanan PAdES standard&#305;n&#305; uygular ve AB &uuml;ye devletleri ile uluslararas&#305; yarg&#305; alanlar&#305;nda hukuki ge&ccedil;erlilik sa&#287;lar.</p>
+  </div>
+
+  <table class="pades-table">
+    <thead>
+      <tr>
+        <th>Seviye</th>
+        <th>Standart</th>
+        <th>Sa&#287;lad&#305;klar&#305;</th>
+        <th>Kullan&#305;m Alan&#305;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="level-badge level-b">PAdES-B</span></td>
+        <td>Temel</td>
+        <td>&#304;mzalayan kimli&#287;i do&#287;rulamas&#305; ile dijital imza</td>
+        <td>&#304;&ccedil; belgeler, rutin imzalama</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge level-t">PAdES-T</span></td>
+        <td>Zaman Damgas&#305;</td>
+        <td>&#304;mza + RFC 3161 g&uuml;venilir zaman damgas&#305; kan&#305;t&#305;</td>
+        <td>S&ouml;zle&#351;meler, hukuki belgeler, d&uuml;zenleyici ba&#351;vurular</td>
+      </tr>
+      <tr>
+        <td><span class="level-badge level-lt">PAdES-LT</span></td>
+        <td>Uzun Vadeli</td>
+        <td>&#304;mza + zaman damgas&#305; + g&ouml;m&uuml;l&uuml; iptal verisi</td>
+        <td>Ar&#351;ivleme, uzun vadeli do&#287;rulama (10+ y&#305;l)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="note-box">
+    <p>T&uuml;m imza seviyeleri <strong>Adobe Acrobat</strong>, <strong>Foxit Reader</strong> ve herhangi bir PAdES uyumlu g&ouml;r&uuml;nt&uuml;leyicide do&#287;rulanabilir PDF dosyalar&#305; &uuml;retir. &Ouml;zel eklenti gerekmez.</p>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== TEMEL YETENEKLER ==================== -->
+<section class="section section-blue">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x2699; Temel &Ouml;zellikler</div>
+    <h2>&Ouml;l&ccedil;ekli &#304;mzalama &#304;&ccedil;in Her &#350;ey</h2>
+    <p>Ki&#351;isel sertifikalardan otomatik toplu i&#351;lemeye kadar, YesPDF her kurumsal imzalama senaryosunu kapsar.</p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F464;</div>
+      <h4>Ki&#351;isel Sertifika ile &#304;mzalama</h4>
+      <p>.p12/.pfx sertifikalar&#305;n&#305; y&uuml;kleyin. Yap&#305;land&#305;r&#305;labilir neden ve konum ile tek t&#305;kla imzalama. S&uuml;r&uuml;kle-b&#305;rak ile g&ouml;rsel imza yerle&#351;tirme. Parolalar AES-256 ile &#351;ifrelenmi&#351;.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F3E2;</div>
+      <h4>Kurumsal Sertifika Havuzu</h4>
+      <p>Rol ve grup bazl&#305; eri&#351;im kontrolü ile payla&#351;&#305;ml&#305; sertifika y&ouml;netimi. S&uuml;re dolum takibi ve 30, 15, 7 ve 1 g&uuml;n &ouml;ncesinde otomatik uyar&#305;lar.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4CB;</div>
+      <h4>&#304;mzalama Politikalar&#305;</h4>
+      <p>Kurum genelinde kurallar&#305; zorunlu k&#305;l&#305;n: minimum PAdES seviyesi, zorunlu neden/konum alanlar&#305;, varsay&#305;lan sertifikalar. Rol, grup veya global bazda uygulan&#305;r.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4E6;</div>
+      <h4>Toplu &#304;mzalama</h4>
+      <p>Y&uuml;zlerce belgeyi ayn&#305; anda imzalay&#305;n. Ger&ccedil;ek zamanl&#305; ilerleme ile senkron UI toplu i&#351;lemi veya binlerce belge i&ccedil;in asenkron kuyruk.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4C2;</div>
+      <h4>Hot Folder &#304;mzalama</h4>
+      <p>PDF'leri izlenen klas&ouml;re b&#305;rak&#305;n &mdash; otomatik olarak imzalan&#305;r. Dosya kararl&#305;l&#305;k kontrolü, yap&#305;land&#305;r&#305;labilir G/&Ccedil; yollar&#305;, farkl&#305; sertifikalarla birden fazla hot folder.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x2705;</div>
+      <h4>&#304;mza Do&#287;rulama</h4>
+      <p>T&uuml;m g&ouml;m&uuml;l&uuml; imzalar&#305; do&#287;rulay&#305;n: belge b&uuml;t&uuml;nl&uuml;&#287;&uuml;, imzalayan kimli&#287;i, g&uuml;ven durumu, PAdES seviyesi, zaman damgas&#305; ge&ccedil;erlili&#287;i ve sertifika s&uuml;resi. Renk kodlu sonu&ccedil;lar.</p>
+    </div>
+  </div>
+
+  <div class="features-grid-2">
+    <div class="feature-card">
+      <div class="feature-icon">&#x23F0;</div>
+      <h4>Sertifika S&uuml;re Dolum Y&ouml;netimi</h4>
+      <p>Kademeli uyar&#305;larla proaktif izleme (30/15/7/1 g&uuml;n). S&uuml;resi dolan sertifikalar otomatik devre d&#305;&#351;&#305;. Hot folder s&uuml;resi dolmu&#351; sertifikalar&#305; atlar. Pano ve e-posta bildirimleri.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F527;</div>
+      <h4>Y&ouml;netim Ayarlar&#305; Paneli</h4>
+      <p>Tam web tabanl&#305; yap&#305;land&#305;rma: sertifika CRUD, imzalama politikalar&#305;, hot folder y&ouml;netimi, TSA yap&#305;land&#305;rmas&#305;, varsay&#305;lan ayarlar ve ger&ccedil;ek zamanl&#305; istatistik panosu.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== HOT FOLDER ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x26A1; Otomasyon</div>
+    <h2>Hot Folder ile Dokunmadan &#304;mzalama</h2>
+    <p>ERP, muhasebe ve belge y&ouml;netim sistemleriyle entegre edin. Dosyalar&#305; b&#305;rak&#305;n, imzal&#305; PDF al&#305;n &mdash; insan etkile&#351;imi gerekmez.</p>
+  </div>
+
+  <div class="hotfolder-visual">
+    <div class="flow-row">
+      <div class="flow-box">
+        <div class="icon">&#x1F4BC;</div>
+        <div class="label">ERP Sistemi</div>
+        <div class="sub">fatura.pdf olu&#351;turur</div>
+      </div>
+      <div class="flow-arrow">&#x27A1;</div>
+      <div class="flow-box">
+        <div class="icon">&#x1F4C1;</div>
+        <div class="label">Hot Folder</div>
+        <div class="sub">\\sunucu\girdi\</div>
+      </div>
+      <div class="flow-arrow">&#x27A1;</div>
+      <div class="flow-box highlight">
+        <div class="icon">&#x270D;&#xFE0F;</div>
+        <div class="label">YesPDF &#304;mzalar</div>
+        <div class="sub">PAdES-T + Kurumsal Sertifika</div>
+      </div>
+    </div>
+    <div class="flow-row" style="margin-top: 24px;">
+      <div class="flow-split">
+        <div class="flow-box">
+          <div class="icon">&#x2705;</div>
+          <div class="label">&Ccedil;&#305;kt&#305; Klas&ouml;r&uuml;</div>
+          <div class="sub">\\sunucu\cikti\ (imzal&#305;)</div>
+        </div>
+        <div class="flow-box">
+          <div class="icon">&#x1F4BE;</div>
+          <div class="label">Ar&#351;iv Klas&ouml;r&uuml;</div>
+          <div class="sub">\\sunucu\arsiv\ (orijinal)</div>
+        </div>
+        <div class="flow-box">
+          <div class="icon">&#x26A0;&#xFE0F;</div>
+          <div class="label">Hata Klas&ouml;r&uuml;</div>
+          <div class="sub">\\sunucu\hata\ (ba&#351;ar&#305;s&#305;z)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="features-grid" style="margin-top: 40px;">
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F50D;</div>
+      <h4>Dosya Kararl&#305;l&#305;k Kontrol&uuml;</h4>
+      <p>Yaln&#305;zca yaz&#305;m&#305; tamamlanm&#305;&#351; dosyalar&#305; i&#351;ler. A&#287; transferleri s&#305;ras&#305;nda yar&#305;m dosya imzalanmas&#305;n&#305; &ouml;nler.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F451;</div>
+      <h4>Lider Se&ccedil;imi (Y&uuml;ksek Eri&#351;im)</h4>
+      <p>Veritaban&#305; tabanl&#305; lider se&ccedil;imi, y&uuml;k dengelenmi&#351; ortamlarda yaln&#305;zca bir &ouml;rne&#287;in dosyalar&#305; i&#351;lemesini sa&#287;lar. ~30 saniyede otomatik yedekleme ge&ccedil;i&#351;i.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">&#x1F4CA;</div>
+      <h4>Tam Denetim &#304;zi</h4>
+      <p>&#304;&#351;lenen her dosya durum, dosya boyutu, i&#351;leme s&uuml;resi, kullan&#305;lan sertifika ve imzalayan kimli&#287;i ile kaydedilir.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== REST API ==================== -->
+<section class="section section-dark">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4BB; REST API</div>
+    <h2>&#304;mzalamay&#305; Her &#304;&#351; Ak&#305;&#351;&#305;na Entegre Edin</h2>
+    <p>Programatik imzalama, do&#287;rulama ve toplu i&#351;leme i&ccedil;in durumsuz REST API. Kapsam tabanl&#305; izinlerle API anahtar&#305; kimlik do&#287;rulamas&#305;.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <div class="api-block">
+        <div class="api-block-header">
+          <span class="api-method method-post">POST</span>
+          <span class="api-endpoint">/api/v1/signing/sign-and-return</span>
+        </div>
+        <pre><span class="comment">// PDF'i imzala ve anında geri d&ouml;nd&uuml;r</span>
+<span class="comment">// Sunucuda belge saklanmaz</span>
+
+Content-Type: multipart/form-data
+X-API-Key: api-anahtariniz
+
+<span class="key">file</span>: fatura.pdf
+<span class="key">certificate_id</span>: <span class="string">5</span>
+<span class="key">p12_password</span>: <span class="string">****</span>
+<span class="key">pades_level</span>: <span class="string">pades-t</span>
+<span class="key">reason</span>: <span class="string">Onaylandı</span>
+<span class="key">location</span>: <span class="string">İstanbul</span>
+
+<span class="comment">&#x2192; Yan&#305;t: &#304;mzal&#305; PDF binary</span></pre>
+      </div>
+
+      <div class="api-block">
+        <div class="api-block-header">
+          <span class="api-method method-post">POST</span>
+          <span class="api-endpoint">/api/v1/signing/batch</span>
+        </div>
+        <pre><span class="comment">// Asenkron toplu imzalama</span>
+{
+  <span class="key">"document_ids"</span>: <span class="string">[101, 102, 103, ...]</span>,
+  <span class="key">"certificate_id"</span>: <span class="string">5</span>,
+  <span class="key">"pades_level"</span>: <span class="string">"pades-t"</span>
+}
+
+<span class="comment">&#x2192; Yan&#305;t: Sorgulama i&ccedil;in &#304;&#351; ID</span></pre>
+      </div>
+
+      <div class="api-block">
+        <div class="api-block-header">
+          <span class="api-method method-get">GET</span>
+          <span class="api-endpoint">/api/v1/signing/verify/{document_id}</span>
+        </div>
+        <pre><span class="comment">// Belgedeki t&uuml;m imzalar&#305; do&#287;rula</span>
+
+<span class="comment">&#x2192; Yan&#305;t: &#304;mza detaylar&#305; JSON dizisi</span>
+<span class="comment">   (imzalayan, b&uuml;t&uuml;nl&uuml;k, g&uuml;ven, zaman damgalar&#305;)</span></pre>
+      </div>
+    </div>
+
+    <div>
+      <div class="workflow-visual">
+        <h3 style="color:var(--white); font-size:20px; margin-bottom:28px;">&#304;mzalama &#304;&#351; Ak&#305;&#351;&#305;</h3>
+        <div class="workflow-steps">
+          <div class="workflow-step">
+            <div class="step-icon">&#x1F4C4;</div>
+            <span class="step-label">PDF<br>Y&uuml;kle</span>
+          </div>
+          <span class="workflow-arrow">&#x27A1;</span>
+          <div class="workflow-step">
+            <div class="step-icon">&#x1F511;</div>
+            <span class="step-label">Sertifika<br>Se&ccedil;</span>
+          </div>
+          <span class="workflow-arrow">&#x27A1;</span>
+          <div class="workflow-step">
+            <div class="step-icon">&#x270D;&#xFE0F;</div>
+            <span class="step-label">&#304;mza<br>Uygula</span>
+          </div>
+          <span class="workflow-arrow">&#x27A1;</span>
+          <div class="workflow-step">
+            <div class="step-icon">&#x23F1;&#xFE0F;</div>
+            <span class="step-label">Zaman<br>Damgas&#305;</span>
+          </div>
+          <span class="workflow-arrow">&#x27A1;</span>
+          <div class="workflow-step">
+            <div class="step-icon">&#x2705;</div>
+            <span class="step-label">&#304;mzal&#305;<br>PDF</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <h4 style="color:var(--white); font-size:16px; margin-bottom:16px;">Entegrasyon Senaryolar&#305;</h4>
+        <div class="feature-card" style="margin-bottom:12px;">
+          <div class="feature-icon">&#x1F3E6;</div>
+          <h4>ERP / Muhasebe</h4>
+          <p>Hot folder veya REST API ile faturalar&#305; otomatik imzalay&#305;n. S&#305;f&#305;r kullan&#305;c&#305; etkile&#351;imi, tam denetim.</p>
+        </div>
+        <div class="feature-card" style="margin-bottom:12px;">
+          <div class="feature-icon">&#x1F4C1;</div>
+          <h4>Belge Y&ouml;netimi</h4>
+          <p>Y&uuml;kle &#x2192; &#304;ncele &#x2192; &#304;mzala &#x2192; Payla&#351;. Do&#287;rulama ile tam ya&#351;am d&ouml;ng&uuml;s&uuml;.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">&#x1F4DA;</div>
+          <h4>Uyumluluk / Ar&#351;ivleme</h4>
+          <p>G&ouml;m&uuml;l&uuml; iptal verisi ile PAdES-LT toplu imzalama. 10+ y&#305;l boyunca do&#287;rulanabilir.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== G&Uuml;VENL&#304;K & UYUMLULUK ==================== -->
+<section class="section section-gold">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F6E1; G&uuml;venlik &amp; Uyumluluk</div>
+    <h2>Kurumsal D&uuml;zeyde G&uuml;venlik</h2>
+    <p>%100 on-premise kurulum. Bulut ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok. Harici API &ccedil;a&#287;r&#305;s&#305; yok. T&uuml;m kriptografik i&#351;lemler yerel olarak ger&ccedil;ekle&#351;tirilir.</p>
+  </div>
+
+  <div class="compliance-grid">
+    <div class="compliance-card">
+      <div class="badge">&#x1F1EA;&#x1F1FA; eIDAS</div>
+      <h4>AB Elektronik &#304;mzalar</h4>
+      <p>ETSI EN 319 142 uyar&#305;nca PAdES-B/T/LT imzalar&#305;. Nitelikli sertifika deste&#287;i ile t&uuml;m AB &uuml;ye devletlerinde hukuken ba&#287;lay&#305;c&#305;.</p>
+    </div>
+    <div class="compliance-card">
+      <div class="badge">&#x1F1F9;&#x1F1F7; KVKK</div>
+      <h4>Ki&#351;isel Verilerin Korunmas&#305;</h4>
+      <p>On-premise kurulum, altyap&#305;n&#305;z d&#305;&#351;&#305;nda veri transferi olmamas&#305;n&#305; garanti eder. D&uuml;zenleyici denetimler i&ccedil;in eksiksiz denetim izi.</p>
+    </div>
+    <div class="compliance-card">
+      <div class="badge">&#x1F1EA;&#x1F1FA; GDPR</div>
+      <h4>Genel Veri Koruma</h4>
+      <p>Veri egemenli&#287;i garantisi. Durgun &#351;ifreleme, rol tabanl&#305; eri&#351;im kontrolleri ve kapsaml&#305; veri i&#351;leme kay&#305;tlar&#305;.</p>
+    </div>
+    <div class="compliance-card">
+      <div class="badge">&#x1F4C8; SOX</div>
+      <h4>Sarbanes-Oxley</h4>
+      <p>Her imzalama i&#351;lemi i&ccedil;in de&#287;i&#351;tirilemez denetim izi. Rol tabanl&#305; eri&#351;im, politika uygulamas&#305; ve kurcalamaya dayan&#305;kl&#305; g&uuml;nl&uuml;kleme.</p>
+    </div>
+    <div class="compliance-card">
+      <div class="badge">&#x1F3E5; HIPAA</div>
+      <h4>Sa&#287;l&#305;k Sigortalar&#305;</h4>
+      <p>Durgun ve aktar&#305;mda AES-256 &#351;ifreleme. Eri&#351;im g&uuml;nl&uuml;kleme, oturum y&ouml;netimi ve belge d&uuml;zeyinde g&uuml;venlik kontrolleri.</p>
+    </div>
+    <div class="compliance-card">
+      <div class="badge">&#x1F3E6; BDDK</div>
+      <h4>Bankac&#305;l&#305;k D&uuml;zenleme</h4>
+      <p>Finans kurumlar&#305;nda dijital belge y&ouml;netimi i&ccedil;in BDDK gereksinimlerini kar&#351;&#305;lar. Tam veri egemenli&#287;i ile on-premise.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;">
+    <h3 style="font-size:20px; font-weight:800; color:var(--dark); text-align:center; margin-bottom:24px;">Durgun &#350;ifreleme</h3>
+    <div class="features-grid-2">
+      <div class="feature-card" style="border-left:4px solid var(--primary);">
+        <table style="width:100%; font-size:14px;">
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px 0; font-weight:700; color:var(--dark);">P12 Sertifika Dosyalar&#305;</td>
+            <td style="padding:10px 0; color:var(--gray-500);">Kurulum ba&#351;&#305;na anahtar ile AES-256</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px 0; font-weight:700; color:var(--dark);">P12 Parolalar&#305;</td>
+            <td style="padding:10px 0; color:var(--gray-500);">Kurulum ba&#351;&#305;na anahtar ile AES-256</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:10px 0; font-weight:700; color:var(--dark);">&#304;mzal&#305; PDF Belgeler</td>
+            <td style="padding:10px 0; color:var(--gray-500);">Dosya ba&#351;&#305;na rastgele salt ile AES-256</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 0; font-weight:700; color:var(--dark);">&#350;ifreleme Anahtarlar&#305;</td>
+            <td style="padding:10px 0; color:var(--gray-500);">Otomatik &uuml;retilir, .env'de saklan&#305;r</td>
+          </tr>
+        </table>
+      </div>
+      <div class="feature-card" style="border-left:4px solid var(--accent-gold);">
+        <h4 style="margin-bottom:12px;">Denetim &#304;zi Kay&#305;tlar&#305;</h4>
+        <table style="width:100%; font-size:14px;">
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:8px 0;">&#x1F464; Kullan&#305;c&#305; kimli&#287;i</td>
+            <td style="padding:8px 0;">&#x1F4C4; Belge referans&#305;</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:8px 0;">&#x1F511; Kullan&#305;lan sertifika</td>
+            <td style="padding:8px 0;">&#x1F4DD; &#304;mza tipi</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:8px 0;">&#x23F0; TSA URL</td>
+            <td style="padding:8px 0;">&#x1F310; &#304;stemci IP</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;" colspan="2">&#x1F4C5; &#304;&#351;lemin tam zaman damgas&#305;</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== TEKN&#304;K &Ouml;ZELL&#304;KLER ==================== -->
+<section class="section section-dark">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F9F0; Teknik &Ouml;zellikler</div>
+    <h2>Kan&#305;tlanm&#305;&#351; Teknoloji &Uuml;zerine &#304;n&#351;a Edildi</h2>
+    <p>A&ccedil;&#305;k standartlar, sava&#351;ta test edilmi&#351; k&uuml;t&uuml;phaneler, sat&#305;c&#305; ba&#287;&#305;ml&#305;l&#305;&#287;&#305; yok.</p>
+  </div>
+
+  <div class="encryption-grid">
+    <div class="enc-item">
+      <div class="icon">&#x1F50F;</div>
+      <div class="label">&#304;mza Motoru</div>
+      <div class="value">pyhanko</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x1F512;</div>
+      <div class="label">Kriptografi</div>
+      <div class="value">OpenSSL</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x1F4C4;</div>
+      <div class="label">Sertifika Format&#305;</div>
+      <div class="value">PKCS#12</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x1F522;</div>
+      <div class="label">Hash Algoritmalar&#305;</div>
+      <div class="value">SHA-256/384/512</div>
+    </div>
+  </div>
+
+  <div class="encryption-grid" style="margin-top:16px;">
+    <div class="enc-item">
+      <div class="icon">&#x23F1;&#xFE0F;</div>
+      <div class="label">Zaman Damgas&#305;</div>
+      <div class="value">RFC 3161</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x1F5C4;</div>
+      <div class="label">Anahtar Depolama</div>
+      <div class="value">AES-256</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x1F5C3;&#xFE0F;</div>
+      <div class="label">Veritaban&#305;</div>
+      <div class="value">SQLite / PostgreSQL</div>
+    </div>
+    <div class="enc-item">
+      <div class="icon">&#x26A1;</div>
+      <div class="label">E&#351;zamanl&#305;l&#305;k</div>
+      <div class="value">Thread Pool</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== L&#304;SANSLAMA ==================== -->
+<section class="section section-light">
+<div class="container">
+  <div class="section-header">
+    <div class="section-tag">&#x1F4B0; Lisanslama</div>
+    <h2>Her &#350;ey Dahil Kurumsal Lisans</h2>
+    <p>Dijital imza mod&uuml;l&uuml; YesPDF Enterprise Edition'a dahildir. &#304;mza ba&#351;&#305;na &uuml;cret yok. Harici abonelik yok.</p>
+  </div>
+
+  <div class="license-grid">
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Ki&#351;isel &#304;mzalama</h4>
+      <p>Bireysel sertifika y&uuml;kleme ve tek t&#305;kla imzalama</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Kurumsal Havuz</h4>
+      <p>RBAC ile payla&#351;&#305;ml&#305; sertifika y&ouml;netimi</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Toplu &#304;mzalama</h4>
+      <p>Senkron ve asenkron toplu i&#351;leme</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Hot Folder</h4>
+      <p>Otomatik dokunulmadan imzalama</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>REST API</h4>
+      <p>Programatik imzalama, do&#287;rulama, toplu</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Do&#287;rulama</h4>
+      <p>Tam imza do&#287;rulama motoru</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>S&uuml;re Dolum Uyar&#305;lar&#305;</h4>
+      <p>Proaktif sertifika izleme</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>&#304;mzalama Politikalar&#305;</h4>
+      <p>Kurum genelinde kural uygulamas&#305;</p>
+    </div>
+    <div class="license-card">
+      <div class="check">&#x2714;</div>
+      <h4>Denetim &#304;zi</h4>
+      <p>De&#287;i&#351;tirilemez i&#351;lem g&uuml;nl&uuml;kleme</p>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ==================== CTA ==================== -->
+<section class="cta-section">
+<div class="container">
+  <h2>Belge &#304;&#351; Ak&#305;&#351;lar&#305;n&#305;z&#305; G&uuml;vence Alt&#305;na Almaya Haz&#305;r m&#305;s&#305;n&#305;z?</h2>
+  <p class="subtitle">Kurumsal dijital imzalar, kendi altyap&#305;n&#305;zda. Bulut yok. S&#305;n&#305;r yok.</p>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="icon">&#x1F310;</div>
+      <div class="label">Web Sitesi</div>
+      <div class="value"><a href="https://www.yespdf.com.tr">www.yespdf.com.tr</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x2709;&#xFE0F;</div>
+      <div class="label">E-posta</div>
+      <div class="value"><a href="mailto:info@yesbilisim.com">info@yesbilisim.com</a></div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x1F4DE;</div>
+      <div class="label">Telefon</div>
+      <div class="value">+90 212 347 4715</div>
+    </div>
+    <div class="contact-card">
+      <div class="icon">&#x1F4CD;</div>
+      <div class="label">Konum</div>
+      <div class="value">&#304;stanbul, T&uuml;rkiye</div>
+    </div>
+  </div>
+
+  <div class="cta-buttons">
+    <a href="https://www.yespdf.com.tr" class="cta-final-btn">Canl&#305; Demo Planlay&#305;n &#x2192;</a>
+  </div>
+
+  <p style="text-align:center; margin-top:40px; font-size:12px; color:rgba(255,255,255,0.3);">YES B&#304;L&#304;&#350;&#304;M TEKNOLOJ&#304;LER&#304; YAZILIM DANI&#350;MANLIK SAN. VE T&#304;C. A.&#350;.</p>
+</div>
+</section>
+
+
+<!-- ==================== FOOTER ==================== -->
+<div class="footer">
+<div class="container">
+  <p><span class="brand">YesPDF</span> &middot; Kurumsal Belge Y&ouml;netimi</p>
+  <p>S&uuml;r&uuml;m 1.3.0 &middot; &#350;ubat 2026</p>
+</div>
+</div>
+
+</body>
+</html>
