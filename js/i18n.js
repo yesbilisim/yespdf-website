@@ -1,4 +1,4 @@
-// YesPDF Website - Internationalization (TR/EN)
+// YesPDF Website - Internationalization (TR/EN/DE)
 const translations = {
   tr: {
     // Navbar
@@ -480,6 +480,247 @@ const translations = {
     'kvkk.text': 'This website uses cookies to improve user experience. In accordance with the Personal Data Protection Law (KVKK No. 6698), your personal data is processed in compliance with our privacy policy. By continuing to use the site, you accept the use of cookies.',
     'kvkk.accept': 'Accept',
     'kvkk.reject': 'Decline',
+  },
+
+  de: {
+    // Navbar
+    'nav.features': 'Funktionen',
+    'nav.gallery': 'Galerie',
+    'nav.why': 'Warum YesPDF',
+    'nav.security': 'Sicherheit',
+    'nav.verticals': 'Branchen',
+    'nav.docs': 'Dokumente',
+    'nav.contact': 'Kontakt',
+    'nav.demo': 'Demo anfordern',
+    'nav.cta': 'Demo anfordern',
+
+    // Hero
+    'hero.badge': 'KVKK-konform · On-Premise',
+    'hero.title.line1': 'Enterprise-PDF-',
+    'hero.title.line2': 'Management-Plattform',
+    'hero.subtitle': 'Verwalten Sie alle Ihre PDF-Vorg\u00e4nge auf einer Plattform. Konvertierung, Bearbeitung, OCR, Verschl\u00fcsselung und mehr \u2014 vollst\u00e4ndig auf Ihrem eigenen Server.',
+    'hero.cta_primary': 'Demo anfordern',
+    'hero.cta_secondary': 'Funktionen entdecken',
+    'hero.stat1_number': '20+',
+    'hero.stat1_label': 'PDF-Werkzeuge',
+    'hero.stat2_number': '500+',
+    'hero.stat2_label': 'Gleichzeitige Nutzer',
+    'hero.stat3_number': '6',
+    'hero.stat3_label': 'OCR-Sprachen',
+    'hero.stat4_number': '100%',
+    'hero.stat4_label': 'On-Premise',
+
+    // Features
+    'features.tag': 'FUNKTIONEN',
+    'features.title': 'Leistungsstarke Funktionen',
+    'features.subtitle': 'Eine vollst\u00e4ndige Plattform f\u00fcr alle Ihre PDF-Anforderungen',
+    'features.convert.title': 'PDF-Konvertierung',
+    'features.convert.desc': 'Schnelle und pr\u00e4zise Konvertierung in Word, Excel, HTML und Bildformate.',
+    'features.editor.title': 'Erweiterter PDF-Editor',
+    'features.editor.desc': 'Volle Kontrolle mit Text-, Bild- und Anmerkungsbearbeitung.',
+    'features.ocr.title': 'OCR (Zeichenerkennung)',
+    'features.ocr.desc': 'Gescannte Dokumente in 6 Sprachen in durchsuchbare PDFs umwandeln.',
+    'features.merge_split.title': 'PDF zusammenf\u00fchren & teilen',
+    'features.merge_split.desc': 'Mehrere PDFs zusammenf\u00fchren oder nach Seitenbereichen aufteilen.',
+    'features.compress.title': 'PDF-Komprimierung',
+    'features.compress.desc': 'Dateigr\u00f6\u00dfe ohne Qualit\u00e4tsverlust deutlich reduzieren.',
+    'features.watermark.title': 'Wasserzeichen & Stempel',
+    'features.watermark.desc': 'Text-, Bild- oder QR-Code-Wasserzeichen hinzuf\u00fcgen.',
+    'features.encrypt.title': 'Verschl\u00fcsselung & Schutz',
+    'features.encrypt.desc': 'AES-256-Verschl\u00fcsselung mit granularer Berechtigungskontrolle.',
+    'features.forms.title': 'Formulare & Unterschrift',
+    'features.forms.desc': 'PDF-Formulare ausf\u00fcllen und digital unterschreiben.',
+    'features.smart_edit.title': 'Intelligente Bearbeitung',
+    'features.smart_edit.desc': 'Bereichsbasierte Textbearbeitung in gescannten Dokumenten.',
+    'features.redaction.title': 'Schw\u00e4rzung (Redaktion)',
+    'features.redaction.desc': 'Sensible Informationen dauerhaft und unwiderruflich schw\u00e4rzen.',
+    'features.admin.title': 'Admin-Panel',
+    'features.admin.desc': 'Benutzer-, Rollen-, Gruppen- und Dokumentenverwaltung \u00fcber ein einziges Panel.',
+    'features.translate.title': 'Dokument\u00fcbersetzung',
+    'features.translate.desc': 'Automatische \u00dcbersetzung in 30+ Sprachen mit DeepL-Integration.',
+
+    // Gallery
+    'gallery.tag': 'GALERIE',
+    'gallery.title': 'Produktgalerie',
+    'gallery.subtitle': 'Entdecken Sie die leistungsstarke Oberfl\u00e4che von YesPDF',
+    'gallery.filter.all': 'Alle',
+    'gallery.filter.tools': 'PDF-Werkzeuge',
+    'gallery.filter.editor': 'Editor',
+    'gallery.filter.admin': 'Verwaltung',
+    'gallery.anasayfa': 'Startseite',
+    'gallery.word-donustur': 'In Word konvertieren',
+    'gallery.excel-donustur': 'In Excel konvertieren',
+    'gallery.html-donustur': 'In HTML konvertieren',
+    'gallery.image-donustur': 'In Bild konvertieren',
+    'gallery.searchable-pdf': 'Durchsuchbares PDF (OCR)',
+    'gallery.pdf-birlestir': 'PDFs zusammenf\u00fchren',
+    'gallery.pdf-bol': 'PDF aufteilen',
+    'gallery.pdf-sikistir': 'PDF komprimieren',
+    'gallery.filigran': 'Wasserzeichen hinzuf\u00fcgen',
+    'gallery.editor-full': 'PDF-Editor',
+    'gallery.metin-duzenle': 'Textbearbeitung',
+    'gallery.duzenleme': 'Bearbeitungswerkzeuge',
+    'gallery.sekiller': 'Formen',
+    'gallery.olcum': 'Messwerkzeuge',
+    'gallery.karartma': 'Schw\u00e4rzung',
+    'gallery.doldur-imzala': 'Ausf\u00fcllen & Unterschreiben',
+    'gallery.formlar': 'PDF-Formulare',
+    'gallery.pullar': 'Stempel',
+    'gallery.akilli-duzenleme': 'Intelligente Bearbeitung',
+    'gallery.kontrol-paneli': '\u00dcbersicht',
+    'gallery.kullanici-yonetimi': 'Benutzerverwaltung',
+    'gallery.kullanici-ekle': 'Benutzer hinzuf\u00fcgen',
+    'gallery.ldap-ad': 'LDAP/AD-Integration',
+    'gallery.is-kuyrugu': 'Auftrags\u00fcberwachung',
+    'gallery.guvenlik-ayarlari': 'Sicherheitseinstellungen',
+    'gallery.denetim-kayitlari': 'Pr\u00fcfprotokolle',
+    'gallery.kullanim-istatistikleri': 'Nutzungsstatistiken',
+    'gallery.sertifika-yonetimi': 'Zertifikatsverwaltung',
+    'gallery.giris-ekrani': 'Anmeldebildschirm',
+
+    // Why YesPDF
+    'why.title': 'Warum YesPDF?',
+    'why.subtitle': 'Vorteile, die im Enterprise-PDF-Management den Unterschied machen',
+    'why.onprem.title': '100% On-Premise',
+    'why.onprem.desc': 'Ihre Daten bleiben auf Ihrem Server. Kein Cloud-Datentransfer. Funktioniert auch in Air-Gapped-Netzwerken.',
+    'why.cost.title': 'Kostenvorteil',
+    'why.cost.desc': 'G\u00fcnstige j\u00e4hrliche Lizenzierung pro Benutzer. \u00dcber 90% Ersparnis gegen\u00fcber Adobe. Flexible Tarife \u2014 zahlen Sie nur, was Sie brauchen.',
+    'why.browser.title': 'Browserbasiert',
+    'why.browser.desc': 'Keine Client-Installation erforderlich. Zugriff von jedem Ger\u00e4t mit Chrome, Firefox oder Edge. Windows, Mac, Linux, mobil.',
+    'why.compliance.title': 'KVKK- & BDDK-konform',
+    'why.compliance.desc': 'Umfassende Pr\u00fcfprotokolle, AES-256-Verschl\u00fcsselung, RBAC-Autorisierung. Volle Konformit\u00e4t mit t\u00fcrkischen Vorschriften.',
+
+    // Security
+    'security.title': 'Enterprise-Sicherheit',
+    'security.subtitle': 'Ihre Daten werden auf h\u00f6chstem Niveau gesch\u00fctzt',
+    'security.kvkk.title': 'KVKK-Konformit\u00e4t',
+    'security.kvkk.desc': 'Umfassender Datenschutz gem\u00e4\u00df den Anforderungen des Datenschutzgesetzes (KVKK).',
+    'security.owasp.title': 'OWASP Top 10',
+    'security.owasp.desc': 'Volle Konformit\u00e4t mit Web-Anwendungssicherheitsstandards. CSRF-, XSS-, SQL-Injection-Schutz.',
+    'security.aes.title': 'AES-256-Verschl\u00fcsselung',
+    'security.aes.desc': 'Dateibezogene Verschl\u00fcsselung mit einzigartigem Salt. Datenschutz im Ruhezustand und bei der \u00dcbertragung.',
+    'security.virus.title': 'Virenpr\u00fcfung',
+    'security.virus.desc': 'Automatische Sicherheitspr\u00fcfung hochgeladener Dateien mit ClamAV-Integration.',
+    'security.audit.title': 'Pr\u00fcfprotokolle',
+    'security.audit.desc': 'Jede Aktion protokolliert: Benutzer, Aktion, IP-Adresse, Zeitstempel, Ger\u00e4teinformation.',
+    'security.ip.title': 'IP-Beschr\u00e4nkung',
+    'security.ip.desc': 'IP-basierte Zugriffskontrolle f\u00fcr das Admin-Panel. Sichere Verwaltung mit Whitelisting.',
+
+    // Verticals
+    'verticals.tag': 'Branchenl\u00f6sungen',
+    'verticals.title': 'PDF-L\u00f6sungen f\u00fcr jede Branche',
+    'verticals.subtitle': 'YesPDF bietet ma\u00dfgeschneiderte L\u00f6sungen f\u00fcr die individuellen Dokumentenmanagement-Anforderungen verschiedener Branchen.',
+    'verticals.banking.title': 'Banken & Finanzen',
+    'verticals.banking.desc': 'Regulierungskonformes Dokumentenmanagement, sichere Kreditakten, digitale Signaturen und Pr\u00fcfprotokolle.',
+    'verticals.dicom.title': 'Gesundheitswesen & DICOM',
+    'verticals.dicom.desc': 'Medizinische Bildgebung, DICOM-Konvertierung, Patientenakten und Compliance im Gesundheitswesen.',
+    'verticals.government.title': 'Beh\u00f6rden & \u00f6ffentlicher Sektor',
+    'verticals.government.desc': 'E-Government-konformes Dokumentenmanagement, amtlicher Schriftverkehr, Archivierung und digitale Transformation.',
+    'verticals.military.title': 'Milit\u00e4r & Verteidigung',
+    'verticals.military.desc': 'NATO-konformes Dokumentenmanagement, Verschlusssachen, Air-Gapped-Netzwerkf\u00e4higkeit und milit\u00e4rische Sicherheit.',
+    'verticals.insurance.title': 'Versicherungswesen',
+    'verticals.insurance.desc': 'Policenverwaltung, Schadenakten, versicherungsmathematische Berichte und Compliance-Dokumentation.',
+    'verticals.legal.title': 'Recht',
+    'verticals.legal.desc': 'Vertragsverwaltung, Fallakten, Schw\u00e4rzung (Redaktion) und digitale Signaturl\u00f6sungen.',
+    'verticals.cad.title': 'CAD & Ingenieurwesen',
+    'verticals.cad.desc': 'Technische Zeichnungskonvertierung, Gro\u00dfformatdruck, Messwerkzeuge und Projektarchivierung.',
+    'verticals.education.title': 'Bildungswesen',
+    'verticals.education.desc': 'Zeugnisse, Diplome, Pr\u00fcfungsunterlagen, Studierendenakten und akademisches Dokumentenmanagement.',
+    'verticals.sts.title': 'Service to Software',
+    'verticals.sts.desc': 'Kein SaaS, sondern Service to Software. Ihre Daten bleiben bei Ihnen, wir liefern den Service.',
+    'verticals.digsig.title': 'Digitale Signatur',
+    'verticals.digsig.desc': 'Digitale Unternehmenssignatur, E-Signatur-Integration, Zertifikatsverwaltung und Compliance-L\u00f6sungen.',
+    'verticals.audit.title': 'Wirtschaftspr\u00fcfung & Beratung',
+    'verticals.audit.desc': 'Pr\u00fcfberichte, Jahresabschl\u00fcsse, Compliance-Dokumente und ABBYY FineReader-Vergleich.',
+
+    // Documents
+    'docs.title': 'Dokumente',
+    'docs.subtitle': 'Technische Dokumentation, Benutzerhandb\u00fccher und Berichte',
+    'docs.brochure_tr': 'Produktbrosch\u00fcre (T\u00fcrkisch)',
+    'docs.brochure_en': 'Produktbrosch\u00fcre (Englisch)',
+    'docs.user_guide_tr': 'Benutzerhandbuch (T\u00fcrkisch)',
+    'docs.whitepaper_tr': 'Technisches Whitepaper',
+    'docs.kvkk_tr': 'KVKK-Konformit\u00e4tsbericht',
+    'docs.sysreq_tr': 'Systemanforderungen (T\u00fcrkisch)',
+    'docs.sysreq_en': 'Systemanforderungen (Englisch)',
+    'docs.competitor_tr': 'Wettbewerbsvergleich (T\u00fcrkisch)',
+    'docs.competitor_en': 'Wettbewerbsvergleich (Englisch)',
+    'docs.loadtest_tr': 'Lasttestbericht (T\u00fcrkisch)',
+    'docs.loadtest_en': 'Lasttestbericht (Englisch)',
+    'docs.gdpr_en': 'DSGVO-Konformit\u00e4tsbericht',
+    'docs.ferpa_tr': 'FERPA-Konformit\u00e4tsbericht (T\u00fcrkisch)',
+    'docs.ferpa_en': 'FERPA-Konformit\u00e4tsbericht (Englisch)',
+    'docs.hipaa_tr': 'HIPAA-Konformit\u00e4tsbericht (T\u00fcrkisch)',
+    'docs.hipaa_en': 'HIPAA-Konformit\u00e4tsbericht (Englisch)',
+    'docs.soc2_tr': 'SOC 2-Konformit\u00e4tsbericht (T\u00fcrkisch)',
+    'docs.soc2_en': 'SOC 2-Konformit\u00e4tsbericht (Englisch)',
+    'docs.iso27001_tr': 'ISO 27001-Konformit\u00e4tsbericht (T\u00fcrkisch)',
+    'docs.iso27001_en': 'ISO 27001-Konformit\u00e4tsbericht (Englisch)',
+    'docs.sts_tr': 'Service to Software (T\u00fcrkisch)',
+    'docs.sts_en': 'Service to Software (Englisch)',
+    'docs.tsk_whitepaper_tr': 'Verteidigungsindustrie-Whitepaper (T\u00fcrkisch)',
+    'docs.nato_stanag_en': 'NATO STANAG-Konformit\u00e4t',
+    'docs.loadbalancer_tr': 'Lastverteilung & Hochverf\u00fcgbarkeit (T\u00fcrkisch)',
+    'docs.loadbalancer_en': 'Lastverteilung & Hochverf\u00fcgbarkeit (Englisch)',
+    'docs.release_history': 'Versionsgeschichte',
+
+    // Articles
+    'nav.articles': 'Artikel',
+    'articles.tag': 'ARTIKEL',
+    'articles.title': 'Wissenszentrum',
+    'articles.subtitle': 'Fachwissen zu Dokumentensicherheit, PDF-Management und Compliance im Unternehmen',
+    'articles.docsecurity.title': 'Dokumentensicherheit',
+    'articles.docsecurity.desc': 'Strategien f\u00fcr Dokumentensicherheit, Bedrohungsvektoren und Schutzma\u00dfnahmen.',
+    'articles.redaction.title': 'Schw\u00e4rzungsrisiken',
+    'articles.redaction.desc': 'Fehlerhafte Schw\u00e4rzungspraktiken, Datenleckrisiken und richtige Techniken.',
+    'articles.licensing.title': 'Lizenzmodelle',
+    'articles.licensing.desc': 'PDF-Software-Lizenzmodelle, versteckte Kosten und Auswahlkriterien.',
+    'articles.central.title': 'Zentrales PDF-Management',
+    'articles.central.desc': 'Zentral verwaltete PDF-Umgebungen, Unternehmenskontrolle und Effizienzvorteile.',
+    'articles.personal.title': 'Gefahr durch pers\u00f6nliche PDF-Tools',
+    'articles.personal.desc': 'Auswirkungen pers\u00f6nlicher PDF-Tools auf die Unternehmenssicherheit und Pr\u00e4ventionsstrategien.',
+
+    // Contact
+    'contact.title': 'Demo anfordern',
+    'contact.subtitle': 'Kontaktieren Sie uns, um YesPDF in Ihrer Organisation zu erleben.',
+    'contact.benefit1': 'Individuelle Demo f\u00fcr Ihre Organisation',
+    'contact.benefit2': 'Technische Anforderungsanalyse',
+    'contact.benefit3': 'Kostenloser POC-Aufbau (Proof of Concept)',
+    'contact.phone': '+90 212 347 47 16',
+    'contact.form.company': 'Firmenname',
+    'contact.form.name': 'Vollst\u00e4ndiger Name <span class="text-red-500">*</span>',
+    'contact.form.email': 'E-Mail <span class="text-red-500">*</span>',
+    'contact.form.phone': 'Telefon',
+    'contact.form.message': 'Nachricht',
+    'contact.form.company_ph': 'Ihr Firmenname',
+    'contact.form.name_ph': 'Ihr vollst\u00e4ndiger Name',
+    'contact.form.email_ph': 'name@firma.de',
+    'contact.form.phone_ph': '+49 (XXX) XXX XX XX',
+    'contact.form.message_ph': 'Erz\u00e4hlen Sie uns von Ihrem Projekt...',
+    'contact.form.submit': 'Absenden',
+    'contact.form.success': 'Ihre Nachricht wurde erfolgreich gesendet. Wir werden uns in K\u00fcrze bei Ihnen melden.',
+    'contact.form.error': 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.',
+
+    // Footer
+    'footer.brand.desc': 'On-Premise-PDF-Management-Plattform. Sichere, schnelle und selbst gehostete L\u00f6sung f\u00fcr alle Ihre PDF-Vorg\u00e4nge.',
+    'footer.links.title': 'Schnelllinks',
+    'footer.links.features': 'Funktionen',
+    'footer.links.gallery': 'Galerie',
+    'footer.links.why': 'Warum YesPDF',
+    'footer.links.security': 'Sicherheit',
+    'footer.docs.title': 'Dokumente',
+    'footer.docs.all': 'Alle Dokumente',
+    'footer.docs.user_guide': 'Benutzerhandbuch',
+    'footer.docs.whitepaper': 'Technisches Whitepaper',
+    'footer.contact.title': 'Kontakt',
+    'footer.contact.phone': '+90 212 347 47 16',
+    'footer.contact.company': 'YesPDF',
+    'footer.copyright': '\u00a9 2026 YesPDF. Alle Rechte vorbehalten.',
+
+    // KVKK Banner
+    'kvkk.text': 'Diese Website verwendet Cookies zur Verbesserung der Benutzererfahrung. Gem\u00e4\u00df dem Datenschutzgesetz (KVKK Nr. 6698) werden Ihre personenbezogenen Daten in \u00dcbereinstimmung mit unserer Datenschutzrichtlinie verarbeitet. Durch die weitere Nutzung der Website stimmen Sie der Verwendung von Cookies zu.',
+    'kvkk.accept': 'Akzeptieren',
+    'kvkk.reject': 'Ablehnen',
   }
 };
 
@@ -534,7 +775,7 @@ function applyLanguage(lang) {
     const src = img.getAttribute('src') || '';
     const full = img.getAttribute('data-full') || '';
     enScreenshots.forEach(name => {
-      if (lang === 'en') {
+      if (lang === 'en' || lang === 'de') {
         if (src.includes(name + '.webp') && !src.includes(name + '-en.webp')) {
           img.setAttribute('src', src.replace(name + '.webp', name + '-en.webp'));
         }
@@ -563,16 +804,22 @@ function applyLanguage(lang) {
   });
 }
 
-// Toggle between TR and EN
+// Language cycle: TR → EN → DE → TR
+const langCycle = ['tr', 'en', 'de'];
+
+// Toggle to next language in cycle
 function toggleLanguage() {
-  const newLang = currentLang === 'tr' ? 'en' : 'tr';
+  const idx = langCycle.indexOf(currentLang);
+  const newLang = langCycle[(idx + 1) % langCycle.length];
   applyLanguage(newLang);
   updateLangLabels();
 }
 
-// Update toggle button labels
+// Update toggle button labels (shows next language in cycle)
 function updateLangLabels() {
-  const label = currentLang === 'tr' ? 'EN' : 'TR';
+  const idx = langCycle.indexOf(currentLang);
+  const nextLang = langCycle[(idx + 1) % langCycle.length];
+  const label = nextLang.toUpperCase();
   const el = document.getElementById('lang-label');
   if (el) el.textContent = label;
   document.querySelectorAll('.lang-label-mobile').forEach(el => {
