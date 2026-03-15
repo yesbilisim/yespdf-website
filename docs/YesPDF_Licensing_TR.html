@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YesPDF – Lisanslama &amp; Fiyatlandırma</title>
+<link rel="canonical" href="https://yespdf.com.tr/docs/YesPDF_Licensing_TR.html"/>
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_Licensing_TR.html"/>
+<link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_Licensing_EN.html"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1.7; color: #1a1a1a; background: #f0efe9; }
+  .page { max-width: 960px; margin: 2rem auto 4rem; background: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+  .doc-header { background: linear-gradient(135deg, #0f3460 0%, #1a5276 100%); color: #fff; padding: 2.5rem 2.5rem 2rem; text-align: center; }
+  .logo-row { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 1.2rem; }
+  .logo-mark { width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; letter-spacing: 0.5px; color: #fff; }
+  .logo-name { font-size: 14px; opacity: 0.7; letter-spacing: 0.02em; }
+  .doc-title { font-size: 26px; font-weight: 600; margin-bottom: 8px; }
+  .doc-subtitle { font-size: 14px; opacity: 0.7; max-width: 600px; margin: 0 auto; }
+  .body { padding: 0 2.5rem 2.5rem; }
+
+  /* License Type Cards */
+  .license-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; padding: 2rem 0; }
+  .license-card { border: 2px solid #e8e6df; border-radius: 12px; padding: 1.75rem; position: relative; transition: border-color 0.2s, box-shadow 0.2s; }
+  .license-card:hover { border-color: #185fa5; box-shadow: 0 4px 20px rgba(24,95,165,0.1); }
+  .license-card.featured { border-color: #185fa5; background: linear-gradient(180deg, #f0f7ff 0%, #fff 40%); }
+  .license-card.featured::after { content: "POPÜLER"; position: absolute; top: -1px; right: 20px; background: #185fa5; color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; padding: 4px 12px; border-radius: 0 0 6px 6px; }
+  .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 1rem; }
+  .card-icon.blue { background: #e8f0fb; color: #185fa5; }
+  .card-icon.green { background: #e8f7ed; color: #1a7a3a; }
+  .card-icon.purple { background: #f0e8fb; color: #6a3ab2; }
+  .card-icon.orange { background: #fef3e2; color: #b86e00; }
+  .card-title { font-size: 18px; font-weight: 700; color: #0f3460; margin-bottom: 4px; }
+  .card-tagline { font-size: 13px; color: #888; margin-bottom: 1rem; }
+  .card-desc { font-size: 13.5px; color: #444; line-height: 1.65; margin-bottom: 1.25rem; }
+  .card-features { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+  .card-features li { font-size: 13px; color: #333; padding-left: 22px; position: relative; line-height: 1.5; }
+  .card-features li::before { content: "✓"; position: absolute; left: 0; color: #1a7a3a; font-weight: 700; font-size: 14px; }
+  .card-ideal { margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #f0eeea; }
+  .card-ideal-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 4px; }
+  .card-ideal-text { font-size: 12.5px; color: #666; line-height: 1.5; }
+
+  /* Comparison Table */
+  .section { padding: 2rem 0; border-bottom: 1px solid #f0eeea; }
+  .section:last-child { border-bottom: none; }
+  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 1.25rem; }
+  .section-num { width: 28px; height: 28px; border-radius: 50%; background: #e8f0fb; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #185fa5; flex-shrink: 0; }
+  h2 { font-size: 17px; font-weight: 600; color: #0f3460; }
+  h3 { font-size: 14px; font-weight: 600; color: #0f3460; margin-bottom: 0.75rem; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin-top: 0.5rem; }
+  th { background: #f9f8f5; color: #0f3460; font-weight: 600; text-align: left; padding: 10px 14px; border-bottom: 2px solid #e8e6df; font-size: 12px; }
+  td { padding: 9px 14px; border-bottom: 1px solid #f0eeea; color: #333; }
+  tr:hover td { background: #fafaf8; }
+  .check { color: #1a7a3a; font-weight: 700; }
+  .dash { color: #ccc; }
+  .highlight-row td { background: #f0f7ff; }
+
+  /* Deployment Section */
+  .deploy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
+  .deploy-card { background: #f9f8f5; border-radius: 10px; padding: 1.5rem; border: 1px solid #e8e6df; }
+  .deploy-card h4 { font-size: 14px; font-weight: 600; color: #0f3460; margin-bottom: 0.5rem; }
+  .deploy-card p { font-size: 13px; color: #555; line-height: 1.6; }
+  .deploy-card .config-block { background: #fff; border: 1px solid #e0ddd7; border-radius: 6px; padding: 10px 14px; margin-top: 0.75rem; font-family: 'Cascadia Code', 'Consolas', monospace; font-size: 11.5px; color: #444; line-height: 1.6; white-space: pre; overflow-x: auto; }
+
+  /* Info boxes */
+  .info-box { background: #f0f7ff; border: 1px solid #c8ddf5; border-radius: 8px; padding: 1rem 1.25rem; margin: 1rem 0; }
+  .info-box.warning { background: #fef9e7; border-color: #f5e6a3; }
+  .info-box.green { background: #e8f7ed; border-color: #b8e6c8; }
+  .info-box-title { font-size: 12px; font-weight: 700; color: #185fa5; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .info-box.warning .info-box-title { color: #b86e00; }
+  .info-box.green .info-box-title { color: #1a7a3a; }
+  .info-box p { font-size: 13px; color: #444; line-height: 1.6; }
+
+  /* FAQ */
+  .faq-item { padding: 1rem 0; border-bottom: 1px solid #f0eeea; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-size: 13.5px; font-weight: 600; color: #0f3460; margin-bottom: 4px; }
+  .faq-a { font-size: 13px; color: #555; line-height: 1.6; }
+
+  /* Footer */
+  .doc-footer { background: #f9f8f5; border-top: 1px solid #e8e6df; padding: 1.5rem 2.5rem; text-align: center; }
+  .doc-footer p { font-size: 12px; color: #999; line-height: 1.6; }
+  .doc-footer a { color: #185fa5; text-decoration: none; }
+  .doc-footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 700px) {
+    .license-grid, .deploy-grid { grid-template-columns: 1fr; }
+    .body { padding: 0 1.25rem 2rem; }
+    .doc-header { padding: 1.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="doc-header">
+    <div class="logo-row">
+      <div class="logo-mark">Y</div>
+      <span class="logo-name">YES BİLİŞİM</span>
+    </div>
+    <div class="doc-title">YesPDF Lisanslama Rehberi</div>
+    <div class="doc-subtitle">Kurumsal PDF Yönetimi — Yerinde Kurulum, Güvenli, Ölçeklenebilir</div>
+  </div>
+
+  <div class="body">
+
+    <!-- License Types -->
+    <div class="license-grid">
+
+      <!-- Named User -->
+      <div class="license-card featured">
+        <div class="card-icon blue">👤</div>
+        <div class="card-title">Adlandırılmış Kullanıcı</div>
+        <div class="card-tagline">Sabit ekipler için kullanıcı bazlı lisanslama</div>
+        <div class="card-desc">
+          Her lisans belirli sayıda adlandırılmış kullanıcıyı kapsar. Her kullanıcının kendi hesabı, kişisel belge depolama alanı, imza sertifikası ve denetim kaydı bulunur.
+        </div>
+        <ul class="card-features">
+          <li>Sabit kullanıcı sayısı (5, 10, 25, 50, 100+)</li>
+          <li>Kullanıcı başına kişisel belge kütüphanesi</li>
+          <li>Bireysel dijital imza sertifikaları</li>
+          <li>Kullanıcı bazlı tam denetim kaydı</li>
+          <li>LDAP/Active Directory entegrasyonu</li>
+          <li>Rol tabanlı erişim kontrolü</li>
+        </ul>
+        <div class="card-ideal">
+          <div class="card-ideal-label">İdeal Kullanım</div>
+          <div class="card-ideal-text">Her çalışanın kendi çalışma alanına ihtiyaç duyduğu küçük ve orta ölçekli ekipler — hukuk departmanları, finans ekipleri, İK birimleri.</div>
+        </div>
+      </div>
+
+      <!-- Concurrent -->
+      <div class="license-card">
+        <div class="card-icon green">👥</div>
+        <div class="card-title">Eşzamanlı Kullanıcı</div>
+        <div class="card-tagline">Büyük kurumlar için paylaşımlı erişim</div>
+        <div class="card-desc">
+          Lisans, toplam kullanıcı sayısını değil <strong>eşzamanlı aktif oturum sayısını</strong> sınırlar. Sınırsız kullanıcı hesabı oluşturabilirsiniz — sistem yalnızca aynı anda kaç kişinin oturum açabileceğini kısıtlar.
+        </div>
+        <ul class="card-features">
+          <li>Sınırsız kayıtlı kullanıcı</li>
+          <li>Yalnızca eşzamanlı oturum limiti</li>
+          <li>Çıkış/zaman aşımında otomatik oturum serbest bırakma</li>
+          <li>Vardiyalı çalışma düzenleri için uygun maliyet</li>
+          <li>Tüm özellikler dahil</li>
+          <li>Gerçek zamanlı oturum izleme (Yönetici Paneli)</li>
+        </ul>
+        <div class="card-ideal">
+          <div class="card-ideal-label">İdeal Kullanım</div>
+          <div class="card-ideal-text">Vardiyalı çalışan, ortak iş istasyonu kullanan veya herkesin aynı anda erişim gerekmediği büyük kurumlar — bankalar, kamu kurumları, fabrikalar.</div>
+        </div>
+      </div>
+
+      <!-- Site License -->
+      <div class="license-card">
+        <div class="card-icon orange">🏢</div>
+        <div class="card-title">Site Lisansı</div>
+        <div class="card-tagline">Çoklu sunucu, yük dengelemeli dağıtımlar</div>
+        <div class="card-desc">
+          Tek bir lisans, yük dengeleyici arkasındaki <strong>birden fazla YesPDF sunucu örneğini</strong> kapsar. Makine parmak izi kısıtlaması yoktur — tek bir lisans anahtarıyla 2, 3 veya daha fazla sunucuya dağıtım yapabilirsiniz.
+        </div>
+        <ul class="card-features">
+          <li>Makine parmak izi kısıtlaması yok</li>
+          <li>Birden fazla sunucuya serbestçe dağıtım</li>
+          <li>Paylaşımlı veritabanı &amp; ağ depolama</li>
+          <li>Adlandırılmış veya Eşzamanlı lisansla birleşir</li>
+          <li>Yüksek erişilebilirlik / yedekleme desteği</li>
+          <li>İsteğe bağlı örnek limiti (ör. maks. 5 sunucu)</li>
+        </ul>
+        <div class="card-ideal">
+          <div class="card-ideal-label">İdeal Kullanım</div>
+          <div class="card-ideal-text">Yüksek erişilebilirlik, yük dengeleme veya felaket kurtarma gerektiren kurumsal dağıtımlar — bankalar, sigorta şirketleri, büyük kamu kurumları.</div>
+        </div>
+      </div>
+
+      <!-- API License -->
+      <div class="license-card">
+        <div class="card-icon purple">⚡</div>
+        <div class="card-title">API Erişimi</div>
+        <div class="card-tagline">YesPDF'i uygulamalarınıza entegre edin</div>
+        <div class="card-desc">
+          Programatik erişim için <strong>REST API</strong>'yi etkinleştirin. Kendi uygulamalarınızdan kapsamlı yetkilerle API anahtarları kullanarak PDF işlemlerini otomatikleştirin — dönüştürme, imzalama, OCR, birleştirme, bölme.
+        </div>
+        <ul class="card-features">
+          <li>OpenAPI dokümantasyonlu RESTful API</li>
+          <li>Kapsam bazlı API anahtar kimlik doğrulama</li>
+          <li>Toplu işlemler (imzalama, dönüştürme, OCR)</li>
+          <li>Tamamlanma bildirimleri (webhook)</li>
+          <li>Durumsuz imzalama uç noktası (imzala ve geri gönder)</li>
+          <li>Herhangi bir lisans türüne eklenti olarak dahil edilir</li>
+        </ul>
+        <div class="card-ideal">
+          <div class="card-ideal-label">İdeal Kullanım</div>
+          <div class="card-ideal-text">PDF iş akışlarını mevcut sistemlerine entegre eden kurumlar — DMS platformları, ERP sistemleri, iş akışı otomasyonu, özel web uygulamaları.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">1</div>
+        <h2>Özellik Karşılaştırması</h2>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th style="width:40%">Özellik</th>
+            <th>Adlandırılmış</th>
+            <th>Eşzamanlı</th>
+            <th>Site</th>
+            <th>API</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>PDF Görüntüleme &amp; Düzenleme</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Belge Dönüştürme (Word, Excel, HTML, Görüntü)</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>OCR (Optik Karakter Tanıma)</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Dijital İmza (PAdES B/T/LT)</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Akıllı Düzenleme (Taranmış PDF düzenleme)</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Birleştirme, Bölme, Sıkıştırma, Filigran</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>AES-256 Belge Şifreleme</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>LDAP / Active Directory Entegrasyonu</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>Sınırsız Kayıtlı Kullanıcı</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>Çoklu Sunucu Dağıtımı</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>Yük Dengeleyici Desteği</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+            <td class="dash">—</td>
+          </tr>
+          <tr>
+            <td>REST API Erişimi</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>API Anahtar Yönetimi</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>API ile Toplu İşlemler</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="dash">—</td>
+            <td class="check">✓</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="info-box" style="margin-top: 1.25rem;">
+        <div class="info-box-title">Not</div>
+        <p><strong>API Erişimi</strong>, herhangi bir Adlandırılmış Kullanıcı, Eşzamanlı veya Site lisansıyla birleştirilebilen bir eklenti modülüdür. <strong>Site Lisansı</strong>, Adlandırılmış veya Eşzamanlı kullanıcı modeliyle birlikte kullanılan bir dağıtım seçeneğidir.</p>
+      </div>
+    </div>
+
+    <!-- How Licensing Works -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">2</div>
+        <h2>Lisanslama Nasıl Çalışır?</h2>
+      </div>
+
+      <h3>Adlandırılmış Kullanıcı Modeli</h3>
+      <p style="font-size:13.5px; color:#444; margin-bottom:1rem; line-height:1.65;">
+        Lisansınız oluşturulabilecek maksimum kullanıcı hesabı sayısını belirler. Her kullanıcı, kendi giriş bilgilerine sahip adlandırılmış bir bireydir. Kullanıcı limitine ulaşıldığında, mevcut hesaplardan biri devre dışı bırakılmadıkça yeni hesap oluşturulamaz.
+      </p>
+
+      <h3>Eşzamanlı Kullanıcı Modeli</h3>
+      <p style="font-size:13.5px; color:#444; margin-bottom:1rem; line-height:1.65;">
+        Lisansınız <strong>aynı anda oturum açabilen</strong> maksimum kullanıcı sayısını belirler. Sınırsız kullanıcı hesabı oluşturabilirsiniz. Eşzamanlı oturum limitine ulaşıldığında, aktif bir oturum sonlanana (çıkış veya zaman aşımı) kadar yeni girişler beklemeye alınır. Oturum zaman aşımı yönetici tarafından yapılandırılabilir (varsayılan: 30 dakika hareketsizlik).
+      </p>
+
+      <h3>Lisans Aktivasyonu</h3>
+      <p style="font-size:13.5px; color:#444; line-height:1.65;">
+        YesPDF, RSA-2048 dijital imzalı lisans dosyaları (<code>.yeslic</code>) kullanır. Aktivasyon tamamen çevrimdışıdır — internet bağlantısı gerekmez. Lisans dosyası Yönetici Paneli → Lisans sayfasından yüklenir. Makine bazlı lisanslarda sunucu, lisansla eşleşmesi gereken bir makine parmak izi oluşturur. Site lisansları bu kontrolü atlar ve aynı lisans dosyasının birden fazla sunucuda kullanılmasına olanak tanır.
+      </p>
+
+      <div class="info-box green" style="margin-top: 1rem;">
+        <div class="info-box-title">Demo Modu</div>
+        <p>Lisans olmadan YesPDF, sınırlı işlevsellikle demo modunda çalışır (3 kullanıcı, temel özellikler). Bu, satın alma öncesi değerlendirme yapmanıza olanak tanır.</p>
+      </div>
+    </div>
+
+    <!-- Deployment Options -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">3</div>
+        <h2>Dağıtım Seçenekleri</h2>
+      </div>
+
+      <div class="deploy-grid">
+        <div class="deploy-card">
+          <h4>🖥️ Tekli Sunucu (Makine Bazlı)</h4>
+          <p>Tek bir Windows sunucusunda standart dağıtım. Lisans, makinenin donanım parmak izine bağlıdır. Basit kurulum — yükle, etkinleştir, hazır.</p>
+          <div class="config-block">1 × Windows Server
+1 × YesPDF Örneği
+SQLite veya PostgreSQL
+Yerel Depolama</div>
+        </div>
+
+        <div class="deploy-card">
+          <h4>⚖️ Yük Dengeli (Site Lisansı)</h4>
+          <p>Yük dengeleyici arkasında birden fazla YesPDF sunucusu, tek bir veritabanı ve tek bir ağ depolama alanı paylaşır. Tek lisans tüm örnekleri kapsar.</p>
+          <div class="config-block">2-3 × Windows Server
+2-3 × YesPDF Örneği
+1 × PostgreSQL (paylaşımlı)
+1 × Ağ Depolama (NAS/SAN)
+1 × Yük Dengeleyici</div>
+        </div>
+      </div>
+
+      <div class="info-box warning" style="margin-top: 1.25rem;">
+        <div class="info-box-title">Site Lisansı Gereksinimleri</div>
+        <p>Site lisansı dağıtımları PostgreSQL (SQLite değil), yüklenen belgeler için paylaşımlı ağ depolama alanı ve tüm sunucu örneklerinde aynı şifreleme anahtarları gerektirir. Birincil sunucu zamanlanmış görevleri çalıştırır; işçi örnekler yalnızca kullanıcı isteklerini işler.</p>
+      </div>
+    </div>
+
+    <!-- Security & Compliance -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">4</div>
+        <h2>Güvenlik &amp; Uyumluluk</h2>
+      </div>
+
+      <table>
+        <tbody>
+          <tr><td style="width:40%; font-weight:600;">Veri Konumu</td><td>%100 yerinde kurulum — bulut yok, dışarıya veri aktarımı yok</td></tr>
+          <tr><td style="font-weight:600;">Belge Şifreleme</td><td>AES-256 (depolama sırasında), dosya başına rastgele tuz</td></tr>
+          <tr><td style="font-weight:600;">Parola Depolama</td><td>bcrypt hash (uyarlanabilir maliyet faktörü)</td></tr>
+          <tr><td style="font-weight:600;">Veritabanı Güvenliği</td><td>SCRAM-SHA-256 kimlik doğrulama (PostgreSQL)</td></tr>
+          <tr><td style="font-weight:600;">Oturum Yönetimi</td><td>Yapılandırılabilir zaman aşımlı sunucu taraflı oturumlar</td></tr>
+          <tr><td style="font-weight:600;">Dijital İmzalar</td><td>PAdES B/T/LT, PKCS#12 &amp; kurumsal sertifika havuzları</td></tr>
+          <tr><td style="font-weight:600;">Denetim Kaydı</td><td>Tam aktivite günlüğü (giriş, yükleme, düzenleme, imzalama, indirme)</td></tr>
+          <tr><td style="font-weight:600;">Uyumluluk</td><td>KVKK, GDPR uyumlu mimari</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- FAQ -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">5</div>
+        <h2>Sıkça Sorulan Sorular</h2>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Adlandırılmış Kullanıcıdan Eşzamanlı modele geçiş yapabilir miyim?</div>
+        <div class="faq-a">Evet. Eşzamanlı modelle yeni bir lisans düzenlenmesi için bizimle iletişime geçin. Verileriniz ve ayarlarınız korunur — yalnızca kullanıcı limiti uygulaması değişir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Mevcut lisansıma API erişimi ekleyebilir miyim?</div>
+        <div class="faq-a">Evet. API erişimi herhangi bir zamanda etkinleştirilebilen bir eklentidir. "api" özellik bayrağıyla yeni bir lisans dosyası düzenlenir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Lisans süresi dolduğunda ne olur?</div>
+        <div class="faq-a">Sistem demo moduna geçer. Mevcut tüm belgeler erişilebilir durumda kalır ve indirilebilir. Lisans yenilenene kadar yeni yüklemeler ve gelişmiş özellikler kısıtlanır.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Lisansımı farklı bir sunucuya taşıyabilir miyim?</div>
+        <div class="faq-a">Makine bazlı lisanslar donanıma bağlıdır. Yeni makine için lisansın yeniden düzenlenmesi için bizimle iletişime geçin (lisans süresi boyunca ücretsiz). Site lisansları serbestçe taşınabilir.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">İnternet bağlantısı gerekli mi?</div>
+        <div class="faq-a">Hayır. YesPDF tamamen yerinde çalışır. Lisans aktivasyonu, belge işleme ve tüm özellikler tamamen çevrimdışı çalışır. Tek isteğe bağlı internet özelliği, DeepL çeviri entegrasyonudur (müşterinin kendi API anahtarı gerekir).</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Site Lisansı kaç sunucuyu kapsar?</div>
+        <div class="faq-a">Varsayılan olarak Site Lisansı sınırsız örneği kapsar. Gerekirse isteğe bağlı bir örnek üst limiti belirlenebilir (ör. maksimum 3 veya 5 sunucu). Özel gereksinimleriniz için bizimle iletişime geçin.</div>
+      </div>
+    </div>
+
+    <!-- Support -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-num">6</div>
+        <h2>Destek &amp; Güncellemeler</h2>
+      </div>
+
+      <p style="font-size:13.5px; color:#444; line-height:1.65;">
+        Tüm lisanslar, aktif lisans süresi boyunca teknik destek ve yazılım güncellemelerini kapsar. Destek, e-posta ve uzaktan yardım yoluyla sağlanır.
+      </p>
+
+      <table style="margin-top: 1rem;">
+        <tbody>
+          <tr><td style="width:40%; font-weight:600;">Destek Kanalı</td><td>destek@yesbilisim.com.tr</td></tr>
+          <tr><td style="font-weight:600;">Yanıt Süresi</td><td>1 iş günü içinde</td></tr>
+          <tr><td style="font-weight:600;">Güncellemeler</td><td>Lisans süresi boyunca dahil</td></tr>
+          <tr><td style="font-weight:600;">Uzaktan Yardım</td><td>Kurulum ve yapılandırma için mevcuttur</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="doc-footer">
+    <p>
+      <strong>Yes Bilişim Teknolojileri Yazılım Danışmanlık San. ve Tic. A.Ş.</strong><br>
+      <a href="https://yesbilisim.com.tr">yesbilisim.com.tr</a> &nbsp;·&nbsp; destek@yesbilisim.com.tr<br><br>
+      © 2024–2026 Yes Bilişim Teknolojileri. Tüm hakları saklıdır.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
