@@ -125,6 +125,26 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Licensing EN -->
+  <url>
+    <loc>https://yespdf.com.tr/docs/YesPDF_Licensing_EN.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_Licensing_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_Licensing_TR.html"/>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Licensing TR -->
+  <url>
+    <loc>https://yespdf.com.tr/docs/YesPDF_Licensing_TR.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/docs/YesPDF_Licensing_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/docs/YesPDF_Licensing_EN.html"/>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- ========== COMPLIANCE DOCS ========== -->
 
   <!-- FERPA -->
