@@ -617,4 +617,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- YesPDF Ankara Zirvesi 2026 (Event) -->
+  <url>
+    <loc>https://yespdf.com.tr/events/yespdf-ankara-zirvesi-2026-tr.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/events/yespdf-ankara-zirvesi-2026-tr.html"/>
+    <lastmod>2026-04-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
