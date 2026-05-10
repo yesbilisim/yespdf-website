@@ -363,6 +363,125 @@ html {
   }
 }
 </style>
+
+<!-- ─── JSON-LD Structured Data (Schema.org) — SEO rich results ──────────── -->
+<!-- Organization: brand identity for Google Knowledge Graph -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "YesPDF",
+  "alternateName": "Yes PDF",
+  "url": "https://yespdf.com.tr/",
+  "logo": "https://yespdf.com.tr/assets/img/yespdflogo.png",
+  "description": "YesPDF — Kurumsal PDF Yönetim Platformu. KVKK uyumlu, on-premise PDF dönüştürme, düzenleme, OCR, KamuSM zaman damgası ve belge yönetimi çözümü.",
+  "sameAs": [
+    "https://www.linkedin.com/company/yespdf",
+    "https://online.yespdf.com.tr"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "destek@yespdf.com.tr",
+    "availableLanguage": ["Turkish", "English"],
+    "areaServed": "TR"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gülbahar Mah. Avni Dilligil Sk. Çelik İş Merkezi No 9/B Daire 21 Kat 5",
+    "addressLocality": "Şişli",
+    "addressRegion": "İstanbul",
+    "postalCode": "34394",
+    "addressCountry": "TR"
+  },
+  "founder": {
+    "@type": "Organization",
+    "name": "Yes Bilişim"
+  }
+}
+</script>
+
+<!-- WebSite + SearchAction: Google sitelinks search box -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "YesPDF",
+  "url": "https://yespdf.com.tr/",
+  "inLanguage": ["tr-TR", "en-US"],
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://www.google.com/search?q=site%3Ayespdf.com.tr+{search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- SoftwareApplication: PDF management product schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "YesPDF Kurumsal PDF Yönetim Platformu",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "DocumentManagement",
+  "operatingSystem": "Windows Server, Linux, Web",
+  "url": "https://yespdf.com.tr/",
+  "description": "On-premise (kurumsal sunucu) ve SaaS modelinde Kurumsal PDF Yönetim Platformu. KVKK uyumlu, KamuSM Zaman Damgası entegrasyonu (TÜBİTAK), Adobe LTV uyumlu PAdES-LT imza, Hot Folder otomatik imzalama, REST API, LDAP/AD entegrasyonu, OCR, batch dönüştürme.",
+  "softwareVersion": "2026.5",
+  "datePublished": "2024-01-01",
+  "inLanguage": ["tr-TR", "en-US"],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "On-premise Kurumsal Lisans",
+      "category": "Enterprise",
+      "url": "https://yespdf.com.tr/#kurumsal"
+    },
+    {
+      "@type": "Offer",
+      "name": "Online Ücretsiz",
+      "price": "0",
+      "priceCurrency": "TRY",
+      "category": "Free tier",
+      "url": "https://online.yespdf.com.tr/"
+    },
+    {
+      "@type": "Offer",
+      "name": "Online Premium",
+      "price": "180",
+      "priceCurrency": "TRY",
+      "billingDuration": "P1M",
+      "category": "Subscription",
+      "url": "https://online.yespdf.com.tr/"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Yes Bilişim",
+    "url": "https://yespdf.com.tr/"
+  },
+  "featureList": [
+    "On-premise (kendi sunucunuzda) deployment",
+    "KamuSM (TÜBİTAK) Zaman Damgası entegrasyonu",
+    "PAdES-LT Adobe LTV uyumlu nitelikli imza",
+    "Hot Folder otomatik toplu imzalama",
+    "REST API (banka/ERP entegrasyonu)",
+    "LDAP / Active Directory entegrasyonu",
+    "Türkçe + İngilizce OCR",
+    "PDF birleştir, böl, sıkıştır, dönüştür (Word/Excel/PowerPoint)",
+    "Şifreleme, filigran, sayfa numarası",
+    "Audit log + Kurumsal sertifika yönetimi",
+    "KVKK + GDPR + HIPAA + ISO 27001 uyumlu",
+    "Çoklu dil destek (TR/EN/DE)"
+  ]
+}
+</script>
+<!-- ─── /JSON-LD ──────────────────────────────────────────────────────────── -->
+
 </head>
 
 <body class="font-sans text-gray-800 bg-white antialiased">
