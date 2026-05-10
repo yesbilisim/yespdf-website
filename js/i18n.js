@@ -11,6 +11,7 @@ const translations = {
     'nav.contact': 'İletişim',
     'nav.demo': 'Demo Talep Et',
     'nav.cta': 'Demo Talep Et',
+    'nav.online': 'Online Dene',
 
     // Hero
     'hero.badge': 'KVKK Uyumlu · On-Premise',
@@ -264,6 +265,7 @@ const translations = {
     'nav.contact': 'Contact',
     'nav.demo': 'Request Demo',
     'nav.cta': 'Request Demo',
+    'nav.online': 'Try Online',
 
     // Hero
     'hero.badge': 'KVKK Compliant · On-Premise',
@@ -517,6 +519,7 @@ const translations = {
     'nav.contact': 'Kontakt',
     'nav.demo': 'Demo anfordern',
     'nav.cta': 'Demo anfordern',
+    'nav.online': 'Online testen',
 
     // Hero
     'hero.badge': 'KVKK-konform · On-Premise',
