@@ -2423,7 +2423,10 @@ html {
                     <form id="demo-form" action="https://formsubmit.co/info@yespdf.com.tr" method="POST" class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
                         <input type="hidden" name="_subject" value="YesPDF Demo Talebi">
                         <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_next" value="https://yespdf.com.tr/#contact">
+                        <!-- LinkedIn conversion tracking: form submit redirects to /tesekkurler.html
+                             which loads the Insight Tag and fires the conversion event.
+                             Hash anchors (#contact) do NOT trigger page-load events. -->
+                        <input type="hidden" name="_next" value="https://yespdf.com.tr/tesekkurler.html">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="Demo URL" value="https://demo.yespdf.com.tr">
                         <input type="text" name="_honey" style="display:none">

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- robots: tracking conversion page only — keep it out of search results -->
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Talebiniz Alındı — YesPDF</title>
+    <meta name="description" content="YesPDF demo talebiniz başarıyla iletildi. En kısa sürede sizinle iletişime geçeceğiz.">
+
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --brand-green-700: #288C28;
+            --brand-green-600: #2EA82E;
+            --navy-900: #0f1f3d;
+            --navy-700: #334e68;
+            --navy-50: #f0f5fa;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { height: 100%; }
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f0f5fa 0%, #ffffff 50%, #e8f5e9 100%);
+            color: var(--gray-700);
+            display: flex; flex-direction: column;
+            min-height: 100vh;
+        }
+        .topbar {
+            padding: 18px 24px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(10px);
+        }
+        .topbar img { height: 36px; width: auto; display: block; }
+        main {
+            flex: 1;
+            display: flex; align-items: center; justify-content: center;
+            padding: 40px 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 56px 48px;
+            box-shadow: 0 10px 40px rgba(15, 31, 61, 0.08);
+            max-width: 560px; width: 100%;
+            text-align: center;
+            border: 1px solid rgba(40, 140, 40, 0.1);
+            animation: fadeUp 0.5s ease-out;
+        }
+        @keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+        .check {
+            width: 80px; height: 80px;
+            margin: 0 auto 24px;
+            background: linear-gradient(135deg, var(--brand-green-700), var(--brand-green-600));
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 8px 24px rgba(40, 140, 40, 0.3);
+            animation: pulse 2s ease-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 24px rgba(40, 140, 40, 0.3); }
+            50% { box-shadow: 0 8px 32px rgba(40, 140, 40, 0.5); }
+        }
+        .check svg { width: 44px; height: 44px; stroke: white; }
+
+        h1 {
+            font-size: 1.75rem; font-weight: 700;
+            color: var(--navy-900);
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        .subtitle {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+        .next-steps {
+            background: var(--navy-50);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        .next-steps h3 {
+            font-size: 0.78rem; font-weight: 600;
+            color: var(--navy-700);
+            text-transform: uppercase; letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+        .next-steps ul { list-style: none; }
+        .next-steps li {
+            display: flex; align-items: flex-start; gap: 10px;
+            font-size: 0.95rem; color: var(--gray-700);
+            padding: 6px 0;
+        }
+        .next-steps li::before {
+            content: "✓"; color: var(--brand-green-700);
+            font-weight: 700; flex-shrink: 0;
+        }
+        .actions {
+            display: flex; gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.95rem; font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: var(--brand-green-700);
+            color: white;
+            box-shadow: 0 4px 12px rgba(40, 140, 40, 0.25);
+        }
+        .btn-primary:hover { background: var(--brand-green-600); transform: translateY(-1px); }
+        .btn-secondary {
+            background: white;
+            color: var(--navy-700);
+            border: 1.5px solid #d1d5db;
+        }
+        .btn-secondary:hover { border-color: var(--navy-700); background: var(--navy-50); }
+        .btn svg { width: 16px; height: 16px; }
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: var(--gray-500);
+            font-size: 0.85rem;
+        }
+        footer a { color: var(--navy-700); text-decoration: none; }
+
+        @media (max-width: 600px) {
+            .card { padding: 40px 28px; }
+            h1 { font-size: 1.45rem; }
+            .subtitle { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="topbar">
+    <a href="/" aria-label="YesPDF Ana Sayfa">
+        <img src="img/logo-nav.webp" alt="YesPDF" width="164" height="36">
+    </a>
+</header>
+
+<main>
+    <div class="card">
+        <div class="check" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+            </svg>
+        </div>
+
+        <h1>Talebiniz başarıyla iletildi</h1>
+        <p class="subtitle">
+            Demo talebiniz ekibimize ulaştı. En geç <strong>1 iş günü</strong> içinde
+            size dönüş yapacağız.
+        </p>
+
+        <div class="next-steps">
+            <h3>Sıradaki adımlar</h3>
+            <ul>
+                <li>Satış ekibimiz ihtiyaçlarınızı dinlemek için arayacak</li>
+                <li>Ortamınıza uygun bir demo tarihi belirleriz</li>
+                <li>30 dakikalık canlı demo + soru-cevap yaparız</li>
+            </ul>
+        </div>
+
+        <div class="actions">
+            <a href="/" class="btn btn-primary">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                Ana sayfaya dön
+            </a>
+            <a href="https://online.yespdf.com.tr/" target="_blank" rel="noopener" class="btn btn-secondary">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                Bu arada online dene
+            </a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    Sorunuz mu var? <a href="mailto:info@yespdf.com.tr">info@yespdf.com.tr</a>
+</footer>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — fires the conversion event -->
+<script type="text/javascript">
+_linkedin_partner_id = "9126690";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9126690&fmt=gif" />
+</noscript>
+<!-- /LinkedIn Insight Tag -->
+
+</body>
+</html>
