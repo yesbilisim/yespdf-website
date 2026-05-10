@@ -437,16 +437,11 @@ html {
   "offers": [
     {
       "@type": "Offer",
-      "name": "On-premise Kurumsal Lisans",
-      "category": "Enterprise",
-      "url": "https://yespdf.com.tr/#kurumsal"
-    },
-    {
-      "@type": "Offer",
       "name": "Online Ücretsiz",
       "price": "0",
       "priceCurrency": "TRY",
       "category": "Free tier",
+      "availability": "https://schema.org/InStock",
       "url": "https://online.yespdf.com.tr/"
     },
     {
@@ -456,9 +451,30 @@ html {
       "priceCurrency": "TRY",
       "billingDuration": "P1M",
       "category": "Subscription",
+      "availability": "https://schema.org/InStock",
       "url": "https://online.yespdf.com.tr/"
+    },
+    {
+      "@type": "Offer",
+      "name": "On-premise Kurumsal Lisans",
+      "category": "Enterprise",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "TRY",
+        "minPrice": "5000",
+        "valueAddedTaxIncluded": false
+      },
+      "availability": "https://schema.org/PreOrder",
+      "url": "https://yespdf.com.tr/#contact"
     }
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "127",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
   "publisher": {
     "@type": "Organization",
     "name": "Yes Bilişim",
