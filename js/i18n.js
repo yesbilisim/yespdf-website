@@ -210,6 +210,8 @@ const translations = {
 
     'articles.programpdf.title': 'Programatik PDF İşleme',
     'articles.programpdf.desc': 'PDF’i kod düzeyinde işlemenin temel kavramları, Python ekosistemi ve doğru araç seçimi rehberi.',
+
+    'articles.programpdf.tag': 'GELİŞTİRİCİ',
     // Contact
     'contact.title': 'Demo Talep Edin',
     'contact.subtitle': 'YesPDF\'i kurumunuzda deneyimlemek için bizimle iletişime geçin.',
@@ -463,6 +465,9 @@ const translations = {
     'articles.central.desc': 'Centrally managed PDF environments, enterprise control and efficiency advantages.',
     'articles.personal.title': 'Personal PDF Tools Danger',
     'articles.personal.desc': 'Impact of personal PDF tools on enterprise security and prevention strategies.',
+    'articles.programpdf.title': 'Programmatic PDF Processing',
+    'articles.programpdf.desc': 'Core concepts of processing PDFs at the code level, the Python ecosystem, and choosing the right tool.',
+    'articles.programpdf.tag': 'DEVELOPER',
 
     // Contact
     'contact.title': 'Request a Demo',
@@ -720,6 +725,7 @@ const translations = {
 
     'articles.programpdf.title': 'Programmatische PDF-Verarbeitung',
     'articles.programpdf.desc': 'Kernkonzepte der PDF-Verarbeitung auf Code-Ebene, das Python-Ökosystem und die Wahl des richtigen Werkzeugs.',
+    'articles.programpdf.tag': 'ENTWICKLER',
     // Contact
     'contact.title': 'Demo anfordern',
     'contact.subtitle': 'Kontaktieren Sie uns, um YesPDF in Ihrer Organisation zu erleben.',
