@@ -208,6 +208,8 @@ const translations = {
     'articles.personal.title': 'Kişisel PDF Araçlarının Tehlikesi',
     'articles.personal.desc': 'Kişisel PDF araçlarının kurumsal güvenliğe etkileri ve önleme stratejileri.',
 
+    'articles.programpdf.title': 'Programatik PDF İşleme',
+    'articles.programpdf.desc': 'PDF’i kod düzeyinde işlemenin temel kavramları, Python ekosistemi ve doğru araç seçimi rehberi.',
     // Contact
     'contact.title': 'Demo Talep Edin',
     'contact.subtitle': 'YesPDF\'i kurumunuzda deneyimlemek için bizimle iletişime geçin.',
@@ -716,6 +718,8 @@ const translations = {
     'articles.personal.title': 'Gefahr durch pers\u00f6nliche PDF-Tools',
     'articles.personal.desc': 'Auswirkungen pers\u00f6nlicher PDF-Tools auf die Unternehmenssicherheit und Pr\u00e4ventionsstrategien.',
 
+    'articles.programpdf.title': 'Programmatische PDF-Verarbeitung',
+    'articles.programpdf.desc': 'Kernkonzepte der PDF-Verarbeitung auf Code-Ebene, das Python-Ökosystem und die Wahl des richtigen Werkzeugs.',
     // Contact
     'contact.title': 'Demo anfordern',
     'contact.subtitle': 'Kontaktieren Sie uns, um YesPDF in Ihrer Organisation zu erleben.',
