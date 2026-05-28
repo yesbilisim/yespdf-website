@@ -1,0 +1,264 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Programatik PDF İşleme: Geliştiriciler ve Karar Vericiler İçin Pratik Bir Rehber — YesPDF</title>
+<meta name="description" content="PDF'i kod düzeyinde işlemenin temel kavramları, yaygın senaryoları ve Python ekosistemindeki olgun araçları. pikepdf, pdfplumber, pyHanko ve Apryse karşılaştırması.">
+<meta property="og:title" content="Programatik PDF İşleme: Geliştiriciler ve Karar Vericiler İçin Pratik Bir Rehber">
+<meta property="og:description" content="PDF'i kod düzeyinde işlemenin temel kavramları, yaygın senaryoları ve Python ekosistemindeki olgun araçları.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yespdf.com.tr/articles/programatik-pdf-isleme-tr.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yespdf.com.tr/articles/programatik-pdf-isleme-tr.html">
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/articles/programatik-pdf-isleme-tr.html">
+<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/articles/programatik-pdf-isleme-tr.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#FAFAFA; --white:#FFF; --dark:#0F172A; --gray-50:#F8FAFC; --gray-100:#F1F5F9; --gray-200:#E2E8F0; --gray-500:#64748B; --gray-700:#334155; --gray-900:#0F172A; --green:#059669; --green-light:#D1FAE5; --accent:#7C3AED; --accent-light:#EDE9FE; --accent-dark:#6D28D9; --radius:12px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; color:var(--gray-700); line-height:1.8; background:var(--bg); }
+h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',-apple-system,sans-serif; color:var(--gray-900); line-height:1.3; }
+a { color:var(--accent); }
+
+.article-header { background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f4c3a 100%); padding:64px 0 52px; }
+.article-header .container { max-width:760px; margin:0 auto; padding:0 28px; }
+.article-header .logo { font-size:16px; font-weight:800; color:#fff; margin-bottom:32px; }
+.article-header .logo span { color:#4ade80; }
+.article-header .logo a { color:inherit; text-decoration:none; }
+.article-header .tag { display:inline-block; background:rgba(74,222,128,0.15); border:1px solid rgba(74,222,128,0.3); color:#86efac; font-size:11px; font-weight:700; letter-spacing:2px; padding:5px 14px; border-radius:100px; margin-bottom:20px; }
+.article-header h1 { color:#fff; font-size:34px; font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+.article-header .subtitle { color:rgba(255,255,255,0.6); font-size:17px; margin-bottom:20px; }
+.article-header .meta { color:rgba(255,255,255,0.35); font-size:13px; display:flex; gap:16px; flex-wrap:wrap; }
+
+.article-body { max-width:760px; margin:0 auto; padding:48px 28px 80px; }
+.article-body h2 { font-size:24px; font-weight:800; margin:40px 0 16px; padding-top:24px; border-top:1px solid var(--gray-200); }
+.article-body h2:first-child { border-top:none; padding-top:0; margin-top:0; }
+.article-body h3 { font-size:19px; font-weight:700; margin:28px 0 12px; color:var(--gray-900); }
+.article-body p { margin-bottom:16px; font-size:16px; }
+.article-body ul, .article-body ol { margin:16px 0; padding-left:24px; }
+.article-body li { margin-bottom:10px; font-size:15px; }
+.article-body strong { color:var(--gray-900); }
+
+/* Code blocks */
+.code-block { background:#1e293b; border-radius:var(--radius); margin:20px 0; overflow:hidden; }
+.code-block .code-header { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:#0f172a; border-bottom:1px solid rgba(255,255,255,0.08); }
+.code-block .code-lang { font-size:12px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:1px; }
+.code-block pre { padding:16px 20px; margin:0; overflow-x:auto; }
+.code-block code { font-family:'JetBrains Mono','Fira Code',monospace; font-size:13.5px; line-height:1.7; color:#e2e8f0; }
+.code-block .comment { color:#64748b; }
+.code-block .keyword { color:#c084fc; }
+.code-block .string { color:#86efac; }
+.code-block .function { color:#7dd3fc; }
+.code-block .param { color:#fbbf24; }
+
+/* Inline code */
+.article-body code.inline { background:var(--gray-100); border:1px solid var(--gray-200); padding:2px 7px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#be185d; }
+
+/* Category cards */
+.cat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+.cat-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:20px; border-left:3px solid var(--accent); }
+.cat-card h4 { font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.cat-card p { font-size:13px; color:var(--gray-500); margin:0; }
+
+/* Tool comparison */
+.tool-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:24px; margin:16px 0; }
+.tool-card h4 { font-size:17px; margin-bottom:4px; }
+.tool-card .tool-sub { font-size:13px; color:var(--gray-500); margin-bottom:12px; }
+.tool-card p { font-size:14px; margin-bottom:8px; }
+
+/* CTA box */
+.cta-box { background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%); border:1px solid rgba(5,150,105,0.15); border-radius:var(--radius); padding:24px 28px; margin:32px 0; }
+.cta-box p { font-size:15px; margin-bottom:12px; }
+.cta-link { display:inline-block; color:#059669; font-weight:700; font-size:15px; text-decoration:none; }
+.cta-link:hover { text-decoration:underline; }
+
+/* Key insight box */
+.insight-box { background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius); padding:20px 24px; margin:20px 0; }
+.insight-box p { font-size:14px; margin:0; color:#92400e; }
+
+.article-footer { text-align:center; padding:24px 0; border-top:1px solid var(--gray-200); max-width:760px; margin:0 auto; padding-left:28px; padding-right:28px; }
+.article-footer p { font-size:12px; color:var(--gray-500); }
+.article-footer a { color:var(--accent); text-decoration:none; }
+.article-footer .logo { font-size:15px; font-weight:800; color:var(--gray-900); margin-bottom:4px; }
+.article-footer .logo span { color:#059669; }
+
+@media(max-width:700px) { .article-header h1 { font-size:24px; } .cat-grid { grid-template-columns:1fr; } .code-block code { font-size:12px; } }
+</style></head><body>
+
+<div class="article-header"><div class="container">
+  <div class="logo"><a href="https://yespdf.com.tr">Yes<span>PDF</span></a></div>
+  <div class="tag">GELİŞTİRİCİ</div>
+  <h1>Programatik PDF İşleme: Geliştiriciler ve Karar Vericiler İçin Pratik Bir Rehber</h1>
+  <p class="subtitle">PDF'i kod düzeyinde işlemenin temel kavramları, yaygın senaryoları ve Python ekosistemindeki olgun araçları.</p>
+  <div class="meta">
+    <span>YesPDF Teknik Ekip</span>
+    <span>·</span>
+    <span>28 Mayıs 2026</span>
+    <span>·</span>
+    <span>10 dk okuma</span>
+  </div>
+</div></div>
+
+<div class="article-body">
+
+<p>PDF, üzerinden 30 yılı aşkın süre geçmiş olmasına rağmen kurumsal belge akışlarının hâlâ omurgasını oluşturuyor. Sözleşmeler, faturalar, resmî yazışmalar, taranmış arşiv belgeleri — hepsi PDF olarak dolaşıyor. Ancak bu formatın "değiştirilemez bir kâğıt görüntüsü" algısı, onunla programatik olarak çalışmanın ne kadar katmanlı bir iş olduğunu gizler.</p>
+<p>Bu yazıda PDF'i kod düzeyinde işlemenin temel kavramlarını, yaygın senaryoları ve Python ekosistemindeki olgun araçları ele alıyoruz.</p>
+
+<h2>PDF Neden "Zor" Bir Formattır?</h2>
+<p>Word veya HTML gibi formatların aksine, PDF bir <em>sunum</em> formatıdır; içeriği değil, içeriğin sayfada nasıl görüneceğini tanımlar. Bir PDF dosyasının içinde "paragraf" diye bir kavram yoktur. Bunun yerine, belirli koordinatlara yerleştirilmiş metin parçaları, çizim komutları ve gömülü font tanımları bulunur.</p>
+
+<p>Bu durum iki önemli sonuç doğurur:</p>
+<ul>
+<li><strong>Metni "okumak" ile metni "çıkarmak" farklı şeylerdir.</strong> Bir PDF görsel olarak kusursuz görünebilirken, içindeki metin sayfada rastgele sırada saklanıyor olabilir.</li>
+<li><strong>Taranmış (scanned) bir PDF aslında hiç metin içermez</strong> — sadece sayfa görüntülerinden ibarettir ve metne erişmek için OCR gerektirir.</li>
+</ul>
+
+<div class="insight-box">
+<p><strong>💡 Temel ayrım:</strong> "Doğuştan dijital" PDF ile "taranmış" PDF'i ayırt etmek, hangi araca ne zaman başvuracağınızı belirleyen ilk adımdır.</p>
+</div>
+
+<h2>Temel İşlem Kategorileri</h2>
+<p>Programatik PDF işleme görevlerini beş ana başlık altında toplamak mümkün:</p>
+
+<div class="cat-grid">
+<div class="cat-card">
+<h4>📦 Yapısal İşlemler</h4>
+<p>Birleştirme, bölme, sayfa döndürme, sayfa silme/ekleme. Dosyanın içeriğine dokunmadan yapısını yeniden düzenler.</p>
+</div>
+<div class="cat-card">
+<h4>🔍 İçerik Çıkarımı</h4>
+<p>Metin, tablo, görsel ve meta veri çıkarma. Zorluk, kaynağın dijital mi taranmış mı olduğuna göre değişir.</p>
+</div>
+<div class="cat-card">
+<h4>🏭 Üretim</h4>
+<p>Sıfırdan PDF oluşturma veya şablon doldurma. Fatura, rapor, sertifika gibi belgelerin dinamik üretimi.</p>
+</div>
+<div class="cat-card">
+<h4>📝 Form İşlemleri</h4>
+<p>AcroForm alanlarını okuma ve doldurma. Kurumsal başvuru ve onay süreçlerinde sık karşılaşılır.</p>
+</div>
+</div>
+
+<div class="cat-grid">
+<div class="cat-card" style="grid-column:1/-1;">
+<h4>🔐 Güvenlik ve Bütünlük</h4>
+<p>Şifreleme, parola koruması, dijital imzalama ve damgalama (watermark). Hukuki ve mevzuat gereksinimleri olan ortamlarda kritik öneme sahiptir.</p>
+</div>
+</div>
+
+<h2>Python Ekosistemi: Doğru Araç Seçimi</h2>
+<p>Python, PDF işleme için zengin bir kütüphane yelpazesi sunar. Ancak hepsi aynı işi yapmaz; her birinin güçlü olduğu alan farklıdır.</p>
+
+<h3>pikepdf — Düşük Seviye Yapısal İşlemler</h3>
+<p><code class="inline">pikepdf</code>, C++ ile yazılmış olgun <code class="inline">qpdf</code> kütüphanesinin üzerine kurulu bir Python sarmalayıcısıdır. PDF dosyasının iç yapısına doğrudan ve güvenli erişim sağlar. Birleştirme, bölme, onarım ve şifre işlemleri için tercih edilir. Bozuk PDF'leri kurtarmadaki başarısı dikkat çekicidir.</p>
+
+<div class="code-block">
+<div class="code-header"><span class="code-lang">Python</span></div>
+<pre><code><span class="keyword">import</span> pikepdf
+
+<span class="comment"># İki PDF'i birleştirme</span>
+<span class="keyword">with</span> pikepdf.<span class="function">open</span>(<span class="string">"sozlesme.pdf"</span>) <span class="keyword">as</span> pdf:
+    <span class="keyword">with</span> pikepdf.<span class="function">open</span>(<span class="string">"ek.pdf"</span>) <span class="keyword">as</span> ek:
+        pdf.pages.<span class="function">extend</span>(ek.pages)
+    pdf.<span class="function">save</span>(<span class="string">"birlesik.pdf"</span>)
+
+<span class="comment"># Parola ile şifreleme (AES-256)</span>
+<span class="keyword">with</span> pikepdf.<span class="function">open</span>(<span class="string">"rapor.pdf"</span>) <span class="keyword">as</span> pdf:
+    pdf.<span class="function">save</span>(
+        <span class="string">"korumali.pdf"</span>,
+        <span class="param">encryption</span>=pikepdf.<span class="function">Encryption</span>(
+            <span class="param">owner</span>=<span class="string">"yonetici"</span>,
+            <span class="param">user</span>=<span class="string">"kullanici"</span>,
+            <span class="param">R</span>=<span class="param">6</span>
+        ),
+    )</code></pre>
+</div>
+
+<p><code class="inline">pikepdf</code>'in felsefesi, içeriği "anlamaya" çalışmadan dosyayı güvenle manipüle etmektir. Metin çıkarmak gibi semantik görevler için tasarlanmamıştır.</p>
+
+<h3>Metin ve Veri Çıkarımı</h3>
+<p>Doğuştan dijital PDF'lerden metin çıkarmak için <code class="inline">pdfplumber</code> ve <code class="inline">PyMuPDF</code> (fitz) öne çıkar. <code class="inline">pdfplumber</code> özellikle tablo tespiti ve hücre düzeyinde konumsal veri çıkarımında güçlüdür; <code class="inline">fitz</code> ise hız ve görsel render konularında üstündür.</p>
+
+<div class="code-block">
+<div class="code-header"><span class="code-lang">Python</span></div>
+<pre><code><span class="keyword">import</span> pdfplumber
+
+<span class="keyword">with</span> pdfplumber.<span class="function">open</span>(<span class="string">"fatura.pdf"</span>) <span class="keyword">as</span> pdf:
+    sayfa = pdf.pages[<span class="param">0</span>]
+    metin = sayfa.<span class="function">extract_text</span>()
+    tablolar = sayfa.<span class="function">extract_tables</span>()</code></pre>
+</div>
+
+<p>Taranmış belgelerde ise metin çıkarımı doğrudan mümkün değildir; önce OCR uygulanması gerekir. Burada Tesseract tabanlı çözümler veya ticari OCR motorları devreye girer. OCR kalitesi, taramanın çözünürlüğüne ve belgenin diline güçlü biçimde bağlıdır — özellikle Türkçe gibi aksanlı karakterler içeren dillerde dil paketinin doğru seçilmesi sonucu belirgin biçimde etkiler.</p>
+
+<h3>pyHanko — Dijital İmzalama</h3>
+<p>PAdES uyumlu dijital imzalama söz konusu olduğunda <code class="inline">pyHanko</code>, Python ekosistemindeki en kapsamlı açık kaynak çözümdür. Görsel imza, zaman damgası (timestamp), uzun ömürlü doğrulama (LTV) ve HSM entegrasyonu gibi kurumsal gereksinimleri karşılar.</p>
+
+<div class="code-block">
+<div class="code-header"><span class="code-lang">Python</span></div>
+<pre><code><span class="keyword">from</span> pyhanko.sign <span class="keyword">import</span> signers, fields
+<span class="keyword">from</span> pyhanko.pdf_utils.incremental_writer <span class="keyword">import</span> IncrementalPdfFileWriter
+
+signer = signers.<span class="function">SimpleSigner.load</span>(
+    <span class="string">"ozel_anahtar.pem"</span>, <span class="string">"sertifika.pem"</span>,
+    <span class="param">key_passphrase</span>=<span class="string">b"parola"</span>
+)
+
+<span class="keyword">with</span> <span class="function">open</span>(<span class="string">"belge.pdf"</span>, <span class="string">"rb"</span>) <span class="keyword">as</span> f:
+    w = <span class="function">IncrementalPdfFileWriter</span>(f)
+    fields.<span class="function">append_signature_field</span>(
+        w, fields.<span class="function">SigFieldSpec</span>(
+            <span class="param">sig_field_name</span>=<span class="string">"Imza"</span>,
+            <span class="param">box</span>=(<span class="param">50</span>, <span class="param">50</span>, <span class="param">250</span>, <span class="param">120</span>)
+        )
+    )
+    <span class="keyword">with</span> <span class="function">open</span>(<span class="string">"imzali.pdf"</span>, <span class="string">"wb"</span>) <span class="keyword">as</span> out:
+        signers.<span class="function">sign_pdf</span>(
+            w,
+            signers.<span class="function">PdfSignatureMetadata</span>(
+                <span class="param">field_name</span>=<span class="string">"Imza"</span>
+            ),
+            <span class="param">signer</span>=signer,
+            <span class="param">output</span>=out
+        )</code></pre>
+</div>
+
+<div class="insight-box">
+<p><strong>💡 PAdES seviyeleri:</strong> Zaman damgası ve doğrulama bilgisinin gömülmesi, imzanın sertifika süresi dolduktan sonra bile geçerliliğini koruması açısından kritiktir. Uzun süre arşivlenecek hukuki belgelerde en az <strong>B-LT</strong> seviyesi hedeflenmelidir.</p>
+</div>
+
+<h3>Apryse (eski PDFTron) — Ticari Endüstri Standardı</h3>
+<p>Açık kaynak araçlar pek çok ihtiyacı karşılasa da; yüksek doğrulukta render, karmaşık form işleme, redaksiyon (redaction), gelişmiş OCR ve geniş format dönüşümleri gerektiren kurumsal senaryolarda <strong>Apryse</strong> gibi ticari SDK'lar devreye girer.</p>
+<p>Apryse, tek bir API altında render'dan imzalamaya kadar geniş bir yelpazeyi tutarlı biçimde sunar ve birden çok platformda (Windows, Linux, mobil, tarayıcı) çalışır.</p>
+
+<div class="insight-box">
+<p><strong>⚠️ Lisanslama:</strong> OEM anahtarları çoğunlukla platforma kilitlidir. Dağıtım mimarisi (örneğin Linux sunucu üzerinde çalıştırma) lisans koşullarıyla uyumlu planlanmalıdır. Açık kaynak yığınının sınırlarına gerçekten ulaşıp ulaşmadığınızı net biçimde değerlendirmek maliyet açısından önemlidir.</p>
+</div>
+
+<h2>Karar Vericiler İçin: Build vs. Buy</h2>
+<p>Teknik ekibiniz bu kütüphanelerin çoğunu birkaç günde entegre edebilir. Ancak asıl soru kütüphanenin kendisi değil, etrafındaki mühendisliktir:</p>
+<ul>
+<li>Taranmış belgelerin yüzde kaçının doğru OCR'lanacağı</li>
+<li>İmza altyapısının mevzuata uygunluğu</li>
+<li>Yüksek hacimde toplu işlemenin ölçeklenmesi</li>
+<li>Uç senaryolardaki (bozuk dosya, alışılmadık font, karışık dilli içerik) dayanıklılık</li>
+</ul>
+<p>Gerçek maliyet bu kalemlerde gizlidir.</p>
+
+<p><strong>Pratik yaklaşım:</strong> Yapısal işlemler ve doğuştan dijital metin çıkarımı gibi standart ihtiyaçlar için açık kaynak yığını (<code class="inline">pikepdf</code> + <code class="inline">pdfplumber</code>/<code class="inline">PyMuPDF</code> + <code class="inline">pyHanko</code>) genellikle yeterli ve ekonomiktir. Yüksek doğruluklu render, kurumsal redaksiyon, çok formatlı dönüşüm ve geniş ölçekli OCR söz konusu olduğunda ticari bir SDK'nın toplam sahip olma maliyeti çoğu zaman kendi çözümünüzü sürdürmekten daha düşüktür.</p>
+
+<h2>Sonuç</h2>
+<p>PDF işleme, "dosyayı aç ve içindekini al" kadar basit görünse de altında font kodlamaları, sayfa koordinat sistemleri, imza kriptografisi ve OCR doğruluğu gibi katmanlar barındırır.</p>
+<p>Doğru aracı seçmenin anahtarı, görevinizi yukarıdaki kategorilere ayırmak ve her kategori için en uygun, en olgun çözümü kullanmaktır. Python ekosistemi bu görevlerin büyük çoğunluğunu zarif biçimde karşılarken; mevzuat, ölçek ve doğruluk gereksinimleri yükseldikçe ticari SDK'lar tabloya dahil olur.</p>
+<p>İyi tasarlanmış bir PDF işleme katmanı, kurumsal belge akışlarının görünmez ama kritik bir parçası haline gelir — ve bu katmanı baştan doğru kurmak, sonradan teknik borç olarak ödemekten her zaman daha ucuzdur.</p>
+
+<div class="cta-box">
+<p><strong>YesPDF</strong>, bu yazıda ele alınan tüm işlem kategorilerini — yapısal işlemler, metin çıkarımı, OCR, dijital imzalama ve güvenlik — tek bir kurumsal platformda sunar. Tamamen on-premise, KVKK uyumlu.</p>
+<a href="https://yespdf.com.tr/#contact" class="cta-link">→ Demo talep edin</a>
+</div>
+
+</div>
+
+<div class="article-footer">
+  <div class="logo">Yes<span>PDF</span></div>
+  <p>&copy; 2026 YesPDF. Tüm hakları saklıdır. <a href="https://yespdf.com.tr">yespdf.com.tr</a></p>
+</div>
+
+</body></html>
