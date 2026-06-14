@@ -646,4 +646,138 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ========== VERTICALS FR ========== -->
+
+  <!-- Audit_Advisory FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Audit_Advisory_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Audit_Advisory_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Audit_Advisory_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Audit_Advisory_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Audit_Advisory_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Banking FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Banking_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Banking_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Banking_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Banking_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Banking_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CAD FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_CAD_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_CAD_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_CAD_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_CAD_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_CAD_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- DICOM FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_DICOM_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_DICOM_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_DICOM_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_DICOM_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_DICOM_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Digital_Signature FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Digital_Signature_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Education FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Education_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Education_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Education_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Education_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Education_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Government FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Government_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Government_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Government_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Government_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Government_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Insurance FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Insurance_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Insurance_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Insurance_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Insurance_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Insurance_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Legal_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Legal_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Legal_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Legal_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Legal_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Service_to_Software FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Service_to_Software_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Service_to_Software_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Service_to_Software_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Service_to_Software_TR.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://yespdf.com.tr/verticals/YesPDF_Service_to_Software_DE.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Military FR -->
+  <url>
+    <loc>https://yespdf.com.tr/verticals/YesPDF_Military_FR.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yespdf.com.tr/verticals/YesPDF_Military_FR.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yespdf.com.tr/verticals/YesPDF_Military_EN.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/verticals/YesPDF_Military_TR.html"/>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
