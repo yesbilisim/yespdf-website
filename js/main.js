@@ -199,6 +199,8 @@ function closeMobileMenu() {
 function acceptKVKK() {
   localStorage.setItem('kvkk-consent', 'accepted');
   document.getElementById('kvkk-banner').classList.add('hidden');
+  // Load marketing/analytics tags only after explicit consent (KVKK)
+  if (typeof window.loadLinkedInInsight === 'function') window.loadLinkedInInsight();
 }
 
 function rejectKVKK() {

@@ -2591,29 +2591,33 @@ html {
     <!-- ==================== SCRIPTS ==================== -->
     <script src="js/aos.js" defer></script>
     <script src="js/i18n.js?v=7"></script>
-    <script src="js/main.js?v=4" defer></script>
+    <script src="js/main.js?v=5" defer></script>
     <script src="js/gallery.js?v=4" defer></script>
     <script src="js/form.js?v=4" defer></script>
 
 
-<!-- LinkedIn Insight Tag (campaign 9126690) -->
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
 <script type="text/javascript">
-_linkedin_partner_id = "9126690";
-window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-</script><script type="text/javascript">
-(function(l) {
-if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
-window.lintrk.q=[]}
-var s = document.getElementsByTagName("script")[0];
-var b = document.createElement("script");
-b.type = "text/javascript";b.async = true;
-b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-s.parentNode.insertBefore(b, s);})(window.lintrk);
+window.loadLinkedInInsight = function() {
+  if (window.__li_insight_loaded) return;
+  window.__li_insight_loaded = true;
+  window._linkedin_partner_id = "9126690";
+  window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+  window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+  (function(l) {
+    if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+    window.lintrk.q=[]}
+    var s = document.getElementsByTagName("script")[0];
+    var b = document.createElement("script");
+    b.type = "text/javascript";b.async = true;
+    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+    s.parentNode.insertBefore(b, s);})(window.lintrk);
+};
+// Fire immediately only if the visitor already granted KVKK consent.
+if (localStorage.getItem('kvkk-consent') === 'accepted') {
+  window.loadLinkedInInsight();
+}
 </script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9126690&fmt=gif" />
-</noscript>
 <!-- /LinkedIn Insight Tag -->
 
 </body>
