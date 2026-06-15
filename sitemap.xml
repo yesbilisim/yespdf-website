@@ -780,4 +780,13 @@
     <priority>0.7</priority>
   </url>
 
+
+  <!-- Desktop Buy / Lisans -->
+  <url>
+    <loc>https://yespdf.com.tr/buy</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
