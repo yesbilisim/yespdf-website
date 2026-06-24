@@ -235,5 +235,18 @@ try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogle
 </script>
 <!-- /Google Ads -->
 
+<!-- Event snippet for YesPDF Demo Talebi conversion — fires only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  try {
+    if (localStorage.getItem('kvkk-consent') === 'accepted') {
+      if (typeof window.loadGoogleTag === 'function') window.loadGoogleTag(); // ensure gtag js + config are queued first
+      gtag('event', 'conversion', {'send_to': 'AW-18267998044/ZRReCLTo5sQcENyO7oZE'});
+    }
+  } catch(e){}
+})();
+</script>
+<!-- /Event snippet -->
+
 </body>
 </html>
