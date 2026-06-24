@@ -201,6 +201,7 @@ function acceptKVKK() {
   document.getElementById('kvkk-banner').classList.add('hidden');
   // Load marketing/analytics tags only after explicit consent (KVKK)
   if (typeof window.loadLinkedInInsight === 'function') window.loadLinkedInInsight();
+  if (typeof window.loadGoogleTag === 'function') window.loadGoogleTag();
 }
 
 function rejectKVKK() {
