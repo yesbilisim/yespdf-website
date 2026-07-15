@@ -111,18 +111,21 @@
       <p class="eyebrow" data-en>Native for Apple Silicon</p>
       <p class="eyebrow" data-de lang-hide>Nativ für Apple Silicon</p>
       <p class="eyebrow" data-tr lang-hide>Apple Silicon için yerel</p>
+      <p class="eyebrow" data-fr lang-hide>Natif pour Apple Silicon</p>
       <h1>YesPDF for Mac</h1>
       <p data-en>The macOS edition — read, edit, sign, convert and OCR your PDFs in a fast native app built for Apple Silicon. Here's what's new.</p>
       <p data-de lang-hide>Die macOS-Edition — lesen, bearbeiten, signieren, konvertieren und OCR für Ihre PDFs in einer schnellen nativen App für Apple Silicon. Das ist neu.</p>
       <p data-tr lang-hide>macOS sürümü — PDF'lerinizi Apple Silicon için geliştirilmiş hızlı, yerel bir uygulamada okuyun, düzenleyin, imzalayın, dönüştürün ve OCR yapın. Yenilikler burada.</p>
+      <p data-fr lang-hide>L'édition macOS — lisez, modifiez, signez, convertissez et appliquez l'OCR à vos PDF dans une application native rapide conçue pour Apple Silicon. Voici les nouveautés.</p>
     </div>
   </section>
 
   <div class="bar">
-    <h2 data-en>Release history</h2><h2 data-de lang-hide>Versionsverlauf</h2><h2 data-tr lang-hide>Sürüm geçmişi</h2>
+    <h2 data-en>Release history</h2><h2 data-de lang-hide>Versionsverlauf</h2><h2 data-tr lang-hide>Sürüm geçmişi</h2><h2 data-fr lang-hide>Historique des versions</h2>
     <div class="seg" role="group" aria-label="Language">
       <button id="l-en" aria-pressed="true" onclick="setLang('en')">EN</button>
       <button id="l-de" aria-pressed="false" onclick="setLang('de')">DE</button>
+      <button id="l-fr" aria-pressed="false" onclick="setLang('fr')">FR</button>
       <button id="l-tr" aria-pressed="false" onclick="setLang('tr')">TR</button>
     </div>
   </div>
@@ -134,80 +137,94 @@
     <span data-en>· Apple Silicon (M-series) · Universal support</span>
     <span data-de lang-hide>· Apple Silicon (M-Serie) · Universelle Unterstützung</span>
     <span data-tr lang-hide>· Apple Silicon (M-serisi) · Evrensel destek</span>
+    <span data-fr lang-hide>· Apple Silicon (série M) · Prise en charge universelle</span>
   </footer>
 </div>
 
 <script>
   const RELEASES = [
-    { v:"1.4.0", date:{en:"July 13, 2026",de:"13. Juli 2026",tr:"13 Temmuz 2026"}, latest:true,
+    { v:"1.4.0", date:{en:"July 13, 2026",de:"13. Juli 2026",tr:"13 Temmuz 2026",fr:"13 juillet 2026"}, latest:true,
       title:{en:"Layout-aware OCR & a non-blocking workflow",
              de:"Layout-bewusste OCR & unterbrechungsfreier Arbeitsablauf",
-             tr:"Yerleşim-duyarlı OCR & kesintisiz akış"},
+             tr:"Yerleşim-duyarlı OCR & kesintisiz akış",
+             fr:"OCR sensible à la mise en page et flux non bloquant"},
       changes:[
         {kind:"new",
           en:"A new OCR engine turns scans into editable or searchable PDFs with layout awareness — 99.9% accuracy on Turkish.",
           de:"Eine neue OCR-Engine wandelt Scans layout-bewusst in bearbeitbare oder durchsuchbare PDFs um — 99,9 % Genauigkeit bei Türkisch.",
-          tr:"Yeni bir OCR motoru taramaları yerleşim-duyarlı biçimde düzenlenebilir veya aranabilir PDF'e çevirir — Türkçede %99,9 doğruluk."},
+          tr:"Yeni bir OCR motoru taramaları yerleşim-duyarlı biçimde düzenlenebilir veya aranabilir PDF'e çevirir — Türkçede %99,9 doğruluk.",
+          fr:"Un nouveau moteur OCR transforme les numérisations en PDF modifiables ou consultables, avec reconnaissance de la mise en page — 99,9 % de précision en turc."},
         {kind:"new",
           en:"OCR and file conversions now run in the background — keep reading and working on your other documents.",
           de:"OCR und Konvertierungen laufen jetzt im Hintergrund — lesen und arbeiten Sie an Ihren anderen Dokumenten weiter.",
-          tr:"OCR ve dosya dönüştürmeleri artık arka planda çalışır — diğer belgelerinizi okumaya ve üzerinde çalışmaya devam edin."},
+          tr:"OCR ve dosya dönüştürmeleri artık arka planda çalışır — diğer belgelerinizi okumaya ve üzerinde çalışmaya devam edin.",
+          fr:"L'OCR et les conversions s'exécutent désormais en arrière-plan — continuez à lire et à travailler sur vos autres documents."},
         {kind:"new",
           en:"A clear “Processing” overlay shows live progress on the busy document, with a Cancel button.",
           de:"Eine klare „In Bearbeitung“-Überlagerung zeigt den Live-Fortschritt des aktiven Dokuments — mit Abbrechen-Schaltfläche.",
-          tr:"Net bir “İşlem sürüyor” katmanı meşgul belgenin ilerlemesini canlı gösterir — İptal düğmesiyle."},
+          tr:"Net bir “İşlem sürüyor” katmanı meşgul belgenin ilerlemesini canlı gösterir — İptal düğmesiyle.",
+          fr:"Une superposition « Traitement en cours » claire affiche la progression du document actif, avec un bouton Annuler."},
         {kind:"imp",
           en:"Word, Excel, PowerPoint, Image, PDF/A and HTML conversions are all non-blocking now.",
           de:"Konvertierungen zu Word, Excel, PowerPoint, Bild, PDF/A und HTML sind jetzt alle unterbrechungsfrei.",
-          tr:"Word, Excel, PowerPoint, Görsel, PDF/A ve HTML dönüşümleri artık kesintisiz."},
+          tr:"Word, Excel, PowerPoint, Görsel, PDF/A ve HTML dönüşümleri artık kesintisiz.",
+          fr:"Les conversions vers Word, Excel, PowerPoint, Image, PDF/A et HTML sont désormais toutes non bloquantes."},
       ]},
-    { v:"1.3.3", date:{en:"July 9, 2026",de:"9. Juli 2026",tr:"9 Temmuz 2026"},
-      title:{en:"Editable & searchable OCR",de:"Bearbeitbare & durchsuchbare OCR",tr:"Düzenlenebilir & aranabilir OCR"},
+    { v:"1.3.3", date:{en:"July 9, 2026",de:"9. Juli 2026",tr:"9 Temmuz 2026",fr:"9 juillet 2026"},
+      title:{en:"Editable & searchable OCR",de:"Bearbeitbare & durchsuchbare OCR",tr:"Düzenlenebilir & aranabilir OCR",fr:"OCR modifiable et consultable"},
       changes:[
         {kind:"new",
           en:"Turn scanned PDFs into searchable or fully editable documents.",
           de:"Verwandeln Sie gescannte PDFs in durchsuchbare oder vollständig bearbeitbare Dokumente.",
-          tr:"Taranmış PDF'leri aranabilir veya tamamen düzenlenebilir belgelere dönüştürün."},
+          tr:"Taranmış PDF'leri aranabilir veya tamamen düzenlenebilir belgelere dönüştürün.",
+          fr:"Transformez les PDF numérisés en documents consultables ou entièrement modifiables."},
         {kind:"new",
           en:"Sign in with a QR code.",
           de:"Anmeldung per QR-Code.",
-          tr:"QR kod ile giriş."},
+          tr:"QR kod ile giriş.",
+          fr:"Connexion par code QR."},
       ]},
-    { v:"1.3.2", date:{en:"July 6, 2026",de:"6. Juli 2026",tr:"6 Temmuz 2026"},
-      title:{en:"The native macOS edition",de:"Die native macOS-Edition",tr:"Yerel macOS sürümü"},
+    { v:"1.3.2", date:{en:"July 6, 2026",de:"6. Juli 2026",tr:"6 Temmuz 2026",fr:"6 juillet 2026"},
+      title:{en:"The native macOS edition",de:"Die native macOS-Edition",tr:"Yerel macOS sürümü",fr:"L'édition macOS native"},
       changes:[
         {kind:"new",
           en:"Built natively for Apple Silicon (M-series) — fast and energy-efficient.",
           de:"Nativ für Apple Silicon (M-Serie) entwickelt — schnell und energieeffizient.",
-          tr:"Apple Silicon (M-serisi) için yerel geliştirildi — hızlı ve enerji dostu."},
+          tr:"Apple Silicon (M-serisi) için yerel geliştirildi — hızlı ve enerji dostu.",
+          fr:"Conçu nativement pour Apple Silicon (série M) — rapide et économe en énergie."},
         {kind:"new",
           en:"“View” — a fast, read-only viewer for quick reading.",
           de:"„Ansehen“ — ein schneller, schreibgeschützter Betrachter zum schnellen Lesen.",
-          tr:"“Görüntüle” — hızlı okuma için hızlı, salt-okunur görüntüleyici."},
+          tr:"“Görüntüle” — hızlı okuma için hızlı, salt-okunur görüntüleyici.",
+          fr:"« Aperçu » — une visionneuse rapide en lecture seule pour lire immédiatement."},
         {kind:"new",
           en:"Markup & annotations, night mode, digital signatures and Fill & Sign.",
           de:"Markierungen & Anmerkungen, Nachtmodus, digitale Signaturen und Ausfüllen & Signieren.",
-          tr:"İşaretleme & açıklamalar, gece modu, dijital imzalar ve Doldur & İmzala."},
+          tr:"İşaretleme & açıklamalar, gece modu, dijital imzalar ve Doldur & İmzala.",
+          fr:"Annotations et marquages, mode nuit, signatures numériques et Remplir et signer."},
         {kind:"new",
           en:"Scan to PDF; convert to Word, Excel, PowerPoint and Image; e-Invoice (e-Fatura) to PDF.",
           de:"Scannen zu PDF; Konvertierung zu Word, Excel, PowerPoint und Bild; E-Rechnung (e-Fatura) zu PDF.",
-          tr:"PDF'e tarama; Word, Excel, PowerPoint ve Görsel'e dönüştürme; e-Fatura'dan PDF'e."},
+          tr:"PDF'e tarama; Word, Excel, PowerPoint ve Görsel'e dönüştürme; e-Fatura'dan PDF'e.",
+          fr:"Numérisation vers PDF ; conversion vers Word, Excel, PowerPoint et Image ; e-Facture (e-Fatura) vers PDF."},
         {kind:"new",
           en:"Turkish-aware search, online documents, dashboard, audit logging and two-factor sign-in.",
           de:"Türkisch-bewusste Suche, Online-Dokumente, Dashboard, Audit-Protokoll und Zwei-Faktor-Anmeldung.",
-          tr:"Türkçe-duyarlı arama, çevrimiçi belgeler, panel, denetim günlüğü ve iki-adımlı giriş."},
+          tr:"Türkçe-duyarlı arama, çevrimiçi belgeler, panel, denetim günlüğü ve iki-adımlı giriş.",
+          fr:"Recherche adaptée au turc, documents en ligne, tableau de bord, journal d'audit et connexion à deux facteurs."},
         {kind:"imp",
           en:"Honest progress indicators and notifications that wait for you.",
           de:"Ehrliche Fortschrittsanzeigen und Benachrichtigungen, die auf Sie warten.",
-          tr:"Dürüst ilerleme göstergeleri ve sizi bekleyen bildirimler."},
+          tr:"Dürüst ilerleme göstergeleri ve sizi bekleyen bildirimler.",
+          fr:"Des indicateurs de progression honnêtes et des notifications qui vous attendent."},
       ]},
   ];
   const KIND = {
-    new:{cls:"k-new", en:"New", de:"Neu", tr:"Yeni"},
-    imp:{cls:"k-imp", en:"Improved", de:"Verbessert", tr:"İyileştirme"},
-    fix:{cls:"k-fix", en:"Fixed", de:"Behoben", tr:"Düzeltme"},
+    new:{cls:"k-new", en:"New", de:"Neu", tr:"Yeni", fr:"Nouveau"},
+    imp:{cls:"k-imp", en:"Improved", de:"Verbessert", tr:"İyileştirme", fr:"Amélioré"},
+    fix:{cls:"k-fix", en:"Fixed", de:"Behoben", tr:"Düzeltme", fr:"Corrigé"},
   };
-  const LATEST = {en:"Latest", de:"Aktuell", tr:"Güncel"};
+  const LATEST = {en:"Latest", de:"Aktuell", tr:"Güncel", fr:"Récent"};
   let lang = "en";
 
   function render(){
@@ -226,13 +243,14 @@
   function setLang(l){
     lang = l;
     document.documentElement.lang = l;
-    ["en","de","tr"].forEach(x=>document.getElementById("l-"+x).setAttribute("aria-pressed", String(x===l)));
+    ["en","de","fr","tr"].forEach(x=>document.getElementById("l-"+x).setAttribute("aria-pressed", String(x===l)));
     document.querySelectorAll("[data-en]").forEach(e=>e.toggleAttribute("lang-hide", l!=="en"));
     document.querySelectorAll("[data-de]").forEach(e=>e.toggleAttribute("lang-hide", l!=="de"));
+    document.querySelectorAll("[data-fr]").forEach(e=>e.toggleAttribute("lang-hide", l!=="fr"));
     document.querySelectorAll("[data-tr]").forEach(e=>e.toggleAttribute("lang-hide", l!=="tr"));
     render();
   }
-  setLang("en");
+  (function(){ var _sl; try{ _sl = localStorage.getItem("yespdf-lang"); }catch(e){} setLang(["en","de","fr","tr"].indexOf(_sl) >= 0 ? _sl : "en"); })();
 </script>
 
 <!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
