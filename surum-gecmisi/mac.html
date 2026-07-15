@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesPDF for Mac — Release History</title>
+<style>
+  :root{
+    --bg:#F7F5F1; --surface:#FFFFFF; --surface-2:#EFECE5; --chrome:#ECE8E1;
+    --ink:#1C1A16; --muted:#6B675E; --line:#E4DFD6;
+    --accent:#D93025; --accent-ink:#B3241B;
+    --new:#2E9E5B; --imp:#B8791F; --fix:#7C7A74;
+    --tl-red:#EC6A5E; --tl-yellow:#F4BF4F; --tl-green:#61C554;
+    --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",system-ui,Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#121110; --surface:#1D1B18; --surface-2:#242219; --chrome:#26241E;
+      --ink:#EFEDE7; --muted:#9C978D; --line:#2E2B26;
+      --accent:#F2564B; --accent-ink:#F4756C;
+      --new:#4FBE7C; --imp:#D6A24E; --fix:#8C897F;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121110; --surface:#1D1B18; --surface-2:#242219; --chrome:#26241E;
+    --ink:#EFEDE7; --muted:#9C978D; --line:#2E2B26;
+    --accent:#F2564B; --accent-ink:#F4756C; --new:#4FBE7C; --imp:#D6A24E; --fix:#8C897F;
+  }
+  :root[data-theme="light"]{
+    --bg:#F7F5F1; --surface:#FFFFFF; --surface-2:#EFECE5; --chrome:#ECE8E1;
+    --ink:#1C1A16; --muted:#6B675E; --line:#E4DFD6;
+    --accent:#D93025; --accent-ink:#B3241B; --new:#2E9E5B; --imp:#B8791F; --fix:#7C7A74;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:900px;margin:0 auto;padding:clamp(24px,5vw,56px) clamp(16px,4vw,36px);}
+
+  /* ── macOS window hero ── */
+  .window{border:1px solid var(--line);border-radius:13px;overflow:hidden;
+    background:var(--surface);box-shadow:0 14px 40px -18px rgba(0,0,0,.28);}
+  .titlebar{display:flex;align-items:center;gap:9px;padding:11px 15px;
+    background:var(--chrome);border-bottom:1px solid var(--line);}
+  .lights{display:flex;gap:7px;}
+  .lights i{width:12px;height:12px;border-radius:50%;display:block;}
+  .lights .r{background:var(--tl-red);} .lights .y{background:var(--tl-yellow);} .lights .g{background:var(--tl-green);}
+  .titlebar .name{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.01em;
+    margin-left:4px;}
+  .hero{padding:clamp(24px,4.5vw,40px);}
+  .eyebrow{font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--accent-ink);margin:0 0 12px;}
+  .hero h1{margin:0;font-size:clamp(26px,5vw,40px);font-weight:780;letter-spacing:-.028em;
+    line-height:1.08;text-wrap:balance;}
+  .hero p{margin:14px 0 0;font-size:clamp(14.5px,2.2vw,16px);color:var(--muted);
+    max-width:54ch;text-wrap:pretty;}
+
+  /* ── Toolbar row ── */
+  .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;
+    gap:14px;margin:26px 0 6px;}
+  .bar h2{margin:0;font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--ink);}
+  .seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--line);
+    border-radius:9px;padding:3px;gap:2px;}
+  .seg button{font-family:var(--sans);font-size:12.5px;font-weight:650;color:var(--muted);
+    background:transparent;border:0;border-radius:6px;padding:5px 12px;cursor:pointer;
+    letter-spacing:.02em;transition:color .15s,background .15s;}
+  .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);
+    box-shadow:0 1px 2px rgba(0,0,0,.08);}
+  .seg button:hover:not([aria-pressed="true"]){color:var(--ink);}
+  .seg button:focus-visible{outline:2px solid var(--accent);outline-offset:1px;}
+
+  /* ── Timeline ── */
+  .timeline{margin-top:14px;}
+  .rel{display:grid;grid-template-columns:128px 1fr;gap:clamp(14px,3vw,32px);
+    padding:26px 0;border-top:1px solid var(--line);}
+  .ver{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--accent-ink);}
+  .tag-latest{display:inline-block;margin-left:7px;font-size:9px;font-weight:700;
+    letter-spacing:.09em;text-transform:uppercase;color:#fff;background:var(--accent);
+    padding:2px 6px;border-radius:5px;vertical-align:2px;}
+  .date{display:block;margin-top:4px;font-size:12px;color:var(--muted);
+    font-variant-numeric:tabular-nums;}
+  .body h3{margin:0 0 12px;font-size:16.5px;font-weight:680;letter-spacing:-.01em;text-wrap:balance;}
+  ul.changes{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;}
+  ul.changes li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:baseline;
+    font-size:14.5px;}
+  .kind{font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+    padding:2.5px 7px;border-radius:999px;white-space:nowrap;border:1px solid transparent;translate:0 -1px;}
+  .k-new{color:var(--new);background:color-mix(in srgb,var(--new) 12%,transparent);border-color:color-mix(in srgb,var(--new) 26%,transparent);}
+  .k-imp{color:var(--imp);background:color-mix(in srgb,var(--imp) 13%,transparent);border-color:color-mix(in srgb,var(--imp) 28%,transparent);}
+  .k-fix{color:var(--fix);background:color-mix(in srgb,var(--fix) 12%,transparent);border-color:color-mix(in srgb,var(--fix) 26%,transparent);}
+  .chg-txt{text-wrap:pretty;}
+
+  footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;}
+  .apple{font-weight:700;color:var(--ink);}
+  [lang-hide]{display:none !important;}
+  @media (max-width:540px){
+    .rel{grid-template-columns:1fr;gap:8px;}
+    .meta{display:flex;align-items:baseline;gap:12px;}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none !important;}}
+</style>
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/mac.html">
+</head>
+<body>
+<div class="wrap">
+  <section class="window">
+    <div class="titlebar"><span class="lights"><i class="r"></i><i class="y"></i><i class="g"></i></span>
+      <span class="name">YesPDF</span></div>
+    <div class="hero">
+      <p class="eyebrow" data-en>Native for Apple Silicon</p>
+      <p class="eyebrow" data-de lang-hide>Nativ für Apple Silicon</p>
+      <p class="eyebrow" data-tr lang-hide>Apple Silicon için yerel</p>
+      <h1>YesPDF for Mac</h1>
+      <p data-en>The macOS edition — read, edit, sign, convert and OCR your PDFs in a fast native app built for Apple Silicon. Here's what's new.</p>
+      <p data-de lang-hide>Die macOS-Edition — lesen, bearbeiten, signieren, konvertieren und OCR für Ihre PDFs in einer schnellen nativen App für Apple Silicon. Das ist neu.</p>
+      <p data-tr lang-hide>macOS sürümü — PDF'lerinizi Apple Silicon için geliştirilmiş hızlı, yerel bir uygulamada okuyun, düzenleyin, imzalayın, dönüştürün ve OCR yapın. Yenilikler burada.</p>
+    </div>
+  </section>
+
+  <div class="bar">
+    <h2 data-en>Release history</h2><h2 data-de lang-hide>Versionsverlauf</h2><h2 data-tr lang-hide>Sürüm geçmişi</h2>
+    <div class="seg" role="group" aria-label="Language">
+      <button id="l-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+      <button id="l-de" aria-pressed="false" onclick="setLang('de')">DE</button>
+      <button id="l-tr" aria-pressed="false" onclick="setLang('tr')">TR</button>
+    </div>
+  </div>
+
+  <div class="timeline" id="timeline"></div>
+
+  <footer>
+    <span class="apple">macOS 11+</span>
+    <span data-en>· Apple Silicon (M-series) · Universal support</span>
+    <span data-de lang-hide>· Apple Silicon (M-Serie) · Universelle Unterstützung</span>
+    <span data-tr lang-hide>· Apple Silicon (M-serisi) · Evrensel destek</span>
+  </footer>
+</div>
+
+<script>
+  const RELEASES = [
+    { v:"1.4.0", date:{en:"July 13, 2026",de:"13. Juli 2026",tr:"13 Temmuz 2026"}, latest:true,
+      title:{en:"Layout-aware OCR & a non-blocking workflow",
+             de:"Layout-bewusste OCR & unterbrechungsfreier Arbeitsablauf",
+             tr:"Yerleşim-duyarlı OCR & kesintisiz akış"},
+      changes:[
+        {kind:"new",
+          en:"A new OCR engine turns scans into editable or searchable PDFs with layout awareness — 99.9% accuracy on Turkish.",
+          de:"Eine neue OCR-Engine wandelt Scans layout-bewusst in bearbeitbare oder durchsuchbare PDFs um — 99,9 % Genauigkeit bei Türkisch.",
+          tr:"Yeni bir OCR motoru taramaları yerleşim-duyarlı biçimde düzenlenebilir veya aranabilir PDF'e çevirir — Türkçede %99,9 doğruluk."},
+        {kind:"new",
+          en:"OCR and file conversions now run in the background — keep reading and working on your other documents.",
+          de:"OCR und Konvertierungen laufen jetzt im Hintergrund — lesen und arbeiten Sie an Ihren anderen Dokumenten weiter.",
+          tr:"OCR ve dosya dönüştürmeleri artık arka planda çalışır — diğer belgelerinizi okumaya ve üzerinde çalışmaya devam edin."},
+        {kind:"new",
+          en:"A clear “Processing” overlay shows live progress on the busy document, with a Cancel button.",
+          de:"Eine klare „In Bearbeitung“-Überlagerung zeigt den Live-Fortschritt des aktiven Dokuments — mit Abbrechen-Schaltfläche.",
+          tr:"Net bir “İşlem sürüyor” katmanı meşgul belgenin ilerlemesini canlı gösterir — İptal düğmesiyle."},
+        {kind:"imp",
+          en:"Word, Excel, PowerPoint, Image, PDF/A and HTML conversions are all non-blocking now.",
+          de:"Konvertierungen zu Word, Excel, PowerPoint, Bild, PDF/A und HTML sind jetzt alle unterbrechungsfrei.",
+          tr:"Word, Excel, PowerPoint, Görsel, PDF/A ve HTML dönüşümleri artık kesintisiz."},
+      ]},
+    { v:"1.3.3", date:{en:"July 9, 2026",de:"9. Juli 2026",tr:"9 Temmuz 2026"},
+      title:{en:"Editable & searchable OCR",de:"Bearbeitbare & durchsuchbare OCR",tr:"Düzenlenebilir & aranabilir OCR"},
+      changes:[
+        {kind:"new",
+          en:"Turn scanned PDFs into searchable or fully editable documents.",
+          de:"Verwandeln Sie gescannte PDFs in durchsuchbare oder vollständig bearbeitbare Dokumente.",
+          tr:"Taranmış PDF'leri aranabilir veya tamamen düzenlenebilir belgelere dönüştürün."},
+        {kind:"new",
+          en:"Sign in with a QR code.",
+          de:"Anmeldung per QR-Code.",
+          tr:"QR kod ile giriş."},
+      ]},
+    { v:"1.3.2", date:{en:"July 6, 2026",de:"6. Juli 2026",tr:"6 Temmuz 2026"},
+      title:{en:"The native macOS edition",de:"Die native macOS-Edition",tr:"Yerel macOS sürümü"},
+      changes:[
+        {kind:"new",
+          en:"Built natively for Apple Silicon (M-series) — fast and energy-efficient.",
+          de:"Nativ für Apple Silicon (M-Serie) entwickelt — schnell und energieeffizient.",
+          tr:"Apple Silicon (M-serisi) için yerel geliştirildi — hızlı ve enerji dostu."},
+        {kind:"new",
+          en:"“View” — a fast, read-only viewer for quick reading.",
+          de:"„Ansehen“ — ein schneller, schreibgeschützter Betrachter zum schnellen Lesen.",
+          tr:"“Görüntüle” — hızlı okuma için hızlı, salt-okunur görüntüleyici."},
+        {kind:"new",
+          en:"Markup & annotations, night mode, digital signatures and Fill & Sign.",
+          de:"Markierungen & Anmerkungen, Nachtmodus, digitale Signaturen und Ausfüllen & Signieren.",
+          tr:"İşaretleme & açıklamalar, gece modu, dijital imzalar ve Doldur & İmzala."},
+        {kind:"new",
+          en:"Scan to PDF; convert to Word, Excel, PowerPoint and Image; e-Invoice (e-Fatura) to PDF.",
+          de:"Scannen zu PDF; Konvertierung zu Word, Excel, PowerPoint und Bild; E-Rechnung (e-Fatura) zu PDF.",
+          tr:"PDF'e tarama; Word, Excel, PowerPoint ve Görsel'e dönüştürme; e-Fatura'dan PDF'e."},
+        {kind:"new",
+          en:"Turkish-aware search, online documents, dashboard, audit logging and two-factor sign-in.",
+          de:"Türkisch-bewusste Suche, Online-Dokumente, Dashboard, Audit-Protokoll und Zwei-Faktor-Anmeldung.",
+          tr:"Türkçe-duyarlı arama, çevrimiçi belgeler, panel, denetim günlüğü ve iki-adımlı giriş."},
+        {kind:"imp",
+          en:"Honest progress indicators and notifications that wait for you.",
+          de:"Ehrliche Fortschrittsanzeigen und Benachrichtigungen, die auf Sie warten.",
+          tr:"Dürüst ilerleme göstergeleri ve sizi bekleyen bildirimler."},
+      ]},
+  ];
+  const KIND = {
+    new:{cls:"k-new", en:"New", de:"Neu", tr:"Yeni"},
+    imp:{cls:"k-imp", en:"Improved", de:"Verbessert", tr:"İyileştirme"},
+    fix:{cls:"k-fix", en:"Fixed", de:"Behoben", tr:"Düzeltme"},
+  };
+  const LATEST = {en:"Latest", de:"Aktuell", tr:"Güncel"};
+  let lang = "en";
+
+  function render(){
+    document.getElementById("timeline").innerHTML = RELEASES.map(r=>{
+      const items = r.changes.map(c=>{
+        const k = KIND[c.kind];
+        return `<li><span class="kind ${k.cls}">${k[lang]}</span><span class="chg-txt">${c[lang]}</span></li>`;
+      }).join("");
+      const latest = r.latest ? `<span class="tag-latest">${LATEST[lang]}</span>` : "";
+      return `<article class="rel">
+        <div class="meta"><span class="ver">${r.v}</span>${latest}<span class="date">${r.date[lang]}</span></div>
+        <div class="body"><h3>${r.title[lang]}</h3><ul class="changes">${items}</ul></div>
+      </article>`;
+    }).join("");
+  }
+  function setLang(l){
+    lang = l;
+    document.documentElement.lang = l;
+    ["en","de","tr"].forEach(x=>document.getElementById("l-"+x).setAttribute("aria-pressed", String(x===l)));
+    document.querySelectorAll("[data-en]").forEach(e=>e.toggleAttribute("lang-hide", l!=="en"));
+    document.querySelectorAll("[data-de]").forEach(e=>e.toggleAttribute("lang-hide", l!=="de"));
+    document.querySelectorAll("[data-tr]").forEach(e=>e.toggleAttribute("lang-hide", l!=="tr"));
+    render();
+  }
+  setLang("en");
+</script>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
