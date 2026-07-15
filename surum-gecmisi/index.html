@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YesPDF Sürüm Geçmişi — On-Prem & Desktop</title>
+<meta name="description" content="YesPDF ürünlerinin sürüm geçmişi: On-Prem kurumsal platform ve Desktop uygulaması. Her sürüm kod-imzalı ve zaman damgalı.">
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yespdf.com.tr/surum-gecmisi">
+<meta property="og:title" content="YesPDF Sürüm Geçmişi">
+<meta property="og:description" content="On-Prem ve Desktop ürünlerinin sürüm geçmişi — kod-imzalı, zaman damgalı.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F172A;--navy-2:#1e3a5f;--green:#059669;--green-2:#10b981;--green-3:#4ade80;--bg:#FAFAFA;--white:#fff;--g50:#F8FAFC;--g100:#F1F5F9;--g200:#E2E8F0;--g400:#94A3B8;--g500:#64748B;--g600:#475569;--g700:#334155;--g900:#0F172A;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,sans-serif;color:var(--g700);line-height:1.7;background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;color:var(--g900);line-height:1.2;letter-spacing:-0.02em}
+a{color:inherit;text-decoration:none}
+.container{max-width:960px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--g200)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:'Plus Jakarta Sans';font-weight:800;font-size:20px;color:var(--navy)}
+.logo span{color:var(--green)}
+.nav-link{font-size:14px;font-weight:600;color:var(--g600)}
+.nav-link:hover{color:var(--navy)}
+.hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 55%,#0f4c3a 100%);color:#fff;padding:64px 0 56px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(800px 380px at 50% -10%,rgba(74,222,128,.18),transparent 60%)}
+.hero .container{position:relative;z-index:1}
+.badge{display:inline-block;background:rgba(74,222,128,.14);border:1px solid rgba(74,222,128,.35);color:#86efac;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 15px;border-radius:100px;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(30px,4.5vw,44px);font-weight:800;margin-bottom:14px}
+.hero p{color:rgba(255,255,255,.72);font-size:18px;max-width:56ch;margin:0 auto}
+.section{padding:64px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.card{background:#fff;border:1px solid var(--g200);border-radius:20px;padding:32px;box-shadow:0 24px 50px -34px rgba(15,23,42,.4)}
+.card .top{height:5px;border-radius:100px;margin-bottom:22px;width:56px}
+.onprem .top{background:linear-gradient(90deg,#1e3a5f,#3b6ea5)}
+.desktop .top{background:linear-gradient(90deg,#059669,#34d399)}
+.card .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.onprem .eyebrow{color:var(--navy-2)}.desktop .eyebrow{color:var(--green)}
+.card h2{font-size:24px;margin-bottom:8px}
+.card p{color:var(--g600);font-size:15px;margin-bottom:22px}
+.langs{display:flex;flex-wrap:wrap;gap:10px}
+.lang{display:inline-flex;align-items:center;gap:7px;padding:10px 18px;border-radius:11px;font-weight:700;font-size:14px;border:1px solid var(--g200);transition:transform .15s,border-color .15s,background .15s;font-family:'Plus Jakarta Sans'}
+.lang:hover{transform:translateY(-2px);border-color:var(--green);color:var(--green)}
+.lang.soon{opacity:.5;cursor:not-allowed;background:var(--g50)}
+.lang.soon:hover{transform:none;border-color:var(--g200);color:var(--g500)}
+.lang .tag-soon{font-size:10px;font-weight:600;color:var(--g400);letter-spacing:.05em}
+.note{max-width:960px;margin:28px auto 0;text-align:center;color:var(--g500);font-size:13.5px}
+.footer{background:#0f172a;color:#fff;padding:40px 0 32px;margin-top:16px}
+.footer .container{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:center}
+.footer .logo{color:#fff}.footer .logo span{color:var(--green-3)}
+.footer a{color:rgba(255,255,255,.65);font-size:14px}.footer a:hover{color:#fff}
+.footer .f-links{display:flex;gap:22px;flex-wrap:wrap}
+.footer .copy{width:100%;border-top:1px solid rgba(255,255,255,.1);padding-top:20px;color:rgba(255,255,255,.45);font-size:13px;text-align:center}
+@media(max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="https://yespdf.com.tr" class="logo">Yes<span>PDF</span></a>
+    <a href="https://yespdf.com.tr" class="nav-link">Ana Site</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div class="badge">Sürüm Geçmişi</div>
+    <h1>YesPDF Sürüm Geçmişi</h1>
+    <p>Ürünlerimizin gelişim geçmişi. Her sürüm kod-imzalı ve zaman damgalıdır; güvenli on-premise dağıtım için tasarlanır.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="grid">
+
+      <div class="card onprem">
+        <div class="top"></div>
+        <div class="eyebrow">Kurumsal · Web</div>
+        <h2>YesPDF On-Prem</h2>
+        <p>Tarayıcı tabanlı kurumsal PDF platformunun sürüm geçmişi.</p>
+        <div class="langs">
+          <a class="lang" href="/surum-gecmisi/onprem-tr.html">🇹🇷 Türkçe</a>
+          <a class="lang" href="/surum-gecmisi/onprem-en.html">🇬🇧 English</a>
+          <a class="lang" href="/surum-gecmisi/onprem-de.html">🇩🇪 Deutsch</a>
+        </div>
+      </div>
+
+      <div class="card desktop">
+        <div class="top"></div>
+        <div class="eyebrow">Masaüstü</div>
+        <h2>YesPDF Desktop</h2>
+        <p>Masaüstü uygulamasının sürüm geçmişi.</p>
+        <div class="langs">
+          <span class="lang soon">🇹🇷 Türkçe <span class="tag-soon">yakında</span></span>
+          <a class="lang" href="/surum-gecmisi/desktop-en.html">🇬🇧 English</a>
+          <span class="lang soon">🇩🇪 Deutsch <span class="tag-soon">yakında</span></span>
+        </div>
+      </div>
+
+    </div>
+    <p class="note">Tüm sürümler kod-imzalı ve zaman damgalıdır. Kurumsal dağıtımda yayıncı sertifikası, kurumun güvenilir yayıncı listesine eklenmelidir.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <a href="https://yespdf.com.tr" class="logo">Yes<span>PDF</span></a>
+    <div class="f-links">
+      <a href="https://yespdf.com.tr">Ana Site</a>
+      <a href="/urunler">Ürünler</a>
+      <a href="/buy">Desktop</a>
+      <a href="https://yespdf.com.tr/#contact">İletişim</a>
+    </div>
+    <div class="copy">© 2026 YesPDF. Tüm hakları saklıdır.</div>
+  </div>
+</footer>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>

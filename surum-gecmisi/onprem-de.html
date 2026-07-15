@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesPDF On-Prem — Versionshistorie</title>
+<!-- HINWEIS: Inhalt aus Sitzungsnotizen zusammengestellt; Daten und Umfang vor Veröffentlichung prüfen. -->
+<style>
+  :root{
+    --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+    --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  }
+  :root[data-theme="dark"]{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  :root[data-theme="light"]{ --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+           --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.65 "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:56px 24px 72px; }
+
+  header h1{
+    font-size:clamp(26px,4vw,34px); font-weight:650; letter-spacing:-0.02em;
+    margin:0 0 6px; text-wrap:balance;
+  }
+  header p{ margin:0; color:var(--muted); max-width:60ch; }
+  header{ padding-bottom:28px; border-bottom:2px solid var(--accent); margin-bottom:8px; }
+
+  .series{ margin-top:40px; }
+  .series > h2{
+    font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 4px;
+  }
+
+  .release{ display:grid; grid-template-columns:118px 1fr; gap:20px;
+            padding:26px 0; border-bottom:1px solid var(--line); }
+  .release:last-child{ border-bottom:none; }
+
+  .vcol{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .ver{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-size:14px; font-weight:600; color:var(--accent);
+    background:var(--chip); border:1px solid var(--line);
+    padding:3px 9px; border-radius:4px; white-space:nowrap;
+  }
+  .release.major .ver{ color:var(--copper); border-color:var(--copper); }
+  .date{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  }
+
+  .rcol h3{ margin:0 0 8px; font-size:18px; font-weight:650; letter-spacing:-0.01em; }
+  .rcol ul{ margin:0; padding-left:18px; }
+  .rcol li{ margin:5px 0; }
+  .rcol li::marker{ color:var(--accent); }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .tag{
+    font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px; border:1px solid var(--line); color:var(--muted);
+  }
+  .tag.new{ color:var(--accent); border-color:var(--accent); }
+  .tag.perf{ color:var(--copper); border-color:var(--copper); }
+
+  footer{ margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+          font-size:13.5px; color:var(--muted); }
+
+  @media (max-width:560px){
+    .release{ grid-template-columns:1fr; gap:8px; }
+    .vcol{ flex-direction:row; align-items:center; gap:12px; }
+  }
+</style>
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/onprem-de.html">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>YesPDF On-Prem — Versionshistorie</h1>
+  <p>Neuerungen, Verbesserungen und Korrekturen Ihrer On-Premises-PDF-Management-Plattform im Überblick.</p>
+</header>
+
+<!-- ============ SERIE 1.7 ============ -->
+<section class="series">
+  <h2>Serie 1.7 — Bearbeitbare gescannte Dokumente</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.2.1</span><span class="date">13.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performance</span></div>
+      <h3>Multi-Core-Beschleunigung der Bearbeitbar-Konvertierung</h3>
+      <ul>
+        <li>&bdquo;Bearbeitbar machen&ldquo; ist bei gescannten Dokumenten dank paralleler OCR-Vorverarbeitung jetzt <strong>bis zu 4&times; schneller</strong> (ein 47-seitiges Beispieldokument: von ~23 Min. auf ~5 Min.).</li>
+        <li>Die OCR-Parallelität lässt sich auf Multi-Core-Servern an die Hardware anpassen.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.2.0</span><span class="date">13.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>
+      <h3>Gescannte PDFs bearbeitbar machen — Engine der nächsten Generation</h3>
+      <ul>
+        <li><strong>Originalgetreue Overlay-Technologie:</strong> gescannte Dokumente werden bearbeitbar, während das Originalbild erhalten bleibt — Stempel, Siegel und Unterschriften bleiben exakt an ihrem Platz, der Text ist Wort für Wort bearbeitbar.</li>
+        <li>Qualitäts-Konfidenzwert: jede Konvertierung meldet, welcher Anteil des Dokuments zuverlässig bearbeitbar gemacht wurde.</li>
+        <li>Intelligente Dokumenterkennung: digital erstellte (nicht gescannte) Dokumente werden vor unnötiger Verarbeitung geschützt.</li>
+        <li>Automatische Ausrichtungskorrektur bei gedrehten gescannten Seiten.</li>
+        <li>Schriftabgleich auf Wortebene mit Erkennung von Fett- und Serifenschriften.</li>
+        <li>Installationspakete und Anwendungskomponenten sind jetzt codesigniert (Authenticode mit Zeitstempel).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.0.0</span><span class="date">08.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Verbesserung</span><span class="tag">Kompatibilität</span></div>
+      <h3>OCR-Genauigkeitspaket und Unterstützung großer Archive</h3>
+      <ul>
+        <li>Höhere Textebenen-Genauigkeit bei der Erzeugung durchsuchbarer PDFs; Problem mit doppeltem Text behoben.</li>
+        <li>Auflösungsoptimierung (DPI) der OCR-Engine — verbesserte Erkennungsgenauigkeit türkischer Zeichen.</li>
+        <li>Massenoperationen mit mehr als 2.000 Dokumenten (Archivieren, Wiederherstellen, Löschen, Teilen, Zusammenführen) für den zuverlässigen Betrieb mit Microsoft SQL Server gehärtet.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ SERIE 1.6 ============ -->
+<section class="series">
+  <h2>Serie 1.6 — Reifegrad und Enterprise-Integration</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.8</span><span class="date">07.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Kompatibilität</span><span class="tag">Sicherheit</span></div>
+      <h3>LDAP-Synchronisation für große Verzeichnisse</h3>
+      <ul>
+        <li>Synchronisation von mehr als 2.000 Benutzern aus Active Directory in Microsoft-SQL-Server-Umgebungen korrigiert.</li>
+        <li>Signiertes Installationspaket (Kompatibilität mit Enterprise-Endpoint-Security-Lösungen).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.x</span><span class="date">Jun.–Jul. 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performance</span><span class="tag">Verbesserung</span></div>
+      <h3>Parallele OCR und verlustfreie durchsuchbare PDFs</h3>
+      <ul>
+        <li>Parallele Multi-Core-OCR: die Erzeugung durchsuchbarer PDFs und Office-Konvertierungen (Word, Excel, PowerPoint) sind deutlich schneller.</li>
+        <li>Verlustfreie durchsuchbare PDFs: Originalbildqualität und Dateistruktur bleiben bei der OCR erhalten.</li>
+        <li>Verbesserungen bei HTTPS und Unterstützung von Unternehmenszertifikaten.</li>
+        <li>Erweitertes Support-Diagnosepaket (Status-Berichte zu Version, Netzwerk, Datenbank und LDAP).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.6.0</span><span class="date">2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Plattform</span></div>
+      <h3>Linux-Unterstützung und Audit-Infrastruktur</h3>
+      <ul>
+        <li><strong>Linux-Edition:</strong> volle Plattformunterstützung auf Pardus- und Debian-basierten Distributionen.</li>
+        <li>Anzeigeunterstützung für Arabisch und Rechts-nach-links-Dokumente (RTL).</li>
+        <li>Native Konvertierungs-Engine mit hoher Layouttreue für Word- und PowerPoint-Konvertierungen.</li>
+        <li>Übertragung der Audit-Protokolle der Desktop-Anwendung an den zentralen Server (Audit-Integration).</li>
+        <li>LDAP-/Active-Directory-Integration: sichere Verbindungen (LDAPS) und geplante automatische Synchronisation.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ SERIE 1.5 ============ -->
+<section class="series">
+  <h2>Serie 1.5 — Kernplattform</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.5.x</span><span class="date">2025–2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Kern</span></div>
+      <h3>Grundlagen der On-Premises-PDF-Management-Plattform</h3>
+      <ul>
+        <li>Webbasiertes Anzeigen und Bearbeiten; Dokumentenverwaltung, Ordner und Freigaben.</li>
+        <li>Konvertierungswerkzeuge: PDF ↔ Word, Excel, PowerPoint, HTML und Bildformate.</li>
+        <li>PDF-Werkzeuge: Zusammenführen, Teilen, Komprimieren, Drehen, Seitenverwaltung, Wasserzeichen.</li>
+        <li>Erzeugung durchsuchbarer PDFs per OCR in mehr als 14 Sprachen.</li>
+        <li>Unterstützung elektronischer Signaturen und Zeitstempel (PAdES).</li>
+        <li>Verschlüsselte Dokumentenablage auf dem Server; Benutzer-, Rollen- und Rechteverwaltung.</li>
+        <li>Datenbankunterstützung für PostgreSQL (integriert) und Microsoft SQL Server.</li>
+        <li>Dokumenteneingang per E-Mail und Unterstützung des UYAP-UDF-Formats.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<footer>
+  Diese Seite fasst die wichtigsten Änderungen zusammen. Für versionsspezifische Details und
+  Unterstützung beim Upgrade wenden Sie sich bitte an das Support-Team von YES Bilişim.
+</footer>
+
+</div>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
