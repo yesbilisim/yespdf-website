@@ -857,4 +857,12 @@
     <priority>0.5</priority>
   </url>
 
+
+  <url>
+    <loc>https://yespdf.com.tr/surum-gecmisi/desktop-de.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>

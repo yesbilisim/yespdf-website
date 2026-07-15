@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YesPDF Desktop — Versionsverlauf</title>
+<meta name="description" content="Versionsverlauf von YesPDF Desktop. Jede Version ist code-signiert und mit Zeitstempel versehen, für die sichere On-Premise-Bereitstellung.">
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/desktop-de.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yespdf.com.tr/surum-gecmisi/desktop-de.html">
+<meta property="og:title" content="YesPDF Desktop — Versionsverlauf">
+<meta property="og:description" content="Die Entwicklungsgeschichte von YesPDF Desktop — code-signiert, mit Zeitstempel, On-Premise.">
+<style>
+  :root{
+    --brand:#E8323C; --brand-deep:#C21A24;
+    --ground:#FBF9F8; --surface:#FFFFFF; --surface-2:#FEF6F5;
+    --ink:#1C1615; --muted:#756E6C; --line:#ECE5E3; --line-strong:#DBD2D0;
+    --new-bg:#FCE7E7; --new-ink:#B01823;
+    --imp-bg:#DCF1F1; --imp-ink:#0C6A72;
+    --fix-bg:#EAE7E6; --fix-ink:#5C5553;
+    --spine:#E4DBD9;
+    --shadow:0 1px 2px rgba(28,22,21,.04), 0 8px 30px -18px rgba(28,22,21,.18);
+    --font:-apple-system,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono","JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --brand:#FF525C; --brand-deep:#FF6B73;
+      --ground:#141010; --surface:#1D1817; --surface-2:#241A1A;
+      --ink:#F3EEEC; --muted:#A69E9C; --line:#2D2624; --line-strong:#3A312F;
+      --new-bg:#3A1B1D; --new-ink:#FF9AA0;
+      --imp-bg:#12312F; --imp-ink:#6FD3D0;
+      --fix-bg:#2A2422; --fix-ink:#B6ADAA;
+      --spine:#312825;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px -18px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="light"]{
+    --brand:#E8323C; --brand-deep:#C21A24;
+    --ground:#FBF9F8; --surface:#FFFFFF; --surface-2:#FEF6F5;
+    --ink:#1C1615; --muted:#756E6C; --line:#ECE5E3; --line-strong:#DBD2D0;
+    --new-bg:#FCE7E7; --new-ink:#B01823; --imp-bg:#DCF1F1; --imp-ink:#0C6A72;
+    --fix-bg:#EAE7E6; --fix-ink:#5C5553; --spine:#E4DBD9;
+    --shadow:0 1px 2px rgba(28,22,21,.04), 0 8px 30px -18px rgba(28,22,21,.18);
+  }
+  :root[data-theme="dark"]{
+    --brand:#FF525C; --brand-deep:#FF6B73;
+    --ground:#141010; --surface:#1D1817; --surface-2:#241A1A;
+    --ink:#F3EEEC; --muted:#A69E9C; --line:#2D2624; --line-strong:#3A312F;
+    --new-bg:#3A1B1D; --new-ink:#FF9AA0; --imp-bg:#12312F; --imp-ink:#6FD3D0;
+    --fix-bg:#2A2422; --fix-ink:#B6ADAA; --spine:#312825;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px -18px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--font); line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 80px;}
+
+  header.masthead{margin-bottom:clamp(36px,6vw,60px);}
+  .brandline{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .wordmark{
+    font-size:clamp(30px,6vw,44px); font-weight:800; letter-spacing:-.03em;
+    line-height:1; margin:0;
+  }
+  .wordmark .yes{color:var(--brand);}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 14px;
+  }
+  .lede{
+    max-width:60ch; margin:16px 0 0; color:var(--muted); font-size:clamp(15px,2vw,17px);
+    text-wrap:pretty;
+  }
+  .lede strong{color:var(--ink); font-weight:600;}
+
+  .timeline{position:relative; margin-top:8px;}
+  .timeline::before{
+    content:""; position:absolute; left:48px; top:14px; bottom:10px;
+    width:2px; background:linear-gradient(var(--spine), var(--spine) 70%, transparent);
+  }
+  .release{
+    --chip-w:96px;
+    position:relative; display:grid;
+    grid-template-columns:var(--chip-w) 1fr; gap:clamp(16px,3vw,34px);
+    padding:22px 0 30px;
+  }
+  .release + .release{border-top:1px solid var(--line);}
+  .rail{position:relative;}
+  .chip{
+    position:relative; z-index:1;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.01em;
+    padding:6px 0; width:var(--chip-w); border-radius:999px;
+    background:var(--surface); color:var(--ink);
+    border:1px solid var(--line-strong); box-shadow:var(--shadow);
+    font-variant-numeric:tabular-nums;
+  }
+  .release.current .chip{background:var(--brand); color:#fff; border-color:transparent;}
+  .badge-current{
+    display:block; margin-top:10px; text-align:center;
+    font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--brand); font-weight:600;
+  }
+
+  .body h2{
+    font-size:clamp(18px,2.4vw,21px); font-weight:700; letter-spacing:-.01em;
+    margin:2px 0 4px; text-wrap:balance;
+  }
+  .body .sub{margin:0 0 16px; color:var(--muted); font-size:14.5px;}
+  .release.current .body{
+    background:var(--surface-2); border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; margin-top:-6px;
+  }
+
+  ul.changes{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+  ul.changes li{display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start;}
+  .tag{
+    display:inline-block; min-width:96px; text-align:center;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.05em; text-transform:uppercase;
+    font-weight:600; padding:4px 8px; border-radius:6px; margin-top:2px; white-space:nowrap;
+  }
+  .tag.new{background:var(--new-bg); color:var(--new-ink);}
+  .tag.imp{background:var(--imp-bg); color:var(--imp-ink);}
+  .tag.fix{background:var(--fix-bg); color:var(--fix-ink);}
+  .change-text{font-size:15px;}
+  .change-text b{font-weight:600;}
+
+  footer{
+    margin-top:56px; padding-top:26px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:13.5px; display:flex; flex-direction:column; gap:8px;
+  }
+  footer .sig{display:flex; align-items:center; gap:9px; color:var(--ink); font-weight:600; font-size:14px;}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--brand); flex:none;}
+
+  @media (max-width:560px){
+    .timeline::before{display:none;}
+    .release{grid-template-columns:1fr; gap:12px;}
+    .rail{display:flex; align-items:center; gap:12px;}
+    .chip{width:auto; padding:5px 14px;}
+    .badge-current{margin:0; text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Versionsverlauf · Desktop</p>
+    <div class="brandline">
+      <h1 class="wordmark"><span class="yes">Yes</span>PDF</h1>
+    </div>
+    <p class="lede">
+      Die Entwicklungsgeschichte unserer Enterprise-PDF-Plattform. Jede Version ist
+      <strong>code-signiert und mit Zeitstempel versehen</strong> – entwickelt für die sichere On-Premise-Bereitstellung.
+    </p>
+  </header>
+
+  <div class="timeline">
+
+    <article class="release current">
+      <div class="rail">
+        <span class="chip">1.6.0</span>
+        <span class="badge-current">Aktuell</span>
+      </div>
+      <div class="body">
+        <h2>Arabische durchsuchbare PDFs, Kopierqualität und mehrsprachige Oberfläche</h2>
+        <p class="sub">Unsere umfassendste Version – mit Fokus auf Dokumentenerkennung und mehrsprachige Nutzung.</p>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Arabische (rechts-nach-links) durchsuchbare PDFs.</b> Gescannte arabische Dokumente sind jetzt durchsuchbar und kopierbar; der Text wird in Standard-Viewern korrekt wiedergegeben.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>XML → PDF-Erzeugung.</b> Erstellen Sie PDFs aus XML-Dateien mit fertigen Vorlagen (Allgemein, Rechnung, Bericht, Beleg) – einschließlich E-Rechnungen.</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>Kopierqualität durchsuchbarer PDFs.</b> Aus türkischen und englischen Dokumenten kopierter Text behält jetzt die vollständige Zeilenintegrität.</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>Mehrsprachige Oberfläche.</b> Unterstützung für Deutsch, Spanisch, Französisch und Portugiesisch hinzugefügt.</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>Unterbrechungsfreie Konvertierungen.</b> Jede Konvertierung läuft im Hintergrund – arbeiten Sie mit anderen Dokumenten weiter, während ein Vorgang läuft.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>OCR-Sprachauswahl.</b> Die gewählte Dokumentsprache wird jetzt in jedem Fall korrekt angewendet.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.8</span></div>
+      <div class="body">
+        <h2>Unterbrechungsfreie Konvertierungen</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Alle Dokumentkonvertierungen wurden für den Hintergrundbetrieb neu gestaltet.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.7</span></div>
+      <div class="body">
+        <h2>Türkische Zeichen &amp; Word-Kompatibilität</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Behoben</span><span class="change-text">Das türkische <b>„İ“</b> wird jetzt korrekt in Word-Dokumente übertragen.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text">Im Web erstellte Word-Dokumente lassen sich problemlos öffnen.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.6</span></div>
+      <div class="body">
+        <h2>Dokumentenanalyse</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text">Werkzeug <b>„Dokumentenanalyse (Document Intelligence)“</b> hinzugefügt.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.5</span></div>
+      <div class="body">
+        <h2>Schnellere OCR</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Neue OCR-Engine – <b>41–56 % schnelleres</b> Scannen.</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text">OCR läuft im Hintergrund; ein detaillierter Verarbeitungsbericht wurde hinzugefügt.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.4</span></div>
+      <div class="body">
+        <h2>Automatische Seitenausrichtung</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Die neue OCR-Engine korrigiert die Ausrichtung gescannter Seiten automatisch.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.3</span></div>
+      <div class="body">
+        <h2>Hochpräzise OCR &amp; Lizenzsicherheit</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Hochpräzise OCR-Engine.</b></span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Lizenzprüfung und Zugriffssicherheit der Werkzeuge gestärkt.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.x</span></div>
+      <div class="body">
+        <h2>Stabilität &amp; Verteilung</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Verbesserungen an Stabilität, Lizenzablauf und signierten Installationspaketen.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.4.0</span></div>
+      <div class="body">
+        <h2>Moderne Anmeldung</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text"><b>QR-Code-Anmeldung</b> – bestätigen Sie den auf dem Desktop angezeigten Code mit Ihrem Mobilgerät.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Browser-Anmeldung</b> – mit Google oder Unternehmens-SSO.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.9</span></div>
+      <div class="body">
+        <h2>Ehrliche Fortschrittsanzeige</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Echte Fortschrittsanzeige und Vorgangszähler; allgemeine Stabilitätsverbesserungen.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.8</span></div>
+      <div class="body">
+        <h2>„Speichern unter“ beim Drucken</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text">„Speichern unter“-Ablauf für gedruckte PDFs; das Speicherfenster öffnet sich im Vordergrund.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.6</span></div>
+      <div class="body">
+        <h2>Vereinfachte Bearbeitung</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text">Eine schlankere Bearbeitungsleiste, ein einziges „Speichern“ und „An Seite anpassen“.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.5</span></div>
+      <div class="body">
+        <h2>Breite PDF-Kompatibilität</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Behoben</span><span class="change-text">Mit abweichender Kodierung (BOM) gespeicherte PDFs lassen sich jetzt öffnen.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.4</span></div>
+      <div class="body">
+        <h2>Verbesserungen bei der Anzeige</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text">Rechtsklick-Menü bei der Anzeige und Suche im Dokument.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.3</span></div>
+      <div class="body">
+        <h2>E-Rechnungs-Anzeige</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text"><b>E-Rechnung XML → PDF</b>-Konvertierung.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.2</span></div>
+      <div class="body">
+        <h2>Online-Dokumente &amp; Dashboard</h2>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text">„Meine Online-Dokumente“ und personalisierte Dashboard-Ansichten.</span></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <div class="sig"><span class="dot"></span>YES Bilişim Teknolojileri A.Ş.</div>
+    <div>Alle Versionen sind code-signiert und mit Zeitstempel versehen. Für die Unternehmensbereitstellung sollte das Herausgeberzertifikat zur Liste der vertrauenswürdigen Herausgeber der Organisation hinzugefügt werden.</div>
+  </footer>
+</div>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
