@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesPDF On-Prem — Historique des versions</title>
+<!-- NOTE : contenu compilé à partir des notes de session ; vérifier les dates et le périmètre avant publication. -->
+<style>
+  :root{
+    --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+    --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  }
+  :root[data-theme="dark"]{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  :root[data-theme="light"]{ --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+           --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.65 "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:56px 24px 72px; }
+
+  header h1{
+    font-size:clamp(26px,4vw,34px); font-weight:650; letter-spacing:-0.02em;
+    margin:0 0 6px; text-wrap:balance;
+  }
+  header p{ margin:0; color:var(--muted); max-width:60ch; }
+  header{ padding-bottom:28px; border-bottom:2px solid var(--accent); margin-bottom:8px; }
+
+  .series{ margin-top:40px; }
+  .series > h2{
+    font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 4px;
+  }
+
+  .release{ display:grid; grid-template-columns:118px 1fr; gap:20px;
+            padding:26px 0; border-bottom:1px solid var(--line); }
+  .release:last-child{ border-bottom:none; }
+
+  .vcol{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .ver{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-size:14px; font-weight:600; color:var(--accent);
+    background:var(--chip); border:1px solid var(--line);
+    padding:3px 9px; border-radius:4px; white-space:nowrap;
+  }
+  .release.major .ver{ color:var(--copper); border-color:var(--copper); }
+  .date{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  }
+
+  .rcol h3{ margin:0 0 8px; font-size:18px; font-weight:650; letter-spacing:-0.01em; }
+  .rcol ul{ margin:0; padding-left:18px; }
+  .rcol li{ margin:5px 0; }
+  .rcol li::marker{ color:var(--accent); }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .tag{
+    font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px; border:1px solid var(--line); color:var(--muted);
+  }
+  .tag.new{ color:var(--accent); border-color:var(--accent); }
+  .tag.perf{ color:var(--copper); border-color:var(--copper); }
+
+  footer{ margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+          font-size:13.5px; color:var(--muted); }
+
+  @media (max-width:560px){
+    .release{ grid-template-columns:1fr; gap:8px; }
+    .vcol{ flex-direction:row; align-items:center; gap:12px; }
+  }
+</style>
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/onprem-fr.html">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>YesPDF On-Prem — Historique des versions</h1>
+  <p>Nouveautés, améliorations et corrections de votre plateforme de gestion PDF on-premises, version par version.</p>
+</header>
+
+<!-- ============ SÉRIE 1.7 ============ -->
+<section class="series">
+  <h2>Série 1.7 — Documents numérisés modifiables</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.2.1</span><span class="date">13/07/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performance</span></div>
+      <h3>Accélération multicœur de la conversion en document modifiable</h3>
+      <ul>
+        <li>La fonction «&nbsp;Rendre modifiable&nbsp;» est désormais <strong>jusqu&rsquo;à 4&nbsp;fois plus rapide</strong> pour les documents numérisés grâce au prétraitement OCR parallèle (un document type de 47&nbsp;pages passe d&rsquo;environ 23&nbsp;min à environ 5&nbsp;min).</li>
+        <li>Le parallélisme OCR est configurable pour s&rsquo;adapter au matériel des serveurs multicœurs.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.2.0</span><span class="date">13/07/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>
+      <h3>Rendre les PDF numérisés modifiables — moteur de nouvelle génération</h3>
+      <ul>
+        <li><strong>Technologie de calque fidèle&nbsp;:</strong> les documents numérisés deviennent modifiables tout en préservant l&rsquo;image d&rsquo;origine — tampons, sceaux et signatures restent exactement à leur place, et le texte est modifiable mot par mot.</li>
+        <li>Indice de confiance qualité&nbsp;: chaque conversion indique la proportion du document rendue modifiable de manière fiable.</li>
+        <li>Détection intelligente des documents&nbsp;: les documents créés numériquement (non numérisés) sont protégés de tout traitement inutile.</li>
+        <li>Correction automatique de l&rsquo;orientation des pages numérisées pivotées.</li>
+        <li>Correspondance des polices au niveau du mot, avec détection du gras et des polices à empattement.</li>
+        <li>Les paquets d&rsquo;installation et les composants de l&rsquo;application sont désormais signés numériquement (Authenticode avec horodatage).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.0.0</span><span class="date">08/07/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Amélioration</span><span class="tag">Compatibilité</span></div>
+      <h3>Pack de précision OCR et prise en charge des grandes archives</h3>
+      <ul>
+        <li>Précision accrue de la couche de texte lors de la génération de PDF interrogeables&nbsp;; problème de texte dupliqué corrigé.</li>
+        <li>Optimisation de la résolution (DPI) du moteur OCR — meilleure précision de reconnaissance des caractères turcs.</li>
+        <li>Les opérations en masse portant sur plus de 2&nbsp;000 documents (archivage, restauration, suppression, partage, fusion) ont été consolidées pour un fonctionnement fiable avec Microsoft SQL Server.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ SÉRIE 1.6 ============ -->
+<section class="series">
+  <h2>Série 1.6 — Maturité et intégration en entreprise</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.8</span><span class="date">07/07/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Compatibilité</span><span class="tag">Sécurité</span></div>
+      <h3>Synchronisation LDAP pour les grands annuaires</h3>
+      <ul>
+        <li>Correction de la synchronisation de plus de 2&nbsp;000 utilisateurs depuis Active Directory dans les environnements Microsoft SQL Server.</li>
+        <li>Paquet d&rsquo;installation signé (compatibilité avec les solutions de sécurité des postes en entreprise).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.x</span><span class="date">juin–juil. 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performance</span><span class="tag">Amélioration</span></div>
+      <h3>OCR parallèle et PDF interrogeable non destructif</h3>
+      <ul>
+        <li>OCR parallèle multicœur&nbsp;: la génération de PDF interrogeables et les conversions Office (Word, Excel, PowerPoint) sont nettement plus rapides.</li>
+        <li>PDF interrogeable non destructif&nbsp;: la qualité d&rsquo;image d&rsquo;origine et la structure du fichier sont préservées lors de l&rsquo;OCR.</li>
+        <li>Améliorations de la prise en charge HTTPS et des certificats d&rsquo;entreprise.</li>
+        <li>Pack de diagnostic support étendu (rapports d&rsquo;état&nbsp;: version, réseau, base de données et LDAP).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.6.0</span><span class="date">2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Plateforme</span></div>
+      <h3>Prise en charge de Linux et infrastructure d&rsquo;audit</h3>
+      <ul>
+        <li><strong>Édition Linux&nbsp;:</strong> prise en charge complète de la plateforme sur les distributions Pardus et dérivées de Debian.</li>
+        <li>Affichage des documents en arabe et en écriture de droite à gauche (RTL).</li>
+        <li>Moteur de conversion natif haute fidélité pour les conversions Word et PowerPoint.</li>
+        <li>Transmission des journaux d&rsquo;audit de l&rsquo;application de bureau vers le serveur central (intégration d&rsquo;audit).</li>
+        <li>Intégration LDAP / Active Directory&nbsp;: connexions sécurisées (LDAPS) et synchronisation automatique planifiée.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ SÉRIE 1.5 ============ -->
+<section class="series">
+  <h2>Série 1.5 — Plateforme de base</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.5.x</span><span class="date">2025–2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Socle</span></div>
+      <h3>Fondations de la plateforme de gestion PDF on-premises</h3>
+      <ul>
+        <li>Affichage et édition via le web&nbsp;; gestion documentaire, dossiers et partage.</li>
+        <li>Outils de conversion&nbsp;: PDF ↔ Word, Excel, PowerPoint, HTML et formats d&rsquo;image.</li>
+        <li>Outils PDF&nbsp;: fusion, découpage, compression, rotation, gestion des pages, filigrane.</li>
+        <li>Génération de PDF interrogeables par OCR dans plus de 14 langues.</li>
+        <li>Prise en charge de la signature électronique et de l&rsquo;horodatage (PAdES).</li>
+        <li>Stockage chiffré des documents sur le serveur&nbsp;; gestion des utilisateurs, des rôles et des droits.</li>
+        <li>Prise en charge des bases de données PostgreSQL (intégrée) et Microsoft SQL Server.</li>
+        <li>Réception de documents par e-mail et prise en charge du format UYAP UDF.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<footer>
+  Cette page résume les changements notables. Pour les détails propres à chaque version et
+  l&rsquo;assistance à la mise à niveau, veuillez contacter l&rsquo;équipe support de YES Bilişim.
+</footer>
+
+</div>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
