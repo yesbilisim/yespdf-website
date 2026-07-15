@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YesPDF Desktop — Sürüm Geçmişi</title>
+<meta name="description" content="YesPDF Desktop sürüm geçmişi. Her sürüm kod imzalı ve zaman damgalıdır; güvenli on-premise dağıtım için tasarlanır.">
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/desktop-tr.html">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yespdf.com.tr/surum-gecmisi/desktop-tr.html">
+<meta property="og:title" content="YesPDF Desktop — Sürüm Geçmişi">
+<meta property="og:description" content="YesPDF Desktop'ın gelişim kaydı — kod imzalı, zaman damgalı, on-premise.">
+<style>
+  :root{
+    --brand:#E8323C; --brand-deep:#C21A24;
+    --ground:#FBF9F8; --surface:#FFFFFF; --surface-2:#FEF6F5;
+    --ink:#1C1615; --muted:#756E6C; --line:#ECE5E3; --line-strong:#DBD2D0;
+    --new-bg:#FCE7E7; --new-ink:#B01823;
+    --imp-bg:#DCF1F1; --imp-ink:#0C6A72;
+    --fix-bg:#EAE7E6; --fix-ink:#5C5553;
+    --spine:#E4DBD9;
+    --shadow:0 1px 2px rgba(28,22,21,.04), 0 8px 30px -18px rgba(28,22,21,.18);
+    --font:-apple-system,"Segoe UI",system-ui,Roboto,"Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,"Cascadia Code","SF Mono","JetBrains Mono",Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --brand:#FF525C; --brand-deep:#FF6B73;
+      --ground:#141010; --surface:#1D1817; --surface-2:#241A1A;
+      --ink:#F3EEEC; --muted:#A69E9C; --line:#2D2624; --line-strong:#3A312F;
+      --new-bg:#3A1B1D; --new-ink:#FF9AA0;
+      --imp-bg:#12312F; --imp-ink:#6FD3D0;
+      --fix-bg:#2A2422; --fix-ink:#B6ADAA;
+      --spine:#312825;
+      --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px -18px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="light"]{
+    --brand:#E8323C; --brand-deep:#C21A24;
+    --ground:#FBF9F8; --surface:#FFFFFF; --surface-2:#FEF6F5;
+    --ink:#1C1615; --muted:#756E6C; --line:#ECE5E3; --line-strong:#DBD2D0;
+    --new-bg:#FCE7E7; --new-ink:#B01823; --imp-bg:#DCF1F1; --imp-ink:#0C6A72;
+    --fix-bg:#EAE7E6; --fix-ink:#5C5553; --spine:#E4DBD9;
+    --shadow:0 1px 2px rgba(28,22,21,.04), 0 8px 30px -18px rgba(28,22,21,.18);
+  }
+  :root[data-theme="dark"]{
+    --brand:#FF525C; --brand-deep:#FF6B73;
+    --ground:#141010; --surface:#1D1817; --surface-2:#241A1A;
+    --ink:#F3EEEC; --muted:#A69E9C; --line:#2D2624; --line-strong:#3A312F;
+    --new-bg:#3A1B1D; --new-ink:#FF9AA0; --imp-bg:#12312F; --imp-ink:#6FD3D0;
+    --fix-bg:#2A2422; --fix-ink:#B6ADAA; --spine:#312825;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 10px 34px -18px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--font); line-height:1.6;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:clamp(28px,5vw,64px) clamp(18px,4vw,40px) 80px;}
+
+  header.masthead{margin-bottom:clamp(36px,6vw,60px);}
+  .brandline{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+  .wordmark{
+    font-size:clamp(30px,6vw,44px); font-weight:800; letter-spacing:-.03em;
+    line-height:1; margin:0;
+  }
+  .wordmark .yes{color:var(--brand);}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--muted); margin:0 0 14px;
+  }
+  .lede{
+    max-width:60ch; margin:16px 0 0; color:var(--muted); font-size:clamp(15px,2vw,17px);
+    text-wrap:pretty;
+  }
+  .lede strong{color:var(--ink); font-weight:600;}
+
+  .timeline{position:relative; margin-top:8px;}
+  .timeline::before{
+    content:""; position:absolute; left:48px; top:14px; bottom:10px;
+    width:2px; background:linear-gradient(var(--spine), var(--spine) 70%, transparent);
+  }
+  .release{
+    --chip-w:96px;
+    position:relative; display:grid;
+    grid-template-columns:var(--chip-w) 1fr; gap:clamp(16px,3vw,34px);
+    padding:22px 0 30px;
+  }
+  .release + .release{border-top:1px solid var(--line);}
+  .rail{position:relative;}
+  .chip{
+    position:relative; z-index:1;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:14px; font-weight:600; letter-spacing:.01em;
+    padding:6px 0; width:var(--chip-w); border-radius:999px;
+    background:var(--surface); color:var(--ink);
+    border:1px solid var(--line-strong); box-shadow:var(--shadow);
+    font-variant-numeric:tabular-nums;
+  }
+  .release.current .chip{background:var(--brand); color:#fff; border-color:transparent;}
+  .badge-current{
+    display:block; margin-top:10px; text-align:center;
+    font-family:var(--mono); font-size:10px; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--brand); font-weight:600;
+  }
+
+  .body h2{
+    font-size:clamp(18px,2.4vw,21px); font-weight:700; letter-spacing:-.01em;
+    margin:2px 0 4px; text-wrap:balance;
+  }
+  .body .sub{margin:0 0 16px; color:var(--muted); font-size:14.5px;}
+  .release.current .body{
+    background:var(--surface-2); border:1px solid var(--line);
+    border-radius:14px; padding:20px 22px; margin-top:-6px;
+  }
+
+  ul.changes{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+  ul.changes li{display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start;}
+  .tag{
+    display:inline-block; min-width:88px; text-align:center;
+    font-family:var(--mono); font-size:10.5px; letter-spacing:.06em; text-transform:uppercase;
+    font-weight:600; padding:4px 8px; border-radius:6px; margin-top:2px; white-space:nowrap;
+  }
+  .tag.new{background:var(--new-bg); color:var(--new-ink);}
+  .tag.imp{background:var(--imp-bg); color:var(--imp-ink);}
+  .tag.fix{background:var(--fix-bg); color:var(--fix-ink);}
+  .change-text{font-size:15px;}
+  .change-text b{font-weight:600;}
+
+  footer{
+    margin-top:56px; padding-top:26px; border-top:1px solid var(--line);
+    color:var(--muted); font-size:13.5px; display:flex; flex-direction:column; gap:8px;
+  }
+  footer .sig{display:flex; align-items:center; gap:9px; color:var(--ink); font-weight:600; font-size:14px;}
+  .dot{width:8px; height:8px; border-radius:50%; background:var(--brand); flex:none;}
+
+  @media (max-width:560px){
+    .timeline::before{display:none;}
+    .release{grid-template-columns:1fr; gap:12px;}
+    .rail{display:flex; align-items:center; gap:12px;}
+    .chip{width:auto; padding:5px 14px;}
+    .badge-current{margin:0; text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Sürüm Geçmişi · Desktop</p>
+    <div class="brandline">
+      <h1 class="wordmark"><span class="yes">Yes</span>PDF</h1>
+    </div>
+    <p class="lede">
+      Kurumsal PDF çözümümüzün gelişim kaydı. Her sürüm imzalı olarak yayınlanır.
+      <strong>WellPDF</strong> aynı çekirdeği paylaşan marka varyantıdır; aşağıdaki tüm yenilikler her iki ürün için geçerlidir.
+    </p>
+  </header>
+
+  <div class="timeline">
+
+    <article class="release current">
+      <div class="rail">
+        <span class="chip">1.6.0</span>
+        <span class="badge-current">Güncel</span>
+      </div>
+      <div class="body">
+        <h2>Arapça aranabilir PDF, kopyalama kalitesi ve çok dilli arayüz</h2>
+        <p class="sub">En kapsamlı sürüm — belge tanıma ve çok dilli kullanım odaklı.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Arapça (sağdan-sola) aranabilir PDF.</b> Taranmış Arapça belgeler artık aranabilir ve kopyalanabilir; metin standart görüntüleyicilerde düzgün gelir.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>XML → PDF üretimi.</b> XML dosyalarından hazır şablonlarla (Genel, Fatura, Rapor, Dekont) PDF oluşturma — e-fatura dahil.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Aranabilir PDF kopyalama kalitesi.</b> Türkçe ve İngilizce belgelerde kopyalanan metin artık satır bütünlüğüyle gelir.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Çok dilli arayüz.</b> Almanca, İspanyolca, Fransızca ve Portekizce arayüz desteği eklendi.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Kesintisiz dönüştürme.</b> Tüm dönüştürme işlemleri arka planda çalışır; işlem sürerken başka belgelerle çalışmaya devam edebilirsiniz.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>OCR dil seçimi.</b> Seçilen belge dili artık her koşulda doğru uygulanır.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.8</span></div>
+      <div class="body">
+        <h2>Kesintisiz dönüştürme</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Tüm belge dönüştürme işlemleri arka planda çalışacak şekilde yeniden tasarlandı.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.7</span></div>
+      <div class="body">
+        <h2>Türkçe karakter ve Word uyumu</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text">Türkçe <b>“İ”</b> karakteri Word belgelerine doğru aktarılır.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text">Web üzerinde oluşturulan Word belgeleri sorunsuz açılır.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.6</span></div>
+      <div class="body">
+        <h2>Belge Analizi</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Belge Analizi (Belge Zekâsı)</b> aracı eklendi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.5</span></div>
+      <div class="body">
+        <h2>Daha hızlı OCR</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Yeni OCR motoru — <b>%41–56 daha hızlı</b> tarama.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">OCR arka planda çalışır; ayrıntılı İşlem Raporu eklendi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.4</span></div>
+      <div class="body">
+        <h2>Otomatik sayfa yönü</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Yeni OCR motoru taranan sayfaların yönünü otomatik düzeltir.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.3</span></div>
+      <div class="body">
+        <h2>Yüksek doğruluklu OCR ve lisans güvenliği</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Yüksek doğruluklu OCR motoru.</b></span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Lisans doğrulama ve araç erişim güvenliği güçlendirildi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.5.x</span></div>
+      <div class="body">
+        <h2>Kararlılık ve dağıtım</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Kararlılık, lisans akışı ve imzalı kurulum paketlerinde iyileştirmeler (YesPDF &amp; WellPDF).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.4.0</span></div>
+      <div class="body">
+        <h2>Modern giriş yöntemleri</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>QR kod ile giriş</b> — masaüstünde beliren kodu mobil cihazınızla onaylayın.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Tarayıcıdan giriş</b> — Google veya kurumsal SSO oturumuyla.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.9</span></div>
+      <div class="body">
+        <h2>Dürüst ilerleme göstergesi</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Gerçek ilerleme çubuğu ve işlem sayaçları; genel kararlılık iyileştirmeleri.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.8</span></div>
+      <div class="body">
+        <h2>Yazdırmada “Farklı Kaydet”</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text">Yazdırılan PDF’ler için “Farklı Kaydet” akışı; kayıt penceresi ön planda açılır.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.6</span></div>
+      <div class="body">
+        <h2>Sadeleştirilmiş düzenleme</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text">Daha sade düzenleme araç çubuğu, tek “Kaydet” ve “Sayfaya Sığdır”.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.5</span></div>
+      <div class="body">
+        <h2>Geniş PDF uyumu</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text">Farklı kodlamayla (BOM) kaydedilmiş PDF’ler artık açılır.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.4</span></div>
+      <div class="body">
+        <h2>Görüntüleme iyileştirmeleri</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text">Görüntülemede sağ-tık menüsü ve Türkçe arama.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.3</span></div>
+      <div class="body">
+        <h2>e-Fatura görüntüleme</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>e-Fatura XML → PDF</b> dönüştürme.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.3.2</span></div>
+      <div class="body">
+        <h2>Online belgeler ve kontrol paneli</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text">Online Belgelerim ve kişiselleştirilmiş kontrol paneli görünümleri.</span></li>
+        </ul>
+      </div>
+    </article>
+
+  </div>
+
+  <footer>
+    <div class="sig"><span class="dot"></span>YES Bilişim Teknolojileri A.Ş.</div>
+    <div>Tüm sürümler kod imzalıdır (zaman damgalı). Kurumsal dağıtımda yayımcı sertifikası, güvenilen yayımcılar listesine eklenmelidir.</div>
+  </footer>
+</div>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
