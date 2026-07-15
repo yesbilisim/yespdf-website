@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesPDF On-Prem — Sürüm Geçmişi</title>
+<!-- NOT: İçerik oturum hafızasından derlenmiştir; yayınlamadan önce tarih ve kapsamları doğrulayın. -->
+<style>
+  :root{
+    --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+    --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  }
+  :root[data-theme="dark"]{ --paper:#0C171D; --ink:#DFE9EC; --muted:#93A8B0;
+           --accent:#3BAAB4; --copper:#D98352; --line:#1F3038; --chip:#152730; }
+  :root[data-theme="light"]{ --paper:#F6F9FA; --ink:#14232B; --muted:#5A7079;
+           --accent:#0E7C86; --copper:#BE5D2A; --line:#D9E3E7; --chip:#EAF1F3; }
+
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font:16px/1.65 "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  .wrap{ max-width:760px; margin:0 auto; padding:56px 24px 72px; }
+
+  header h1{
+    font-size:clamp(26px,4vw,34px); font-weight:650; letter-spacing:-0.02em;
+    margin:0 0 6px; text-wrap:balance;
+  }
+  header p{ margin:0; color:var(--muted); max-width:60ch; }
+  header{ padding-bottom:28px; border-bottom:2px solid var(--accent); margin-bottom:8px; }
+
+  .series{ margin-top:40px; }
+  .series > h2{
+    font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--accent); margin:0 0 4px;
+  }
+
+  .release{ display:grid; grid-template-columns:118px 1fr; gap:20px;
+            padding:26px 0; border-bottom:1px solid var(--line); }
+  .release:last-child{ border-bottom:none; }
+
+  .vcol{ display:flex; flex-direction:column; gap:6px; align-items:flex-start; }
+  .ver{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-size:14px; font-weight:600; color:var(--accent);
+    background:var(--chip); border:1px solid var(--line);
+    padding:3px 9px; border-radius:4px; white-space:nowrap;
+  }
+  .release.major .ver{ color:var(--copper); border-color:var(--copper); }
+  .date{
+    font-family:"Cascadia Code", Consolas, ui-monospace, monospace;
+    font-variant-numeric:tabular-nums; font-size:12.5px; color:var(--muted);
+  }
+
+  .rcol h3{ margin:0 0 8px; font-size:18px; font-weight:650; letter-spacing:-0.01em; }
+  .rcol ul{ margin:0; padding-left:18px; }
+  .rcol li{ margin:5px 0; }
+  .rcol li::marker{ color:var(--accent); }
+
+  .tags{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+  .tag{
+    font-size:11px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;
+    padding:2px 8px; border-radius:3px; border:1px solid var(--line); color:var(--muted);
+  }
+  .tag.new{ color:var(--accent); border-color:var(--accent); }
+  .tag.perf{ color:var(--copper); border-color:var(--copper); }
+
+  footer{ margin-top:48px; padding-top:20px; border-top:1px solid var(--line);
+          font-size:13.5px; color:var(--muted); }
+
+  @media (max-width:560px){
+    .release{ grid-template-columns:1fr; gap:8px; }
+    .vcol{ flex-direction:row; align-items:center; gap:12px; }
+  }
+</style>
+<link rel="canonical" href="https://yespdf.com.tr/surum-gecmisi/onprem-tr.html">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>YesPDF On-Prem — Sürüm Geçmişi</h1>
+  <p>Kurum içi PDF yönetim platformunuzdaki öne çıkan yenilikler, iyileştirmeler ve düzeltmeler.</p>
+</header>
+
+<!-- ============ 1.7 SERİSİ ============ -->
+<section class="series">
+  <h2>1.7 Serisi — Düzenlenebilir Taranmış Belgeler</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.2.1</span><span class="date">13.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performans</span></div>
+      <h3>Düzenlenebilir dönüşümde çok çekirdekli hızlandırma</h3>
+      <ul>
+        <li>Taranmış belgelerde &ldquo;Düzenlenebilir Yap&rdquo; işlemi paralel OCR ön-işleme ile <strong>4 kata kadar hızlandı</strong> (47 sayfalık örnek belgede ~23 dk → ~5 dk).</li>
+        <li>Çok çekirdekli sunucularda OCR paralelliği donanıma göre yapılandırılabilir.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.2.0</span><span class="date">13.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Güvenlik</span></div>
+      <h3>Taranmış PDF&rsquo;leri düzenlenebilir yapma — yeni nesil motor</h3>
+      <ul>
+        <li><strong>Sadık katman teknolojisi:</strong> taranmış belge, orijinal görüntüsü korunarak düzenlenebilir hale gelir — kaşe, mühür ve imzalar aynen yerinde kalır, metin kelime kelime düzenlenebilir.</li>
+        <li>Kalite güven skoru: her dönüşümde belgenin ne kadarının güvenle düzenlenebilir yapıldığı raporlanır.</li>
+        <li>Akıllı belge tespiti: dijital üretilmiş (taranmamış) belgeler gereksiz işlemden korunur.</li>
+        <li>Döndürülmüş taranmış sayfalarda otomatik yön düzeltme.</li>
+        <li>Kelime bazlı font eşleştirme ve kalın/serif yazı tipi tespiti.</li>
+        <li>Kurulum paketleri ve uygulama bileşenleri artık kod imzalı (Authenticode + zaman damgası).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.0.0</span><span class="date">08.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">İyileştirme</span><span class="tag">Uyumluluk</span></div>
+      <h3>OCR doğruluk paketi ve büyük arşiv desteği</h3>
+      <ul>
+        <li>Aranabilir PDF üretiminde metin katmanı doğruluğu artırıldı; çift metin oluşumu giderildi.</li>
+        <li>OCR motoruna çözünürlük (DPI) optimizasyonu — Türkçe karakter tanıma doğruluğu iyileştirildi.</li>
+        <li>Microsoft SQL Server üzerinde 2.000&rsquo;den fazla belgeyle yapılan toplu işlemler (arşivleme, geri yükleme, silme, paylaşma, birleştirme) sorunsuz çalışacak şekilde güçlendirildi.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 1.6 SERİSİ ============ -->
+<section class="series">
+  <h2>1.6 Serisi — Olgunlaşma ve Kurumsal Entegrasyon</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.8</span><span class="date">07.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Uyumluluk</span><span class="tag">Güvenlik</span></div>
+      <h3>Büyük dizinlerde LDAP senkronizasyonu</h3>
+      <ul>
+        <li>Active Directory&rsquo;den 2.000&rsquo;den fazla kullanıcının senkronizasyonu Microsoft SQL Server ortamlarında düzeltildi.</li>
+        <li>İmzalı kurulum paketi (kurumsal uç nokta güvenlik çözümleriyle uyum).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.6.7.x</span><span class="date">Haziran–Temmuz 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag perf">Performans</span><span class="tag">İyileştirme</span></div>
+      <h3>Paralel OCR ve tahribatsız aranabilir PDF</h3>
+      <ul>
+        <li>Çok çekirdekli paralel OCR: aranabilir PDF üretimi ve Office dönüşümleri (Word, Excel, PowerPoint) belirgin şekilde hızlandı.</li>
+        <li>Tahribatsız aranabilir PDF: OCR sırasında orijinal görüntü kalitesi ve dosya yapısı korunur.</li>
+        <li>HTTPS ve kurumsal sertifika desteği iyileştirmeleri.</li>
+        <li>Destek tanılama paketi genişletildi (sürüm, ağ, veritabanı ve LDAP durum raporları).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.6.0</span><span class="date">2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Platform</span></div>
+      <h3>Linux desteği ve denetim altyapısı</h3>
+      <ul>
+        <li><strong>Linux sürümü:</strong> Pardus ve Debian tabanlı dağıtımlarda tam platform desteği.</li>
+        <li>Arapça ve sağdan-sola (RTL) belge görüntüleme desteği.</li>
+        <li>Word ve PowerPoint dönüşümlerinde yüksek doğruluklu yerleşik dönüştürme motoru.</li>
+        <li>Masaüstü uygulaması denetim kayıtlarının merkezi sunucuya aktarımı (audit entegrasyonu).</li>
+        <li>LDAP / Active Directory entegrasyonu: güvenli bağlantı (LDAPS) ve zamanlanmış otomatik senkronizasyon.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<!-- ============ 1.5 SERİSİ ============ -->
+<section class="series">
+  <h2>1.5 Serisi — Temel Platform</h2>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.5.x</span><span class="date">2025–2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Çekirdek</span></div>
+      <h3>Kurum içi PDF yönetim platformunun temelleri</h3>
+      <ul>
+        <li>Web tabanlı görüntüleme ve düzenleme; belge yönetimi, klasörleme ve paylaşım.</li>
+        <li>Dönüştürme araçları: PDF ↔ Word, Excel, PowerPoint, HTML ve görüntü formatları.</li>
+        <li>PDF araçları: birleştirme, bölme, sıkıştırma, döndürme, sayfa yönetimi, filigran.</li>
+        <li>14&rsquo;ten fazla dilde OCR ile aranabilir PDF üretimi.</li>
+        <li>Elektronik imza ve zaman damgası desteği (PAdES).</li>
+        <li>Sunucuda şifreli belge saklama; kullanıcı, rol ve yetki yönetimi.</li>
+        <li>PostgreSQL (yerleşik) ve Microsoft SQL Server veritabanı desteği.</li>
+        <li>E-posta ile belge alma ve UYAP UDF belge desteği.</li>
+      </ul>
+    </div>
+  </article>
+</section>
+
+<footer>
+  Bu sayfa öne çıkan değişiklikleri özetler. Sürüme özel ayrıntılar ve yükseltme desteği için
+  YES Bilişim destek ekibiyle iletişime geçebilirsiniz.
+</footer>
+
+</div>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
