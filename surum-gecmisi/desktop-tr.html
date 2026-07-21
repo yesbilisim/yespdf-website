@@ -163,9 +163,28 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.0</span>
+        <span class="chip">1.6.1</span>
         <span class="badge-current">Güncel</span>
       </div>
+      <div class="body">
+        <h2>Sağ-tık ile PDF’e dönüştürme, tam yerelleştirme ve dayanıklı oturum</h2>
+        <p class="sub">Günlük iş akışını hızlandıran, arayüzü tamamen yerelleştiren kapsamlı bir sürüm.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Sağ-tık → PDF’e dönüştür.</b> Office (Word/Excel/PPT), metin ve 7 görsel formatı dahil 14 dosya türü için Windows bağlam menüsü — Adobe olmadan da hızlı dönüştürme.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Belge Analizi (Belge Zekâsı)</b> aracı eklendi.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Non-blocking OCR.</b> İşlem sırasında uygulama donmuyor; sonunda İşlem Raporu (imza/kaşe, tablo, görsel sayaçları).</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Arapça aranabilir PDF tanıma</b> iyileştirildi (kod noktası normalizasyonu, satır birleştirme, mantıksal okuma sırası).</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Tam yerelleştirme.</b> Almanca, İspanyolca, Fransızca ve Portekizce için 193 eksik çeviri tamamlandı; panel, giriş/lisans/2FA/ayarlar ve araçlar tümüyle yerelleştirildi.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Oturum dayanıklılığı.</b> Lisans/oturum sunucuda düşse bile uygulama kapanmıyor; görüntüleme moduna geçip “Düzenleme için giriş yapın” bilgisi veriyor.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>OCR dil seçimi</b> artık motora doğru geçiyor (Türkçe / İngilizce / Arapça).</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Türkçe İ/Ş font sorunu</b> (Word’e gömülü font ile) çözüldü; Office belgelerinde “Birlikte aç” düzeltildi.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>İmzalı kurulum</b> (SHA-256 + DigiCert zaman damgası); CEF önbelleği artık %LOCALAPPDATA%\YesPDF\cef-cache’e yazıyor.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.0</span></div>
       <div class="body">
         <h2>Arapça aranabilir PDF, kopyalama kalitesi ve çok dilli arayüz</h2>
         <p class="sub">En kapsamlı sürüm — belge tanıma ve çok dilli kullanım odaklı.</p>

@@ -163,9 +163,28 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.0</span>
+        <span class="chip">1.6.1</span>
         <span class="badge-current">Actuelle</span>
       </div>
+      <div class="body">
+        <h2>Conversion en PDF par clic droit, localisation complète et session résiliente</h2>
+        <p class="sub">Une version complète qui accélère les flux de travail quotidiens et localise entièrement l’interface.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Clic droit → Convertir en PDF.</b> Menu contextuel Windows pour 14 types de fichiers — Office (Word/Excel/PPT), texte et 7 formats d’image — conversion rapide même sans Adobe.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text">Outil <b>« Analyse de documents (Document Intelligence) »</b> ajouté.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>OCR non bloquant.</b> L’application reste réactive pendant le traitement ; un rapport de traitement (compteurs de signatures/cachets, tableaux et images) s’affiche à la fin.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Reconnaissance des PDF arabes interrogeables</b> améliorée (normalisation des points de code, fusion de lignes, ordre de lecture logique).</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Localisation complète.</b> 193 traductions manquantes complétées pour l’allemand, l’espagnol, le français et le portugais ; tableau de bord, connexion/licence/2FA/paramètres et outils désormais entièrement localisés.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Résilience de session.</b> Si la licence/session expire sur le serveur, l’application ne se ferme plus — elle bascule en mode lecture avec la mention « Connectez-vous pour modifier ».</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Sélection de la langue OCR</b> désormais transmise correctement au moteur (turc / anglais / arabe).</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Problème de police İ/Ş turcs</b> résolu (police intégrée dans Word) ; « Ouvrir avec » pour les documents Office corrigé.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Programme d’installation signé</b> (SHA-256 + horodatage DigiCert) ; cache CEF déplacé vers %LOCALAPPDATA%\YesPDF\cef-cache.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.0</span></div>
       <div class="body">
         <h2>PDF arabe interrogeable, qualité de copie et interface multilingue</h2>
         <p class="sub">Notre version la plus complète — axée sur la reconnaissance de documents et l’usage multilingue.</p>

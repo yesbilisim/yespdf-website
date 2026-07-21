@@ -163,9 +163,28 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.0</span>
+        <span class="chip">1.6.1</span>
         <span class="badge-current">Current</span>
       </div>
+      <div class="body">
+        <h2>Right-click convert to PDF, full localization, and a resilient session</h2>
+        <p class="sub">A comprehensive release that speeds up daily workflows and fully localizes the interface.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Right-click → Convert to PDF.</b> Windows context menu for 14 file types — Office (Word/Excel/PPT), text and 7 image formats — fast conversion even without Adobe.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Document Analysis (Document Intelligence)</b> tool added.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Non-blocking OCR.</b> The app stays responsive during processing; a Processing Report (signature/stamp, table and image counts) is shown at the end.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Arabic searchable-PDF recognition</b> improved (code-point normalization, line merging, logical reading order).</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Full localization.</b> 193 missing translations completed for German, Spanish, French and Portuguese; dashboard, sign-in/license/2FA/settings and tools are now fully localized.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Session resilience.</b> If the license/session drops on the server, the app no longer closes — it falls back to view mode with a “Sign in to edit” note.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>OCR language selection</b> now passes correctly to the engine (Turkish / English / Arabic).</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish İ/Ş font issue</b> resolved (embedded font in Word); “Open with” for Office documents fixed.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Signed installer</b> (SHA-256 + DigiCert timestamp); CEF cache moved to %LOCALAPPDATA%\YesPDF\cef-cache.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.0</span></div>
       <div class="body">
         <h2>Arabic searchable PDF, copy quality, and a multilingual interface</h2>
         <p class="sub">Our most comprehensive release — focused on document recognition and multilingual use.</p>
