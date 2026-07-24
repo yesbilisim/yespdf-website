@@ -163,9 +163,35 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.1</span>
+        <span class="chip">1.6.3</span>
         <span class="badge-current">Güncel</span>
       </div>
+      <div class="body">
+        <h2>Kurulum güvenilirliği, bulut lisans uyumu ve web indirici</h2>
+        <p class="sub">Kurulum kilitlenmelerini gideren, bulut lisansını netleştiren ve indirmeyi hafifleten bakım sürümü.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Kurulum dosya kilidi giderildi.</b> Kaldırma sonrası arka planda kalan süreçler (Print Watcher, tarayıcı alt-süreçleri, OCR motoru) yeni kurulumu kilitleyebiliyordu; installer artık dosyaları kopyalamadan önce ilgili tüm süreçleri güvenle kapatıyor. &ldquo;another process&rdquo; hatası çözüldü.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Bulut lisans uyumu.</b> Bulut (çevrimiçi) kullanıcıları yanlışlıkla &ldquo;DEMO / License Inactive&rdquo; görebiliyordu; bulut kiracılarında lisans yorumlaması düzeltildi &rarr; temiz &ldquo;LICENSED&rdquo; durumu.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Lisans/plan tazeleme.</b> Çevrimiçi modda lisans doğrulama 12 saatte bir yerine 60 dakikada bir yapılıyor (plan ve premium değişiklikleri daha hızlı yansır). On-prem modda 12 saat korundu.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Marka-farkında güncelleme.</b> Otomatik güncelleme kontrolü artık doğru güncelleme sunucusunu sorguluyor (YesPDF &rarr; portal.yespdf.com.tr, WellPDF &rarr; wellpdf.com).</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Web indirici.</b> 800+ MB doğrudan indirme yerine ~1,8 MB&rsquo;lık küçük indirici; tam kurulumu arka planda, görünür ilerleme ve bağlantı koparsa kaldığı yerden devam ederek getirir. On-prem dağıtım etkilenmez (SCCM ile tam installer).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.2</span></div>
+      <div class="body">
+        <h2>.NET kurulu olmadan çalışma</h2>
+        <p class="sub">OCR motoru artık kendi çalışma zamanını içeriyor; müşteri PC&rsquo;sinde ön kurulum gerektirmez.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>&ldquo;You must install .NET to run this application&rdquo; hatası giderildi.</b> Ana uygulama kendi .NET çalışma zamanını içerse de OCR motoru (YesPDF.Ocr.Cli) framework-bağımlıydı; .NET 8 kurulu olmayan PC&rsquo;lerde OCR/tarama başarısız oluyordu (hostfxr.dll). OCR motoru da self-contained üretildi — artık hiçbir ön kurulum gerekmez.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.1</span></div>
       <div class="body">
         <h2>Sağ-tık ile PDF’e dönüştürme, tam yerelleştirme ve dayanıklı oturum</h2>
         <p class="sub">Günlük iş akışını hızlandıran, arayüzü tamamen yerelleştiren kapsamlı bir sürüm.</p>

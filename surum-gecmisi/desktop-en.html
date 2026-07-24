@@ -163,9 +163,35 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.1</span>
+        <span class="chip">1.6.3</span>
         <span class="badge-current">Current</span>
       </div>
+      <div class="body">
+        <h2>Installer reliability, cloud license compatibility, and a web downloader</h2>
+        <p class="sub">A maintenance release that clears installer locks, clarifies cloud licensing, and lightens the download.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Installer file lock resolved.</b> Processes left running after uninstall (Print Watcher, browser sub-processes, the OCR engine) could lock a fresh install; the installer now safely closes all related processes before copying files. The &ldquo;another process&rdquo; error is fixed.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Cloud license compatibility.</b> Cloud (online) users could incorrectly see &ldquo;DEMO / License Inactive&rdquo;; license interpretation for cloud tenants was corrected &rarr; a clean &ldquo;LICENSED&rdquo; state.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>License/plan refresh.</b> In online mode, license validation now runs every 60 minutes instead of every 12 hours (plan and premium changes apply faster). On-prem mode keeps the 12-hour interval.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Edition-aware auto-update.</b> The update check now targets the correct update server for the installed edition.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Web downloader.</b> Instead of an 800+ MB direct download, a ~1.8 MB lightweight downloader fetches the full setup in the background — with visible progress and resume if the connection drops. On-prem deployment is unaffected (full installer via SCCM).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.2</span></div>
+      <div class="body">
+        <h2>Runs without a .NET installation</h2>
+        <p class="sub">The OCR engine now bundles its own runtime — no prerequisite install on the customer PC.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>&ldquo;You must install .NET to run this application&rdquo; error fixed.</b> Although the main app bundles its own .NET runtime, the OCR engine (YesPDF.Ocr.Cli) was framework-dependent; OCR/scanning failed on PCs without .NET 8 (hostfxr.dll). The OCR engine is now built self-contained — no prerequisite install is required.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.1</span></div>
       <div class="body">
         <h2>Right-click convert to PDF, full localization, and a resilient session</h2>
         <p class="sub">A comprehensive release that speeds up daily workflows and fully localizes the interface.</p>

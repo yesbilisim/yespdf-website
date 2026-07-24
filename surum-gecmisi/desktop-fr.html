@@ -163,9 +163,35 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.1</span>
+        <span class="chip">1.6.3</span>
         <span class="badge-current">Actuelle</span>
       </div>
+      <div class="body">
+        <h2>Fiabilité de l’installateur, compatibilité des licences cloud et téléchargeur web</h2>
+        <p class="sub">Une version de maintenance qui élimine les verrous d’installation, clarifie la licence cloud et allège le téléchargement.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Verrou de fichier d’installation résolu.</b> Des processus restés actifs après la désinstallation (Print Watcher, sous-processus du navigateur, moteur OCR) pouvaient verrouiller une nouvelle installation ; l’installateur ferme désormais en toute sécurité tous les processus concernés avant de copier les fichiers. L’erreur « another process » est corrigée.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Compatibilité des licences cloud.</b> Les utilisateurs cloud (en ligne) pouvaient voir à tort « DEMO / License Inactive » ; l’interprétation de la licence pour les locataires cloud a été corrigée &rarr; un état « LICENSED » propre.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Actualisation licence/forfait.</b> En mode en ligne, la validation de licence s’exécute désormais toutes les 60 minutes au lieu de toutes les 12 heures (les changements de forfait et premium s’appliquent plus vite). Le mode sur site conserve l’intervalle de 12 heures.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Mise à jour adaptée à l’édition.</b> La vérification des mises à jour cible désormais le bon serveur de mise à jour pour l’édition installée.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Téléchargeur web.</b> Au lieu d’un téléchargement direct de plus de 800 Mo, un petit téléchargeur d’environ 1,8 Mo récupère l’installation complète en arrière-plan — avec progression visible et reprise en cas de coupure. Le déploiement sur site n’est pas affecté (installateur complet via SCCM).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.2</span></div>
+      <div class="body">
+        <h2>Fonctionne sans installation de .NET</h2>
+        <p class="sub">Le moteur OCR embarque désormais son propre runtime — aucune installation préalable sur le PC du client.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Erreur « You must install .NET to run this application » corrigée.</b> Bien que l’application principale embarque son propre runtime .NET, le moteur OCR (YesPDF.Ocr.Cli) dépendait du framework ; l’OCR/la numérisation échouait sur les PC sans .NET 8 (hostfxr.dll). Le moteur OCR est désormais généré en self-contained — aucune installation préalable n’est requise.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.1</span></div>
       <div class="body">
         <h2>Conversion en PDF par clic droit, localisation complète et session résiliente</h2>
         <p class="sub">Une version complète qui accélère les flux de travail quotidiens et localise entièrement l’interface.</p>
