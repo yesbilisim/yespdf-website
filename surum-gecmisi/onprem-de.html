@@ -91,6 +91,21 @@
 <section class="series">
   <h2>Serie 1.7 — Bearbeitbare gescannte Dokumente</h2>
 
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">23.07.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Verbesserung</span></div>
+      <h3>Druckdatei-Konvertierung (PS/EPS) und Diagnosebildschirm „Systemmodule“</h3>
+      <ul>
+        <li><strong>Druckdatei &rarr; PDF (PS/EPS).</strong> Neue Kachel in „Werkzeuge“: PostScript- (.ps) und EPS- (.eps) Dateien werden per Drag-and-drop mit einem Klick in PDF konvertiert und in „Meine Dokumente“ gespeichert. Die Konvertierung läuft in einem separaten, eingeschränkten (&minus;dSAFER) Prozess mit Signaturprüfung sowie Größen-/Timeout-Schutz, angetrieben von <strong>Ghostscript</strong> (nicht im Paket enthalten; separat auf dem Server installiert und in der .env konfiguriert). Auch der API-Upload akzeptiert PS/EPS.</li>
+        <li><strong>Diagnosebildschirm „Systemmodule“.</strong> Eine neue Kategorie „Systemmodule“ unter Admin &gt; Einstellungen zeigt PDF-Engine, OCR-Modul, installierte Tesseract-Sprachen, Ghostscript- und Python-Versionen/-Status auf einem einzigen schreibgeschützten Bildschirm.</li>
+        <li><strong>Administrator-Aussperrschutz (CCU).</strong> Selbst wenn alle Lizenzplätze für gleichzeitige Benutzer belegt sind, sind Administrator-Anmeldungen vom Platzlimit ausgenommen &mdash; der Zugang zur Systemverwaltung geht bei voller Lizenz nie verloren.</li>
+        <li><strong>Fehlermeldungen bei der Unternehmenssignatur.</strong> Eine klare Meldung bei falschem PFX-Passwort; eine Vorprüfung und ein sichtbarer roter Hinweis, sobald eine PFX ausgewählt wird.</li>
+        <li><strong>Korrekturen.</strong> Doppelklick-Schutz beim Einzellöschen im Archiv (die Aktion wird jetzt nur einmal ausgeführt); LDAP-Erstsynchronisierung (Quellenstatus) bei Neuinstallationen behoben. Die .env-Konfiguration (Datenbank, SSL, geheimer Schlüssel) bleibt beim Upgrade erhalten.</li>
+      </ul>
+    </div>
+  </article>
+
   <article class="release">
     <div class="vcol"><span class="ver">1.7.2.1</span><span class="date">13.07.2026</span></div>
     <div class="rcol">
