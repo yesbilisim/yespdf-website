@@ -91,6 +91,21 @@
 <section class="series">
   <h2>1.7 Series — Editable Scanned Documents</h2>
 
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">Jul 23, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Improvement</span></div>
+      <h3>Print-file (PS/EPS) conversion and a System Engines diagnostics screen</h3>
+      <ul>
+        <li><strong>Print File &rarr; PDF (PS/EPS).</strong> A new card in Tools: PostScript (.ps) and EPS (.eps) files are converted to PDF with a single drag-and-drop click and saved to &ldquo;My Documents.&rdquo; Conversion runs in a separate, sandboxed (&minus;dSAFER) process with signature validation and size/timeout guards, powered by <strong>Ghostscript</strong> (not bundled; installed separately on the server and configured in .env). The API upload path also accepts PS/EPS and converts automatically.</li>
+        <li><strong>System Engines diagnostics screen.</strong> A new &ldquo;System Engines&rdquo; category under Admin &gt; Settings shows the PDF engine, OCR module, installed Tesseract languages, Ghostscript and Python versions/status on a single read-only screen.</li>
+        <li><strong>Admin lockout safety (CCU).</strong> Even when all concurrent-user seats are taken, administrator sign-ins are exempt from the seat limit &mdash; access to system administration is never lost when the license is full.</li>
+        <li><strong>Enterprise signing error messages.</strong> A clear message when the PFX password is wrong; a pre-check and a visible red warning as soon as a PFX is selected.</li>
+        <li><strong>Fixes.</strong> Double-click protection for single-delete in the archive (the action now runs once); LDAP first-run sync (source status) fixed on new installations. The .env configuration (database, SSL, secret key) is preserved on upgrade.</li>
+      </ul>
+    </div>
+  </article>
+
   <article class="release">
     <div class="vcol"><span class="ver">1.7.2.1</span><span class="date">Jul 13, 2026</span></div>
     <div class="rcol">
