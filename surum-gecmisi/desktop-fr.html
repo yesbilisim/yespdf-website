@@ -163,9 +163,46 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.3</span>
+        <span class="chip">1.6.8</span>
         <span class="badge-current">Actuelle</span>
       </div>
+      <div class="body">
+        <h2>PDF multipage &rarr; Excel&nbsp;: contenu complet</h2>
+        <p class="sub">L&rsquo;export Excel des documents multipages comme les factures et relevés est désormais complet.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Perte de contenu PDF multipage &rarr; Excel corrigée.</b> Pour les documents multipages et mis en forme (factures, relevés), tout le contenu après la première page pouvait être perdu lors de l&rsquo;export Excel&nbsp;; le convertisseur extrait désormais toutes les pages ainsi que le texte hors tableaux, sans perte. (Sur une facture de 3 pages, le contenu est passé de 1/3 à 3/3 pages, ~4&times; plus de texte.)</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>S&rsquo;applique à toutes les dispositions Excel.</b> &laquo;&nbsp;une feuille par tableau&nbsp;&raquo; / &laquo;&nbsp;une feuille par page&nbsp;&raquo; / &laquo;&nbsp;tout sur une seule feuille&nbsp;&raquo; — dans l&rsquo;interface comme en ligne de commande (RPA).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.7</span></div>
+      <div class="body">
+        <h2>Interface en ligne de commande pour RPA / robots</h2>
+        <p class="sub">Les conversions PDF peuvent désormais être automatisées en mode headless, avec une seule commande.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Exécution headless.</b> PDF&rarr;Excel, PDF&rarr;Word et PDF interrogeable (OCR) s&rsquo;exécutent en une seule commande, sans toucher à l&rsquo;interface&nbsp;; chaque commande s&rsquo;exécute de manière autonome puis se termine. Les robots n&rsquo;ont plus besoin de garder l&rsquo;application ouverte ni de maintenir une session connectée en permanence.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Options robot.</b> <code>--silent</code> (aucune fenêtre ni boîte de dialogue), <code>--json</code> (statut + chemin de sortie + durée), <code>--out</code> (fichier de sortie), <code>--password</code> (PDF chiffrés)&nbsp;; codes de sortie cohérents (0 = succès &middot; 2 = usage &middot; 3 = entrée &middot; 4 = licence &middot; 5 = erreur de traitement).</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Documentation d&rsquo;automatisation.</b> Nouvelle section d&rsquo;aide &laquo;&nbsp;Ligne de commande / Automatisation (RPA)&nbsp;&raquo; (turc + anglais), plus un guide de référence dédié aux équipes d&rsquo;automatisation.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.6</span></div>
+      <div class="body">
+        <h2>Dispositions des feuilles Excel &amp; flux d&rsquo;édition</h2>
+        <p class="sub">Options de disposition pour la sortie Excel et édition plus intelligente.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>3 dispositions Excel.</b> Menu contextuel &laquo;&nbsp;Convertir en Excel&nbsp;&raquo; de l&rsquo;Explorateur Windows&nbsp;: tout sur une seule feuille / une feuille par tableau / une feuille par page PDF.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Plus de re-OCR inutile.</b> Le bouton &laquo;&nbsp;Modifier&nbsp;&raquo; relançait inutilement l&rsquo;OCR sur les documents interrogeables (contenant déjà du texte)&nbsp;; un avertissement clair s&rsquo;affiche désormais et rien ne se produit sans confirmation.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.3</span></div>
       <div class="body">
         <h2>Fiabilité de l’installateur, compatibilité des licences cloud et téléchargeur web</h2>
         <p class="sub">Une version de maintenance qui élimine les verrous d’installation, clarifie la licence cloud et allège le téléchargement.</p>
