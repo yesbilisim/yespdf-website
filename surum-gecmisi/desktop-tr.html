@@ -163,9 +163,46 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.3</span>
+        <span class="chip">1.6.8</span>
         <span class="badge-current">Güncel</span>
       </div>
+      <div class="body">
+        <h2>Çok sayfalı PDF &rarr; Excel: tam içerik</h2>
+        <p class="sub">Fatura ve ekstre gibi çok sayfalı belgelerde Excel&rsquo;e aktarım artık eksiksiz.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Çok sayfalı PDF &rarr; Excel&rsquo;de içerik kaybı giderildi.</b> Biçimli ve çok sayfalı belgelerde (fatura, ekstre) ilk sayfadan sonrası kaybolabiliyordu; dönüştürücü artık tüm sayfaları ve tablo dışı metinleri de eksiksiz aktarır. (Örnek 3 sayfalık faturada içerik 1/3&rsquo;ten 3/3&rsquo;e, ~4 kat metin.)</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Tüm Excel düzenlerinde geçerli.</b> &ldquo;Her tablo ayrı&rdquo; / &ldquo;her sayfa ayrı&rdquo; / &ldquo;tüm içerik tek sayfa&rdquo; — hem arayüzde hem komut satırında (RPA).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.7</span></div>
+      <div class="body">
+        <h2>RPA / robot için komut satırı arayüzü</h2>
+        <p class="sub">PDF dönüştürme işlemleri artık arayüzsüz, tek komutla otomatikleştirilebilir.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Headless çalıştırma.</b> PDF&rarr;Excel, PDF&rarr;Word ve Aranabilir PDF (OCR) arayüze hiç dokunmadan tek komutla çalışır; her komut kendi başına çalışıp kapanır. Robot artık uygulamayı açık tutmak veya sürekli oturum açık bırakmak zorunda değil.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Robot bayrakları.</b> <code>--silent</code> (pencere/diyalog yok), <code>--json</code> (durum + çıktı yolu + süre), <code>--out</code> (çıktı dosyası), <code>--password</code> (şifreli PDF); tutarlı çıkış kodları (0 başarı &middot; 2 kullanım &middot; 3 girdi &middot; 4 lisans &middot; 5 işlem hatası).</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Otomasyon dokümantasyonu.</b> Yardım&rsquo;a &ldquo;Komut Satırı / Otomasyon (RPA)&rdquo; bölümü (TR + EN) ve otomasyon ekipleri için ayrı referans kılavuzu eklendi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.6</span></div>
+      <div class="body">
+        <h2>Excel çalışma sayfası düzenleri ve düzenleme akışı</h2>
+        <p class="sub">Excel çıktısında düzen seçenekleri ve daha akıllı düzenleme.</p>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>3 Excel düzen seçeneği.</b> Windows Gezgini sağ tık &ldquo;Excel&rsquo;e Dönüştür&rdquo; menüsüne eklendi: tüm içerik tek sayfa / her tablo ayrı / her PDF sayfası ayrı.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Gereksiz yeniden OCR önlendi.</b> Aranabilir (zaten metin içeren) belgede &ldquo;Düzenle&rdquo; düğmesi gereksiz yere OCR başlatıyordu; artık net uyarı gösterilir ve onaysız işlem yapılmaz.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.3</span></div>
       <div class="body">
         <h2>Kurulum güvenilirliği, bulut lisans uyumu ve web indirici</h2>
         <p class="sub">Kurulum kilitlenmelerini gideren, bulut lisansını netleştiren ve indirmeyi hafifleten bakım sürümü.</p>
