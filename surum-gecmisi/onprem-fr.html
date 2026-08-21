@@ -89,7 +89,47 @@
 
 <!-- ============ SÉRIE 1.7 ============ -->
 <section class="series">
-  <h2>Série 1.7 — Documents numérisés modifiables</h2>
+  <h2>Série 1.7 — Maturité d’entreprise</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19–20/08/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>
+      <h3>Mise en file d’attente plutôt que refus, et durcissement pour l’entreprise</h3>
+      <ul>
+        <li><strong>File d’attente utilisateurs simultanés (CCU).</strong> Lorsque la limite de licence est atteinte, les utilisateurs ne sont plus refusés ; ils rejoignent une file FIFO équitable et sont admis automatiquement dès qu’un siège se libère. Le seuil d’inactivité se réduit tant qu’une personne attend ; seule l’identité de l’utilisateur est conservée dans la file, jamais un mot de passe.</li>
+        <li><strong>Appartenance de groupe manuelle.</strong> Des groupes et des autorisations d’outils peuvent désormais être attribués manuellement aux comptes locaux (hors annuaire) ; les appartenances attribuées manuellement sont préservées lors de la synchronisation d’annuaire.</li>
+        <li><strong>Prise en charge d’un proxy de confiance</strong> et un écran de diagnostic « Comment me voyez-vous ? » pour vérifier la configuration réseau/en-têtes.</li>
+        <li><strong>Durcissement après un test de sécurité indépendant.</strong> Les conclusions d’un test d’intrusion tiers ont été traitées par des solutions centrales et durables plutôt que par des correctifs ponctuels.</li>
+        <li><strong>Document numérisé → PDF modifiable : correctif de stabilité.</strong> Un bogue pouvant occasionnellement interrompre le filigrane, les champs de formulaire et l’OCR des petits documents numérisés a été corrigé ; ces opérations aboutissent désormais de façon fiable.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.5.x</span><span class="date">11–17/08/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span><span class="tag">Compatibilité</span></div>
+      <h3>SSO Windows, Kerberos MSSQL et autorisation par groupe</h3>
+      <ul>
+        <li><strong>SSO Windows (Negotiate / SSPI).</strong> Authentification unique via la session de domaine ; aucune dépendance supplémentaire. Désactivé par défaut et sans redirection automatique, par choix de sécurité délibéré.</li>
+        <li><strong>Authentification Windows vers MSSQL (Kerberos).</strong> Fonctionne de bout en bout avec un compte de service ; le mot de passe de la base n’est stocké nulle part.</li>
+        <li><strong>Autorisation d’outils par groupe (RBAC).</strong> Correspondance groupe–outil via LDAPS pour les grands annuaires (synchronisation à l’échelle de 10 000 utilisateurs et 158 groupes).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.4.x</span><span class="date">6–7/08/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Amélioration</span><span class="tag perf">Performance</span></div>
+      <h3>Correctifs de stabilité et installateur plus léger</h3>
+      <ul>
+        <li>Divers correctifs de stabilité : l’outil UDF→Word peut être fermé, les limites de file s’affichent correctement dans l’interface et la limitation de débit fonctionne de manière cohérente.</li>
+        <li>Installateur réduit de <strong>1278 Mo à 1128 Mo</strong> (~150 Mo de moins).</li>
+      </ul>
+    </div>
+  </article>
 
   <article class="release major">
     <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">23/07/2026</span></div>

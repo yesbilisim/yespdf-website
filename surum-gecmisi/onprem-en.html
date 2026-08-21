@@ -89,7 +89,47 @@
 
 <!-- ============ 1.7 SERIES ============ -->
 <section class="series">
-  <h2>1.7 Series — Editable Scanned Documents</h2>
+  <h2>1.7 Series — Enterprise Maturity</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">Aug 19–20, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>
+      <h3>Queue instead of reject, and enterprise hardening</h3>
+      <ul>
+        <li><strong>Concurrent-user (CCU) queue.</strong> When the licence limit is reached, users are no longer turned away; they enter a fair FIFO queue and are admitted automatically when a seat frees up. The idle threshold shortens while someone is waiting; only the user identity is held in the queue, never a password.</li>
+        <li><strong>Manual group membership.</strong> Local (non-directory) accounts can now be assigned groups and tool permissions manually; manually assigned memberships are preserved across directory synchronisation.</li>
+        <li><strong>Trusted-proxy support</strong> and a &ldquo;How do you see me?&rdquo; diagnostic screen to verify network/header configuration.</li>
+        <li><strong>Hardening after an independent security test.</strong> Findings from a third-party penetration test were resolved with central, lasting solutions rather than point patches.</li>
+        <li><strong>Scanned document → editable PDF: reliability fix.</strong> A bug that could occasionally interrupt watermarking, form-field and small-scan OCR operations was fixed; these now complete reliably.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.5.x</span><span class="date">Aug 11–17, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span><span class="tag">Compatibility</span></div>
+      <h3>Windows SSO, MSSQL Kerberos and group-based authorisation</h3>
+      <ul>
+        <li><strong>Windows SSO (Negotiate / SSPI).</strong> Single sign-on with the domain session; no extra dependency. Off by default and no automatic redirect, as a deliberate security choice.</li>
+        <li><strong>Windows authentication to MSSQL (Kerberos).</strong> Works end to end with a service account; the database password is stored nowhere.</li>
+        <li><strong>Group-based tool authorisation (RBAC).</strong> Group-to-tool mapping over LDAPS for large directories (synchronisation at the scale of 10,000 users and 158 groups).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.4.x</span><span class="date">Aug 6–7, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Improvement</span><span class="tag perf">Performance</span></div>
+      <h3>Stability fixes and a smaller installer</h3>
+      <ul>
+        <li>Various stability fixes: the UDF→Word tool can be closed, queue limits show correctly in the UI, and the rate limit behaves consistently.</li>
+        <li>Installer reduced from <strong>1278 MB to 1128 MB</strong> (~150 MB smaller).</li>
+      </ul>
+    </div>
+  </article>
 
   <article class="release major">
     <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">Jul 23, 2026</span></div>
