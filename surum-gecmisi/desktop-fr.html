@@ -163,15 +163,36 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8</span>
+        <span class="chip">1.6.8_Fix</span>
         <span class="badge-current">Actuelle</span>
       </div>
       <div class="body">
-        <h2>PDF multipage &rarr; Excel&nbsp;: contenu complet</h2>
-        <p class="sub">L&rsquo;export Excel des documents multipages comme les factures et relevés est désormais complet.</p>
+        <h2>Contrôle d’accès par rôles, connexion sécurisée et piste d’audit</h2>
+        <p class="sub">Contrôle d’accès par rôles, vérification de certificat HTTPS et piste d’audit conforme au RGPD/KVKK pour le déploiement en entreprise.</p>
         <ul class="changes">
-          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Perte de contenu PDF multipage &rarr; Excel corrigée.</b> Pour les documents multipages et mis en forme (factures, relevés), tout le contenu après la première page pouvait être perdu lors de l&rsquo;export Excel&nbsp;; le convertisseur extrait désormais toutes les pages ainsi que le texte hors tableaux, sans perte. (Sur une facture de 3 pages, le contenu est passé de 1/3 à 3/3 pages, ~4&times; plus de texte.)</span></li>
-          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>S&rsquo;applique à toutes les dispositions Excel.</b> &laquo;&nbsp;une feuille par tableau&nbsp;&raquo; / &laquo;&nbsp;une feuille par page&nbsp;&raquo; / &laquo;&nbsp;tout sur une seule feuille&nbsp;&raquo; — dans l&rsquo;interface comme en ligne de commande (RPA).</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Contrôle d’accès par rôles (RBAC).</b> Les autorisations de groupe définies sur le serveur de licences s’appliquent désormais à l’application de bureau ; les outils non autorisés apparaissent désactivés (motif affiché), et leur appel depuis un menu ou une barre d’outils ne lance pas l’opération. Couvre 26 fonctions (conversion, OCR, édition, caviardage, signature, fusion/division, rotation, chiffrement, filigrane…) ; tous les points d’entrée passent par le même contrôle.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Comportement des rôles.</b> Un utilisateur sans groupe peut uniquement consulter (message explicatif après connexion) ; les administrateurs sont exemptés. Les modifications prennent effet sans redémarrage, et les droits de l’utilisateur précédent ne sont pas repris au changement de session.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Piste d’audit.</b> Toute opération bloquée pour un motif d’autorisation est enregistrée et transmise au serveur de licences. Les enregistrements sont conformes au RGPD/KVKK — ni contenu de document ni données personnelles brutes.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Connexion sécurisée (HTTPS).</b> La vérification du certificat du serveur de licences peut être activée pour les déploiements d’entreprise ; si l’organisation exploite sa propre autorité de certification, la connexion est vérifiée de bout en bout. « Tester la connexion » signale désormais les problèmes de certificat.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Numéro de page en mode consultation.</b> Saisissez-le directement dans la barre supérieure pour atteindre une page.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Guide de déploiement en entreprise</b> enrichi : HTTPS, prérequis de certificat et liste de contrôle.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8</span></div>
+      <div class="body">
+        <h2>Office &rarr; PDF : fidélité totale, PDF/A et identité du document</h2>
+        <p class="sub">Documents Office rendus par leurs propres moteurs ; fichiers plus légers, PDF/A et métadonnées complètes.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Fidélité totale pour Office &rarr; PDF.</b> Si Microsoft Office est installé, Word, Excel et PowerPoint sont convertis avec leurs propres moteurs de rendu ; polices, alignement, graphiques et disposition des tableaux correspondent exactement à la source.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Taille des fichiers réduite de 38 à 53 %.</b> La duplication inutile de polices lors des conversions Office a été supprimée ; qualité d’image et rendu de page identiques.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Office &rarr; PDF/A en une étape.</b> Le format d’archivage à long terme peut être produit directement (interface et ligne de commande).</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Identité et métadonnées du document.</b> Titre, auteur, sujet, mots-clés, langue et producteur sont repris du document Office source et inscrits intégralement ; les dates sont cohérentes, fuseau horaire compris.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>PDF multipage &rarr; Excel.</b> Le problème de perte du contenu après la première page (factures, relevés) est corrigé ; le texte hors tableaux est aussi exporté (les trois dispositions Excel + RPA).</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Modèle de licence utilisateurs simultanés (CCU).</b> Consommation de sièges alignée sur le serveur de licences local ; la consultation ne consomme pas de siège — un siège n’est utilisé que pour l’édition, la conversion et l’OCR.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Corrections d’interface.</b> Un document Office ouvert peut être converti en PDF d’un seul bouton ; les problèmes d’affichage des onglets Office et de mise en page de l’écran des paramètres sont corrigés.</span></li>
         </ul>
       </div>
     </article>
