@@ -163,15 +163,36 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8</span>
+        <span class="chip">1.6.8_Fix</span>
         <span class="badge-current">Current</span>
       </div>
       <div class="body">
-        <h2>Multi-page PDF &rarr; Excel: full content</h2>
-        <p class="sub">Excel export from multi-page documents like invoices and statements is now complete.</p>
+        <h2>Role-based access control, secure connection and audit trail</h2>
+        <p class="sub">Role-based access control, HTTPS certificate verification and a GDPR/KVKK-compliant audit trail for enterprise deployment.</p>
         <ul class="changes">
-          <li><span class="tag fix">Fix</span><span class="change-text"><b>Multi-page PDF &rarr; Excel content loss fixed.</b> Multi-page, formatted documents (invoices, statements) could lose everything after the first page when exported to Excel; the converter now extracts all pages and non-table text completely. (On a sample 3-page invoice, content went from 1/3 to 3/3 pages, ~4&times; more text.)</span></li>
-          <li><span class="tag imp">Improved</span><span class="change-text"><b>Applies to all Excel layouts.</b> &ldquo;One sheet per table&rdquo; / &ldquo;one sheet per page&rdquo; / &ldquo;everything on a single sheet&rdquo; — both in the UI and on the command line (RPA).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Role-based access control (RBAC).</b> Group permissions defined on the licence server now apply to the desktop app; tools the user is not entitled to appear disabled with the reason shown, and attempting them from a menu or toolbar does not start the operation. Covers 26 capabilities (conversion, OCR, editing, redaction, signing, merge/split, rotation, encryption, watermarking…), and every entry point passes the same check.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Role behaviour.</b> A user in no group can only view documents (an explanatory message is shown after sign-in); administrators are exempt. Permission changes take effect without a restart, and the previous user&rsquo;s permissions are not inherited on session change.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Audit trail.</b> Every operation blocked for authorisation reasons is written to the audit log and forwarded to the licence server. Records are GDPR/KVKK compliant — they contain neither document content nor raw personal data.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Secure connection (HTTPS).</b> Licence-server certificate verification can be enabled for enterprise deployments; where the organisation runs its own CA, the connection is verified end to end. &ldquo;Test Connection&rdquo; now reports certificate problems.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Page number in view mode.</b> Type it directly in the top bar to jump to a page.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Enterprise deployment guide</b> updated with HTTPS, certificate prerequisites and a deployment checklist.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8</span></div>
+      <div class="body">
+        <h2>Office &rarr; PDF full fidelity, PDF/A and document identity</h2>
+        <p class="sub">Office documents rendered by their own engines; smaller files, PDF/A and complete metadata.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Full fidelity for Office &rarr; PDF.</b> Where Microsoft Office is installed, Word, Excel and PowerPoint are converted with their own rendering engines; fonts, alignment, charts and table layout match the source exactly.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>File size reduced by 38&ndash;53%.</b> Redundant font duplication in Office conversions was eliminated, with image quality and page appearance identical.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Office &rarr; PDF/A in one step.</b> The long-term archiving format can be produced directly (UI and command line).</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Document identity and metadata.</b> Title, author, subject, keywords, language and producer are taken from the source Office document and written completely; dates are consistent, including time zone.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Multi-page PDF &rarr; Excel.</b> The issue where content after the first page could be lost (invoices, statements) is fixed; text outside tables is exported too (all three Excel layouts + RPA).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Concurrent user (CCU) licence model.</b> Seat usage aligned with the on-premise licence server; viewing does not consume a seat — a seat is used only for editing, conversion and OCR.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>UI fixes.</b> An open Office document can be converted to PDF with a single button; display issues on Office tabs and layout issues in the settings screen are fixed.</span></li>
         </ul>
       </div>
     </article>
