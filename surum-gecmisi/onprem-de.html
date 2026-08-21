@@ -89,7 +89,47 @@
 
 <!-- ============ SERIE 1.7 ============ -->
 <section class="series">
-  <h2>Serie 1.7 — Bearbeitbare gescannte Dokumente</h2>
+  <h2>Serie 1.7 — Unternehmensreife</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19.–20.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>
+      <h3>Einreihen statt Ablehnen und Härtung für Unternehmen</h3>
+      <ul>
+        <li><strong>Warteschlange für gleichzeitige Benutzer (CCU).</strong> Wird das Lizenzlimit erreicht, werden Benutzer nicht mehr abgewiesen, sondern in eine faire FIFO-Warteschlange aufgenommen und automatisch eingelassen, sobald ein Platz frei wird. Die Leerlaufschwelle verkürzt sich, solange jemand wartet; in der Warteschlange wird nur die Benutzerkennung gehalten, nie ein Passwort.</li>
+        <li><strong>Manuelle Gruppenzugehörigkeit.</strong> Lokalen (verzeichnisfremden) Konten können Gruppen und Werkzeugberechtigungen manuell zugewiesen werden; manuell vergebene Mitgliedschaften bleiben bei der Verzeichnissynchronisierung erhalten.</li>
+        <li><strong>Trusted-Proxy-Unterstützung</strong> und ein Diagnosebildschirm „Wie sehen Sie mich?&ldquo; zur Überprüfung der Netzwerk-/Header-Konfiguration.</li>
+        <li><strong>Härtung nach unabhängigem Sicherheitstest.</strong> Die Ergebnisse eines Penetrationstests durch Dritte wurden mit zentralen, dauerhaften Lösungen statt punktueller Patches behoben.</li>
+        <li><strong>Gescanntes Dokument → bearbeitbares PDF: Stabilitätskorrektur.</strong> Ein Fehler, der Wasserzeichen-, Formularfeld- und OCR-Vorgänge bei kleinen Scans gelegentlich abbrechen konnte, wurde behoben; diese Vorgänge werden nun zuverlässig abgeschlossen.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.5.x</span><span class="date">11.–17.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span><span class="tag">Kompatibilität</span></div>
+      <h3>Windows-SSO, MSSQL-Kerberos und gruppenbasierte Berechtigung</h3>
+      <ul>
+        <li><strong>Windows-SSO (Negotiate / SSPI).</strong> Single Sign-on mit der Domänensitzung; keine zusätzliche Abhängigkeit. Standardmäßig deaktiviert und ohne automatische Weiterleitung — eine bewusste Sicherheitsentscheidung.</li>
+        <li><strong>Windows-Authentifizierung an MSSQL (Kerberos).</strong> Funktioniert durchgängig mit einem Dienstkonto; das Datenbankpasswort wird nirgends gespeichert.</li>
+        <li><strong>Gruppenbasierte Werkzeugberechtigung (RBAC).</strong> Gruppen-zu-Werkzeug-Zuordnung über LDAPS für große Verzeichnisse (Synchronisierung im Umfang von 10.000 Benutzern und 158 Gruppen).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.4.x</span><span class="date">6.–7.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">Verbesserung</span><span class="tag perf">Performance</span></div>
+      <h3>Stabilitätskorrekturen und kleineres Installationspaket</h3>
+      <ul>
+        <li>Verschiedene Stabilitätskorrekturen: Das UDF→Word-Werkzeug lässt sich schließen, Warteschlangenlimits werden in der Oberfläche korrekt angezeigt und die Ratenbegrenzung arbeitet konsistent.</li>
+        <li>Installationspaket von <strong>1278 MB auf 1128 MB</strong> reduziert (~150 MB kleiner).</li>
+      </ul>
+    </div>
+  </article>
 
   <article class="release major">
     <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">23.07.2026</span></div>

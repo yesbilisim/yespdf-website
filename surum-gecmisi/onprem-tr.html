@@ -89,7 +89,47 @@
 
 <!-- ============ 1.7 SERİSİ ============ -->
 <section class="series">
-  <h2>1.7 Serisi — Düzenlenebilir Taranmış Belgeler</h2>
+  <h2>1.7 Serisi — Kurumsal Olgunlaşma</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19–20.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Güvenlik</span></div>
+      <h3>Reddetme yerine sıraya alma ve kurumsal sertleştirme</h3>
+      <ul>
+        <li><strong>Eşzamanlı kullanıcı (CCU) sırası.</strong> Lisans sınırına ulaşıldığında kullanıcı geri çevrilmez; adil bir sıraya (FIFO) alınır ve yer açıldığında otomatik içeri alınır. Sırada bekleyen varken boşta kalma eşiği kısalır; sırada yalnızca kullanıcı kimliği tutulur, parola tutulmaz.</li>
+        <li><strong>Elle grup üyeliği.</strong> Yerel (dizin dışı) hesaplara da grup ve araç yetkisi elle atanabilir; elle atanan üyelikler dizin eşitlemesinde korunur.</li>
+        <li><strong>Güvenilir vekil (trusted proxy) desteği</strong> ve &ldquo;Beni nasıl görüyorsun?&rdquo; tanı ekranıyla ağ/başlık yapılandırması doğrulanır.</li>
+        <li><strong>Bağımsız güvenlik testi sonrası sertleştirme.</strong> Üçüncü taraf sızma testinin bulguları, nokta yaması yerine merkezî ve kalıcı çözümlerle giderildi.</li>
+        <li><strong>Taranmış belgeden düzenlenebilir PDF: kararlılık onarımı.</strong> Filigran, form alanı ve küçük taranmış belge OCR işlemlerini nadiren kesintiye uğratabilen bir hata giderildi; bu işlemler artık güvenilir biçimde tamamlanır.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.5.x</span><span class="date">11–17.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Güvenlik</span><span class="tag">Uyumluluk</span></div>
+      <h3>Windows SSO, MSSQL Kerberos ve grup bazlı yetkilendirme</h3>
+      <ul>
+        <li><strong>Windows SSO (Negotiate / SSPI).</strong> Etki alanı oturumuyla tek oturum açma; ek bağımlılık gerektirmez. Güvenlik gereği varsayılan kapalıdır ve otomatik yönlendirme yapmaz.</li>
+        <li><strong>MSSQL&rsquo;e Windows kimlik doğrulaması (Kerberos).</strong> Servis hesabıyla uçtan uca çalışır; veritabanı parolası hiçbir yerde saklanmaz.</li>
+        <li><strong>Grup bazlı araç yetkilendirme (RBAC).</strong> LDAPS ile büyük dizinlerde grup–araç eşlemesi (10.000 kullanıcı ve 158 grup ölçeğinde eşitleme).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release">
+    <div class="vcol"><span class="ver">1.7.4.x</span><span class="date">6–7.08.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag">İyileştirme</span><span class="tag perf">Performans</span></div>
+      <h3>Kararlılık düzeltmeleri ve daha küçük kurulum paketi</h3>
+      <ul>
+        <li>Çeşitli kararlılık düzeltmeleri: UDF→Word aracının kapatılabilmesi, kuyruk limitlerinin arayüzde doğru görünmesi ve hız sınırının tutarlı çalışması.</li>
+        <li>Kurulum paketi <strong>1278 MB → 1128 MB</strong>&rsquo;a indirildi (~150 MB tasarruf).</li>
+      </ul>
+    </div>
+  </article>
 
   <article class="release major">
     <div class="vcol"><span class="ver">1.7.3.0</span><span class="date">23.07.2026</span></div>
