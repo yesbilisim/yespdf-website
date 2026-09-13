@@ -163,9 +163,48 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8_Fix</span>
+        <span class="chip">1.7.2</span>
         <span class="badge-current">Güncel</span>
       </div>
+      <div class="body">
+        <h2>QR ile girişte hızlandırma</h2>
+        <p class="sub">Yeniden başlatma zinciri sadeleştirildi; QR çok daha hızlı geliyor.</p>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>QR ile giriş ~22 sn → ~5 sn.</b> Yeniden başlatma zinciri sadeleştirildi (Exit öncesi gereksiz Close kaldırıldı, bekleme kısaltıldı); QR ekranı belirgin biçimde daha hızlı geliyor.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.1</span></div>
+      <div class="body">
+        <h2>QR yeniden başlatma kararlılığı</h2>
+        <p class="sub">QR akışındaki nadir çökme giderildi.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>QR yeniden başlatma çökmesi giderildi.</b> Süreç ağacını kapatırken uygulamanın kendisini de kapatabilen durum düzeltildi; işlem sonucu (done-JSON) için şema sigortası eklendi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.0</span></div>
+      <div class="body">
+        <h2>Baştan yazılan arayüz, WebView2 mimarisi ve kurumsal dağıtım</h2>
+        <p class="sub">YesPDF&rsquo;in en geniş kapsamlı sürümü: yeni mimari, yeni arayüz ve kurumsal dağıtım hattı.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>WebView2 mimarisi (CEF kaldırıldı).</b> Gömülü Chromium yerine sistemin Microsoft Edge WebView2 çalışma zamanı kullanılıyor; kurulum paketi <b>1,54 GB → 513 MB (−%67)</b>, indirme süresi ~%70 kısaldı. WebView2 eksik makinelerde otomatik ve sessizce kurulur (<code>/SKIPWEBVIEW2</code> ile kapatılabilir).</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Baştan yazılan arayüz.</b> Kömür koyu tema, pill düğmeler, renk kodlu kartlar ve tutarlı diyalog şablonu; sol altta hesap çipi (avatar + rozet + dil/tema); tüm diyaloglar (Login, 2FA, İşlem, Onboarding, Lisans, Ayarlar…) yeniden yazıldı; mikro animasyonlar ve odak halkaları.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>İki adımlı lisans sihirbazı.</b> Bireysel / Online YesPDF Hesabı / Kurumsal kartları; her biri modele özgü panel açar (anahtar, hesap girişi, sunucu adresi). Oturum zaten açıksa sihirbaz gösterilmez.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>QR ile giriş (WhatsApp tarzı).</b> Online panelinden tek tık → QR → mobil uygulamadan okut → onay → giriş; 5 dakikada bir otomatik yenilenen oturum.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Yeni Dashboard.</b> Liste / küçük grid / büyük grid görünümleri (kalıcı tercih); &ldquo;Online Belgelerim&rdquo; bulut listesi (doğru uzantıyla açılır); yerel PDF&rsquo;lerde cache&rsquo;li ilk sayfa ön izlemeleri.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>&ldquo;Anlamsız şifre diyaloğu&rdquo; giderildi.</b> Eksik/kilitli/bozuk dosyalar artık gerçek hata mesajı verir; eskiden her hata &ldquo;şifreli&rdquo; sanılıp parola kutusu çıkıyordu (CLI/robot yolu dahil düzeltildi).</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Güvenlik, denetim ve kurumsal dağıtım.</b> AuditLogger&rsquo;a 13+ yeni aksiyon kancası (90 gün/50 MB otomatik budama); gizli bilgi taraması için pre-commit kancaları; sessiz kurulum/kaldırma parametreleri, ARP girdileri ve ManageEngine/SCCM/Intune dağıtım kiti (Microsoft Store rafa alındı).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8_Fix</span></div>
       <div class="body">
         <h2>Rol bazlı yetkilendirme, güvenli bağlantı ve denetim izi</h2>
         <p class="sub">Kurumsal dağıtım için rol bazlı yetkilendirme, HTTPS sertifika doğrulama ve KVKK uyumlu denetim izi.</p>

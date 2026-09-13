@@ -163,9 +163,48 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8_Fix</span>
+        <span class="chip">1.7.2</span>
         <span class="badge-current">Actuelle</span>
       </div>
+      <div class="body">
+        <h2>Connexion QR plus rapide</h2>
+        <p class="sub">La chaîne de redémarrage a été simplifiée ; le code QR apparaît nettement plus vite.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Connexion QR ~22 s → ~5 s.</b> La chaîne de redémarrage a été allégée (un Close superflu avant Exit supprimé, l’attente raccourcie) ; l’écran QR apparaît sensiblement plus vite.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.1</span></div>
+      <div class="body">
+        <h2>Stabilité du redémarrage QR</h2>
+        <p class="sub">Un plantage rare du flux QR a été corrigé.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Plantage du redémarrage QR corrigé.</b> Correction d’un cas où la fermeture de l’arbre de processus pouvait aussi fermer l’application elle-même ; ajout d’une sécurité de schéma pour le résultat de l’opération (done-JSON).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.0</span></div>
+      <div class="body">
+        <h2>Interface réécrite, architecture WebView2 et déploiement en entreprise</h2>
+        <p class="sub">La version la plus vaste de YesPDF à ce jour : nouvelle architecture, interface réécrite et chaîne de déploiement en entreprise.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Architecture WebView2 (CEF retiré).</b> Le Chromium embarqué est remplacé par le runtime Microsoft Edge WebView2 du système ; le programme d’installation passe de <b>1,54 Go à 513 Mo (−67 %)</b> et le temps de téléchargement d’environ 70 %. WebView2 est installé silencieusement et automatiquement là où il manque (désactivable avec <code>/SKIPWEBVIEW2</code>).</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Interface réécrite.</b> Thème anthracite, boutons pilule, cartes à code couleur et gabarit de dialogue cohérent ; une puce de compte en bas à gauche (avatar + badge + langue/thème) ; tous les dialogues (Connexion, 2FA, Traitement, Intégration, Licence, Paramètres…) ont été réécrits, avec micro-animations et anneaux de focus.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Assistant de licence en deux étapes.</b> Cartes « Individuel / Compte YesPDF en ligne / Entreprise », chacune ouvrant un panneau spécifique au modèle (clé, connexion au compte, adresse du serveur). L’assistant est ignoré si une session est déjà ouverte.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Connexion par QR (façon WhatsApp).</b> Un clic dans le panneau En ligne → QR → scan depuis l’application mobile → validation → connexion ; une session qui se renouvelle automatiquement toutes les 5 minutes.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Nouveau tableau de bord.</b> Vues Liste / petite grille / grande grille (mémorisées) ; une liste cloud « Mes documents en ligne » (ouverture avec la bonne extension) ; aperçus de première page en cache pour les PDF locaux.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>« Dialogue de mot de passe absurde » supprimé.</b> Les fichiers manquants, verrouillés ou corrompus donnent désormais un vrai message d’erreur ; auparavant, toute erreur était prise pour « chiffré » et affichait une boîte de mot de passe (corrigé aussi sur la voie CLI/robot).</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Sécurité, audit et déploiement en entreprise.</b> Plus de 13 nouveaux points d’audit dans AuditLogger (purge automatique 90 jours / 50 Mo) ; hooks de pré-commit pour la détection de secrets ; paramètres d’installation/désinstallation silencieuses, entrées ARP et un kit de déploiement ManageEngine/SCCM/Intune (Microsoft Store mis de côté).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8_Fix</span></div>
       <div class="body">
         <h2>Contrôle d’accès par rôles, connexion sécurisée et piste d’audit</h2>
         <p class="sub">Contrôle d’accès par rôles, vérification de certificat HTTPS et piste d’audit conforme au RGPD/KVKK pour le déploiement en entreprise.</p>

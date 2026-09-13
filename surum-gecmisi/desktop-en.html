@@ -163,9 +163,48 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8_Fix</span>
+        <span class="chip">1.7.2</span>
         <span class="badge-current">Current</span>
       </div>
+      <div class="body">
+        <h2>Faster QR sign-in</h2>
+        <p class="sub">The restart chain was simplified; the QR code appears much faster.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>QR sign-in ~22 s → ~5 s.</b> The restart chain was streamlined (a redundant Close before Exit was removed and the wait shortened); the QR screen now appears markedly faster.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.1</span></div>
+      <div class="body">
+        <h2>QR restart stability</h2>
+        <p class="sub">A rare crash in the QR flow was fixed.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>QR restart crash fixed.</b> Fixed a case where closing the process tree could also close the application itself; added a schema safeguard for the operation result (done-JSON).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.0</span></div>
+      <div class="body">
+        <h2>Rewritten interface, WebView2 architecture and enterprise deployment</h2>
+        <p class="sub">YesPDF&rsquo;s broadest release yet: a new architecture, a rewritten interface and an enterprise deployment pipeline.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>WebView2 architecture (CEF removed).</b> The embedded Chromium was replaced by the system&rsquo;s Microsoft Edge WebView2 runtime; the installer dropped from <b>1.54 GB to 513 MB (−67%)</b> and download time by ~70%. WebView2 is installed silently and automatically where missing (can be disabled with <code>/SKIPWEBVIEW2</code>).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Rewritten interface.</b> Charcoal dark theme, pill buttons, colour-coded cards and a consistent dialog template; an account chip at the bottom-left (avatar + badge + language/theme); every dialog (Login, 2FA, Processing, Onboarding, Licence, Settings…) was rewritten, with micro-animations and focus rings.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Two-step licence wizard.</b> Individual / Online YesPDF Account / Enterprise cards, each opening a model-specific panel (key, account sign-in, server address). The wizard is skipped when a session is already open.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>QR sign-in (WhatsApp-style).</b> One click in the Online panel → QR → scan from the mobile app → approve → sign in; a session that auto-refreshes every 5 minutes.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>New dashboard.</b> List / small-grid / large-grid views (remembered); an &ldquo;Online Documents&rdquo; cloud list (opens with the correct extension); cached first-page previews for local PDFs.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>&ldquo;Meaningless password dialog&rdquo; removed.</b> Missing, locked or corrupt files now give a real error message; previously every error was assumed to mean &ldquo;encrypted&rdquo; and popped a password box (fixed on the CLI/robot path too).</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Security, audit and enterprise deployment.</b> 13+ new action hooks in AuditLogger (90-day / 50 MB auto-pruning); secret-scanning pre-commit hooks; silent install/uninstall parameters, ARP entries and a ManageEngine/SCCM/Intune deployment kit (Microsoft Store shelved).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8_Fix</span></div>
       <div class="body">
         <h2>Role-based access control, secure connection and audit trail</h2>
         <p class="sub">Role-based access control, HTTPS certificate verification and a GDPR/KVKK-compliant audit trail for enterprise deployment.</p>

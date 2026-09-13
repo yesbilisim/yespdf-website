@@ -163,9 +163,48 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.6.8_Fix</span>
+        <span class="chip">1.7.2</span>
         <span class="badge-current">Aktuell</span>
       </div>
+      <div class="body">
+        <h2>Schnellere QR-Anmeldung</h2>
+        <p class="sub">Die Neustartkette wurde vereinfacht; der QR-Code erscheint deutlich schneller.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>QR-Anmeldung ~22 s → ~5 s.</b> Die Neustartkette wurde verschlankt (ein überflüssiges Close vor Exit entfernt, die Wartezeit verkürzt); der QR-Bildschirm erscheint spürbar schneller.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.1</span></div>
+      <div class="body">
+        <h2>Stabilität des QR-Neustarts</h2>
+        <p class="sub">Ein seltener Absturz im QR-Ablauf wurde behoben.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>QR-Neustart-Absturz behoben.</b> Behoben wurde ein Fall, in dem das Schließen des Prozessbaums auch die Anwendung selbst beenden konnte; für das Vorgangsergebnis (done-JSON) wurde eine Schema-Absicherung ergänzt.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.0</span></div>
+      <div class="body">
+        <h2>Neu geschriebene Oberfläche, WebView2-Architektur und Unternehmensverteilung</h2>
+        <p class="sub">Die bislang umfangreichste YesPDF-Version: neue Architektur, neu geschriebene Oberfläche und eine Unternehmens-Verteilungskette.</p>
+        <ul class="changes">
+          <li><span class="tag new">Neu</span><span class="change-text"><b>WebView2-Architektur (CEF entfernt).</b> Das eingebettete Chromium wurde durch die systemeigene Microsoft-Edge-WebView2-Laufzeit ersetzt; das Installationspaket sank von <b>1,54 GB auf 513 MB (−67 %)</b>, die Downloadzeit um ~70 %. WebView2 wird auf fehlenden Rechnern automatisch und still installiert (mit <code>/SKIPWEBVIEW2</code> deaktivierbar).</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Neu geschriebene Oberfläche.</b> Anthrazit-dunkles Thema, Pill-Schaltflächen, farbcodierte Karten und ein einheitliches Dialogschema; unten links ein Konto-Chip (Avatar + Abzeichen + Sprache/Thema); alle Dialoge (Login, 2FA, Verarbeitung, Onboarding, Lizenz, Einstellungen…) wurden neu geschrieben, mit Mikroanimationen und Fokusringen.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Zweistufiger Lizenzassistent.</b> Karten „Einzelplatz / Online-YesPDF-Konto / Unternehmen&ldquo;, die je ein modellspezifisches Panel öffnen (Schlüssel, Kontoanmeldung, Serveradresse). Bei bereits offener Sitzung wird der Assistent übersprungen.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>QR-Anmeldung (im WhatsApp-Stil).</b> Ein Klick im Online-Panel → QR → mit der mobilen App scannen → bestätigen → anmelden; eine Sitzung, die sich alle 5 Minuten automatisch erneuert.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Neues Dashboard.</b> Listen-/Klein-Raster-/Groß-Raster-Ansicht (gemerkt); eine Cloud-Liste „Online-Dokumente&ldquo; (öffnet mit korrekter Endung); zwischengespeicherte Erste-Seiten-Vorschauen für lokale PDFs.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>„Sinnloser Passwortdialog&ldquo; entfernt.</b> Fehlende, gesperrte oder beschädigte Dateien liefern jetzt eine echte Fehlermeldung; zuvor wurde jeder Fehler als „verschlüsselt&ldquo; gedeutet und ein Passwortfeld eingeblendet (auch im CLI-/Roboterpfad behoben).</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>Sicherheit, Audit und Unternehmensverteilung.</b> 13+ neue Aktions-Hooks im AuditLogger (90 Tage / 50 MB automatische Bereinigung); Secret-Scanning-Pre-Commit-Hooks; Parameter für stille Installation/Deinstallation, ARP-Einträge und ein ManageEngine-/SCCM-/Intune-Verteilungskit (Microsoft Store zurückgestellt).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.6.8_Fix</span></div>
       <div class="body">
         <h2>Rollenbasierte Berechtigungen, sichere Verbindung und Audit-Protokoll</h2>
         <p class="sub">Rollenbasierte Berechtigungen, HTTPS-Zertifikatsprüfung und ein DSGVO/KVKK-konformes Audit-Protokoll für die Unternehmensverteilung.</p>
