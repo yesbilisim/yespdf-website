@@ -92,6 +92,22 @@
   <h2>1.7 Series — Enterprise Maturity</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.8.0</span><span class="date">Sep 21–23, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>
+      <h3>Corporate Signature Portal (Phase 1)</h3>
+      <ul>
+        <li><strong>Corporate Signature Portal.</strong> A document signing flow: for internal users, a new request wizard, an inbox, role-based notifications, and e-signed approval and initial fields. With a state machine, hash-based signing, certificate/trust-chain verification and KVKK (GDPR) masking.</li>
+        <li><strong>External-signer flow.</strong> An email link and a one-time verification code; signing on behalf of an organisation with an authority document (signature circular / power of attorney); a personal address book (no national ID stored).</li>
+        <li><strong>Multi-channel verification code.</strong> WhatsApp &rarr; SMS &rarr; email order; SMS providers NetGSM, İleti Merkezi, Verimor, Mutlucell. WhatsApp is off by default (KVKK) and enabled by an admin.</li>
+        <li><strong>Bilingual signature portal (TR/EN).</strong> The request language determines everything sent to the signer (email, SMS, WhatsApp, signing and verification pages, audit report); the system language is set by the admin.</li>
+        <li><strong>Signing Tool — Windows and macOS.</strong> A menu-bar/tray app; verified end to end with a real smart-card token (TÜBİTAK AKİS); code-signed and bundled.</li>
+        <li><strong>QR verification and audit report.</strong> A QR verification page and a PDF audit report for the signed document; timestamp (TSA) retry resilience.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">Aug 27 – Sep 7, 2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>

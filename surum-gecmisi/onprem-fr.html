@@ -92,6 +92,22 @@
   <h2>Série 1.7 — Maturité d’entreprise</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.8.0</span><span class="date">21–23/09/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>
+      <h3>Portail de signature d’entreprise (Phase 1)</h3>
+      <ul>
+        <li><strong>Portail de signature d’entreprise.</strong> Un flux de signature de documents : pour les utilisateurs internes, un nouvel assistant de demande, une boîte de réception, des notifications par rôle et des champs d’approbation et de paraphe signés électroniquement. Avec machine à états, signature par empreinte (hash), vérification du certificat/de la chaîne de confiance et masquage KVKK (RGPD).</li>
+        <li><strong>Flux du signataire externe.</strong> Un lien par e-mail et un code de vérification à usage unique ; signature au nom d’une organisation avec un justificatif d’autorité (circulaire de signature / procuration) ; un carnet d’adresses personnel (aucun identifiant national conservé).</li>
+        <li><strong>Code de vérification multicanal.</strong> Ordre WhatsApp &rarr; SMS &rarr; e-mail ; fournisseurs SMS NetGSM, İleti Merkezi, Verimor, Mutlucell. WhatsApp est désactivé par défaut (KVKK) et activé par un administrateur.</li>
+        <li><strong>Portail de signature bilingue (TR/EN).</strong> La langue de la demande détermine tout ce qui est envoyé au signataire (e-mail, SMS, WhatsApp, pages de signature et de vérification, rapport d’audit) ; la langue du système est définie par l’administrateur.</li>
+        <li><strong>Outil de signature — Windows et macOS.</strong> Une application de barre de menus/zone de notification ; vérifié de bout en bout avec un vrai jeton à carte à puce (TÜBİTAK AKİS) ; signé numériquement et inclus dans le paquet.</li>
+        <li><strong>Vérification par QR et rapport d’audit.</strong> Une page de vérification QR et un rapport d’audit PDF pour le document signé ; robustesse de réessai de l’horodatage (TSA).</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">27/08 – 07/09/2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>
