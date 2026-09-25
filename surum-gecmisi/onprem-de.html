@@ -92,6 +92,20 @@
   <h2>Serie 1.7 — Unternehmensreife</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">27.08. – 07.09.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>
+      <h3>EV-signierte Pakete, Stabilität der Gruppensynchronisierung und SSO-Diagnose</h3>
+      <ul>
+        <li><strong>EV-signierte Installation.</strong> On-Prem-Installationspakete sind jetzt mit einem Extended-Validation-(EV-)Zertifikat codesigniert, kompatibel mit Endpoint-Security im Unternehmen.</li>
+        <li><strong>Stabilität der AD-Gruppensynchronisierung.</strong> Zwei gleichnamige Active-Directory-Gruppen konnten die gesamte Synchronisierung anhalten; behoben (im Umfang von 18.000+ Gruppen auf SQLite und MSSQL verifiziert). Benutzer ohne E-Mail-Adresse werden nicht mehr übersprungen — es wird auf den UPN zurückgegriffen.</li>
+        <li><strong>Manuelle Benutzeranlage.</strong> Ein Benutzernamensfeld und zusätzliche Prüfungen wurden ergänzt.</li>
+        <li><strong>SSO-Fehlerdiagnose-Bildschirm.</strong> Einstellungen &rsaquo; SSO-Diagnose: der SSPI-Fehlercode plus Lösungsvorschlag; Windows-SSO (Kerberos) im Feld durchgängig verifiziert.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19.–20.08.2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>

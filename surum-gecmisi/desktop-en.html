@@ -163,9 +163,80 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.7.2</span>
+        <span class="chip">1.8.2</span>
         <span class="badge-current">Current</span>
       </div>
+      <div class="body">
+        <h2>Redesigned edit mode, missing-font warning and stability</h2>
+        <p class="sub">A reworked edit mode, a safe &ldquo;Make Editable&rdquo;, and field-driven fixes.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Edit mode redesigned.</b> Save / Save As / Return to viewer now live on the Apryse ribbon; redaction and region editing are undoable.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>&ldquo;Make Editable&rdquo; no longer changes the original.</b> The result is written alongside as <code>_editable.pdf</code> and the original is left untouched (previously it overwrote the original).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Missing-font warning (app + Office add-in).</b> When a corporate font isn't installed, a document/slideshow could look different and the PDF could become non-searchable; a warning is now shown before conversion.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Office add-in fixes.</b> PowerPoint export buttons work; when the target PDF is open, instead of failing silently it writes &ldquo;… (2).pdf&rdquo;.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>&ldquo;Rainbow&rdquo; rendering fault fixed.</b> On some GPU drivers the screen filled with colours when editing a scanned document; the default view mode is now Embedded (the choice moved to Settings).</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>&ldquo;Set Password&rdquo; shows the correct dialog</b> (separate open and ownership passwords); leftover Turkish text in the English UI was removed.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.12</span></div>
+      <div class="body">
+        <h2>Stability: document-race crashes + OCR engine 0.7.1</h2>
+        <p class="sub">Concurrent-access crashes in the viewer were closed and OCR was refreshed.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Document-race crashes fixed.</b> Three separate crash points caused by closing/modifying a document during parallel background rendering were closed (verified with an extensive race test).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>OCR engine 0.7.1.</b> Cleaner &ldquo;make editable&rdquo;, language-list fixes; OCR languages pinned (tur/eng/ara + Apryse deu/fra/spa/ita) and unnecessary language data pruned.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Signature persistence.</b> Signatures drawn in Fill &amp; Sign are now retained.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>On-Prem TLS pinning.</b> The server certificate is trusted on first use; a changed certificate is rejected.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Data-loss paths closed</b> (overwrite-without-backup on encryption, log rotation and more).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.10</span></div>
+      <div class="body">
+        <h2>Field fixes: Excel/image options and the organizer</h2>
+        <p class="sub">18 September field round — layout options and page-organizer fixes.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Worksheet layout for Convert to Excel</b> (per table / per page / single) and <b>format choice for Convert to Image</b> (PNG/JPEG/TIFF) are back.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Page-organizer &ldquo;Extract&rdquo; button</b> works; organizer changes are now marked as &ldquo;modified&rdquo; (no longer lost on close).</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Tool outputs are saved to Documents</b> (instead of a temp folder for online documents).</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Scans that report a wrong size</b> are now fitted to the window.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.4</span></div>
+      <div class="body">
+        <h2>Corporate-certificate / e-Seal signing, batch signing and Turkish OCR</h2>
+        <p class="sub">The corporate signing pipeline, USB token, Türk Trust TSA and a rebuilt Turkish OCR.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Signing with a corporate certificate (PFX / e-Seal)</b> and <b>batch signing</b>: USB token and corporate certificate; one PIN/password, originals preserved, output <code>_signed.pdf</code>.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>PAdES-T with Türk Trust TSA</b> (timestamped signature) verified live.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish OCR overhauled.</b> Letters such as İ/Ş are recognised correctly; the Turkish &ldquo;make searchable&rdquo; path was rewritten (an invisible, searchable text layer).</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Markup toolbar repair</b> (highlight / underline / redaction / freehand work again) plus an editable result box for Smart Region Editing.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.3</span></div>
+      <div class="body">
+        <h2>Viewer render engine: 5–6× faster pages</h2>
+        <p class="sub">In-memory rendering made page drawing noticeably faster.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>In-memory pixel rendering</b> made page drawing ~5× faster (measured 245→45 ms/page); parallel render pool and cache.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Fit-to-Width / Fit-to-Page buttons</b> are back on the top bar; virtualised list for large documents.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.2</span></div>
       <div class="body">
         <h2>Faster QR sign-in</h2>
         <p class="sub">The restart chain was simplified; the QR code appears much faster.</p>

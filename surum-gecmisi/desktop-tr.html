@@ -163,9 +163,80 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.7.2</span>
+        <span class="chip">1.8.2</span>
         <span class="badge-current">Güncel</span>
       </div>
+      <div class="body">
+        <h2>Düzenleme modu arayüzü, eksik font uyarısı ve kararlılık</h2>
+        <p class="sub">Yeniden düzenlenen düzenleme modu, güvenli &ldquo;Düzenlenebilir Yap&rdquo; ve sahadan gelen düzeltmeler.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Düzenleme modu arayüzü yenilendi.</b> Kaydet / Farklı Kaydet / Görüntüleyiciye dön artık Apryse şeridinde; redaksiyon ve bölge düzenleme geri alınabilir.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>&ldquo;Düzenlenebilir Yap&rdquo; artık orijinali değiştirmiyor.</b> Sonuç yanına <code>_duzenlenebilir.pdf</code> olarak yazılır, orijinal el değmeden kalır (eskiden orijinalin üzerine yazıyordu).</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Eksik font uyarısı (uygulama + Office eklentisi).</b> Kurumsal bir font kurulu değilse belge/sunum farklı görünebiliyor ve PDF aranabilir olmayabiliyordu; artık dönüştürmeden önce uyarı verilir.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Office eklentisi düzeltmeleri.</b> PowerPoint dışa aktarma düğmeleri çalışıyor; hedef PDF açıkken sessiz düşme yerine &ldquo;… (2).pdf&rdquo; yazılır.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Görüntülemede &ldquo;gökkuşağı&rdquo; arızası giderildi.</b> Bazı GPU sürücülerinde taranmış belgeyi düzenlerken ekranın renkli dolması giderildi; varsayılan görüntüleme modu Embedded (seçim Ayarlar'da).</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>&ldquo;Parola Koy&rdquo; doğru pencereyi gösteriyor</b> (açma ve sahiplik parolaları ayrı); İngilizce arayüzde kalan Türkçe metinler giderildi.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.12</span></div>
+      <div class="body">
+        <h2>Kararlılık: belge yarışı çökmeleri + OCR motoru 0.7.1</h2>
+        <p class="sub">Görüntüleyicideki eşzamanlı erişim çökmeleri kapatıldı, OCR yenilendi.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Belge yarışı çökmeleri giderildi.</b> Arka planda paralel render sırasında belgenin kapatılması/değiştirilmesi kaynaklı üç ayrı çökme noktası kapatıldı (kapsamlı yarış testiyle doğrulandı).</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>OCR motoru 0.7.1.</b> Daha temiz &ldquo;düzenlenebilir yap&rdquo;, dil listesi düzeltmeleri; OCR dilleri sabitlendi (tur/eng/ara + Apryse deu/fra/spa/ita) ve gereksiz dil verileri budandı.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>İmza kalıcılığı.</b> Doldur-İmzala'da çizilen imzalar artık saklanıyor.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>On-Prem TLS sabitleme.</b> Sunucu sertifikası ilk kullanımda güvenilir kabul edilir; değişen sertifikada bağlantı reddedilir.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Veri kaybı yolları kapatıldı</b> (şifrelemede yedeksiz üzerine yazma, günlük döndürme ve diğerleri).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.10</span></div>
+      <div class="body">
+        <h2>Saha düzeltmeleri: Excel/görsel seçenekleri ve organizer</h2>
+        <p class="sub">18 Eylül saha turu — düzen seçenekleri ve sayfa organizer düzeltmeleri.</p>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Excel'e dönüştürmede çalışma sayfası düzeni</b> (her tablo / her sayfa / tek) ve <b>görsele dönüştürmede biçim seçimi</b> (PNG/JPEG/TIFF) geri geldi.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Sayfa organizer &ldquo;Çıkar&rdquo; düğmesi</b> çalışıyor; organizer değişiklikleri artık &ldquo;değişti&rdquo; olarak işaretleniyor (kapatırken kaybolmuyor).</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Araç çıktıları Belgeler'e yazılıyor</b> (Online belgelerde geçici klasör yerine).</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Hatalı boyut bildiren taramalar</b> artık pencereye sığdırılıyor.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.4</span></div>
+      <div class="body">
+        <h2>Kurumsal sertifika/e-Mühür imzası, toplu imza ve Türkçe OCR</h2>
+        <p class="sub">Kurumsal imza hattı, USB token, Türk Trust TSA ve kökten onarılan Türkçe OCR.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Kurumsal sertifika (PFX/e-Mühür) ile imzalama</b> ve <b>toplu imza</b>: USB token ve kurum sertifikası; tek PIN/parola, orijinaller korunur, çıktı <code>_imzali.pdf</code>.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Türk Trust TSA ile PAdES-T</b> (zaman damgalı imza) canlı doğrulandı.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Türkçe OCR kökten onarıldı.</b> İ/Ş gibi harfler doğru tanınıyor; &ldquo;Aranabilir yap&rdquo; Türkçe yolu yeniden yazıldı (görünmez, aranabilir metin katmanı).</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>İşaretleme çubuğu tamiri</b> (vurgula/altını çiz/redaksiyon/serbest çizim yeniden çalışıyor) + Akıllı Bölge Düzenleme (Smart Edit) düzenlenebilir sonuç kutusu.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.3</span></div>
+      <div class="body">
+        <h2>Görüntüleyici render motoru: 5–6× hızlı sayfa</h2>
+        <p class="sub">Bellek-içi render ile sayfa çizimi belirgin hızlandı.</p>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Bellek-içi piksel render</b> ile sayfa çizimi ~5× hızlandı (245→45 ms/sayfa ölçüldü); paralel render havuzu ve önbellek.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Genişliğe/Sayfaya Sığdır düğmeleri</b> üst bara geri geldi; büyük belgelerde sanallaştırılmış liste.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.2</span></div>
       <div class="body">
         <h2>QR ile girişte hızlandırma</h2>
         <p class="sub">Yeniden başlatma zinciri sadeleştirildi; QR çok daha hızlı geliyor.</p>

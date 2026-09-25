@@ -92,6 +92,20 @@
   <h2>1.7 Serisi — Kurumsal Olgunlaşma</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">27.08 – 07.09.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Güvenlik</span></div>
+      <h3>EV imzalı paketler, grup senkronu kararlılığı ve SSO teşhisi</h3>
+      <ul>
+        <li><strong>EV sertifikasıyla imzalı kurulum.</strong> On-Prem kurulum paketleri artık genişletilmiş doğrulama (EV) sertifikasıyla kod-imzalı; kurumsal uç nokta güvenliğiyle uyumlu.</li>
+        <li><strong>AD grup senkronu kararlılığı.</strong> Aynı isimli iki Active Directory grubu tüm senkronu durdurabiliyordu; giderildi (18.000+ grup ölçeğinde, SQLite ve MSSQL ile doğrulandı). E-posta adresi olmayan kullanıcılar artık atlanmıyor, UPN'e düşüyor.</li>
+        <li><strong>Elle kullanıcı ekleme.</strong> Kullanıcı adı alanı ve ek doğrulamalar eklendi.</li>
+        <li><strong>SSO hata teşhis ekranı.</strong> Ayarlar &rsaquo; SSO teşhis: SSPI hata kodu ve çözüm önerisi; Windows SSO (Kerberos) sahada uçtan uca doğrulandı.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19–20.08.2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">Yeni Özellik</span><span class="tag">Güvenlik</span></div>

@@ -92,6 +92,20 @@
   <h2>Série 1.7 — Maturité d’entreprise</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">27/08 – 07/09/2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>
+      <h3>Paquets signés EV, stabilité de la synchronisation de groupes et diagnostic SSO</h3>
+      <ul>
+        <li><strong>Installation signée EV.</strong> Les paquets d’installation On-Prem sont désormais signés avec un certificat à validation étendue (EV), compatibles avec la sécurité des postes en entreprise.</li>
+        <li><strong>Stabilité de la synchronisation des groupes AD.</strong> Deux groupes Active Directory de même nom pouvaient interrompre toute la synchronisation ; corrigé (vérifié à l’échelle de 18 000+ groupes sur SQLite et MSSQL). Les utilisateurs sans adresse e-mail ne sont plus ignorés — repli sur l’UPN.</li>
+        <li><strong>Création manuelle d’utilisateur.</strong> Un champ de nom d’utilisateur et des validations supplémentaires ont été ajoutés.</li>
+        <li><strong>Écran de diagnostic des erreurs SSO.</strong> Paramètres &rsaquo; diagnostic SSO : le code d’erreur SSPI et une solution proposée ; SSO Windows (Kerberos) vérifié de bout en bout sur le terrain.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">19–20/08/2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">Nouveauté</span><span class="tag">Sécurité</span></div>

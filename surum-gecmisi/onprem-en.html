@@ -92,6 +92,20 @@
   <h2>1.7 Series — Enterprise Maturity</h2>
 
   <article class="release major">
+    <div class="vcol"><span class="ver">1.7.6.4</span><span class="date">Aug 27 – Sep 7, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>
+      <h3>EV-signed packages, group-sync stability and SSO diagnostics</h3>
+      <ul>
+        <li><strong>EV-signed installer.</strong> On-Prem installer packages are now code-signed with an Extended Validation (EV) certificate, compatible with enterprise endpoint security.</li>
+        <li><strong>AD group-sync stability.</strong> Two Active Directory groups with the same name could halt the entire sync; fixed (verified at 18,000+ group scale on SQLite and MSSQL). Users without an email address are no longer skipped — they fall back to the UPN.</li>
+        <li><strong>Manual user creation.</strong> A username field and additional validation were added.</li>
+        <li><strong>SSO error-diagnostics screen.</strong> Settings &rsaquo; SSO diagnostics: the SSPI error code plus a suggested fix; Windows SSO (Kerberos) verified end to end in the field.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
     <div class="vcol"><span class="ver">1.7.6.x</span><span class="date">Aug 19–20, 2026</span></div>
     <div class="rcol">
       <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>

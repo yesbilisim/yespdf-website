@@ -163,9 +163,80 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.7.2</span>
+        <span class="chip">1.8.2</span>
         <span class="badge-current">Actuelle</span>
       </div>
+      <div class="body">
+        <h2>Mode d’édition repensé, avertissement de police manquante et stabilité</h2>
+        <p class="sub">Un mode d’édition retravaillé, un « Rendre modifiable » sûr et des correctifs venus du terrain.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Mode d’édition repensé.</b> Enregistrer / Enregistrer sous / Retour au lecteur se trouvent désormais dans le ruban Apryse ; le caviardage et l’édition de zone sont annulables.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>« Rendre modifiable » ne change plus l’original.</b> Le résultat est enregistré à côté sous <code>_modifiable.pdf</code> et l’original reste intact (auparavant l’original était écrasé).</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Avertissement de police manquante (application + complément Office).</b> Si une police d’entreprise n’est pas installée, un document/diaporama pouvait s’afficher différemment et le PDF devenir non interrogeable ; un avertissement s’affiche désormais avant la conversion.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Correctifs du complément Office.</b> Les boutons d’export PowerPoint fonctionnent ; si le PDF cible est ouvert, au lieu d’échouer en silence il écrit « … (2).pdf ».</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Défaut d’affichage « arc-en-ciel » corrigé.</b> Sur certains pilotes GPU, l’écran se remplissait de couleurs lors de l’édition d’un document numérisé ; le mode d’affichage par défaut est désormais Embedded (le choix est passé dans les Paramètres).</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>« Définir un mot de passe » affiche la bonne fenêtre</b> (mots de passe d’ouverture et de propriété distincts) ; du texte turc résiduel dans l’interface anglaise a été supprimé.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.12</span></div>
+      <div class="body">
+        <h2>Stabilité : plantages d’accès concurrent + moteur OCR 0.7.1</h2>
+        <p class="sub">Les plantages d’accès concurrent dans le lecteur ont été fermés et l’OCR renouvelé.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Plantages de concurrence documentaire corrigés.</b> Trois points de plantage distincts dus à la fermeture/modification d’un document pendant le rendu parallèle en arrière-plan ont été fermés (vérifié par un test de concurrence étendu).</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Moteur OCR 0.7.1.</b> « Rendre modifiable » plus propre, corrections de la liste des langues ; langues OCR fixées (tur/eng/ara + Apryse deu/fra/spa/ita) et données de langue superflues élaguées.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Persistance des signatures.</b> Les signatures tracées dans Remplir et signer sont désormais conservées.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Épinglage TLS On-Prem.</b> Le certificat du serveur est approuvé à la première utilisation ; un certificat modifié est rejeté.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Chemins de perte de données fermés</b> (écrasement sans sauvegarde lors du chiffrement, rotation des journaux, etc.).</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.10</span></div>
+      <div class="body">
+        <h2>Correctifs de terrain : options Excel/image et l’organiseur</h2>
+        <p class="sub">Tournée de terrain du 18 septembre — options de disposition et correctifs de l’organiseur.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>La disposition des feuilles pour Convertir en Excel</b> (par tableau / par page / unique) et <b>le choix de format pour Convertir en image</b> (PNG/JPEG/TIFF) sont de retour.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Le bouton « Extraire » de l’organiseur de pages</b> fonctionne ; les modifications de l’organiseur sont désormais marquées « modifié » (plus perdues à la fermeture).</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Les sorties des outils sont enregistrées dans Documents</b> (au lieu d’un dossier temporaire pour les documents en ligne).</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Les numérisations indiquant une taille erronée</b> sont désormais ajustées à la fenêtre.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.4</span></div>
+      <div class="body">
+        <h2>Signature par certificat d’entreprise / cachet électronique, signature par lots et OCR turc</h2>
+        <p class="sub">La chaîne de signature d’entreprise, le jeton USB, la TSA Türk Trust et un OCR turc reconstruit.</p>
+        <ul class="changes">
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Signature avec un certificat d’entreprise (PFX / cachet électronique)</b> et <b>signature par lots</b> : jeton USB et certificat d’entreprise ; un seul PIN/mot de passe, originaux préservés, sortie <code>_signe.pdf</code>.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>PAdES-T avec la TSA Türk Trust</b> (signature horodatée) vérifié en direct.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>OCR turc entièrement revu.</b> Les lettres comme İ/Ş sont reconnues correctement ; le chemin turc « rendre interrogeable » a été réécrit (une couche de texte invisible et interrogeable).</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Réparation de la barre d’annotation</b> (surligner / souligner / caviarder / dessin libre fonctionnent à nouveau) plus une zone de résultat modifiable pour l’édition intelligente de zone.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.3</span></div>
+      <div class="body">
+        <h2>Moteur de rendu du lecteur : pages 5–6× plus rapides</h2>
+        <p class="sub">Le rendu en mémoire a nettement accéléré le dessin des pages.</p>
+        <ul class="changes">
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Rendu pixel en mémoire</b> : le dessin des pages est ~5× plus rapide (mesuré 245→45 ms/page) ; pool de rendu parallèle et cache.</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Les boutons Ajuster à la largeur/page</b> sont de retour dans la barre supérieure ; liste virtualisée pour les grands documents.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail"><span class="chip">1.7.2</span></div>
       <div class="body">
         <h2>Connexion QR plus rapide</h2>
         <p class="sub">La chaîne de redémarrage a été simplifiée ; le code QR apparaît nettement plus vite.</p>
