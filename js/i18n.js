@@ -4,6 +4,10 @@ const translations = {
     // Navbar
     'nav.features': 'Özellikler',
     'nav.products': 'Ürünler',
+    'nav.group_product': 'Ürün',
+    'nav.group_solutions': 'Çözümler',
+    'nav.group_resources': 'Kaynaklar',
+    'nav.portal': 'Portal',
     'nav.gallery': 'Galeri',
     'nav.why': 'Neden YesPDF',
     'nav.security': 'Güvenlik',
@@ -263,6 +267,10 @@ const translations = {
     // Navbar
     'nav.features': 'Features',
     'nav.products': 'Products',
+    'nav.group_product': 'Product',
+    'nav.group_solutions': 'Solutions',
+    'nav.group_resources': 'Resources',
+    'nav.portal': 'Portal',
     'nav.gallery': 'Gallery',
     'nav.why': 'Why YesPDF',
     'nav.security': 'Security',
@@ -521,6 +529,10 @@ const translations = {
     // Navbar
     'nav.features': 'Funktionen',
     'nav.products': 'Produkte',
+    'nav.group_product': 'Produkt',
+    'nav.group_solutions': 'Lösungen',
+    'nav.group_resources': 'Ressourcen',
+    'nav.portal': 'Portal',
     'nav.gallery': 'Galerie',
     'nav.why': 'Warum YesPDF',
     'nav.security': 'Sicherheit',
@@ -779,6 +791,10 @@ const translations = {
     // Navbar
     'nav.features': 'Fonctionnalités',
     'nav.products': 'Produits',
+    'nav.group_product': 'Produit',
+    'nav.group_solutions': 'Solutions',
+    'nav.group_resources': 'Ressources',
+    'nav.portal': 'Portail',
     'nav.gallery': 'Galerie',
     'nav.why': 'Pourquoi YesPDF',
     'nav.security': 'Sécurité',
