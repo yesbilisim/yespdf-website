@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ABBYY ve Adobe Olmadan: Ölçerek İnşa Ettiğimiz Belge Motoru — YesPDF</title>
+<meta name="description" content="Taranmış belgeleri aranabilir ve düzenlenebilir yapan OCR motorunu, her iddiayı otomatik kalite kapılarıyla ölçerek nasıl inşa ettiğimizin hikâyesi. Türkçe kelime doğruluğu %99,9 (iç ölçüm).">
+<meta property="og:title" content="ABBYY ve Adobe Olmadan: Ölçerek İnşa Ettiğimiz Belge Motoru — YesPDF">
+<meta property="og:description" content="Taranmış belgeleri aranabilir ve düzenlenebilir yapan OCR motorunu, her iddiayı otomatik kalite kapılarıyla ölçerek nasıl inşa ettiğimizin hikâyesi. Türkçe kelime doğruluğu %99,9 (iç ölçüm).">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yespdf.com.tr/articles/olcumle-belge-motoru-tr.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yespdf.com.tr/articles/olcumle-belge-motoru-tr.html">
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/articles/olcumle-belge-motoru-tr.html">
+<link rel="alternate" hreflang="en" href="https://yespdf.com.tr/articles/document-engine-by-measuring-en.html">
+<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/articles/document-engine-by-measuring-en.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+:root { --bg:#FAFAFA; --white:#FFF; --dark:#0F172A; --gray-50:#F8FAFC; --gray-100:#F1F5F9; --gray-200:#E2E8F0; --gray-500:#64748B; --gray-700:#334155; --gray-900:#0F172A; --green:#059669; --green-light:#D1FAE5; --accent:#7C3AED; --accent-light:#EDE9FE; --accent-dark:#6D28D9; --radius:12px; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Inter',-apple-system,sans-serif; color:var(--gray-700); line-height:1.8; background:var(--bg); }
+h1,h2,h3,h4 { font-family:'Plus Jakarta Sans',-apple-system,sans-serif; color:var(--gray-900); line-height:1.3; }
+a { color:var(--accent); }
+
+.article-header { background:linear-gradient(135deg,#0f172a 0%,#1e3a5f 50%,#0f4c3a 100%); padding:64px 0 52px; }
+.article-header .container { max-width:760px; margin:0 auto; padding:0 28px; }
+.article-header .logo { font-size:16px; font-weight:800; color:#fff; margin-bottom:32px; }
+.article-header .logo span { color:#4ade80; }
+.article-header .logo a { color:inherit; text-decoration:none; }
+.article-header .tag { display:inline-block; background:rgba(74,222,128,0.15); border:1px solid rgba(74,222,128,0.3); color:#86efac; font-size:11px; font-weight:700; letter-spacing:2px; padding:5px 14px; border-radius:100px; margin-bottom:20px; }
+.article-header h1 { color:#fff; font-size:34px; font-weight:800; letter-spacing:-0.5px; margin-bottom:14px; }
+.article-header .subtitle { color:rgba(255,255,255,0.6); font-size:17px; margin-bottom:20px; }
+.article-header .meta { color:rgba(255,255,255,0.35); font-size:13px; display:flex; gap:16px; flex-wrap:wrap; }
+
+.article-body { max-width:760px; margin:0 auto; padding:48px 28px 80px; }
+.article-body h2 { font-size:24px; font-weight:800; margin:40px 0 16px; padding-top:24px; border-top:1px solid var(--gray-200); }
+.article-body h2:first-child { border-top:none; padding-top:0; margin-top:0; }
+.article-body h3 { font-size:19px; font-weight:700; margin:28px 0 12px; color:var(--gray-900); }
+.article-body p { margin-bottom:16px; font-size:16px; }
+.article-body ul, .article-body ol { margin:16px 0; padding-left:24px; }
+.article-body li { margin-bottom:10px; font-size:15px; }
+.article-body strong { color:var(--gray-900); }
+
+/* Code blocks */
+.code-block { background:#1e293b; border-radius:var(--radius); margin:20px 0; overflow:hidden; }
+.code-block .code-header { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:#0f172a; border-bottom:1px solid rgba(255,255,255,0.08); }
+.code-block .code-lang { font-size:12px; font-weight:600; color:#94a3b8; text-transform:uppercase; letter-spacing:1px; }
+.code-block pre { padding:16px 20px; margin:0; overflow-x:auto; }
+.code-block code { font-family:'JetBrains Mono','Fira Code',monospace; font-size:13.5px; line-height:1.7; color:#e2e8f0; }
+.code-block .comment { color:#64748b; }
+.code-block .keyword { color:#c084fc; }
+.code-block .string { color:#86efac; }
+.code-block .function { color:#7dd3fc; }
+.code-block .param { color:#fbbf24; }
+
+/* Inline code */
+.article-body code.inline { background:var(--gray-100); border:1px solid var(--gray-200); padding:2px 7px; border-radius:6px; font-family:'JetBrains Mono',monospace; font-size:14px; color:#be185d; }
+
+/* Category cards */
+.cat-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+.cat-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:20px; border-left:3px solid var(--accent); }
+.cat-card h4 { font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.cat-card p { font-size:13px; color:var(--gray-500); margin:0; }
+
+/* Tool comparison */
+.tool-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:24px; margin:16px 0; }
+.tool-card h4 { font-size:17px; margin-bottom:4px; }
+.tool-card .tool-sub { font-size:13px; color:var(--gray-500); margin-bottom:12px; }
+.tool-card p { font-size:14px; margin-bottom:8px; }
+
+/* CTA box */
+.cta-box { background:linear-gradient(135deg,#ecfdf5 0%,#f0fdf4 100%); border:1px solid rgba(5,150,105,0.15); border-radius:var(--radius); padding:24px 28px; margin:32px 0; }
+.cta-box p { font-size:15px; margin-bottom:12px; }
+.cta-link { display:inline-block; color:#059669; font-weight:700; font-size:15px; text-decoration:none; }
+.cta-link:hover { text-decoration:underline; }
+
+/* Key insight box */
+.insight-box { background:#fffbeb; border:1px solid #fde68a; border-radius:var(--radius); padding:20px 24px; margin:20px 0; }
+.insight-box p { font-size:14px; margin:0; color:#92400e; }
+
+.article-footer { text-align:center; padding:24px 0; border-top:1px solid var(--gray-200); max-width:760px; margin:0 auto; padding-left:28px; padding-right:28px; }
+.article-footer p { font-size:12px; color:var(--gray-500); }
+.article-footer a { color:var(--accent); text-decoration:none; }
+.article-footer .logo { font-size:15px; font-weight:800; color:var(--gray-900); margin-bottom:4px; }
+.article-footer .logo span { color:#059669; }
+
+@media(max-width:700px) { .article-header h1 { font-size:24px; } .cat-grid { grid-template-columns:1fr; } .code-block code { font-size:12px; } }
+
+.article-body table{width:100%;border-collapse:collapse;margin:22px 0;font-size:14px;}
+.article-body th,.article-body td{border:1px solid var(--gray-200);padding:9px 12px;text-align:left;vertical-align:top;}
+.article-body thead th{background:var(--gray-50);font-family:'Plus Jakarta Sans',sans-serif;color:var(--gray-900);font-weight:700;}
+.article-body tbody tr:nth-child(even){background:var(--gray-50);}
+.article-body td strong{color:var(--green);}
+.article-body .table-wrap{overflow-x:auto;}
+figure{margin:26px 0;}
+figure img{width:100%;height:auto;border:1px solid var(--gray-200);border-radius:var(--radius);display:block;}
+figcaption{font-size:13px;color:var(--gray-500);text-align:center;margin-top:10px;line-height:1.5;}
+.disclaimer{font-size:13px;color:var(--gray-500);font-style:italic;margin:8px 0 0;}
+</style></head><body>
+<div class="article-header"><div class="container">
+  <div class="logo"><a href="https://yespdf.com.tr">Yes<span>PDF</span></a></div>
+  <div class="tag">MÜHENDİSLİK</div>
+  <h1>ABBYY ve Adobe Olmadan: Ölçerek İnşa Ettiğimiz Belge Motoru</h1>
+  <p class="subtitle">Taranmış belgeleri aranabilir ve düzenlenebilir yapmak için lisanslara bağlı kalmadan, ölçüm disipliniyle bir belge motorunu nasıl kurduk.</p>
+  <div class="meta"><span>YesPDF Teknik Ekip</span><span>·</span><span>27 Eylül 2026</span><span>·</span><span>7 dk okuma</span></div>
+</div></div>
+<div class="article-body">
+
+<p>Taranmış belgeleri aranabilir ve düzenlenebilir yapmak için sektörün standart cevabı, büyük belge yazılımı paketlerinden birini lisanslamaktır. Bu yazı, küçük bir mühendislik ekibinin bu lisanslara bağımlı kalmadan, ölçüm disipliniyle neler başarabildiğinin hikâyesi.</p>
+
+<figure>
+  <img src="assets/ocr-pipeline-tr.png" alt="YesPDF OCR hattı: taranmış PDF, sayfa profilleme, OCR ve düzen analizi, Türkçe düzeltme, kalite kapıları, onaylı paket">
+  <figcaption>Ölçümle inşa edilen hat: hiçbir değişiklik, otomatik kalite kapılarını geçmeden paketlenmez.</figcaption>
+</figure>
+
+<h2>Neden bu yola çıktık</h2>
+<p>Üç gerekçemiz vardı:</p>
+<p><strong>Türkçe.</strong> OCR için zor bir dil. İ/ı ve S/ş gibi çiftler, çekim ekleriyle kökünden şekil değiştiren kelimeler, aglütinatif yapı… Evrensel modeller Türkçeyi &ldquo;yaklaşık&rdquo; okur. Yaklaşık; bir ekstrede, bir sözleşmede, bir resmî evrakta yeterli değildir. Türkçe&rsquo;yi birinci sınıf vatandaş yapan bir hat kurmak istedik.</p>
+<p><strong>Verinin yerinde kalması.</strong> Müşterilerimizin bir kısmı için belge, sunucudan çıkmaz. Hava boşluklu (air-gapped) ortamlar, kendi veri merkezi, şifreli depolama… Hazır bulut OCR servisleri bu senaryolarda söz konusu bile olamıyor.</p>
+<p><strong>Maliyet ve bağımsızlık.</strong> Paket lisansları ölçekle birlikte şişer ve pazarlık masası her yenilemede kurulur. Kendi hattımızda her bileşeni bilinçli seçtik; belge yazılımı devlerinin ürün lisanslarına bağımlı değiliz.</p>
+
+<h2>Yöntem: her iddia bir kapı</h2>
+<p>Bu çalışmanın en önemli çıktısı motorun kendisi değil, <strong>üretim disiplini</strong>. &ldquo;Daha iyi OCR yazalım&rdquo; yerine &ldquo;iddialarımızı ölçülebilir hâle getirelim&rdquo; dedik; her şey bunun ardından geldi.</p>
+<p>Bugün motorun hiçbir değişikliği, otomatik kalite kapılarını geçmeden paketlenemez:</p>
+<ol>
+<li><strong>Çift katman kontrolü.</strong> OCR&rsquo;lı çıktıda eski ve yeni metin katmanının üst üste binmesi (kopyalarken satırların ikiye katlandığı o sinir bozucu durum) otomatik sayılır. Hedef sıfır.</li>
+<li><strong>Sadakat ölçüleri.</strong> Aranabilir çıktı, orijinal sayfa görüntüsünü olduğu gibi korur: görüntü çözünürlüğü, formatı, dosya boyutu. Bir değişiklik 12 sayfalık bir belgeyi 9 kat şiştirmeye başladığında bunu gözle değil kapı yakaladı — o hata yayılsaydı 100 GB&rsquo;lık bir arşiv 900 GB&rsquo;a çıkacaktı.</li>
+<li><strong>Sürümler arası tutarlılık.</strong> Kelime sayısı, karakter kapsamı, sayfa sayısı… Her yeni sürüm, bir öncekiyle aynı belgeler üzerinde otomatik karşılaştırılır. Sapma eşikleri aşılırsa üretim durur.</li>
+<li><strong>Köken doğrulama.</strong> Derlenen her ikili, hangi kaynak kod sürümünden ve hangi günde üretildiğini kendi içinde taşır; paket bütünlüğü SHA-256 ile mühürlenir. Sahada bir davranış görürsek, eldeki paketin hangi üretimden geldiği dakikalar içinde kanıtlanabilir.</li>
+</ol>
+
+<h2>Ne ölçüyoruz</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Ölçüm</th><th>Hedef</th><th>Bu ay iç ölçüm</th><th>Neden önemli</th></tr></thead>
+<tbody>
+<tr><td>Çift metin katmanı</td><td>0</td><td><strong>0</strong></td><td>Kopyalama/arama güvenilirliği</td></tr>
+<tr><td>Aranabilir çıktıda dosya boyutu</td><td>≤ ×1,3</td><td><strong>×1,0–1,1</strong></td><td>Depolama maliyeti; sadakat sözü</td></tr>
+<tr><td>Sürümler arası kelime sapması</td><td>&lt; %2</td><td><strong>%0,1</strong></td><td>Regresyonun erken yakalanması</td></tr>
+<tr><td>Sayfa görüntüsü kimliği</td><td>değişmez</td><td>değişmedi</td><td>Belge kanıt bütünlüğü</td></tr>
+<tr><td>Türkçe kelime doğruluğu</td><td>—</td><td><strong>%99,9</strong> (iç ölçüm)</td><td>Ana kalite göstergesi</td></tr>
+<tr><td>Paket kökeni</td><td>commit kimliği</td><td>her pakette</td><td>Denetlenebilir üretim</td></tr>
+</tbody>
+</table></div>
+<p class="disclaimer">Rakamlar kendi test belgelerimizdeki iç ölçümlerdir; farklı belgelerde farklılık gösterebilir.</p>
+
+<h2>İki hikâye, yöntemin gücü</h2>
+<h3>Yarı kalan satırlar</h3>
+<p>Kullanıcılarımız, karışık punto içeren sayfalarda eski metnin yarısının silinmeden görünürde kaldığını bildirdi. Göze küçük görünen bu kusur, ölçüm zinciriyle adım adım kök nedene indirildi: satırı örtmek için kullanılan boyut hesabı, farklı punto karışımlarında mürekkep yüksekliğini küçük tahmin ediyordu. Düzeltme yapıldı, hemen ardından bu senaryo kalıcı bir kapıya dönüştürüldü — aynı hata bir daha sessizce geri dönemiyor.</p>
+<figure>
+  <img src="assets/ocr-once-sonra-tr.png" alt="Öncesi ve sonrası: düzenlenebilir çıktıda eski satırın yarısı görünüyordu; düzeltme sonrası temiz">
+  <figcaption>Öncesi/sonrası: düzenlenebilir çıktıda eski satırın yarısı görünüyordu — düzeltme sonrası temiz.</figcaption>
+</figure>
+<h3>&ldquo;acquired&rdquo; nerede bozuluyor?</h3>
+<p>Türkçe modda okunan belgelerdeki İngilizce teknik terimler bazen bozuk çıkıyordu. İlk şüpheli yazım düzeltme katmanıydı; ölçtük — değildi. Sorun, Türkçe modelin Latin alfabesinin Türkçe&rsquo;de bulunmayan harfleri hiç tanımamasıydı. Çözüm, iki dili ölçümlü bir kuralla birleştirmek oldu: yalnız sözlük onaylı, satırın dilini bozmayan değişimler kabul. Sonuç: Türkçe belgelerde sıfır yanlış müdahale, İngilizce terimlerde kurtarılmış kelimeler.</p>
+
+<h2>Dürüstlük: sınırlarımızı da yayınlıyoruz</h2>
+<p>Hiçbir motor her belgede kusursuz değildir. Bizimki de değil. El yazısı ağırlıklı formlar, hibrit sayfalar (yarısı dijital yarı tarama), düşük DPI kaynaklar… Hangi sınırların açık olduğunu iç kayıtlarımızda tutuyor, her sürümde ölçüyoruz. Çünkü ölçmediğin şeyi düzeltemezsin — ve müşteriye &ldquo;her şey mükemmel&rdquo; diyen bir ekip, kendi ölçümlerine güvenen bir ekibe uzun vadede yenilir.</p>
+
+<h2>Sonuç</h2>
+<p>Bu çalışmadan çıkan tablo net: Hazır belge yazılımı lisanslarına bağımlı olmadan, müşteri verisinin kendi merkezinden çıkmadığı, Türkçe&rsquo;nin birinci sınıf okunduğu, her sürümü ölçümle kapılardan geçirilen bir belge motoru — küçük bir ekiple kurulabilir.</p>
+<p>Bunu bir pazarlama iddiası olarak değil, yukarıdaki ölçüm tablosu olarak sunuyoruz.</p>
+
+<div class="cta-box">
+<p><strong>YesPDF</strong> — taranmış belgeleri aranabilir ve düzenlenebilir PDF&rsquo;e dönüştüren, kurum içi (on-premise) ve masaüstü ortamlarında çalışan belge motoru. Detay ve demo için bizimle iletişime geçin.</p>
+<a href="https://yespdf.com.tr/#contact" class="cta-link">→ Demo talep edin</a>
+</div>
+
+</div>
+<div class="article-footer">
+  <div class="logo">Yes<span>PDF</span></div>
+  <p>&copy; 2026 YesPDF. Tüm hakları saklıdır. <a href="https://yespdf.com.tr">yespdf.com.tr</a></p>
+</div>
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body></html>
