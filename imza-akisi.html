@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurumsal İmza Akışı — YesPDF</title>
+<meta name="description" content="Belgeleriniz kurumunuzdan çıkmadan nitelikli e-imza: sıralı/paralel imza akışı, kurum dışı imzacı, PAdES-B/T/LT, TürkTrust zaman damgası, Windows & macOS imza aracı, QR doğrulama ve denetim raporu. Tamamen on-premise.">
+<meta property="og:title" content="Kurumsal İmza Akışı — YesPDF">
+<meta property="og:description" content="Belge sunucunuzdan çıkmadan nitelikli elektronik imza. Sıralı/paralel akış, kurum dışı imzacı, TürkTrust zaman damgası, Windows & macOS imza aracı, QR doğrulama ve denetim raporu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yespdf.com.tr/imza-akisi">
+<meta property="og:image" content="https://yespdf.com.tr/img/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yespdf.com.tr/imza-akisi">
+<link rel="alternate" hreflang="tr" href="https://yespdf.com.tr/imza-akisi">
+<link rel="alternate" hreflang="x-default" href="https://yespdf.com.tr/imza-akisi">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+  :root{
+    --ink:#0C1B2E; --ink-soft:#3A4A5C; --muted:#6B7A8C; --line:#E3E9F0;
+    --paper:#F6F8FB; --white:#FFFFFF; --soft:#EEF3F9;
+    --navy:#123A66; --navy-deep:#0C2544; --green:#12874E; --green-2:#16A35C; --green-soft:#E6F5EC;
+    --gold:#C77B22; --gold-soft:#FBEEDD;
+    --shadow:0 24px 60px -30px rgba(12,27,46,.5);
+    --shadow-sm:0 8px 24px -14px rgba(12,27,46,.28);
+    --radius:16px;
+    --disp:'Plus Jakarta Sans',-apple-system,Segoe UI,system-ui,sans-serif;
+    --body:'Inter',-apple-system,Segoe UI,system-ui,sans-serif;
+    color-scheme:light;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--body);color:var(--ink-soft);background:var(--paper);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);line-height:1.2;letter-spacing:-.02em;}
+  a{color:var(--green);text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .narrow{max-width:820px;margin:0 auto;padding:0 24px;}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .topbar .row{display:flex;align-items:center;justify-content:space-between;height:62px;}
+  .brand{font-family:var(--disp);font-weight:800;font-size:20px;color:var(--ink);letter-spacing:-.02em;}
+  .brand span{color:var(--green-2);}
+  .topbar .actions{display:flex;align-items:center;gap:10px;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:700;font-size:14px;border-radius:11px;padding:11px 18px;transition:transform .15s,box-shadow .15s,background .15s;white-space:nowrap;}
+  .btn-primary{background:var(--green);color:#fff;box-shadow:var(--shadow-sm);}
+  .btn-primary:hover{background:var(--green-2);transform:translateY(-1px);color:#fff;}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  .btn-ghost:hover{background:var(--soft);color:var(--ink);}
+  .btn-light{background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.28);}
+  .btn-light:hover{background:rgba(255,255,255,.22);color:#fff;}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:
+     radial-gradient(1100px 520px at 78% -12%, rgba(22,163,92,.30), transparent 62%),
+     linear-gradient(155deg,#0C2544 0%, #123A66 52%, #0E3B4E 100%);
+     color:#fff;padding:70px 0 96px;}
+  .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--disp);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9fe6bf;background:rgba(22,163,92,.16);border:1px solid rgba(22,163,92,.4);padding:7px 14px;border-radius:100px;margin-bottom:22px;}
+  .hero h1{color:#fff;font-size:clamp(32px,5.2vw,54px);font-weight:800;max-width:16ch;text-wrap:balance;}
+  .hero .lede{color:rgba(255,255,255,.82);font-size:clamp(16px,2.1vw,19px);max-width:62ch;margin:20px 0 0;text-wrap:pretty;}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+  .hero .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px;}
+  .chip{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:#eaf3ff;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:9px 14px;border-radius:100px;}
+  .chip svg{width:16px;height:16px;stroke:#7ee2a6;fill:none;stroke-width:2;}
+  .hero-shot{margin-top:52px;}
+
+  /* mac window frame */
+  .win{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .win-bar{display:flex;align-items:center;gap:8px;padding:11px 14px;background:#EBEEF3;border-bottom:1px solid #DDE3EB;}
+  .win-bar .d{width:12px;height:12px;border-radius:50%;flex:none;}
+  .d.r{background:#ff5f57;} .d.y{background:#febc2e;} .d.g{background:#28c840;}
+  .win-bar .t{margin-left:10px;font-size:12.5px;color:#7A879A;font-weight:600;letter-spacing:.01em;}
+  .win img{width:100%;height:auto;}
+  .hero .win{box-shadow:0 40px 90px -40px rgba(0,0,0,.7);}
+
+  /* sections */
+  section{padding:72px 0;}
+  .sec-head{max-width:720px;margin:0 auto 44px;text-align:center;}
+  .sec-head .kick{font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:12px;}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:800;}
+  .sec-head p{color:var(--muted);font-size:17px;margin-top:14px;}
+
+  /* value cards */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm);}
+  .card .ic{width:46px;height:46px;border-radius:12px;background:var(--green-soft);display:grid;place-items:center;margin-bottom:16px;}
+  .card .ic svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.9;}
+  .card h3{font-size:17px;margin-bottom:8px;}
+  .card p{font-size:14px;color:var(--muted);}
+
+  /* zig-zag steps */
+  .step{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-bottom:64px;}
+  .step:nth-child(even) .step-media{order:-1;}
+  .step-num{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:11px;background:var(--navy);color:#fff;font-family:var(--disp);font-weight:800;font-size:16px;margin-bottom:16px;}
+  .step h3{font-size:23px;margin-bottom:12px;}
+  .step p{font-size:15.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .step ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:10px;}
+  .step ul li{position:relative;padding-left:26px;font-size:14.5px;color:var(--ink-soft);}
+  .step ul li::before{content:"";position:absolute;left:0;top:8px;width:15px;height:15px;background:var(--green-soft);border-radius:50%;}
+  .step ul li::after{content:"";position:absolute;left:5px;top:11px;width:5px;height:9px;border-right:2px solid var(--green);border-bottom:2px solid var(--green);transform:rotate(45deg);}
+  .step ul li b{color:var(--ink);}
+
+  /* agent band */
+  .band{background:linear-gradient(150deg,#0C2544,#123A66);color:#fff;border-radius:24px;padding:clamp(32px,4vw,52px);display:grid;grid-template-columns:1.1fr 1fr;gap:42px;align-items:center;}
+  .band h2{color:#fff;font-size:clamp(24px,3vw,32px);}
+  .band p{color:rgba(255,255,255,.8);margin-top:14px;font-size:16px;}
+  .os-row{display:flex;gap:14px;margin-top:24px;flex-wrap:wrap;}
+  .os{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px 18px;}
+  .os svg{width:26px;height:26px;fill:#fff;}
+  .os b{font-family:var(--disp);font-size:15px;color:#fff;display:block;}
+  .os span{font-size:12.5px;color:rgba(255,255,255,.62);}
+  .drivers{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px;}
+  .drivers span{font-size:12.5px;color:#cfe0f2;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);padding:6px 11px;border-radius:8px;}
+
+  /* gallery */
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .gcap{margin-top:12px;}
+  .gcap b{font-family:var(--disp);font-size:15px;color:var(--ink);display:block;}
+  .gcap span{font-size:13.5px;color:var(--muted);}
+
+  /* feature split (türktrust / verify) */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  .pill-list{display:flex;flex-direction:column;gap:14px;margin-top:8px;}
+  .pill{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow-sm);}
+  .pill .pic{width:40px;height:40px;border-radius:11px;background:var(--gold-soft);display:grid;place-items:center;flex:none;}
+  .pill .pic svg{width:22px;height:22px;stroke:var(--gold);fill:none;stroke-width:1.9;}
+  .pill h4{font-size:16px;margin-bottom:4px;}
+  .pill p{font-size:14px;color:var(--muted);}
+
+  /* table */
+  .spec{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);}
+  .spec table{width:100%;border-collapse:collapse;}
+  .spec td{padding:15px 22px;border-top:1px solid var(--line);font-size:15px;vertical-align:top;}
+  .spec tr:first-child td{border-top:none;}
+  .spec td:first-child{font-family:var(--disp);font-weight:700;color:var(--ink);width:34%;background:var(--soft);}
+
+  /* faq */
+  .faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  details{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:4px 22px;box-shadow:var(--shadow-sm);}
+  details summary{font-family:var(--disp);font-weight:700;color:var(--ink);font-size:16px;padding:18px 0;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"+";font-size:22px;color:var(--green);font-weight:400;transition:transform .2s;}
+  details[open] summary::after{transform:rotate(45deg);}
+  details p{padding:0 0 20px;font-size:14.5px;color:var(--ink-soft);}
+
+  /* final cta */
+  .final{background:linear-gradient(150deg,#0C2544,#12874E);color:#fff;border-radius:24px;padding:clamp(36px,5vw,64px);text-align:center;}
+  .final h2{color:#fff;font-size:clamp(26px,3.4vw,38px);max-width:20ch;margin:0 auto;}
+  .final p{color:rgba(255,255,255,.82);margin:16px auto 0;max-width:56ch;font-size:17px;}
+  .final .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px;}
+
+  footer{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;text-align:center;background:var(--white);}
+  footer .brand{font-size:16px;margin-bottom:6px;}
+
+  @media(max-width:860px){
+    .cards{grid-template-columns:1fr 1fr;}
+    .step{grid-template-columns:1fr;gap:22px;}
+    .step:nth-child(even) .step-media{order:0;}
+    .band,.split{grid-template-columns:1fr;gap:26px;}
+    .gal{grid-template-columns:1fr;}
+  }
+  @media(max-width:520px){ .cards{grid-template-columns:1fr;} .topbar .actions .btn-ghost{display:none;} }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap row">
+  <a href="/" class="brand">Yes<span>PDF</span></a>
+  <div class="actions">
+    <a href="/urunler" class="btn btn-ghost">Ürünler</a>
+    <a href="/#contact" class="btn btn-primary">Demo Talep Et</a>
+  </div>
+</div></div>
+
+<!-- HERO -->
+<header class="hero"><div class="wrap">
+  <span class="eyebrow">Yeni · On-Prem</span>
+  <h1>Kurumsal İmza Akışı</h1>
+  <p class="lede">Sözleşme, tutanak, teklif ve formlarınızı kurum içi ve kurum dışı imzacılara sırayla gönderip toplayın — <strong>belge sunucunuzdan hiç çıkmadan</strong>, nitelikli elektronik imza ve nitelikli zaman damgasıyla.</p>
+  <div class="cta">
+    <a href="/#contact" class="btn btn-primary">Demo Talep Et</a>
+    <a href="#nasil" class="btn btn-light">Nasıl çalışır?</a>
+  </div>
+  <div class="chips">
+    <span class="chip"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/></svg>Belge sunucudan çıkmaz</span>
+    <span class="chip"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>TürkTrust zaman damgası</span>
+    <span class="chip"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>Windows &amp; macOS imza aracı</span>
+    <span class="chip"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>PAdES-B / T / LT</span>
+  </div>
+  <div class="hero-shot">
+    <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">YesPDF · İmza Akışı — Belge seçimi</span></div>
+      <img src="img/imza/belge-sec.png" alt="YesPDF İmza Akışı: imzalanacak belgeyi seçme adımı" width="1107" height="781">
+    </div>
+  </div>
+</div></header>
+
+<!-- NEDEN -->
+<section><div class="wrap">
+  <div class="sec-head">
+    <div class="kick">Neden YesPDF</div>
+    <h2>Verinin kurumdan çıkmadığı imza deneyimi</h2>
+    <p>İmza, kullanıcının kendi e-imza aracında (USB token) oluşur; sunucu yalnızca belgenin özetini (hash) imzalatır.</p>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z"/></svg></div>
+      <h3>Belge sunucudan çıkmaz</h3>
+      <p>İmzalanacak belge hiçbir bulut servisine gönderilmez. Kurum dışı imzacı bile belgeyi sizin sunucunuz üzerinden görür.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>Nitelikli imza + zaman damgası</h3>
+      <p>Yetkili ESHS'lerin nitelikli sertifikaları. İmza anı, yerel saatten bağımsız olarak nitelikli zaman damgasıyla mühürlenir.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+      <h3>Uçtan uca kanıt zinciri</h3>
+      <p>Bağlantı açılması, doğrulama kodu, görüntüleme, imza ve hatırlatma — her adım zaman, IP ve cihaz bilgisiyle denetim raporunda.</p>
+    </div>
+    <div class="card">
+      <div class="ic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 01-2-2V5a2 2 0 012-2h14a2 2 0 012 2v1a2 2 0 01-2 2M5 8v11a2 2 0 002 2h10a2 2 0 002-2V8"/></svg></div>
+      <h3>Kurulum sizin sunucunuzda</h3>
+      <p>Abonelik zorunluluğu, dışarıya veri aktarımı ve internet bağımlılığı yok. Tamamen kurum içi (on-premise).</p>
+    </div>
+  </div>
+</div></section>
+
+<!-- NASIL ÇALIŞIR -->
+<section id="nasil" style="background:var(--white);"><div class="wrap">
+  <div class="sec-head">
+    <div class="kick">Nasıl çalışır</div>
+    <h2>Dört adımda imza akışı</h2>
+    <p>Belgeyi seçin, imzacıları ve rolleri belirleyin, alanları yerleştirin, gönderin.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-body">
+      <span class="step-num">1</span>
+      <h3>Belgeyi seçin</h3>
+      <p>Kütüphanenizden bir belge seçin ya da yeni bir PDF yükleyin. Word, Excel, PowerPoint ve XPS belgeleri sisteme yüklendiğinde otomatik olarak PDF'e dönüştürülür.</p>
+    </div>
+    <div class="step-media"><div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Belge seçimi</span></div><img src="img/imza/belge-sec.png" alt="İmzalanacak belgeyi seçme ekranı" loading="lazy"></div></div>
+  </div>
+
+  <div class="step">
+    <div class="step-body">
+      <span class="step-num">2</span>
+      <h3>İmzacıları ve rolleri belirleyin</h3>
+      <p>Kurum içinden kullanıcı seçin, kurum dışından e-posta ile kişi ekleyin. Sıralı akışta imzacılar birbirini bekler; aynı adıma birden çok kişi koyarsanız paralel imzalarlar.</p>
+      <ul>
+        <li>Roller: <b>İmza</b>, <b>Onay</b>, <b>E-imza ile onay</b></li>
+        <li><b>Kurum adına imza:</b> kişiyi bilmeseniz de kurumsal e-postaya gönderin</li>
+        <li><b>Yönlendirme</b> ve <b>imza yetki belgesi</b> (sirküler/vekâlet) desteği</li>
+        <li><b>Beklenen dışında imza uyarısı</b> + isteğe bağlı <b>T.C. kimlik no eşleşmesi</b></li>
+      </ul>
+    </div>
+    <div class="step-media"><div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Akış düzenleme</span></div><img src="img/imza/akis-duzenle.png" alt="İmza akışı ve imzacı rollerini düzenleme" loading="lazy"></div></div>
+  </div>
+
+  <div class="step">
+    <div class="step-body">
+      <span class="step-num">3</span>
+      <h3>İmza ve paraf alanlarını yerleştirin</h3>
+      <p>Belgede imzanın görüneceği yere tıklayın, kişiyi seçin. Paraf alanı da aynı şekilde eklenir; "her sayfaya paraf" seçeneğiyle tüm sayfalara tek tıkla dağıtılır.</p>
+    </div>
+    <div class="step-media"><div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">İmza alanı yerleştirme</span></div><img src="img/imza/imza-alani.png" alt="Belgeye imza ve paraf alanı yerleştirme" loading="lazy"></div></div>
+  </div>
+
+  <div class="step">
+    <div class="step-body">
+      <span class="step-num">4</span>
+      <h3>Gönderi ayarlarını seçin ve gönderin</h3>
+      <p>İmza türünü, doğrulama karesini ve talep dilini belirleyin.</p>
+      <ul>
+        <li><b>PAdES-B / PAdES-T</b> (önerilen) <b>/ PAdES-LT</b> (uzun süreli doğrulama)</li>
+        <li><b>QR doğrulama karesi:</b> belgeyi eline alan taraf, oturum açmadan imzaları doğrular</li>
+        <li><b>Sertifikasyon:</b> ilk imza belgeyi mühürler; sonraki izinsiz değişiklik geçersiz görünür</li>
+        <li><b>Talep dili:</b> Türkçe veya İngilizce (e-posta, kod, imza sayfası, denetim raporu)</li>
+      </ul>
+    </div>
+    <div class="step-media"><div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Gönderi ayarları</span></div><img src="img/imza/gonderi-ayarlari.png" alt="İmza türü ve gönderi ayarları (PAdES, QR, dil)" loading="lazy"></div></div>
+  </div>
+</div></section>
+
+<!-- AGENT BAND -->
+<section><div class="wrap">
+  <div class="band">
+    <div>
+      <h2>İmza Aracı — Windows &amp; macOS</h2>
+      <p>İmza, kullanıcının bilgisayarındaki <strong>YesPDF İmza Aracı</strong> ile kendi e-imza token'ında oluşur; belge dışarı gönderilmez. Araç yalnız imza anında devreye girer.</p>
+      <div class="os-row">
+        <div class="os">
+          <svg viewBox="0 0 24 24"><path d="M3 5.6L10 4.6v6.8H3zM11 4.5L21 3v8.4h-10zM3 12.6h7v6.8l-7-1zM11 12.6h10V21l-10-1.5z"/></svg>
+          <div><b>Windows</b><span>Kod imzalı kurulum</span></div>
+        </div>
+        <div class="os">
+          <svg viewBox="0 0 24 24"><path d="M16 3c0 2-1.6 3.6-3.6 3.6M12 8c-3 0-6 2-6 6.5 0 3.5 2 7 4 7 1 0 1.4-.6 2.6-.6s1.6.6 2.6.6c2 0 4-3.5 4-7C21.6 10 18.5 8 12 8z"/></svg>
+          <div><b>macOS</b><span>Apple noter onaylı — uyarı çıkmaz</span></div>
+        </div>
+      </div>
+      <div class="drivers">
+        <span>TÜBİTAK AKİS</span><span>SafeNet</span><span>A.E.T.</span><span>Gemalto</span><span>Feitian</span><span>Atos</span><span>Charismathics</span>
+      </div>
+    </div>
+    <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">İmza Aracı — PIN penceresi</span></div><img src="img/imza/pin.png" alt="YesPDF İmza Aracı PIN penceresi — PIN yalnız araca iletilir" loading="lazy"></div>
+  </div>
+</div></section>
+
+<!-- KURUM DIŞI DENEYİM -->
+<section style="background:var(--white);"><div class="wrap">
+  <div class="sec-head">
+    <div class="kick">Kurum dışı imzacı deneyimi</div>
+    <h2>Hesap gerektirmeden, beş adımda</h2>
+    <p>Kurum dışı imzacının YesPDF hesabına ihtiyacı yoktur; kendisine özel, tek kullanımlık bağlantıyla erişir.</p>
+  </div>
+  <div class="gal">
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">1 · E-posta bildirimi</span></div><img src="img/imza/eposta.png" alt="İmza talebi e-postası" loading="lazy"></div>
+      <div class="gcap"><b>E-posta gelir</b><span>Kişiye özel, tek kullanımlık bağlantı.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">2 · Kimlik doğrulama</span></div><img src="img/imza/kod-giris.png" alt="Tek kullanımlık doğrulama kodu girişi" loading="lazy"></div>
+      <div class="gcap"><b>Kimlik doğrulanır</b><span>E-posta ile kod; yönetici açmışsa SMS / WhatsApp.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">3 · İmza onayı</span></div><img src="img/imza/imza-onay.png" alt="İmza onayı: hangi sertifikayla imzalanacağı gösterilir" loading="lazy"></div>
+      <div class="gcap"><b>Belge okunur, imzalanır</b><span>Kaç sayfanın görüldüğü kaydedilir; sertifika açıkça gösterilir.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">4 · PIN penceresi</span></div><img src="img/imza/pin.png" alt="PIN yalnız e-imza aracına iletilir" loading="lazy"></div>
+      <div class="gcap"><b>PIN kendi penceresinde</b><span>PIN sayfaya ya da sunucuya asla gönderilmez.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">5 · Tamamlandı</span></div><img src="img/imza/tamamlandi.png" alt="İmza tamamlandı — belge ve denetim raporu indirilebilir" loading="lazy"></div>
+      <div class="gcap"><b>İmza tamamlanır</b><span>İmzacı belgeyi ve denetim raporunu indirebilir.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Two languages · İki dil</span></div><img src="img/imza/arayuz-en.png" alt="İngilizce arayüz — akış iki dillidir" loading="lazy"></div>
+      <div class="gcap"><b>İki dilli arayüz</b><span>Türkçe ve İngilizce; kullanıcı istediği an değiştirir.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TÜRKTRUST / DOĞRULAMA SPLIT -->
+<section><div class="wrap">
+  <div class="split">
+    <div>
+      <div class="kick" style="font-family:var(--disp);font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:12px;">Zaman damgası &amp; doğrulama</div>
+      <h2 style="font-size:clamp(24px,3vw,32px);">Nitelikli zaman damgası, hazır TürkTrust entegrasyonu</h2>
+      <p style="color:var(--muted);margin-top:14px;">İmzanın atıldığı an, yerel bilgisayar saatinden bağımsız olarak nitelikli TSA ile mühürlenir. TSA sağlayıcısı yapılandırılabilir; <strong>TürkTrust entegrasyonu hazırdır</strong>.</p>
+      <div class="pill-list">
+        <div class="pill"><div class="pic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5l3 2M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div><h4>PAdES-T &amp; PAdES-LT</h4><p>Zaman damgası imzaya gömülür; LT ile sertifika süresi dolduktan sonra bile doğrulanabilir.</p></div></div>
+        <div class="pill"><div class="pic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h3v3h-3zM19 17h1v3h-6v-1"/></svg></div><div><h4>QR'lı doğrulama sayfası</h4><p>Belgeyi eline alan taraf, kareyi okutup imzaların geçerliliğini oturum açmadan görür.</p></div></div>
+        <div class="pill"><div class="pic"><svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2a4 4 0 014-4h4m0 0l-3-3m3 3l-3 3M5 7h6"/></svg></div><div><h4>SHA-256 özet</h4><p>Sunucu yalnızca belgenin özetini imzalatır; belgenin kendisi token'dan çıkmaz.</p></div></div>
+      </div>
+    </div>
+    <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Kurum dışı alıcı ekleme</span></div><img src="img/imza/alici-ekle.png" alt="Kurum dışı alıcı ekleme ve kuruma özel seçenekler" loading="lazy"></div>
+  </div>
+</div></section>
+
+<!-- TAKİP & KANIT -->
+<section style="background:var(--white);"><div class="wrap">
+  <div class="sec-head">
+    <div class="kick">Takip ve kanıt</div>
+    <h2>Her adım kayıt altında</h2>
+    <p>Talep listesi, olay geçmişi, otomatik hatırlatma ve tek PDF'te toplanan denetim raporu.</p>
+  </div>
+  <div class="gal">
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Talepler</span></div><img src="img/imza/talepler.png" alt="Gelen ve gönderilen imza talepleri" loading="lazy"></div>
+      <div class="gcap"><b>Talep listesi</b><span>Size gelen ve gönderdiğiniz talepler; ilerleme ve durum.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Talep ayrıntısı</span></div><img src="img/imza/takip-detay.png" alt="Talep ayrıntısı ve olay geçmişi" loading="lazy"></div>
+      <div class="gcap"><b>Olay geçmişi</b><span>Kim imzaladı, kim bekliyor, hangi adımda — tek ekranda.</span></div>
+    </div>
+    <div>
+      <div class="win"><div class="win-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Denetim kaydı</span></div><img src="img/imza/denetim.png" alt="Kurumsal denetim kaydı — CSV/PDF dışa aktarım" loading="lazy"></div>
+      <div class="gcap"><b>Denetim raporu</b><span>Tüm olaylar, doğrulama sonuçları; CSV/PDF dışa aktarım.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- TEKNİK ÖZET -->
+<section><div class="narrow">
+  <div class="sec-head" style="margin-bottom:28px;">
+    <div class="kick">Teknik özet</div>
+    <h2>Standartlar ve kapsam</h2>
+  </div>
+  <div class="spec"><table><tbody>
+    <tr><td>İmza biçimi</td><td>PAdES-B, PAdES-T, PAdES-LT</td></tr>
+    <tr><td>Özet algoritması</td><td>SHA-256</td></tr>
+    <tr><td>Zaman damgası</td><td>Nitelikli TSA (yapılandırılabilir) — TürkTrust entegrasyonu hazır</td></tr>
+    <tr><td>Sertifika</td><td>Türkiye'de yetkili ESHS'lerin nitelikli sertifikaları; USB token</td></tr>
+    <tr><td>İmza aracı (OS)</td><td>Windows, macOS (Apple noter onaylı)</td></tr>
+    <tr><td>Sürücüler</td><td>TÜBİTAK AKİS, SafeNet, A.E.T., Gemalto, Feitian, Atos, Charismathics</td></tr>
+    <tr><td>Akış türleri</td><td>Tek imzacı, sıralı, paralel; İmza / Onay / E-imza ile onay</td></tr>
+    <tr><td>Kurum dışı doğrulama</td><td>E-posta, SMS, WhatsApp ile tek kullanımlık kod; isteğe bağlı T.C. kimlik no eşleşmesi</td></tr>
+    <tr><td>Doğrulama</td><td>QR'lı doğrulama sayfası, denetim raporu PDF'i</td></tr>
+    <tr><td>Diller</td><td>Türkçe, İngilizce</td></tr>
+    <tr><td>Kurulum</td><td>Kurum içi (on-premise) — belge kurumdan çıkmaz</td></tr>
+  </tbody></table></div>
+</div></section>
+
+<!-- SSS -->
+<section style="background:var(--white);"><div class="narrow">
+  <div class="sec-head"><div class="kick">Sık sorulan sorular</div><h2>Merak edilenler</h2></div>
+  <div class="faq">
+    <details><summary>İmzalı belge Adobe Acrobat'ta açıldığında ne görünür?</summary><p>Belge standart PDF'tir ve her okuyucuda açılır. Adobe'un güven listesinde Türkiye'deki elektronik sertifika hizmet sağlayıcıları yer almadığı için Acrobat sertifikayı kendiliğinden tanımaz. İmzaların geçerliliği YesPDF'in doğrulama sayfasından veya kurumun ESHS kök sertifikasını kendi Adobe güven deposuna tanıtmasıyla görüntülenir.</p></details>
+    <details><summary>Kurum dışı imzacının YesPDF hesabı olması gerekir mi?</summary><p>Hayır. Kendisine özel bağlantı ve tek kullanımlık kodla erişir; imza için bilgisayarına yalnızca YesPDF İmza Aracı'nı kurar.</p></details>
+    <details><summary>Belge imzalandıktan sonra değiştirilebilir mi?</summary><p>Değiştirilirse imza geçersiz görünür. "Sertifikasyon" seçeneği açıksa, sonraki imzalar ve form doldurma dışındaki her değişiklik tespit edilir.</p></details>
+    <details><summary>T.C. kimlik numarası saklanıyor mu?</summary><p>Talepte eşleşme için girilen T.C. kimlik numarası adres defterine kaydedilmez; kayıtlarda maskelenerek gösterilir.</p></details>
+    <details><summary>İmza aracı belgeyi dışarı gönderir mi?</summary><p>Hayır. Araç yalnız imza anında devreye girer, belgeyi dışarı göndermez; sunucu yalnızca belgenin SHA-256 özetini imzalatır. PIN sayfaya ya da sunucuya hiçbir zaman iletilmez.</p></details>
+  </div>
+</div></section>
+
+<!-- FINAL CTA -->
+<section><div class="wrap">
+  <div class="final">
+    <h2>İmza akışını kendi sunucunuzda görün</h2>
+    <p>Kurumsal İmza Akışı'nı verileriniz kurumunuzdan çıkmadan deneyimleyin. Ekibimiz kurulum ve entegrasyonu birlikte planlar.</p>
+    <div class="cta">
+      <a href="/#contact" class="btn btn-primary">Demo Talep Et</a>
+      <a href="/urunler" class="btn btn-light">Tüm ürünler</a>
+    </div>
+  </div>
+</div></section>
+
+<footer>
+  <div class="brand">Yes<span>PDF</span></div>
+  <div>&copy; 2026 YesPDF — YES Bilişim Teknolojileri A.Ş. · Kurumsal İmza Akışı · <a href="/">yespdf.com.tr</a></div>
+</footer>
+
+<!-- LinkedIn Insight Tag (campaign 9126690) — loaded only after KVKK consent -->
+<script type="text/javascript">
+(function(){
+  function loadLI(){
+    if (window.__li_insight_loaded) return;
+    window.__li_insight_loaded = true;
+    window._linkedin_partner_id = "9126690";
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+    window._linkedin_data_partner_ids.push(window._linkedin_partner_id);
+    (function(l){ if(!l){window.lintrk=function(a,b){window.lintrk.q.push([a,b])};window.lintrk.q=[]}
+      var s=document.getElementsByTagName("script")[0];var b=document.createElement("script");
+      b.type="text/javascript";b.async=true;b.src="https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b,s);})(window.lintrk);
+  }
+  window.loadLinkedInInsight = loadLI;
+  try { if (localStorage.getItem('kvkk-consent') === 'accepted') loadLI(); } catch(e){}
+})();
+</script>
+<!-- /LinkedIn Insight Tag -->
+
+<!-- Google Ads (gtag.js) AW-18267998044 — loaded only after KVKK consent -->
+<script type="text/javascript">
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+window.gtag = gtag;
+window.loadGoogleTag = function(){
+  if (window.__gtag_loaded) return;
+  window.__gtag_loaded = true;
+  var s = document.createElement('script');
+  s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=AW-18267998044";
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', 'AW-18267998044');
+};
+try { if (localStorage.getItem('kvkk-consent') === 'accepted') window.loadGoogleTag(); } catch(e){}
+</script>
+<!-- /Google Ads -->
+
+</body>
+</html>
