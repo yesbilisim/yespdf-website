@@ -2586,6 +2586,164 @@ html {
 
     </main>
 
+    <!-- ==================== SECTION 8b: TEKNOLOJI VE ENTEGRASYONLAR ==================== -->
+    <style>
+      /* Teknoloji ve Entegrasyonlar — marka çipleri / kayan şerit.
+         Yeni harici istek yok; animasyon yalnızca transform. */
+      #technology{--pc-gap:1.5rem;--pc-accent:#4ec24e;}
+      .partners-viewport{overflow:hidden;position:relative;
+        -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+        mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);}
+      .partners-track{display:flex;width:max-content;will-change:transform;}
+      .partners-track.is-ready{animation:partners-marquee linear infinite;}
+      @keyframes partners-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+      .partners-viewport:hover .partners-track{animation-play-state:paused;}
+      .partners-seq{display:flex;align-items:center;list-style:none;margin:0;padding:0;}
+      /* Boşluk kopyanın İÇİNDE (li padding'i): -%50 sıfırlaması dikişsiz olur */
+      .partners-seq > li{padding-inline-end:var(--pc-gap);}
+      .partners-chip{display:inline-flex;align-items:center;white-space:nowrap;
+        padding:.55rem 1.15rem;border:1px solid rgba(255,255,255,.16);border-radius:9999px;
+        background:rgba(255,255,255,.05);color:rgba(255,255,255,.8);
+        font-size:.95rem;font-weight:600;letter-spacing:.01em;opacity:.85;
+        transition:color .3s ease,border-color .3s ease,background-color .3s ease,opacity .3s ease;}
+      .partners-chip:hover{color:var(--pc-accent);border-color:rgba(78,194,78,.55);
+        background:rgba(78,194,78,.08);opacity:1;}
+      .partners-tag{display:inline-flex;align-items:center;white-space:nowrap;
+        font-size:.72rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;
+        color:rgba(255,255,255,.65);border:1px dashed rgba(255,255,255,.22);
+        border-radius:9999px;padding:.35rem .8rem;}
+      .partners-chip--xl{font-size:1.05rem;padding:.7rem 1.5rem;
+        border-color:rgba(255,255,255,.28);color:rgba(255,255,255,.9);opacity:1;}
+      .partners-powered{display:flex;align-items:center;justify-content:center;gap:1rem;
+        margin:0 auto 2.5rem;width:max-content;max-width:100%;flex-wrap:wrap;}
+      .partners-powered__label{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;
+        color:rgba(255,255,255,.65);}
+      .partners-ai{margin-top:3rem;text-align:center;}
+      .partners-ai__title{font-size:1rem;font-weight:600;color:rgba(255,255,255,.8);margin-bottom:1.1rem;}
+      .partners-ai__list{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem;
+        list-style:none;margin:0;padding:0;}
+      .partners-ai__note{margin:1.1rem auto 0;font-size:.85rem;color:rgba(255,255,255,.65);
+        max-width:640px;}
+      .partners-trademark{margin-top:2.5rem;text-align:center;font-size:.75rem;
+        color:rgba(255,255,255,.6);}
+      @media (max-width:640px){
+        #technology{--pc-gap:1rem;}
+        .partners-chip{font-size:.78rem;padding:.42rem .8rem;}
+        .partners-tag{font-size:.62rem;padding:.28rem .6rem;}
+      }
+      @media (prefers-reduced-motion: reduce){
+        .partners-track{animation:none !important;width:100%;flex-wrap:wrap;justify-content:center;}
+        .partners-seq{flex-wrap:wrap;justify-content:center;column-gap:.75rem;row-gap:.75rem;width:100%;}
+        .partners-seq > li{padding-inline-end:0;}
+        .partners-seq[aria-hidden="true"]{display:none;}
+        .partners-tag{flex-basis:100%;justify-content:center;border:none;text-transform:none;
+          font-size:.85rem;letter-spacing:.02em;color:rgba(255,255,255,.7);margin:.9rem 0 .1rem;padding:0;}
+      }
+    </style>
+
+    <section id="technology" class="py-20 bg-navy-900" aria-labelledby="technology-title">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 id="technology-title" class="text-3xl md:text-4xl font-bold text-white mb-4" data-i18n="partners.title">Teknoloji ve Entegrasyonlar</h2>
+        </div>
+
+        <!-- A) Powered by vurgusu — Apryse'ın yazılı onayı gelene kadar KAPALI.
+             Onay gelince aşağıdaki 'hidden' özniteliği kaldırılarak tek hamlede açılır. -->
+        <div id="powered-block" class="partners-powered" hidden>
+          <span class="partners-powered__label" data-i18n="partners.powered">Güç aldığımız teknoloji</span>
+          <span class="partners-chip partners-chip--xl">Apryse</span>
+        </div>
+
+        <!-- B) Kayan marka şeridi (marquee) -->
+        <div class="partners-viewport" id="partners-viewport">
+          <div class="partners-track" id="partners-track">
+            <ul class="partners-seq" id="partners-seq">
+              <li class="partners-tag"><span data-i18n="partners.platform_sub">Platform ve güven altyapısı</span></li>
+              <li><span class="partners-chip">Microsoft</span></li>
+              <li><span class="partners-chip">Google (Android &amp; Play)</span></li>
+              <li><span class="partners-chip">GlobalSign</span></li>
+              <li><span class="partners-chip">DigiCert</span></li>
+              <li class="partners-tag"><span data-i18n="partners.mfp_sub">MFP entegrasyonları (SDK)</span></li>
+              <li><span class="partners-chip">HP</span></li>
+              <li><span class="partners-chip">Xerox</span></li>
+              <li><span class="partners-chip">Toshiba</span></li>
+              <li><span class="partners-chip">Lexmark</span></li>
+              <li><span class="partners-chip">Fujifilm</span></li>
+              <li><span class="partners-chip">Epson</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- C) Yapay zekâ satırı — KAYMAZ -->
+        <div class="partners-ai" data-aos="fade-up">
+          <h3 class="partners-ai__title" data-i18n="partners.ai_sub">Yazılım geliştirmede kullandığımız yapay zekâ</h3>
+          <ul class="partners-ai__list">
+            <li><span class="partners-chip">Z.ai (GLM)</span></li>
+            <li><span class="partners-chip">Anthropic Claude</span></li>
+            <li><span class="partners-chip">OpenAI ChatGPT</span></li>
+            <li><span class="partners-chip">Google Gemini</span></li>
+          </ul>
+          <p class="partners-ai__note" data-i18n="partners.ai_note">Yazılım geliştirme sürecimizde bu yapay zekâ araçlarını kullanıyoruz. Bu bir iş ortaklığı değil; şeffaflık için paylaşıyoruz.</p>
+        </div>
+
+        <p class="partners-trademark" data-i18n="partners.trademark_note">Marka adları sahiplerinin ticari markalarıdır.</p>
+      </div>
+    </section>
+
+    <script>
+    (function () {
+      'use strict';
+      var track = document.getElementById('partners-track');
+      var seq = document.getElementById('partners-seq');
+      if (!track || !seq) return;
+      var reduceMq = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var mobileMq = window.matchMedia('(max-width: 640px)');
+      var SPEED_DESKTOP = 46; // px/sn — süre içerik genişliğinden türetilir, hız sabit kalır
+      var SPEED_MOBILE = 34;
+      var timer = null;
+
+      function clearClones() {
+        var c = track.querySelectorAll('.partners-seq[aria-hidden="true"]'), i;
+        for (i = 0; i < c.length; i++) c[i].parentNode.removeChild(c[i]);
+      }
+      function build() {
+        clearClones();
+        track.classList.remove('is-ready');
+        track.style.animationDuration = '';
+        if (reduceMq.matches) return; // statik ızgara — CSS devralır, kopya yok
+        var vw = track.parentElement.clientWidth || window.innerWidth;
+        var w = seq.getBoundingClientRect().width;
+        if (w <= 0) return;
+        var perHalf = Math.max(1, Math.ceil(vw / w)); // tek kopya ekranı geçene kadar tekrar
+        function mkClone() {
+          var c = seq.cloneNode(true);
+          c.setAttribute('aria-hidden', 'true');
+          var els = c.querySelectorAll('[data-i18n]'), i; // kopyalar çevrilmez, ölçüm aslıyla aynı
+          for (i = 0; i < els.length; i++) els[i].removeAttribute('data-i18n');
+          return c;
+        }
+        var frag = document.createDocumentFragment(), i;
+        for (i = 0; i < perHalf - 1; i++) frag.appendChild(mkClone()); // A yarısı
+        for (i = 0; i < perHalf; i++) frag.appendChild(mkClone());     // B yarısı (tamamı gizli)
+        track.appendChild(frag);
+        track.style.animationDuration = (perHalf * w / (mobileMq.matches ? SPEED_MOBILE : SPEED_DESKTOP)) + 's';
+        track.classList.add('is-ready');
+      }
+      function schedule() { window.clearTimeout(timer); timer = window.setTimeout(build, 120); }
+      if (reduceMq.addEventListener) reduceMq.addEventListener('change', schedule);
+      else if (reduceMq.addListener) reduceMq.addListener(schedule);
+      window.addEventListener('resize', schedule);
+      // kapsayıcı genişliği her nasıl değişirse (pencere, kaydırma çubuğu, yön) yeniden ölç
+      if (window.ResizeObserver) new ResizeObserver(schedule).observe(track.parentElement);
+      // web fontu sonradan gelirse çip genişlikleri kayar — font hazır olunca yeniden ölç
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(schedule);
+      // i18n dili sayfayı yenilemeden değiştiriyor → etiket genişliği değişir, yeniden ölç
+      new MutationObserver(schedule).observe(seq, { childList: true, subtree: true, characterData: true });
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', build);
+      else build();
+    })();
+    </script>
+
     <!-- ==================== SECTION 9: FOOTER ==================== -->
     <footer class="bg-navy-950 py-12 text-gray-400">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2676,7 +2834,7 @@ html {
 
     <!-- ==================== SCRIPTS ==================== -->
     <script src="js/aos.js" defer></script>
-    <script src="js/i18n.js?v=10"></script>
+    <script src="js/i18n.js?v=11"></script>
     <script src="js/main.js?v=6" defer></script>
     <script src="js/gallery.js?v=4" defer></script>
     <script src="js/form.js?v=4" defer></script>

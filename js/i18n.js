@@ -1,6 +1,15 @@
 // YesPDF Website - Internationalization (TR/EN/DE/FR)
 const translations = {
   tr: {
+    // Teknoloji ve Entegrasyonlar (marka çipleri)
+    'partners.title': 'Teknoloji ve Entegrasyonlar',
+    'partners.powered': 'Güç aldığımız teknoloji',
+    'partners.platform_sub': 'Platform ve güven altyapısı',
+    'partners.mfp_sub': 'MFP entegrasyonları (SDK)',
+    'partners.ai_sub': 'Yazılım geliştirmede kullandığımız yapay zekâ',
+    'partners.ai_note': 'Yazılım geliştirme sürecimizde bu yapay zekâ araçlarını kullanıyoruz. Bu bir iş ortaklığı değil; şeffaflık için paylaşıyoruz.',
+    'partners.trademark_note': 'Marka adları sahiplerinin ticari markalarıdır.',
+
     // Navbar
     'nav.features': 'Özellikler',
     'nav.products': 'Ürünler',
@@ -265,6 +274,15 @@ const translations = {
   },
 
   en: {
+    // Technology & Integrations (brand chips)
+    'partners.title': 'Technology & Integrations',
+    'partners.powered': 'Powered by',
+    'partners.platform_sub': 'Platform & Trust',
+    'partners.mfp_sub': 'MFP Integrations (SDK)',
+    'partners.ai_sub': 'AI tools in our development',
+    'partners.ai_note': 'We use these AI tools in our software development process. This is not a business partnership — we share it for transparency.',
+    'partners.trademark_note': 'Brand names are trademarks of their respective owners.',
+
     // Navbar
     'nav.features': 'Features',
     'nav.products': 'Products',
@@ -528,6 +546,15 @@ const translations = {
   },
 
   de: {
+    // Technologie & Integrationen (Marken-Chips)
+    'partners.title': 'Technologie & Integrationen',
+    'partners.powered': 'Angetrieben von',
+    'partners.platform_sub': 'Plattform- & Vertrauensinfrastruktur',
+    'partners.mfp_sub': 'MFP-Integrationen (SDK)',
+    'partners.ai_sub': 'KI-Werkzeuge in unserer Entwicklung',
+    'partners.ai_note': 'Wir nutzen diese KI-Werkzeuge in unserem Softwareentwicklungsprozess. Dies ist keine Geschäftspartnerschaft – wir teilen es aus Transparenz.',
+    'partners.trademark_note': 'Markennamen sind Marken der jeweiligen Inhaber.',
+
     // Navbar
     'nav.features': 'Funktionen',
     'nav.products': 'Produkte',
@@ -791,6 +818,15 @@ const translations = {
   },
 
   fr: {
+    // Technologie et intégrations (puces de marque)
+    'partners.title': 'Technologie et intégrations',
+    'partners.powered': 'Propulsé par',
+    'partners.platform_sub': 'Plateforme et infrastructure de confiance',
+    'partners.mfp_sub': 'Intégrations MFP (SDK)',
+    'partners.ai_sub': 'Outils d\'IA dans notre développement',
+    'partners.ai_note': 'Nous utilisons ces outils d\'IA dans notre processus de développement logiciel. Ce n\'est pas un partenariat commercial — nous le partageons par transparence.',
+    'partners.trademark_note': 'Les noms de marques sont des marques commerciales de leurs propriétaires respectifs.',
+
     // Navbar
     'nav.features': 'Fonctionnalités',
     'nav.products': 'Produits',
