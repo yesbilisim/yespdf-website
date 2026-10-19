@@ -27,6 +27,7 @@ const translations = {
     'nav.demo': 'Demo Talep Et',
     'nav.cta': 'Demo Talep Et',
     'nav.online': 'Online Dene',
+    'nav.indir': 'İndir',
 
     // Hero
     'hero.badge': 'KVKK Uyumlu · On-Premise',
@@ -300,6 +301,7 @@ const translations = {
     'nav.demo': 'Request Demo',
     'nav.cta': 'Request Demo',
     'nav.online': 'Try Online',
+    'nav.indir': 'Download',
 
     // Hero
     'hero.badge': 'KVKK Compliant · On-Premise',
@@ -572,6 +574,7 @@ const translations = {
     'nav.demo': 'Demo anfordern',
     'nav.cta': 'Demo anfordern',
     'nav.online': 'Online testen',
+    'nav.indir': 'Herunterladen',
 
     // Hero
     'hero.badge': 'KVKK-konform · On-Premise',
@@ -844,6 +847,7 @@ const translations = {
     'nav.demo': 'Demander une démo',
     'nav.cta': 'Demander une démo',
     'nav.online': 'Essayer en ligne',
+    'nav.indir': 'Télécharger',
 
     // Hero
     'hero.badge': 'Conforme KVKK · Sur site',
