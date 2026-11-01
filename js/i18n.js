@@ -45,6 +45,13 @@ const translations = {
     'hero.stat4_number': '%100',
     'hero.stat4_label': 'On-Premise',
 
+    // Hikaye videosu
+    'video.tag': 'Hikayemiz',
+    'video.title': 'YesPDF Hikayesi',
+    'video.subtitle': 'YesPDF nasıl doğdu, kurumsal dünyanın PDF sorununa nasıl çözüm oldu — 4,5 dakikada.',
+    'video.play': 'Videoyu oynat',
+    'video.note': 'Video, tıkladığınızda YouTube üzerinden oynatılır.',
+
     // Features
     'features.tag': 'ÖZELLİKLER',
     'features.title': 'Güçlü Özellikler',
@@ -319,6 +326,13 @@ const translations = {
     'hero.stat4_number': '100%',
     'hero.stat4_label': 'On-Premise',
 
+    // Story video
+    'video.tag': 'Our Story',
+    'video.title': 'The YesPDF Story',
+    'video.subtitle': 'How YesPDF was born and became the answer to enterprise PDF challenges — in 4½ minutes.',
+    'video.play': 'Play video',
+    'video.note': 'The video is played from YouTube when you click.',
+
     // Features
     'features.tag': 'FEATURES',
     'features.title': 'Powerful Features',
@@ -592,6 +606,13 @@ const translations = {
     'hero.stat4_number': '100%',
     'hero.stat4_label': 'On-Premise',
 
+    // Story-Video
+    'video.tag': 'Unsere Geschichte',
+    'video.title': 'Die YesPDF-Geschichte',
+    'video.subtitle': 'Wie YesPDF entstand und zur Lösung für PDF-Prozesse im Unternehmen wurde — in 4½ Minuten.',
+    'video.play': 'Video abspielen',
+    'video.note': 'Das Video wird erst nach einem Klick über YouTube abgespielt.',
+
     // Features
     'features.tag': 'FUNKTIONEN',
     'features.title': 'Leistungsstarke Funktionen',
@@ -864,6 +885,13 @@ const translations = {
     'hero.stat3_label': 'Langues OCR',
     'hero.stat4_number': '100%',
     'hero.stat4_label': 'Sur site',
+
+    // Vidéo de l'histoire
+    'video.tag': 'Notre histoire',
+    'video.title': 'L\'histoire de YesPDF',
+    'video.subtitle': 'Comment YesPDF est né et devenu la réponse aux défis PDF des entreprises — en 4 minutes 30.',
+    'video.play': 'Lire la vidéo',
+    'video.note': 'La vidéo est lue depuis YouTube après votre clic.',
 
     // Features
     'features.tag': 'FONCTIONNALITÉS',
