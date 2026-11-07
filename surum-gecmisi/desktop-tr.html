@@ -182,6 +182,187 @@
     </article>
 
     <article class="release">
+      <div class="rail"><span class="chip">1.13.1</span></div>
+      <div class="body">
+        <h2>Hotfix: redaksiyon çerçevesi</h2>
+        <p class="sub">6 Kasım 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Akıllı Bölge Düzenleme ve Akıllı Silme'de görünür çerçeve kalıyordu</b> — artık tamamen temiz.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Güncelleme penceresinde sürüm notlarındaki Türkçe karakterler düzeltildi</b> (çift kodlama).</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.13.0</span></div>
+      <div class="body">
+        <h2>Görsel güncelleme: animasyonlu Yardım Merkezi ve işlem animasyonları</h2>
+        <p class="sub">30 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Animasyonlu Yardım Merkezi.</b> Her yardım konusunda kısa eğitim animasyonu — 9 dilde, çevrimdışı çalışır.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>17 işlem animasyonu.</b> Birleştirme, bölme, dönüştürme, OCR, karartma, imza gibi işlemlerde sahne animasyonu; yeşil onay / kırmızı hata durumu.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Birleştirme ekranı</b> boşken sürükle-bırak ipucu gösteriyor; küçük ve yüksek DPI ekranlara sığıyor.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Türkçe OCR'da uzun işlemlerde donma</b> (okuma/yazma kilidi çatışması) çözüldü.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Onay diyalogları ekran dışında açılıyordu;</b> artık görünür alana kelepçeleniyor.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Apryse çekirdeği 12.2'ye yükseltildi</b> + yeni OEM lisans.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.5</span></div>
+      <div class="body">
+        <h2>Hotfix: üzerine gelme çökmesi ve sanal yazıcı</h2>
+        <p class="sub">22 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Açıklama üzerinde gezinirken çökme</b> (native erişim ihlali) düzeltildi.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Windows 11 &ldquo;Microsoft Print to PDF&rdquo; sürücüsünün bozuk dönüşümleri</b> atlanıyor.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.4</span></div>
+      <div class="body">
+        <h2>Rehberli özellik turu, güvenlik denetimi ve Apryse 12.2</h2>
+        <p class="sub">19 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Rehberli özellik turu.</b> İlk açılışta örnek belgeyle 8 duraklı ışık huzmesi turu, bağlamsal ipuçları ve Yardım Merkezi (F1).</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>El yazısı &ldquo;Doldur ve İmzala&rdquo;</b> görüntüleyiciye bağlandı.</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Güvenlik:</b> OCR motoru kendi kendine yeter (AI/ONNX hariç), sembol haritaları temizlendi, SHA-256 dinamik.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Dijital imza doğrulama düzeltildi.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.3</span></div>
+      <div class="body">
+        <h2>Sağ tık birleştirme görünürlüğü ve yükseltme düzeltmesi</h2>
+        <p class="sub">14 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Explorer fiili (sağ tık) her kurulumda doğru kaydediliyor.</b></span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Yerinde yükseltilmiş uygulamanın pipe devrini reddetme sorunu</b> çözüldü.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.2</span></div>
+      <div class="body">
+        <h2>Sağ tık birleştirme: çalışan uygulamaya devir</h2>
+        <p class="sub">14 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Sağ tık &rarr; &ldquo;YesPDF Birleştir&rdquo;</b> çalışan uygulamaya aktarılıyor; birleştirme merkezi dosyalarla önyüklü açılıyor.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Türkçe karakter bozulması düzeltildi.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.1</span></div>
+      <div class="body">
+        <h2>Düzenleme-kayıt zinciri onarımı</h2>
+        <p class="sub">14 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>&ldquo;Kaydedilmemiş değişiklikler&rdquo; döngüsü ve hayalet süreç sorunu</b> çözüldü.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.0</span></div>
+      <div class="body">
+        <h2>Farklarla Karşılaştırma: kendi diff motoru</h2>
+        <p class="sub">13 Ekim 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Yan yana görünüm + fark listesi</b> (metin/görüntü değişiklikleri) — filigransız, harici servis yok; PDF/TXT rapor dışa aktarma.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.3</span></div>
+      <div class="body">
+        <h2>Edit-mod akış sızıntıları ve RDS düzeltmeleri</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Bayat etiket, ClearScan el sıkışması, siyah ekran, OCR kapıları, beyaz sekme ve Office şerit kilidi</b> düzeltildi.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.2</span></div>
+      <div class="body">
+        <h2>Makine paylaşımlı aktivasyon</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Aynı lisans, aynı kullanıcıyla birden çok makinede</b> kullanılabilir.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.1</span></div>
+      <div class="body">
+        <h2>RDS hotfix</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Uzak masaüstü oturumlarında tek-örnek</b> Local\ mutex + oturum filtresiyle doğru çalışıyor.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.0</span></div>
+      <div class="body">
+        <h2>Görsel birleştirme ve ClearScan motorunun ilk paketi</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Görsel birleştirme:</b> kart görünümü, küçük resim önizleme, %75 ölçek.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>ClearScan motoru</b> (taranmış &rarr; düzenlenebilir) ilk kez pakete girdi.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.2</span></div>
+      <div class="body">
+        <h2>Denetim hızlı-kazanımları ve Rusça OCR'nin dönüşü</h2>
+        <ul class="changes">
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Denetim ekranı iyileştirmeleri;</b> Rusça OCR pakete geri döndü.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.1</span></div>
+      <div class="body">
+        <h2>Sağ tıkta karışık birleştirme, resim ve font</h2>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Office dosyaları (Word/Excel/PowerPoint) sağ tıkla birleştirilebiliyor.</b></span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Resim birleştirme (JPG/PNG/TIF)</b> ve font iyileştirmeleri.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.0</span></div>
+      <div class="body">
+        <h2>UYAP UDF araçları, kalite ve RBAC</h2>
+        <p class="sub">11 Eylül 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>UYAP UDF araçları:</b> UDF format dönüştürme, ayrıştırma, raporlama.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Rol tabanlı erişim kontrolü (RBAC).</b></span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Toplu işlem güvenceleri</b> ve kalite iyileştirmeleri.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.9.1</span></div>
+      <div class="body">
+        <h2>Sürüm merdiveni düzeltmesi</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Sürüm yükseltme merdivenindeki atlama sorunu düzeltildi.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.9.0</span></div>
+      <div class="body">
+        <h2>Yan yana karşılaştırma ve Farklı Kaydet Office</h2>
+        <p class="sub">5 Eylül 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Yan yana karşılaştırma:</b> iki PDF'i aynı ekranda farkları görerek inceleme.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>Farklı Kaydet Office formatlarında:</b> PDF &rarr; Word/Excel/PowerPoint dışa aktarma.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
       <div class="rail">
         <span class="chip">1.8.2</span>
       </div>

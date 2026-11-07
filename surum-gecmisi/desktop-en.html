@@ -182,6 +182,187 @@
     </article>
 
     <article class="release">
+      <div class="rail"><span class="chip">1.13.1</span></div>
+      <div class="body">
+        <h2>Hotfix: redaction frame</h2>
+        <p class="sub">Nov 6, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>A visible frame remained after Smart Region Editing and Smart Erase</b> — now completely clean.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish characters in the update window's release notes fixed</b> (double encoding).</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.13.0</span></div>
+      <div class="body">
+        <h2>Visual refresh: animated Help Center and operation animations</h2>
+        <p class="sub">Oct 30, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Animated Help Center.</b> A short tutorial animation for every help topic — in 9 languages, works offline.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>17 operation animations.</b> Stage animations for merge, split, convert, OCR, redact, sign and more; green success / red error states.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Merge screen</b> shows a drag-and-drop hint when empty; fits small and high-DPI screens.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish OCR freezing during long jobs</b> (read/write lock conflict) resolved.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Confirmation dialogs opened off-screen;</b> now clamped into the visible area.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Apryse core upgraded to 12.2</b> + new OEM license.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.5</span></div>
+      <div class="body">
+        <h2>Hotfix: hover crash and virtual printer</h2>
+        <p class="sub">Oct 22, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Crash while hovering over annotations</b> (native access violation) fixed.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Broken conversions from the Windows 11 &ldquo;Microsoft Print to PDF&rdquo; driver</b> are skipped.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.4</span></div>
+      <div class="body">
+        <h2>Guided feature tour, security audit and Apryse 12.2</h2>
+        <p class="sub">Oct 19, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Guided feature tour.</b> An 8-stop spotlight tour with a sample document on first launch, contextual tips, and the Help Center (F1).</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Hand-drawn &ldquo;Fill and Sign&rdquo;</b> connected to the viewer.</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Security:</b> self-contained OCR engine (AI/ONNX aside), symbol maps cleaned, dynamic SHA-256.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Digital signature validation fixed.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.3</span></div>
+      <div class="body">
+        <h2>Right-click merge visibility and upgrade fix</h2>
+        <p class="sub">Oct 14, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>The Explorer verb (right-click) now registers correctly on every install.</b></span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>In-place upgraded app refusing pipe handover</b> resolved.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.2</span></div>
+      <div class="body">
+        <h2>Right-click merge: handover to the running app</h2>
+        <p class="sub">Oct 14, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Right-click &rarr; &ldquo;Merge with YesPDF&rdquo;</b> is forwarded to the running app; the merge hub opens preloaded with the files.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish character corruption fixed.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.1</span></div>
+      <div class="body">
+        <h2>Edit-save chain repair</h2>
+        <p class="sub">Oct 14, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>The &ldquo;unsaved changes&rdquo; loop and a ghost-process issue</b> resolved.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.12.0</span></div>
+      <div class="body">
+        <h2>Compare with Differences: our own diff engine</h2>
+        <p class="sub">Oct 13, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Side-by-side view + difference list</b> (text/image changes) — no watermark, no external service; PDF/TXT report export.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.3</span></div>
+      <div class="body">
+        <h2>Edit-mode flow leaks and RDS fixes</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Stale tab, ClearScan handshake, black screen, OCR gates, white tab and Office ribbon lock</b> fixed.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.2</span></div>
+      <div class="body">
+        <h2>Machine-shared activation</h2>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>The same license can be used on multiple machines</b> by the same user.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.1</span></div>
+      <div class="body">
+        <h2>RDS hotfix</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Single-instance on remote desktop sessions</b> now correct via Local\ mutex + session filter.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.11.0</span></div>
+      <div class="body">
+        <h2>Visual merge and the first packaged ClearScan engine</h2>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Visual merge:</b> card view, thumbnail preview, 75% scale.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>The ClearScan engine</b> (scanned &rarr; editable) shipped in the package for the first time.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.2</span></div>
+      <div class="body">
+        <h2>Audit quick wins and the return of Russian OCR</h2>
+        <ul class="changes">
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Audit screen improvements;</b> Russian OCR returned to the package.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.1</span></div>
+      <div class="body">
+        <h2>Mixed right-click merge, images and fonts</h2>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Office files (Word/Excel/PowerPoint) can be merged via right-click.</b></span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Image merging (JPG/PNG/TIF)</b> and font improvements.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.10.0</span></div>
+      <div class="body">
+        <h2>UYAP UDF tools, quality and RBAC</h2>
+        <p class="sub">Sep 11, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>UYAP UDF tools:</b> UDF format conversion, parsing, reporting.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Role-based access control (RBAC).</b></span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Batch processing safeguards</b> and quality improvements.</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.9.1</span></div>
+      <div class="body">
+        <h2>Version ladder fix</h2>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>A skip in the version upgrade ladder was fixed.</b></span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="release">
+      <div class="rail"><span class="chip">1.9.0</span></div>
+      <div class="body">
+        <h2>Side-by-side comparison and Save As Office</h2>
+        <p class="sub">Sep 5, 2026.</p>
+        <ul class="changes">
+          <li><span class="tag new">New</span><span class="change-text"><b>Side-by-side comparison:</b> inspect two PDFs on one screen with their differences.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>Save As in Office formats:</b> PDF &rarr; Word/Excel/PowerPoint export.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
       <div class="rail">
         <span class="chip">1.8.2</span>
       </div>

@@ -90,6 +90,92 @@
 
 <!-- ============ 1.7 SERIES ============ -->
 <section class="series">
+  <h2>1.7.9 Line — Workflows, PAdES-LT and the UDF Rewrite</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.16</span><span class="date">Nov 5, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>
+      <h3>Maintenance release: password-protected UDF, low-text conversions and an editor refresh</h3>
+      <ul>
+        <li><strong>PDF &rarr; UDF conversion fixed for password-protected documents.</strong></li>
+        <li><strong>Low-text PDFs keep their tables and structure when converted to Word/Excel/PowerPoint.</strong></li>
+        <li><strong>Warning on Office &rarr; PDF conversion:</strong> the user is informed if a required font is missing on the server or the fallback engine is used.</li>
+        <li><strong>Make Editable:</strong> the original document is preserved as a separate copy.</li>
+        <li><strong>Document viewer and editor refreshed;</strong> signatures created in the editor are saved to the profile.</li>
+        <li><strong>Administration:</strong> fonts visible to the server are listed; the service starts on its own after a server reboot.</li>
+        <li><strong>Security hardening.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.13</span><span class="date">Oct 8, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span></div>
+      <h3>UDF / UYAP: conversion without the Document Editor, and mixed merge</h3>
+      <ul>
+        <li><strong>UDF &harr; PDF and UDF &harr; Word conversion without UYAP Document Editor installed;</strong> the produced files open in the UYAP Document Editor.</li>
+        <li><strong>PDF, Word, Excel, PowerPoint and image files can be merged in a single operation.</strong></li>
+        <li><strong>Turkish character support in MSSQL improved.</strong></li>
+        <li><strong>LDAP:</strong> renamed Active Directory groups are updated during sync.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.9</span><span class="date">Oct 5, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span></div>
+      <h3>Automatic workflows from folders and email + Windows SSO</h3>
+      <ul>
+        <li><strong>Automatic workflow:</strong> documents arriving via folder/email pass through a chain of steps and land in a folder, email or the library.</li>
+        <li><strong>Rule-based file naming</strong> with a live preview.</li>
+        <li><strong>Bilingual notification to the sender on workflow errors.</strong></li>
+        <li><strong>Windows SSO (Kerberos) on the web and in YesPDF Desktop.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.6</span><span class="date">Oct 2, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"></div>
+      <h3>Skew-feed OCR and signature QR stamp fixes</h3>
+      <ul>
+        <li><strong>OCR accuracy improved on side-fed (rotated) pages.</strong></li>
+        <li><strong>Signature verification QR stamp fixed.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.5</span><span class="date">Sep 29, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span></div>
+      <h3>XPS support, Apple notarization and Signing Portal improvements</h3>
+      <ul>
+        <li><strong>XPS/OXPS documents open by converting to PDF.</strong></li>
+        <li><strong>The macOS Signing Tool is Apple-notarized.</strong></li>
+        <li><strong>Signing Portal:</strong> automatic reminders and a TR/EN language toggle.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.0</span><span class="date">Sep 26, 2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">New Feature</span><span class="tag">Security</span></div>
+      <h3>PAdES-LT: long-lived signature validation</h3>
+      <ul>
+        <li><strong>Revocation information is embedded in the signed document;</strong> the signature remains verifiable years later.</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="series">
   <h2>1.7 Series — Enterprise Maturity</h2>
 
   <article class="release major">

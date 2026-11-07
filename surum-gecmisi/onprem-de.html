@@ -90,6 +90,92 @@
 
 <!-- ============ SERIE 1.7 ============ -->
 <section class="series">
+  <h2>1.7.9-Linie — Workflows, PAdES-LT und die UDF-Neuentwicklung</h2>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.16</span><span class="date">05.11.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>
+      <h3>Wartungsversion: passwortgeschütztes UDF, textarme Konvertierungen und ein Editor-Refresh</h3>
+      <ul>
+        <li><strong>PDF-&rarr;UDF-Konvertierung bei passwortgeschützten Dokumenten korrigiert.</strong></li>
+        <li><strong>Textarme PDFs bewahren beim Konvertieren nach Word/Excel/PowerPoint Tabellen und Struktur.</strong></li>
+        <li><strong>Warnung bei Office-&rarr;PDF-Konvertierung:</strong> der Nutzer wird informiert, wenn eine benötigte Schrift auf dem Server fehlt oder die Ersatzengine genutzt wird.</li>
+        <li><strong>Bearbeitbar machen:</strong> das Originaldokument wird als separate Kopie aufbewahrt.</li>
+        <li><strong>Dokumenten-Viewer und Editor erneuert;</strong> im Editor erstellte Signaturen werden im Profil gespeichert.</li>
+        <li><strong>Verwaltung:</strong> die vom Server gesehenen Schriften werden aufgelistet; der Dienst startet nach einem Serverneustart von selbst.</li>
+        <li><strong>Sicherheitshärtung.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.13</span><span class="date">08.10.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span></div>
+      <h3>UDF / UYAP: Konvertierung ohne den Dokumenten-Editor und gemischte Zusammenführung</h3>
+      <ul>
+        <li><strong>UDF-&harr;PDF- und UDF-&harr;Word-Konvertierung ohne installierten UYAP-Dokumenten-Editor;</strong> die erzeugten Dateien öffnen sich im UYAP-Dokumenten-Editor.</li>
+        <li><strong>PDF-, Word-, Excel-, PowerPoint- und Bilddateien lassen sich in einem Vorgang zusammenführen.</strong></li>
+        <li><strong>Türkische Zeichenunterstützung in MSSQL verbessert.</strong></li>
+        <li><strong>LDAP:</strong> umbenannte Active-Directory-Gruppen werden bei der Synchronisation aktualisiert.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.9</span><span class="date">05.10.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span></div>
+      <h3>Automatische Workflows aus Ordnern und E-Mail + Windows-SSO</h3>
+      <ul>
+        <li><strong>Automatischer Workflow:</strong> über Ordner/E-Mail eingehende Dokumente durchlaufen eine Schrittfolge und landen in Ordner, E-Mail oder Bibliothek.</li>
+        <li><strong>Regelbasierte Dateibenennung</strong> mit Live-Vorschau.</li>
+        <li><strong>Zweisprachige Information des Absenders bei Workflow-Fehlern.</strong></li>
+        <li><strong>Windows-SSO (Kerberos) im Web und in YesPDF Desktop.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.6</span><span class="date">02.10.2026</span></div>
+    <div class="rcol">
+      <div class="tags"></div>
+      <h3>Korrektur: Schief-Einzug-OCR und Signatur-QR-Stempel</h3>
+      <ul>
+        <li><strong>OCR-Genauigkeit bei seitlich eingezogenen (gedrehten) Seiten verbessert.</strong></li>
+        <li><strong>QR-Stempel der Signaturprüfung korrigiert.</strong></li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.5</span><span class="date">29.09.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span></div>
+      <h3>XPS-Unterstützung, Apple-Notarisierung und Verbesserungen im Signaturportal</h3>
+      <ul>
+        <li><strong>XPS/OXPS-Dokumente öffnen sich per Konvertierung in PDF.</strong></li>
+        <li><strong>Das macOS-Signaturwerkzeug ist von Apple notarisiert.</strong></li>
+        <li><strong>Signaturportal:</strong> automatische Erinnerungen und TR/EN-Sprachumschaltung.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="release major">
+    <div class="vcol"><span class="ver">1.7.9.0</span><span class="date">26.09.2026</span></div>
+    <div class="rcol">
+      <div class="tags"><span class="tag new">Neue Funktion</span><span class="tag">Sicherheit</span></div>
+      <h3>PAdES-LT: langlebige Signaturprüfung</h3>
+      <ul>
+        <li><strong>Widerrufsinformationen werden in das signierte Dokument eingebettet;</strong> die Signatur bleibt auch Jahre später prüfbar.</li>
+      </ul>
+    </div>
+  </article>
+
+</section>
+
+<section class="series">
   <h2>Serie 1.7 — Unternehmensreife</h2>
 
   <article class="release major">
