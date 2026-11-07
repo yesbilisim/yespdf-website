@@ -163,8 +163,27 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.8.2</span>
+        <span class="chip">1.13.2</span>
         <span class="badge-current">Current</span>
+      </div>
+      <div class="body">
+        <h2>Right-click merge, printer watcher protection and OCR safety for large documents</h2>
+        <p class="sub">November 8, 2026 · Previous version 1.13.1 — a field-driven stability package, including fixes carried over from 1.13.1.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Right-click merge now works while the app is closed.</b> Selecting 2+ PDFs and choosing &ldquo;Merge with YesPDF&rdquo; used to lose files (Windows launched each file in a separate process, leaving every instance with a single file); all files are now collected in a single merge hub.</span></li>
+          <li><span class="tag new">New</span><span class="change-text"><b>YesPDF Printer watcher auto-protection.</b> If the printer watcher crashes or is stopped, the app restarts it within 30 seconds; after 3 consecutive failures the user is warned (&ldquo;Printing will not produce PDFs&rdquo;).</span></li>
+          <li><span class="tag imp">Improved</span><span class="change-text"><b>Quick sign-back-in with QR when the session expires.</b> On day 7, the QR scan screen opens directly instead of the email/password form — users without a password no longer get stuck.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>OCR crash protection for large documents (the 438-page case).</b> On a 438-page scanned document, OCR crashed around page 413 (an ONNX race condition); documents with 100+ pages now use the CLI engine (a separate process) — even if that process crashes, the main app survives.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Ctrl+F search highlight in the right place.</b> The match was found but the on-screen highlight could appear elsewhere; PDF coordinates are now used directly — the highlight always sits exactly over the matched word.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Smart Region Editing frame issue</b> (carried over from 1.13.1) — redaction borders are now completely clean.</span></li>
+          <li><span class="tag fix">Fix</span><span class="change-text"><b>Turkish characters in the update window</b> (carried over from 1.13.1) — release notes now display Turkish characters correctly.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail">
+        <span class="chip">1.8.2</span>
       </div>
       <div class="body">
         <h2>Redesigned edit mode, missing-font warning and stability</h2>

@@ -163,8 +163,27 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.8.2</span>
+        <span class="chip">1.13.2</span>
         <span class="badge-current">Güncel</span>
+      </div>
+      <div class="body">
+        <h2>Sağ tık birleştirme, yazıcı izleyici koruması ve büyük belgelerde OCR güvenliği</h2>
+        <p class="sub">8 Kasım 2026 · Önceki sürüm 1.13.1 — sahadan gelen kararlılık paketi; 1.13.1'den taşınan düzeltmeler dahil.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Sağ tık birleştirme artık uygulama kapalıyken çalışıyor.</b> 2+ PDF seçip sağ tık &rarr; &ldquo;YesPDF ile Birleştir&rdquo; yaptığınızda dosyalar kayboluyordu (Windows her dosyayı ayrı süreçte başlattığı için her süreç tek dosyada kalıyordu); artık tüm dosyalar tek birleştirme merkezinde toplanıyor.</span></li>
+          <li><span class="tag new">Yeni</span><span class="change-text"><b>YesPDF Printer izleyici otomatik koruması.</b> İzleyici çöker ya da kapatılırsa uygulama 30 saniye içinde yeniden başlatıyor; üst üste 3 başarısız denemede kullanıcı uyarılıyor (&ldquo;Yazdırma işlemleri PDF üretmeyecek&rdquo;).</span></li>
+          <li><span class="tag imp">İyileştirme</span><span class="change-text"><b>Oturum süresi dolduğunda QR ile hızlı geri dönüş.</b> 7. günde e-posta/parola formu yerine doğrudan QR kodu tarama ekranı açılıyor; parolası olmayan kullanıcılar artık takılmıyor.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Büyük belgelerde OCR çökme koruması (438 sayfalık vaka).</b> Taranmış 438 sayfalık belgede OCR, ~413. sayfada çöküyordu (ONNX bellek yarış durumu); 100+ sayfalık belgelerde artık CLI motoru (ayrı süreç) kullanılıyor — süreç çökse bile ana uygulama ayakta kalıyor.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Ctrl+F arama vurgusu doğru konumda.</b> Sonuç bulunuyor ama ekrandaki vurgu başka yerde görünebiliyordu; artık PDF koordinatları doğrudan kullanılıyor — vurgu her zaman eşleşen kelimenin tam üzerinde.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Akıllı Bölge Düzenleme çerçeve sorunu</b> (1.13.1'den taşındı) — redaksiyon kenarlığı artık tamamen temiz.</span></li>
+          <li><span class="tag fix">Düzeltme</span><span class="change-text"><b>Güncelleme penceresinde Türkçe karakterler</b> (1.13.1'den taşındı) — sürüm notları artık doğru görüntüleniyor.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail">
+        <span class="chip">1.8.2</span>
       </div>
       <div class="body">
         <h2>Düzenleme modu arayüzü, eksik font uyarısı ve kararlılık</h2>

@@ -163,8 +163,27 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.8.2</span>
+        <span class="chip">1.13.2</span>
         <span class="badge-current">Aktuell</span>
+      </div>
+      <div class="body">
+        <h2>Rechtsklick-Zusammenführung, Drucker-Wächterschutz und OCR-Sicherheit für große Dokumente</h2>
+        <p class="sub">8. November 2026 · Vorherige Version 1.13.1 — ein Stabilitätspaket aus dem Feldeinsatz, inklusive aus 1.13.1 übernommener Korrekturen.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>Rechtsklick-Zusammenführung funktioniert jetzt auch bei geschlossener App.</b> Wer 2+ PDFs auswählte und „Mit YesPDF zusammenführen“ wählte, verlor Dateien (Windows startete jede Datei in einem eigenen Prozess, sodass jeder nur eine Datei hatte); jetzt werden alle Dateien in einer zentralen Zusammenführung gesammelt.</span></li>
+          <li><span class="tag new">Neu</span><span class="change-text"><b>Automatischer Schutz des YesPDF-Printer-Wächters.</b> Stürzt der Drucker-Wächter ab oder wird beendet, startet die App ihn innerhalb von 30 Sekunden neu; nach 3 Fehlversuchen in Folge wird gewarnt („Druckvorgänge erzeugen keine PDFs“).</span></li>
+          <li><span class="tag imp">Verbessert</span><span class="change-text"><b>Schnelle Rückkehr per QR-Code bei abgelaufener Sitzung.</b> Am 7. Tag öffnet sich direkt der QR-Scan-Bildschirm statt des E-Mail/Passwort-Formulars — Nutzer ohne Passwort bleiben nicht mehr hängen.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>OCR-Absturzschutz für große Dokumente (438-Seiten-Fall).</b> Bei einem 438-seitigen gescannten Dokument stürzte OCR bei etwa Seite 413 ab (ONNX-Race-Condition); Dokumente mit 100+ Seiten nutzen jetzt die CLI-Engine (separater Prozess) — selbst bei einem Absturz überlebt die Haupt-App.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>Ctrl+F-Suchmarkierung an der richtigen Stelle.</b> Der Treffer wurde gefunden, aber die Hervorhebung erschien manchmal woanders; jetzt werden die PDF-Koordinaten direkt verwendet — die Markierung liegt immer exakt auf dem gefundenen Wort.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>Rahmenproblem bei der intelligenten Bereichsbearbeitung</b> (aus 1.13.1 übernommen) — Schwärzungsränder sind jetzt vollständig sauber.</span></li>
+          <li><span class="tag fix">Behoben</span><span class="change-text"><b>Türkische Zeichen im Update-Fenster</b> (aus 1.13.1 übernommen) — Versionshinweise zeigen türkische Zeichen jetzt korrekt.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail">
+        <span class="chip">1.8.2</span>
       </div>
       <div class="body">
         <h2>Überarbeiteter Bearbeitungsmodus, Warnung bei fehlenden Schriften und Stabilität</h2>

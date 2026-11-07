@@ -163,8 +163,27 @@
 
     <article class="release current">
       <div class="rail">
-        <span class="chip">1.8.2</span>
+        <span class="chip">1.13.2</span>
         <span class="badge-current">Actuelle</span>
+      </div>
+      <div class="body">
+        <h2>Fusion par clic droit, protection du surveillant d'imprimante et sécurité OCR pour les grands documents</h2>
+        <p class="sub">8 novembre 2026 · Version précédente 1.13.1 — un paquet de stabilité issu du terrain, avec des correctifs repris de la 1.13.1.</p>
+        <ul class="changes">
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>La fusion par clic droit fonctionne désormais application fermée.</b> Sélectionner 2+ PDF et choisir « Fusionner avec YesPDF » perdait des fichiers (Windows lançait chaque fichier dans un processus séparé, chacun restant avec un seul fichier) ; tous les fichiers sont désormais rassemblés dans un seul hub de fusion.</span></li>
+          <li><span class="tag new">Nouveau</span><span class="change-text"><b>Protection automatique du surveillant YesPDF Printer.</b> S'il plante ou est arrêté, l'application le relance en 30 secondes ; après 3 échecs consécutifs, l'utilisateur est averti (« Les impressions ne produiront pas de PDF »).</span></li>
+          <li><span class="tag imp">Amélioré</span><span class="change-text"><b>Retour rapide par QR code à l'expiration de la session.</b> Au 7e jour, l'écran de scan QR s'ouvre directement au lieu du formulaire e-mail/mot de passe — les utilisateurs sans mot de passe ne restent plus bloqués.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Protection contre les plantages OCR sur les grands documents (cas de 438 pages).</b> Sur un document numérisé de 438 pages, l'OCR plantait vers la page 413 (race condition ONNX) ; les documents de 100+ pages utilisent désormais le moteur CLI (processus séparé) — même en cas de plantage, l'application principale survit.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Surlignage de recherche Ctrl+F au bon endroit.</b> Le résultat était trouvé mais le surlignage apparaissait parfois ailleurs ; les coordonnées PDF sont désormais utilisées directement — le surlignage tombe toujours exactement sur le mot trouvé.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Problème de cadre en Édition intelligente de zone</b> (repris de la 1.13.1) — les bordures de caviardage sont désormais parfaitement propres.</span></li>
+          <li><span class="tag fix">Corrigé</span><span class="change-text"><b>Caractères turcs dans la fenêtre de mise à jour</b> (repris de la 1.13.1) — les notes de version affichent désormais correctement les caractères turcs.</span></li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="release">
+      <div class="rail">
+        <span class="chip">1.8.2</span>
       </div>
       <div class="body">
         <h2>Mode d’édition repensé, avertissement de police manquante et stabilité</h2>
