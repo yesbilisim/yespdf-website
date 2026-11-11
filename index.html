@@ -785,7 +785,7 @@ html {
                 if (frame.dataset.loaded) return;
                 frame.dataset.loaded = '1';
                 var ifr = document.createElement('iframe');
-                ifr.src = 'https://www.youtube-nocookie.com/embed/zQkPlDy0Ki8?autoplay=1&rel=0';
+                ifr.src = 'https://www.youtube-nocookie.com/embed/zQkPlDy0Ki8?autoplay=1&rel=0&cc_load_policy=0&enablejsapi=1';
                 ifr.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
                 ifr.allowFullscreen = true;
                 ifr.referrerPolicy = 'strict-origin-when-cross-origin';
@@ -793,6 +793,17 @@ html {
                 frame.appendChild(ifr);
                 facade.style.display = 'none';
                 frame.style.display = 'block';
+                // Video gorselinde altyazi zaten gomulu; YouTube'un otomatik
+                // Turkce altyazisini oynaticidan kapat (asr izi silinemiyor).
+                try {
+                    var kapat = function () {
+                        ifr.contentWindow.postMessage(JSON.stringify({
+                            event: 'command', func: 'setOption',
+                            args: ['captions', 'track', {}]
+                        }), '*');
+                    };
+                    [600, 1800, 3500].forEach(function (ms) { setTimeout(kapat, ms); });
+                } catch (e) {}
             }
             facade.addEventListener('click', play);
             facade.addEventListener('keydown', function (e) {
