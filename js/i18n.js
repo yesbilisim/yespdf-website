@@ -52,6 +52,14 @@ const translations = {
     'video.play': 'Videoyu oynat',
     'video.note': 'Video, tıkladığınızda YouTube üzerinden oynatılır.',
 
+    // Kampanya pop-up (Lisans Geçiş Programı)
+    'kampanya.tag': 'Lisans Geçiş Programı',
+    'kampanya.title': 'YesPDF\'e geçin, %25 indirimle',
+    'kampanya.desc': 'PDF lisans yenilemeniz yaklaşırken geçerli ticari lisansınızla YesPDF\'e geçin; lisansı çalışan sayısına göre değil, aynı anda kullanılan kadar alın.',
+    'kampanya.cta': 'Programı incele',
+    'kampanya.later': 'Şimdi değil',
+    'kampanya.close': 'Kapat',
+
     // Features
     'features.tag': 'ÖZELLİKLER',
     'features.title': 'Güçlü Özellikler',
@@ -333,6 +341,14 @@ const translations = {
     'video.play': 'Play video',
     'video.note': 'The video is played from YouTube when you click.',
 
+    // Campaign popup (License Switch Program)
+    'kampanya.tag': 'License Switch Program',
+    'kampanya.title': 'Switch to YesPDF with 25% off',
+    'kampanya.desc': 'As your PDF license renewal approaches, switch to YesPDF with your valid commercial license — license by concurrent use, not headcount.',
+    'kampanya.cta': 'Explore the program',
+    'kampanya.later': 'Not now',
+    'kampanya.close': 'Close',
+
     // Features
     'features.tag': 'FEATURES',
     'features.title': 'Powerful Features',
@@ -613,6 +629,14 @@ const translations = {
     'video.play': 'Video abspielen',
     'video.note': 'Das Video wird erst nach einem Klick über YouTube abgespielt.',
 
+    // Kampagnen-Popup (Lizenz-Wechselprogramm)
+    'kampanya.tag': 'Lizenz-Wechselprogramm',
+    'kampanya.title': 'Wechseln Sie zu YesPDF mit 25 % Rabatt',
+    'kampanya.desc': 'Wenn Ihre PDF-Lizenz zur Verlängerung ansteht, wechseln Sie mit Ihrer gültigen kommerziellen Lizenz zu YesPDF — Lizenz nach gleichzeitiger Nutzung, nicht nach Mitarbeiterzahl.',
+    'kampanya.cta': 'Programm ansehen',
+    'kampanya.later': 'Jetzt nicht',
+    'kampanya.close': 'Schließen',
+
     // Features
     'features.tag': 'FUNKTIONEN',
     'features.title': 'Leistungsstarke Funktionen',
@@ -892,6 +916,14 @@ const translations = {
     'video.subtitle': 'Comment YesPDF est né et devenu la réponse aux défis PDF des entreprises — en 4 minutes 30.',
     'video.play': 'Lire la vidéo',
     'video.note': 'La vidéo est lue depuis YouTube après votre clic.',
+
+    // Pop-up campagne (Programme de changement de licence)
+    'kampanya.tag': 'Programme de changement de licence',
+    'kampanya.title': 'Passez à YesPDF avec 25 % de remise',
+    'kampanya.desc': 'À l\'approche du renouvellement de votre licence PDF, passez à YesPDF avec votre licence commerciale valide — une licence selon l\'usage simultané, pas selon l\'effectif.',
+    'kampanya.cta': 'Découvrir le programme',
+    'kampanya.later': 'Pas maintenant',
+    'kampanya.close': 'Fermer',
 
     // Features
     'features.tag': 'FONCTIONNALITÉS',

@@ -2914,7 +2914,65 @@ html {
 
     <!-- ==================== SCRIPTS ==================== -->
     <script src="js/aos.js" defer></script>
-    <script src="js/i18n.js?v=13"></script>
+    <!-- Kampanya pop-up: Lisans Geçiş Programı — ilk girişte bir kez gösterilir -->
+    <style>
+      #gecis-perde{position:fixed;inset:0;z-index:90;background:rgba(12,43,76,.68);display:flex;align-items:center;justify-content:center;padding:20px}
+      #gecis-perde[hidden]{display:none}
+      #gecis-kutu{background:#fff;border-radius:20px;max-width:460px;width:100%;padding:36px 32px 28px;position:relative;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.3)}
+      #gecis-kutu .yuzde{width:92px;height:92px;border-radius:50%;background:#276113;color:#fff;font-size:1.9rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+      #gecis-kutu .etiket{display:inline-block;background:#f0f5fb;color:#0C2B4C;border:1px solid #d9e2ee;padding:4px 12px;border-radius:999px;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+      #gecis-kutu h2{font-size:1.45rem;line-height:1.25;color:#0C2B4C;margin:12px 0 8px;font-weight:800}
+      #gecis-kutu p{color:#5b6b7e;font-size:.95rem;margin:0 0 18px}
+      #gecis-kutu .gecis-cta{display:block;background:#276113;color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:10px;font-size:1rem}
+      #gecis-kutu .gecis-cta:hover{background:#1f4d0f}
+      #gecis-kutu .gecis-later{display:inline-block;margin-top:12px;background:none;border:0;color:#5b6b7e;font-size:.88rem;cursor:pointer;text-decoration:underline;padding:6px}
+      #gecis-kapat{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;border:0;background:#f0f5fb;color:#0C2B4C;font-size:1.25rem;line-height:1;cursor:pointer}
+      #gecis-kapat:hover{background:#d9e2ee}
+      #gecis-kutu .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    </style>
+    <div id="gecis-perde" hidden>
+      <div id="gecis-kutu" role="dialog" aria-modal="true" aria-labelledby="gecis-baslik">
+        <button id="gecis-kapat" type="button"><span class="sr-only" data-i18n="kampanya.close">Kapat</span><span aria-hidden="true">&times;</span></button>
+        <div class="yuzde" aria-hidden="true">%25</div>
+        <span class="etiket" data-i18n="kampanya.tag">Lisans Geçiş Programı</span>
+        <h2 id="gecis-baslik" data-i18n="kampanya.title">YesPDF'e geçin, %25 indirimle</h2>
+        <p data-i18n="kampanya.desc">PDF lisans yenilemeniz yaklaşırken geçerli ticari lisansınızla YesPDF'e geçin; lisansı çalışan sayısına göre değil, aynı anda kullanılan kadar alın.</p>
+        <a class="gecis-cta" id="gecis-cta" href="/kampanya/lisans-gecis/" data-i18n="kampanya.cta">Programı incele</a>
+        <button class="gecis-later" id="gecis-later" type="button" data-i18n="kampanya.later">Şimdi değil</button>
+      </div>
+    </div>
+    <script>
+    (function () {
+      var perde = document.getElementById('gecis-perde');
+      if (!perde || perde.dataset.baslat) return;
+      perde.dataset.baslat = '1';
+      try { if (localStorage.getItem('gecis_v1') === '1') return; } catch (e) { return; }
+      var onceki = null;
+      function kapat() {
+        perde.hidden = true;
+        try { localStorage.setItem('gecis_v1', '1'); } catch (e) {}
+        if (onceki && onceki.focus) onceki.focus();
+      }
+      function ac() {
+        perde.hidden = false;
+        onceki = document.activeElement;
+        document.getElementById('gecis-kapat').focus();
+      }
+      document.getElementById('gecis-kapat').addEventListener('click', kapat);
+      var later = document.getElementById('gecis-later');
+      if (later) later.addEventListener('click', kapat);
+      perde.addEventListener('click', function (e) { if (e.target === perde) kapat(); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !perde.hidden) kapat();
+      });
+      var cta = document.getElementById('gecis-cta');
+      if (cta) cta.addEventListener('click', function () {
+        try { localStorage.setItem('gecis_v1', '1'); } catch (e) {}
+      });
+      setTimeout(ac, 1200);
+    })();
+    </script>
+    <script src="js/i18n.js?v=14"></script>
     <script src="js/main.js?v=6" defer></script>
     <script src="js/gallery.js?v=4" defer></script>
     <script src="js/form.js?v=4" defer></script>

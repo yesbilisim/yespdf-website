@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YesPDF Lisans Geçiş Programı — %25 Geçiş İndirimi</title>
+<meta name="description" content="Geçerli bir ticari PDF lisansınız varsa YesPDF'e geçerken %25 indirim. Lisansı kullanıcı sayısına göre değil, aynı anda kullanılan kadar alın.">
+<link rel="canonical" href="https://yespdf.com.tr/kampanya/lisans-gecis/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YesPDF Lisans Geçiş Programı — %25 Geçiş İndirimi">
+<meta property="og:description" content="Yenileme tarihi yaklaşırken YesPDF'e geçin: %25 indirim, eşzamanlı kullanım (CCU) lisansı, kurum içinde lisans sunucusu.">
+<meta property="og:url" content="https://yespdf.com.tr/kampanya/lisans-gecis/">
+<meta property="og:image" content="https://yespdf.com.tr/img/og-image.png">
+<meta property="og:locale" content="tr_TR">
+<style>
+  :root {
+    --lacivert: #0C2B4C; --yesil: #276113; --zemin: #F5F8FC; --kart: #ffffff; --metin: #14263b; --soluk: #5b6b7e;
+    --cizgi: #d9e2ee; --vurgu: #2e7d32; --uyari: #b4540a;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: "Segoe UI", Inter, system-ui, Arial, sans-serif; color: var(--metin); background: var(--zemin); line-height: 1.55; }
+  .sar { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header { background: #fff; border-bottom: 1px solid var(--cizgi); }
+  header .sar { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+  header img { height: 36px; display: block; }
+  header a.btn { padding: 10px 18px; }
+  .btn { display: inline-block; background: var(--yesil); color: #fff; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 10px; border: 0; cursor: pointer; font-size: 1rem; }
+  .btn:hover { background: #1f4d0f; }
+  .btn.ikincil { background: transparent; color: var(--lacivert); border: 2px solid var(--lacivert); }
+  .btn.ikincil:hover { background: var(--lacivert); color: #fff; }
+  .hero { background: linear-gradient(135deg, var(--lacivert) 0%, #12406f 100%); color: #fff; padding: 72px 0 80px; }
+  .hero .sar { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; }
+  .etiket { display: inline-block; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); padding: 5px 14px; border-radius: 999px; font-size: .85rem; letter-spacing: .06em; text-transform: uppercase; }
+  h1 { font-size: clamp(2rem, 4.5vw, 3.1rem); line-height: 1.12; margin: 18px 0 16px; font-weight: 700; }
+  .hero p.alt { font-size: 1.15rem; opacity: .92; max-width: 40ch; }
+  .hero .eylem { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+  .hero .btn.ikincil { color: #fff; border-color: rgba(255,255,255,.6); }
+  .hero .btn.ikincil:hover { background: #fff; color: var(--lacivert); }
+  .rozet { background: #fff; color: var(--lacivert); border-radius: 20px; padding: 30px 28px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+  .rozet .yuzde { font-size: 5rem; font-weight: 800; color: var(--yesil); line-height: 1; }
+  .rozet .yuzde small { font-size: 2.4rem; }
+  .rozet .metin { font-weight: 600; margin-top: 8px; }
+  .rozet .not { color: var(--soluk); font-size: .88rem; margin-top: 10px; }
+  section { padding: 64px 0; }
+  section.beyaz { background: #fff; }
+  h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.2; margin: 0 0 14px; color: var(--lacivert); }
+  .giris { color: var(--soluk); max-width: 62ch; margin: 0 0 36px; font-size: 1.05rem; }
+  .adim3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .adim { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 16px; padding: 24px; }
+  .adim .no { width: 38px; height: 38px; border-radius: 50%; background: var(--lacivert); color: #fff; display: grid; place-items: center; font-weight: 700; margin-bottom: 12px; }
+  .adim h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--lacivert); }
+  .adim p { margin: 0; color: var(--soluk); font-size: .96rem; }
+  .ccu { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .koltuk { display: grid; grid-template-columns: repeat(10, 1fr); gap: 8px; max-width: 460px; }
+  .koltuk i { aspect-ratio: 1; border-radius: 50%; background: #c9d6e6; transition: background .5s, transform .5s; }
+  .koltuk i.acik { background: var(--yesil); transform: scale(1.08); }
+  .sayac { font-weight: 700; color: var(--lacivert); margin-top: 14px; font-size: 1.15rem; }
+  .sayac span { color: var(--yesil); }
+  ul.tik { list-style: none; padding: 0; margin: 16px 0 0; }
+  ul.tik li { padding-left: 30px; position: relative; margin: 10px 0; }
+  ul.tik li::before { content: ""; position: absolute; left: 0; top: 5px; width: 18px; height: 18px; border-radius: 50%; background: var(--yesil); }
+  ul.tik li::after { content: ""; position: absolute; left: 6px; top: 8px; width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+  .hesap { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 20px; padding: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+  label { display: block; font-weight: 600; margin: 16px 0 6px; color: var(--lacivert); }
+  label:first-child { margin-top: 0; }
+  input[type=number], input[type=text], input[type=email], input[type=tel], input[type=date], select { width: 100%; padding: 12px 14px; border: 1px solid #b8c6d8; border-radius: 10px; font-size: 1rem; font-family: inherit; background: #fff; }
+  input:focus, select:focus, textarea:focus { outline: 3px solid rgba(39,97,19,.3); border-color: var(--yesil); }
+  .ipucu { color: var(--soluk); font-size: .88rem; margin-top: 6px; }
+  .sonuc { background: var(--zemin); border-radius: 16px; padding: 22px; border: 1px dashed #aebfd3; }
+  .sonuc .buyuk { font-size: 2.6rem; font-weight: 800; color: var(--yesil); line-height: 1.1; }
+  .sonuc .kucuk { color: var(--soluk); font-size: .95rem; }
+  .cubuk { height: 16px; border-radius: 8px; background: #d3deec; margin: 14px 0 6px; position: relative; overflow: hidden; }
+  .cubuk b { position: absolute; left: 0; top: 0; bottom: 0; background: var(--yesil); border-radius: 8px; transition: width .4s; }
+  .uyari { background: #fff7ee; border: 1px solid #f0d2b0; color: #6b3a08; border-radius: 12px; padding: 12px 14px; font-size: .9rem; margin-top: 14px; }
+  .sss details { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+  .sss summary { cursor: pointer; font-weight: 600; color: var(--lacivert); }
+  .sss p { margin: 10px 0 0; color: var(--soluk); }
+  form .iki { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-kutu { background: var(--kart); border: 1px solid var(--cizgi); border-radius: 20px; padding: 30px; max-width: 760px; }
+  .onay { display: flex; gap: 10px; align-items: flex-start; margin-top: 16px; font-size: .92rem; color: var(--soluk); }
+  .onay input { margin-top: 4px; width: 18px; height: 18px; }
+  footer { background: var(--lacivert); color: #cdd9e8; padding: 30px 0; font-size: .9rem; }
+  footer .sar { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer a { color: #fff; text-decoration: none; font-weight: 600; }
+  footer a:hover { text-decoration: underline; }
+  @media (max-width: 800px) {
+    .hero .sar, .ccu, .hesap, .adim3, form .iki { grid-template-columns: 1fr; }
+    section { padding: 44px 0; } .hero { padding: 48px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="sar">
+    <a href="https://yespdf.com.tr/" aria-label="YesPDF ana sayfa"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTEwLjU1IDQwMi40NCIgd2lkdGg9IjE1MTAuNTUiIGhlaWdodD0iNDAyLjQ0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Illlc1BERiI+DQogIDx0aXRsZT5ZZXNQREY8L3RpdGxlPg0KICA8IS0tIEhhcmZsZXIgb3V0bGluZSdhIGNldnJpbGRpOiBmb250IGJhZ2ltbGlsaWdpIFlPSy4gUmVua2xlciBvcmlqaW5hbA0KICAgICAgIGhvbWVfbG9nby5wbmcnZGVuIG9ybmVrbGVuZGkuIFVyZXRpY2k6IHRvb2xzL21ha2UtbG9nby5wczEgLS0+DQogIDxkZWZzPg0KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ05hdnkiIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4NCiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzIyMzg1QSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBDMkI0QyIvPg0KICAgIDwvbGluZWFyR3JhZGllbnQ+DQogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnR3JlZW4iIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4NCiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzQwODAyRSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzI3NjExMyIvPg0KICAgIDwvbGluZWFyR3JhZGllbnQ+DQogICAgPGxpbmVhckdyYWRpZW50IGlkPSJnQ2hlY2siIHgxPSIwIiB5MT0iMCIgeDI9IjAiIHkyPSIxIj4NCiAgICAgIDxzdG9wIG9mZnNldD0iMCIgc3RvcC1jb2xvcj0iIzRBOUIzNiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzJFN0ExRiIvPg0KICAgIDwvbGluZWFyR3JhZGllbnQ+DQogIDwvZGVmcz4NCiAgPHBhdGggZmlsbD0idXJsKCNnTmF2eSkiICBmaWxsLXJ1bGU9Im5vbnplcm8iIGQ9Ik0xNzAuNyAyNTMuNTQgTDE3MC43IDM1MC44IEw4Ni4zMyAzNTAuOCBMODYuMzMgMjU0LjcxIEwwIDcwLjczIEw5Ni44OCA3MC43MyBMMTI3LjE1IDE1OC44MSBDMTI5LjIzIDE2NC44IDEzMC43IDE3MC4wMSAxMzEuNTQgMTc0LjQ0IEMxMzIuMzkgMTc4Ljg2IDEzMy4zMyAxODMuMzYgMTM0LjM4IDE4Ny45MSBMMTM1LjE2IDE4Ny45MSBDMTM2Ljg1IDE3Ni4wNiAxMzguNzQgMTY2Ljg4IDE0MC44MiAxNjAuMzcgTDE3MC43IDcwLjczIEwyNTkuOTYgNzAuNzNaTTM1MS41NiAyNzQuNDQgQzM1Mi45OSAyODMuMDMgMzU3Ljk0IDI4OS43NyAzNjYuNDEgMjk0LjY1IEMzNzQuODcgMjk5LjUzIDM4Ni4wNyAzMDEuOTggNDAwIDMwMS45OCBDNDE5LjQgMzAxLjk4IDQzNy43NiAyOTguMjYgNDU1LjA4IDI5MC44NCBMNDU1LjA4IDM0My41OCBDNDM0LjkgMzUxLjY1IDQxMC40MiAzNTUuNjkgMzgxLjY0IDM1NS42OSBDMzQ2Ljc0IDM1NS42OSAzMTkuNiAzNDYuNzcgMzAwLjIgMzI4LjkzIEMyODAuNzkgMzExLjA5IDI3MS4wOSAyODYuNTUgMjcxLjA5IDI1NS4zIEMyNzEuMDkgMjMzLjgxIDI3NS4zNiAyMTQuODcgMjgzLjg5IDE5OC40NiBDMjkyLjQyIDE4Mi4wNSAzMDUuMDUgMTY5LjIgMzIxLjc4IDE1OS44OSBDMzM4LjUxIDE1MC41OCAzNTYuOTcgMTQ1LjkyIDM3Ny4xNSAxNDUuOTIgQzM5Ny44NSAxNDUuOTIgNDE1LjU2IDE0OS45NiA0MzAuMjcgMTU4LjAzIEM0NDQuOTkgMTY2LjEgNDU2LjE1IDE3Ny40MyA0NjMuNzcgMTkyLjAxIEM0NzEuMzkgMjA2LjYgNDc1LjIgMjIzLjY2IDQ3NS4yIDI0My4xOSBMNDc1LjIgMjc0LjQ0Wk00MDEuNTYgMjMwLjg4IEM0MDEuNTYgMjA3Ljg0IDM5My4yOSAxOTYuMzEgMzc2Ljc2IDE5Ni4zMSBDMzY5Ljg2IDE5Ni4zMSAzNjQuMDYgMTk5LjQ3IDM1OS4zOCAyMDUuNzggQzM1NC42OSAyMTIuMSAzNTEuOTUgMjIwLjQ3IDM1MS4xNyAyMzAuODhaTTY2Ni40MSAyODQuNCBDNjY2LjQxIDMwNy4wNSA2NTcuNzggMzI0LjYgNjQwLjUzIDMzNy4wMyBDNjIzLjI3IDM0OS40NyA1OTkuMjIgMzU1LjY5IDU2OC4zNiAzNTUuNjkgQzU1OS4zOCAzNTUuNjkgNTQ4LjI3IDM1NC43OCA1MzUuMDYgMzUyLjk1IEM1MjEuODQgMzUxLjEzIDUxMS4wNyAzNDguOTIgNTAyLjczIDM0Ni4zMSBMNTAyLjczIDI4Ny45MSBDNTI3LjM0IDI5OC44NSA1NDcuOTIgMzA0LjMyIDU2NC40NSAzMDQuMzIgQzU4MC43MyAzMDQuMzIgNTg4Ljg3IDMwMC4wOSA1ODguODcgMjkxLjYyIEM1ODguODcgMjg4LjExIDU4Ni45OCAyODUuMjEgNTgzLjIgMjgyLjkzIEM1NzkuNDMgMjgwLjY1IDU2OS41MyAyNzYuODUgNTUzLjUyIDI3MS41MSBDNTM1LjgxIDI2NS45MSA1MjIuOTIgMjU4LjQ5IDUxNC44NCAyNDkuMjQgQzUwNi43NyAyNDAgNTAyLjczIDIyNy45NSA1MDIuNzMgMjEzLjExIEM1MDIuNzMgMTkyLjQxIDUxMC45NyAxNzYuMDMgNTI3LjQ0IDE2My45OSBDNTQzLjkxIDE1MS45NCA1NjcuMDYgMTQ1LjkyIDU5Ni44OCAxNDUuOTIgQzYxNC4zMiAxNDUuOTIgNjMyLjgxIDE0OC40NiA2NTIuMzQgMTUzLjU0IEw2NTIuMzQgMjA5LjU5IEM2NDQuMTQgMjA2LjA4IDYzNS4xNiAyMDMuMTUgNjI1LjM5IDIwMC44IEM2MTUuNjMgMTk4LjQ2IDYwNy40MiAxOTcuMjkgNjAwLjc4IDE5Ny4yOSBDNTk1LjMxIDE5Ny4yOSA1OTAuOTUgMTk4LjIgNTg3LjcgMjAwLjAyIEM1ODQuNDQgMjAxLjg1IDU4Mi44MSAyMDQuMzggNTgyLjgxIDIwNy42NCBDNTgyLjgxIDIxMS40MiA1ODQuNTcgMjE0LjQ4IDU4OC4wOSAyMTYuODIgQzU5MS42IDIxOS4xNiA1OTguNjMgMjIxLjk2IDYwOS4xOCAyMjUuMjIgQzYyOS42MiAyMzEuMjEgNjQ0LjI3IDIzOC44OSA2NTMuMTMgMjQ4LjI2IEM2NjEuOTggMjU3LjY0IDY2Ni40MSAyNjkuNjggNjY2LjQxIDI4NC40WiIvPg0KICA8cGF0aCBmaWxsPSJ1cmwoI2dHcmVlbikiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTkyNy42NSAxNjMuMTEgQzkyNy42NSAxODIuMjUgOTIyLjggMTk5LjI0IDkxMy4xIDIxNC4wOSBDOTAzLjQgMjI4LjkzIDg4OS41NyAyNDAuNDIgODcxLjYgMjQ4LjU2IEM4NTMuNjMgMjU2LjcgODMyLjczIDI2MC43NiA4MDguOSAyNjAuNzYgTDc4My4xMiAyNjAuNzYgTDc4My4xMiAzNTAuOCBMNjk4Ljc1IDM1MC44IEw2OTguNzUgNzAuNzMgTDgxMy41OSA3MC43MyBDODUzLjA0IDcwLjczIDg4MS45MiA3OC4yMSA5MDAuMjEgOTMuMTkgQzkxOC41IDEwOC4xNiA5MjcuNjUgMTMxLjQ3IDkyNy42NSAxNjMuMTFaTTgzOC4zOSAxNjYuMDQgQzgzOC4zOSAxNTQuNTggODM1LjA3IDE0NS45MiA4MjguNDMgMTQwLjA2IEM4MjEuNzkgMTM0LjIgODEyLjAzIDEzMS4yNyA3OTkuMTQgMTMxLjI3IEw3ODMuMTIgMTMxLjI3IEw3ODMuMTIgMjAwLjQxIEw4MDIuMDcgMjAwLjQxIEM4MjYuMjggMjAwLjQxIDgzOC4zOSAxODguOTUgODM4LjM5IDE2Ni4wNFpNMTIyNS4xMSAyMDcuMjUgQzEyMjUuMTEgMjM1LjYzIDEyMTkuMTYgMjYwLjczIDEyMDcuMjQgMjgyLjU0IEMxMTk1LjMzIDMwNC4zNSAxMTc4LjMgMzIxLjE4IDExNTYuMTcgMzMzLjAzIEMxMTM0LjAzIDM0NC44OCAxMTA4LjUxIDM1MC44IDEwNzkuNiAzNTAuOCBMOTYxLjA1IDM1MC44IEw5NjEuMDUgNzAuNzMgTDEwNzcuMDcgNzAuNzMgQzExNzUuNzYgNzAuNzMgMTIyNS4xMSAxMTYuMjMgMTIyNS4xMSAyMDcuMjVaTTExMzUuNDYgMjA4LjAzIEMxMTM1LjQ2IDE5NC4zNiAxMTMyLjcgMTgyLjA1IDExMjcuMTYgMTcxLjEyIEMxMTIxLjYzIDE2MC4xOCAxMTEzLjcyIDE1MS43MiAxMTAzLjQzIDE0NS43MyBDMTA5My4xNSAxMzkuNzQgMTA4MS4wNCAxMzYuNzQgMTA2Ny4xIDEzNi43NCBMMTA0NS40MiAxMzYuNzQgTDEwNDUuNDIgMjg0Ljc5IEwxMDY5LjA2IDI4NC43OSBDMTA4OS4yNCAyODQuNzkgMTEwNS4zNSAyNzcuODUgMTExNy40IDI2My45OSBDMTEyOS40NCAyNTAuMTIgMTEzNS40NiAyMzEuNDcgMTEzNS40NiAyMDguMDNaTTEzNDguOTQgMTM2Ljc0IEwxMzQ4Ljk0IDE4Ny4xMyBMMTQzMi4xNCAxODcuMTMgTDE0MzIuMTQgMjUzLjE1IEwxMzQ4Ljk0IDI1My4xNSBMMTM0OC45NCAzNTAuOCBMMTI2NC41NyAzNTAuOCBMMTI2NC41NyA3MC43MyBMMTQ0MC4xNSA3MC43MyBMMTQ0MC4xNSAxMzYuNzRaIi8+DQogIDxwYXRoIGZpbGw9InVybCgjZ0NoZWNrKSIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNOTM5Ljc0IDIwMi44IEwxMDU4LjM3IDM2NS4yNSBMMTAyNS41IDM2MC43OSBMMTQ3MC4zNCA3Ljg5IEMxNDgwLjI5IDAgMTQ5NC43NiAxLjY3IDE1MDIuNjUgMTEuNjIgQzE1MTAuNTUgMjEuNTcgMTUwOC44OCAzNi4wNCAxNDk4LjkzIDQzLjkzIEwxMDU0LjA5IDM5Ni44MyBDMTA0OS4xOCA0MDAuNzIgMTA0Mi45MSA0MDIuNDQgMTAzNi43IDQwMS42IEMxMDMwLjUgNDAwLjc2IDEwMjQuOTEgMzk3LjQzIDEwMjEuMjIgMzkyLjM4IEw5MDIuNTkgMjI5LjkzIEM4OTUuMSAyMTkuNjcgODk3LjM0IDIwNS4yOCA5MDcuNiAxOTcuNzkgQzkxNy44NiAxOTAuMyA5MzIuMjUgMTkyLjU0IDkzOS43NCAyMDIuOFoiLz4NCjwvc3ZnPg==" alt="YesPDF"></a>
+    <a class="btn" href="#basvuru">Başvur</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="sar">
+    <div>
+      <span class="etiket">Lisans Geçiş Programı</span>
+      <h1>Yenileme tarihi yaklaşırken YesPDF'e geçin, %25 indirimle.</h1>
+      <p class="alt">Geçerli bir ticari PDF lisansınız yeterli. Üstüne, lisansı çalışan sayısına göre değil, aynı anda kullanılan kadar alırsınız.</p>
+      <div class="eylem">
+        <a class="btn" href="#basvuru">Programa başvur</a>
+        <a class="btn ikincil" href="#hesap">Kaç lisans yeter?</a>
+      </div>
+    </div>
+    <div class="rozet" role="img" aria-label="Yüzde 25 geçiş indirimi">
+      <div class="yuzde">%25</div>
+      <div class="metin">geçiş indirimi</div>
+      <div class="not">Geçerli bir ticari PDF lisansı olan orta ve büyük firmalar için. Koşullar aşağıda.</div>
+    </div>
+  </div>
+</section>
+
+<section class="beyaz">
+  <div class="sar">
+    <h2>Nasıl çalışır?</h2>
+    <p class="giris">Üç adımda, mevcut lisansınızın süresi dolmadan ve işinizi aksatmadan.</p>
+    <div class="adim3">
+      <div class="adim"><div class="no">1</div><h3>Lisansınızı gösterin</h3><p>Yenileme faturanızı (tutarları kapatabilirsiniz) ya da lisans ekranınızın görüntüsünü paylaşın.</p></div>
+      <div class="adim"><div class="no">2</div><h3>Pilotla deneyin</h3><p>14-30 gün, kendi belgelerinizle ve kendi sunucunuzda. Mevcut lisansınız çalışmaya devam eder.</p></div>
+      <div class="adim"><div class="no">3</div><h3>İndirimli geçin</h3><p>Pilotta ölçülen eşzamanlı kullanıma göre lisans adedi belirlenir, %25 indirim uygulanır.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sar ccu">
+    <div>
+      <h2>Kullanıcı başına değil, aynı anda kullanılan kadar.</h2>
+      <p class="giris" style="margin-bottom:0">YesPDF'te CCU (eşzamanlı kullanım) lisansı vardır. 50 YesPDF lisansı, aynı anda 50 kişinin kullanabileceği anlamına gelir. Kullanıcı sayısı sınırsızdır, lisans sunucusu kendi şirketinizin içindedir.</p>
+      <ul class="tik">
+        <li>Çalışan sayısı değil, <b>aynı anda çalışan sayısı</b> kadar lisans.</li>
+        <li>Lisans sunucusu <b>kurum içinde</b>; verileriniz sizde kalır.</li>
+        <li>Masaüstü, On-Prem ve diğer platformlarda tek ürün.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="koltuk" id="koltuk" aria-hidden="true"></div>
+      <div class="sayac"><span id="acik">12</span> / 50 eşzamanlı kullanım <span style="color:var(--soluk);font-weight:500">(örnek)</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="beyaz" id="hesap">
+  <div class="sar">
+    <h2>Kaç eşzamanlı lisansa ihtiyacınız olabilir?</h2>
+    <p class="giris">Kaba bir tahmin için aşağıya mevcut lisans sayınızı ve kullanım profilinizi girin. Gerçek sayıyı pilot süresince ölçeriz.</p>
+    <div class="hesap">
+      <div>
+        <label for="n">Şu an kaç kullanıcı lisansınız var?</label>
+        <input id="n" type="number" min="1" max="100000" value="100" inputmode="numeric">
+        <label for="profil">Kullanım profili</label>
+        <select id="profil">
+          <option value="seyrek">Ara sıra: günde birkaç belge</option>
+          <option value="orta" selected>Orta: çoğu gün kullanılıyor</option>
+          <option value="yogun">Yoğun: gün boyu PDF çalışması</option>
+        </select>
+        <div class="ipucu">Oranlar örnektir. Kullanım analizi sonucu değişebilir.</div>
+      </div>
+      <div class="sonuc" aria-live="polite">
+        <div class="kucuk">Tahmini eşzamanlı lisans ihtiyacı</div>
+        <div class="buyuk" id="aralik">30 - 50</div>
+        <div class="cubuk"><b id="cubuk" style="width:40%"></b></div>
+        <div class="kucuk" id="aciklama"></div>
+        <div class="uyari">Bu bir <b>tahmindir</b>, fiyat ya da tasarruf taahhüdü değildir. Kesin sayı için ücretsiz kullanım analizi ve pilot önerilir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sar">
+    <h2>Kimler yararlanabilir?</h2>
+    <p class="giris">Program orta ve büyük firmalar içindir ve doğrudan satış ekibimizle yürütülür.</p>
+    <ul class="tik">
+      <li>Şu an <b>geçerli, ücretli bir ticari PDF lisansı</b> olan firmalar.</li>
+      <li>YesPDF'in yeni müşterisi olmak. Her firma için tek kullanım.</li>
+      <li>Kanıt: <b>yenileme faturası</b> (tutarlar kapatılabilir) <b>veya lisans ekranı görüntüsü</b>. Kanıt yalnızca doğrulama içindir.</li>
+      <li>Program koşulları ve süresi için satış ekibimizle görüşün.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="beyaz sss">
+  <div class="sar">
+    <h2>Sık sorulanlar</h2>
+    <details><summary>Geçiş işimizi aksatır mı?</summary><p>Pilot, mevcut lisansınızın süresi dolmadan başlar ve yalnızca seçtiğiniz ekiple yapılır. Geçiş için şablon ve form taşıma desteği veririz.</p></details>
+    <details><summary>Belgelerimiz doğru görünecek mi?</summary><p>Pilotta kendi belgelerinizle deneyebilirsiniz. Yazı tipi, tablo ve sayfa düzeninin kendi dosyalarınızda nasıl göründüğünü birlikte kontrol ederiz.</p></details>
+    <details><summary>Kendi sunucularımız ve dizin servisimizle çalışır mı?</summary><p>Lisans sunucusu kurumunuzun içinde çalışır. Dizin servisi, e-posta sunucusu, sertifikalar ve veritabanı bağlantıları gibi kurumsal entegrasyonlar müşteri istekleriyle geliştirilmiştir. Gereksinimlerinizi ilk görüşmede birlikte netleştiririz.</p></details>
+    <details><summary>Faturamı paylaşmak güvenli mi?</summary><p>Tutarları kapatabilirsiniz. Yalnızca lisansın geçerli olduğunu gösteren bilgi yeterlidir. Kanıt doğrulama sonrası silinir ve başka amaçla kullanılmaz.</p></details>
+    <details><summary>%25 indirim ne zamana kadar geçerli?</summary><p>Program süresi ve koşulları satış ekibimizle netleştirilir.</p></details>
+  </div>
+</section>
+
+<section id="basvuru">
+  <div class="sar">
+    <h2>Programa başvurun</h2>
+    <p class="giris">Formu doldurun, satış ekibimiz 1 iş günü içinde sizi arasın.</p>
+    <div class="form-kutu">
+      <form id="form" action="https://formsubmit.co/yespdf@yespdf.com.tr" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="YesPDF Lisans Geçiş Programı Başvurusu">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://yespdf.com.tr/kampanya/lisans-gecis/tesekkurler.html">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="iki">
+          <div><label for="ad">Ad Soyad</label><input id="ad" name="Ad Soyad" type="text" required autocomplete="name"></div>
+          <div><label for="firma">Firma</label><input id="firma" name="Firma" type="text" required autocomplete="organization"></div>
+          <div><label for="eposta">İş e-postası</label><input id="eposta" name="E-posta" type="email" required autocomplete="email"></div>
+          <div><label for="tel">Telefon</label><input id="tel" name="Telefon" type="tel" autocomplete="tel"></div>
+          <div><label for="calisan">Çalışan sayısı</label><input id="calisan" name="Çalışan Sayısı" type="number" min="1"></div>
+          <div><label for="lisans">Mevcut lisans sayısı</label><input id="lisans" name="Mevcut Lisans Sayısı" type="number" min="1"></div>
+          <div><label for="yenileme">Lisans yenileme tarihi</label><input id="yenileme" name="Yenileme Tarihi" type="date"><div class="ipucu">Yenilemeye 60-90 gün kala başlamak en rahat yoldur.</div></div>
+          <div><label for="kanit">Lisans kanıtı (fatura veya lisans ekranı)</label><input id="kanit" name="Lisans Kanıtı" type="file" accept=".pdf,.png,.jpg,.jpeg"><div class="ipucu">Tutarları kapatabilirsiniz. İsterseniz sonradan e-postayla da gönderebilirsiniz.</div></div>
+        </div>
+        <div class="onay"><input id="kvkk" name="KVKK Onayı" type="checkbox" required value="Onaylıyorum"><label for="kvkk" style="font-weight:400;margin:0;color:inherit">Paylaştığım bilgilerin ve kanıt belgesinin program başvurusu kapsamında işlenmesini ve doğrulama sonrası silinmesini kabul ediyorum.</label></div>
+        <div style="margin-top:20px"><button class="btn" type="submit">Başvuruyu gönder</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="sar"><div>© YesPDF · <a href="https://yespdf.com.tr/">yespdf.com.tr</a></div><div>Programa ilişkin koşullar değişiklik gösterebilir.</div></div>
+</footer>
+
+<script>
+  // Koltuk animasyonu
+  (function () {
+    var kap = document.getElementById("koltuk"), acik = document.getElementById("acik");
+    if (!kap) return;
+    for (var i = 0; i < 50; i++) { kap.appendChild(document.createElement("i")); }
+    var k = kap.children;
+    function ayarla(n) { for (var i = 0; i < 50; i++) k[i].className = i < n ? "acik" : ""; acik.textContent = n; }
+    ayarla(12);
+    var azalt = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!azalt) {
+      var n = 12, yon = 1;
+      setInterval(function () {
+        n += yon * (1 + Math.floor(Math.random() * 3));
+        if (n >= 22) { n = 22; yon = -1; } if (n <= 8) { n = 8; yon = 1; }
+        ayarla(n);
+      }, 1100);
+    }
+  })();
+  // Eşzamanlı lisans tahmini (oranlar örnektir)
+  (function () {
+    var ORAN = { seyrek: [0.15, 0.30], orta: [0.30, 0.50], yogun: [0.55, 0.80] };
+    var n = document.getElementById("n"), p = document.getElementById("profil");
+    var aralik = document.getElementById("aralik"), cubuk = document.getElementById("cubuk"), ac = document.getElementById("aciklama");
+    function hesapla() {
+      var N = Math.max(1, Math.min(100000, parseInt(n.value, 10) || 1));
+      var o = ORAN[p.value], lo = Math.max(1, Math.ceil(N * o[0])), hi = Math.max(lo, Math.ceil(N * o[1]));
+      aralik.textContent = lo + " - " + hi;
+      cubuk.style.width = Math.round((hi / N) * 100) + "%";
+      ac.textContent = N + " kullanıcınız varsa, aynı anda en fazla yaklaşık " + lo + "-" + hi + " kişinin PDF aracı kullandığı varsayımıyla " + lo + "-" + hi + " eşzamanlı lisans yeterli olabilir. Tüm " + N + " kullanıcı YesPDF'i kullanabilir.";
+    }
+    n.addEventListener("input", hesapla); p.addEventListener("change", hesapla); hesapla();
+  })();
+</script>
+</body>
+</html>
